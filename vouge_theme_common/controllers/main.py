@@ -239,6 +239,10 @@ class BizopleWebsiteSale(WebsiteSale):
                 req_ctx = request.context.copy()
                 req_ctx.setdefault('brand_id', int(brands))
                 request.context = req_ctx
+        if labels:
+            req_ctx = request.context.copy()
+            req_ctx.setdefault('product_label_id', int(labels))
+            request.context = req_ctx
         Category = request.env['product.public.category']
         if category:
             category = Category.search([('id', '=', int(category))], limit=1)
@@ -314,11 +318,34 @@ class BizopleWebsiteSale(WebsiteSale):
             request.session["brand_name"] = ''
         active_brand_list = list(set(brand_set))
         # VOUGE BRAND OPTIONS CODE END
+
+        # VOUGE Label OPTIONS CODE START
+        label_list = request.httprequest.args.getlist('label')
+        label_list = [unslug(x)[1] for x in label_list]
+        label_set = set([int(v) for v in label_list])
+        if label_list:
+            labellistdomain = list(map(int, label_list))
+            options['product_label_id'] = labellistdomain
+            label = []
+            label_obj = request.env['product.label.bizople'].sudo().search(
+                [('id', 'in', labellistdomain)])
+            if label_obj:
+                for vals in label_obj:
+                    if vals.name not in label:
+                        label.append((vals.name, vals.id))
+                if label:
+                    request.session["label_name"] = label
+        if not label_list:
+            request.session["label_name"] = ''
+        active_label_list = list(set(label_set))
+        # VOUGE LABEL OPTIONS CODE END
         # No limit because attributes are obtained from complete product list
         product_count, details, fuzzy_search_term = request.website._search_with_fuzzy("products_only", search,
             limit=None, order=self._get_search_order(post), options=options)
         search_product = details[0].get('results', request.env['product.template']).with_context(bin_size=True)
-
+        if label_list :
+            search_product = search_product.sudo().search([('product_label_id.id', "in", label_list)])
+            product_count = len(search_product)
         filter_by_price_enabled = request.website.is_view_active('website_sale.filter_products_price')
         if filter_by_price_enabled:
             # TODO Find an alternative way to obtain the domain through the search metadata.
@@ -404,7 +431,9 @@ class BizopleWebsiteSale(WebsiteSale):
             'layout_mode': layout_mode,
             # 'float_round': tools.float_round,
             'brand_set': brand_set,
+            'label_set': label_set,
             'active_brand_list': active_brand_list,
+            'active_label_list': active_label_list,
         }
         if filter_by_price_enabled:
             values['min_price'] = min_price or available_min_price

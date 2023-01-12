@@ -117,6 +117,23 @@ class Website(models.Model):
             ('product_ids', 'in', product_ids.ids or []), ('product_ids', '!=', False)]
         brands = self.env['product.brand'].sudo().search(domain_brand)
         return brands
+    
+    def get_product_labels(self, category, **post):
+        domain = []
+        if category:
+            cat_id = []
+            if category != None:
+                for ids in category:
+                    cat_id.append(ids.id)
+                domain += ['|', ('public_categ_ids.id', 'in', cat_id),
+                           ('public_categ_ids.parent_id', 'in', cat_id)]
+        else:
+            domain = []
+        product_ids = self.env["product.template"].sudo().search(domain)
+        domain_label = [
+            ('product_ids', 'in', product_ids.ids or []), ('product_ids', '!=', False)]
+        labels = self.env['product.label.bizople'].sudo().search(domain_label)
+        return labels
 
     def get_product_count_vouge(self):
         prod_per_page = self.env['product.per.page.bizople'].search([])

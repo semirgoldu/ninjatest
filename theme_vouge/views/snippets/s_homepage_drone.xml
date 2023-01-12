@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_homepage_drone" name="Drone">
+		<section class="s_homepage_drone">
+			<section class="aviat-banner">
+				<div id="banner-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+		          	<div class="carousel-inner" role="listbox">
+		            	<div class="carousel-item active ls-slide bg-primary">
+		            		<div class="container">
+			            		<div class="row align-items-center">
+			            			<div class="col-6">
+						              	<div class="banner-content text-white">
+						              		<h2 class="side-line text-white">
+											Lorem ipsum dolor sit amet.</h2>
+						              		<h1 class="text-white">IZI HX-750 Nano Drone</h1>
+						              		<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						              		<div class="s_btn" data-name="Button">
+						              			<a href="#" class="btn btn-light rounded-circle">SHOP NOW</a>
+						              		</div>
+						              	</div>
+					              	</div>
+					              	<div class="col-6">
+					              		<img class="img img-fluid" src="/theme_vouge/static/src/img/drone-banner1.png" alt="image"/>
+					              	</div>
+				              	</div>
+			              	</div>
+		            	</div>
+		            	<div class="carousel-item ls-slide bg-primary">
+		            		<div class="container">
+			            		<div class="row align-items-center">
+			            			<div class="col-6">
+						              	<div class="banner-content text-white">
+						              		<h2 class="side-line text-white">Lorem ipsum dolor sit amet</h2>
+						              		<h1 class="text-white">T3505W RC Quadcopter</h1>
+						              		<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						              		<div class="s_btn" data-name="Button">
+						              			<a href="#" class="btn btn-light rounded-circle">SHOP NOW</a>
+						              		</div>
+						              	</div>
+					              	</div>
+					              	<div class="col-6">
+					              		<img class="img img-fluid" src="/theme_vouge/static/src/img/drone-banner2.png" alt="image"/>
+					              	</div>
+				              	</div>
+			              	</div>
+			            </div>
+			            <div class="slider-control d-none d-md-block">
+		              		<a class="left carousel-control-prev text-white font-14" data-target="#banner-carousel" role="button" data-slide="prev">
+			                	<span class="fa fa-angle-left"/>
+			               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+			              	</a>
+			              	<a class="right carousel-control-next text-white font-14" data-target="#banner-carousel" role="button" data-slide="next">
+			                	<span class="fa fa-angle-right"/>
+			                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+			              	</a>
+			            </div>
+		          	</div>
+		          	<ol class="carousel-indicators">
+		            	<li data-target="#banner-carousel" data-slide-to="0" class="active"/>
+		            	<li data-target="#banner-carousel" data-slide-to="1"/>
+		          	</ol>
+		        </div>
+			</section>
+			<!-- banner end -->
+			<div class="oe_structure"/>
+			<!-- Service start -->
+			<section class="aviat-services pt64">
+				<div class="container">
+					<div class="service-title text-center mb-4">
+						<span class="text-muted">Consectetur</span>
+						<h3 class="down-line text-secondary">Lorem ipsum dolor</h3>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="service-box text-center mt-4">
+								<span class="fa fa-refresh text-primary"/>
+								<h4 class="mt-4">Lorem ipsum dolor sit </h4>
+								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							</div>	
+						</div>
+						<div class="col-md-3">
+							<div class="service-box text-center mt-4">
+								<span class="fa fa-plug text-primary"/>
+								<h4 class="mt-4">Lorem ipsum dolor sit</h4>
+								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="service-box text-center mt-4">
+								<span class="fa fa-battery-4 text-primary"/>
+								<h4 class="mt-4">Lorem ipsum dolor sit</h4>
+								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="service-box text-center mt-4">
+								<span class="fa fa-home text-primary"/>
+								<h4 class="mt-4">Lorem ipsum dolor sit</h4>
+								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							</div>
+						</div>
+					</div>
+					<div class="drone-img mt-5 text-center">
+						<img class="img img-fluid" src="/theme_vouge/static/src/img/drone-cam1.png" alt="image"/>
+					</div>
+				</div>
+				<section class="bottom-content py-5 text-center text-white bg-primary">
+					<h3 class="mb-4 text text-white">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+					<div class="s_btn" data-name="Button">
+						<a href="#" class="btn btn-outline-light rounded-circle">SHOP NOW</a>
+					</div>
+				</section>
+			</section>
+			<!-- Service end -->
+			<div class="oe_structure"/>
+			<!-- cam-info start -->
+			<section class="aviat-cam-info">
+				<div class="container">
+					<div class="row border-bottom align-items-center justify-content-center">
+						<div class="col-lg-6">
+							<div class="cam-info">
+								<h3 class="text-secondary mb-4">Tincidunt <span class="text-primary">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit.</h3>
+								<p class="text-muted mb-4">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+								<div class="numeric-info d-flex mb-5">
+									<div class="info-box d-flex align-items-center">
+										<div class="icon">
+											<span class="fa fa-circle-thin text-primary"/>
+										</div>
+										<div class="text">
+											<p>58 <span>mm</span></p>
+											<span class="text-muted">Diameter</span>
+										</div>
+									</div>
+									<div class="info-box d-flex align-items-center mx-4">
+										<div class="icon">
+											<span class="fa fa-dashboard text-primary"/>
+										</div>
+										<div class="text">
+											<p>40 <span>fps</span></p>
+											<span class="text-muted">4K Video</span>
+										</div>
+									</div>
+									<div class="info-box d-flex align-items-center">
+										<div class="icon">
+											<span class="fa fa-balance-scale text-primary"/>
+										</div>
+										<div class="text">
+											<p>450 <span>g</span></p>
+											<span class="text-muted">Weight</span>
+										</div>
+									</div>
+								</div>
+								<div class="s_btn" data-name="Button">
+									<a href="#" class="btn btn-outline-secondary rounded-circle">
+										<span class="fa fa-mail-forward mr-1"/> View Product
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4 offset-lg-1">
+							<div class="cam-img">
+								<img class="img img-fluid mb-4 mb-md-0" src="/theme_vouge/static/src/img/drone-cam2.png" alt="image"/>
+							</div>
+						</div>
+						<div class="drone-info pt-0 pt-md-4 pt-lg-0 my-0 my-md-5 my-lg-0">
+							<div class="row border-top align-items-center my-4 my-md-0">
+								<div class="col-md-3">
+									<div class="feature mb-5 text-right">
+										<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+									<div class="feature text-right">
+										<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="drone-img text-center">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/drone-info1.png" alt="image"/>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="feature mb-5">
+										<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+									<div class="feature">
+										<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- cam-info end -->
+			<div class="oe_structure"/>
+			<!-- parallax start -->
+			<section class="aviat-parallax s_cover parallax s_parallax_is_fixed pt96 pb96 s_parallax_no_overflow_hidden" data-scroll-background-ratio="1" data-name="Cover" style="background-image: none;">
+		        <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/theme_vouge/static/src/img/drone-parallax-bg.jpeg');background-attachment: fixed;"/>
+		        <div class="parallax-content text-white px-3">
+		        	<span class="fa fa-camera-retro fa-5x mb-4 text-white"/>
+		        	<h1 class="text-white">Lorem ipsum dolor</h1>
+		        	<h2 class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+		        </div>
+	      	</section>
+			<!-- parallax end -->
+			<div class="oe_structure"/>
+
+			<!-- testimonial start -->
+			<section class="aviat-testimonial pt64 pb64 bg-light">
+				<div class="container">
+					<div class="testimonial-title mb-5 text-center">
+						<span class="text-muted">Lorem ipsum dolor sit amet</span>
+						<h1 class="text-secondary down-line mt-1">LOREM IPSUM <span class="text-primary">DOLOR SIT AMET</span></h1>
+					</div>
+					<div class="row">
+						<div id="testimonial-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+										
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active ls-slide">
+				            		<div class="row text-center">
+				            			<div class="col-md-4">
+				            				<div class="team-box p-3 border">
+								              	<div class="carousel-img mx-auto mb-3">
+								              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+								              	</div>
+								              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+								              	<p><a href="#" class="text text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</a></p>
+								              	<span class="fa fa-quote-right text-secondary"/>
+								              	<p class="text-secondary ceo">Alva Ono</p>
+								            </div>
+						              	</div>
+						              	<div class="col-md-4">
+				            				<div class="team-box p-3 border">
+								              	<div class="carousel-img mx-auto mb-3">
+								              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+								              	</div>
+								              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+								              	<p><a href="#" class="text text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</a></p>
+								              	<span class="fa fa-quote-right text-secondary"/>
+								              	<p class="text-secondary ceo">Amber Laha</p>
+								            </div>
+						              	</div>
+						              	<div class="col-md-4">
+				            				<div class="team-box p-3 border">
+								              	<div class="carousel-img mx-auto mb-3">
+								              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+								              	</div>
+								              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+								              	<p><a href="#" class="text text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</a></p>
+								              	<span class="fa fa-quote-right text-secondary"/>
+								              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+								            </div>
+						              	</div>
+					              	</div>
+				            	</div>
+				            	<div class="carousel-item ls-slide">
+					              	<div class="row text-center">
+				            			<div class="col-md-4">
+				            				<div class="team-box p-3 border">
+								              	<div class="carousel-img mx-auto mb-3">
+								              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+								              	</div>
+								              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+								              	<p><a href="#" class="text text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</a></p>
+								              	<span class="fa fa-quote-right text-secondary"/>
+								              	<p class="text-secondary ceo">Alva Ono</p>
+								            </div>
+						              	</div>
+						              	<div class="col-md-4">
+				            				<div class="team-box p-3 border">
+								              	<div class="carousel-img mx-auto mb-3">
+								              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+								              	</div>
+								              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+								              	<p><a href="#" class="text text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</a></p>
+								              	<span class="fa fa-quote-right text-secondary"/>
+								              	<p class="text-secondary ceo">Amber Laha</p>
+								            </div>
+						              	</div>
+						              	<div class="col-md-4">
+				            				<div class="team-box p-3 border">
+								              	<div class="carousel-img mx-auto mb-3">
+								              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+								              	</div>
+								              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+								              	<p><a href="#" class="text text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</a></p>
+								              	<span class="fa fa-quote-right text-secondary"/>
+								              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+								            </div>
+						              	</div>
+					              	</div>
+					            </div>
+					            
+					            
+				          	</div>
+				          	<ol class="carousel-indicators mt-4">
+				            	<li data-target="#testimonial-carousel" data-slide-to="0" class="active"/>
+				            	<li data-target="#testimonial-carousel" data-slide-to="1"/>
+				          	</ol>
+				        </div>
+				    </div>
+				</div>
+			</section>
+			<!-- testimonial end -->
+			<div class="oe_structure"/>
+			<!-- screen info start -->
+			<section class="aviat-screen-info pt64 pb64">
+				<div class="container">
+					<div class="row pb-5 border-bottom">
+						<div class="col-lg-5 pb-5">
+							<div class="screen-content py-4">
+								<h1 class="text-secondary">LOREM-<span class="text-primary">IPSUM</span> DOLOR</h1>
+								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas. Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+								<div class="row mb-4 mt-4">
+									<div class="col-md-6 col-6">
+										<div class="info-box d-flex align-items-center mb-3">
+											<div class="icon">
+												<span class="fa fa-hourglass-o text-primary"/>
+											</div>
+											<div class="numeric ml-3">
+												<span class="text-muted">Flight time</span>
+												<p class="text-muted">30 MINS</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-6">
+										<div class="info-box d-flex align-items-center mb-3">
+											<div class="icon">
+												<span class="fa fa-play-circle-o text-primary"/>
+											</div>
+											<div class="numeric ml-3">
+												<span class="text-muted">Video resolution</span>
+												<p class="text-muted">4K 60FPS</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-6">
+										<div class="info-box d-flex align-items-center mb-3">
+											<div class="icon">
+												<span class="fa fa-dashboard text-primary"/>
+											</div>
+											<div class="numeric ml-3">
+												<span class="text-muted">Speed</span>
+												<p class="text-muted">72 KM/H</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-6">
+										<div class="info-box d-flex align-items-center mb-3">
+											<div class="icon">
+												<span class="fa fa-feed text-primary"/>
+											</div>
+											<div class="numeric ml-3">
+												<span class="text-muted">Sensor range</span>
+												<p class="text-muted">30 M</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-6">
+										<div class="info-box d-flex align-items-center mb-3">
+											<div class="icon">
+												<span class="fa fa-signal text-primary"/>
+											</div>
+											<div class="numeric ml-3">
+												<span class="text-muted">Control range</span>
+												<p class="text-muted">7 KM</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-6">
+										<div class="info-box d-flex align-items-center mb-3">
+											<div class="icon">
+												<span class="fa fa-eye text-primary"/>
+											</div>
+											<div class="numeric ml-3">
+												<span class="text-muted">Obstacle sensing</span>
+												<p class="text-muted">5 DIRECTIONS</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="s_btn" data-name="Button">
+									<a href="#" class="btn btn-outline-secondary rounded-circle">
+										<span class="fa fa-mail-forward mr-1"/> View Product
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-7 order">
+							<div class="screen-img">
+								<img class="img img-fluid" src="/theme_vouge/static/src/img/drone-screen.png" alt="image"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- screen info end -->
+			<div class="oe_structure"/>
+			<!-- subscribe start -->
+			<section class="aviat-subscribe pt32 pb64">
+				<div class="container">
+					<div class="subs-title text-center">
+						<span class="text-muted">our news</span>
+						<h1 class="text-secondary down-line mt-1">SIGN UP FOR LATEST NEWS</h1>
+					</div>
+					<div class="input-group js_subscribe" data-list-id="1">
+				        <input type="email" name="email" class="js_subscribe_email form-control bg-light" placeholder="your email..."/>
+				        <span class="input-group-append">
+				            <a role="button" href="#" class="btn btn-primary js_subscribe_btn">Subscribe</a>
+				            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none" disabled="disabled">Thanks</a>
+				        </span>
+				    </div>
+				</div>
+			</section>
+		</section>
+	</template>
+</odoo>

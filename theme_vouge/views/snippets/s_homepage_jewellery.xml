@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_homepage_jewellery" name="Jewellery">
+		<section class="s_homepage_jewellery">
+					<!-- banner start -->
+					<section class="homepage-eight-banner">
+						<div id="banner-eight-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active ls-slide" style="background-image: url('/theme_vouge/static/src/img/jewel-banner1.jpg');">
+					              	<div class="banner-content">
+					              		<h2 class="side-line text-white">Lorom Ipsum Dolor </h2>
+					              		<h1 class="text-primary">Real Sea Pearl <br/>Necklesh</h1>
+					              		<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle mt-4 ">SHOP NOW</a>
+						              	</div>
+
+					              	</div>
+				            	</div>
+				            	<div class="carousel-item ls-slide" style="background-image: url('/theme_vouge/static/src/img/jewel-banner2.jpeg');">
+					              	<div class="banner-content">
+					              		<h2 class="side-line text-white">Lorom Ipsum Dolor </h2>
+					              		<h1 class="text-primary">Real Diamond <br/>Ring</h1>
+					              		<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle mt-4 ">SHOP NOW</a>
+						              	</div>
+
+					              	</div>
+					            </div>
+					            <div class="slider-control d-none d-md-block">
+				              		<a class="left carousel-control-prev text-dark font-14" data-target="#banner-eight-carousel" role="button" data-slide="prev">
+					                	<span class="fa fa-angle-left"/>
+					               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+					              	</a>
+					              	<a class="right carousel-control-next text-dark font-14" data-target="#banner-eight-carousel" role="button" data-slide="next">
+					                	<span class="fa fa-angle-right"/>
+					                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+					              	</a>
+					            </div>
+				          	</div>
+				        </div>
+					</section>
+					<!-- banner end -->
+					<div class="oe_structure"/>
+					<!-- about us start -->
+					<section class="homepage-eight-aboutus pt64 pb64">
+						<div class="container">
+							<div class="aboutus-content text-center">
+								<span class="text-muted">Lorem Ipsum Dolor</span>
+								<h1 class="text-secondary mb-4 mt-1 down-line">LOREM IPSUM <span class="text-primary">DOLOR SIT AMET</span></h1>
+								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar iaculis orci, ac iaculis nunc gravida in. Duis bibendum interdum libero, ut feugiat arcu rhoncus sit amet. Phasellus ornare lectus a feugiat lobortis. Aenean felis ipsum, rutrum sed nunc vel, bibendum commodo urna. Sed a enim lectus. In eget mauris euismod, interdum velit at, auctor ligula. Mauris molestie enim ac velit eleifend sodales. Ut egestas mauris odio, congue eleifend justo elementum vitae.</p>
+								<div class="s_btn" data-name="Button">
+									<a href="#" class="btn btn-primary rounded-circle mt-4 ">
+										<span class="fa fa-mail-forward mr-1 "/> Read More
+									</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- about us end -->
+					<div class="oe_structure"/>
+					<!-- single-product start -->
+					<section class="homepage-eight-single-product pt64 pb64">
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-md-6 p-0">
+									<div class="product-img1">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/jewel-product1.jpg" alt="image"/>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="product-info text-center">
+										<h1 class="text-secondary mb-4">Lorem Ipsum <span class="text-primary">Dolor</span></h1>
+										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										<p class="text-primary">$123.00</p>
+										<div class="s_btn" data-name="Button">
+											<a href="#" class="btn btn-outline-secondary rounded-circle mt-4 ">
+												<span class="fa fa-mail-forward mr-1"/> Shop The Collection
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row align-items-center">
+								<div class="col-md-6">
+									<div class="product-info text-center">
+										<h1 class="text-secondary mb-4">Lorem Ipsum <span class="text-primary">Dolor</span></h1>
+										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										<p class="text-primary">$321.00</p>
+										<div class="s_btn" data-name="Button">
+											<a href="#" class="btn btn-outline-secondary rounded-circle mt-4 mb-4 mb-md-0 ">
+												<span class="fa fa-mail-forward mr-1"/> Shop The Collection
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 p-0 order mt-4 mt-md-0">
+									<div class="jewel-product2.jpg">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/jewel-product2.jpg" alt="image"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- single-product end -->
+					<div class="oe_structure"/>
+					<!-- feature start -->
+					<section class="homepage-eight-feature pt64 pb64 bg-light">
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-lg-6">
+									<div class="feature-content">
+										<h1 class="text-secondary">Lorem <span class="text-primary">Ipsum</span>Dolor Sit Amet</h1>
+										<div class="feature-box d-flex mb-4 mt-5 align-items-center">
+											<div class="icon mr-2 bg-white text-center">
+												<span class="fa fa-diamond text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor sit amet</h3>
+												<p class="text-secondary-50">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4 align-items-center">
+											<div class="icon mr-2 bg-white text-center">
+												<span class="fa fa-recycle text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor sit amet</h3>
+												<p class="text-secondary-50">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4 align-items-center">
+											<div class="icon mr-2 bg-white text-center">
+												<span class="fa fa-flag-o text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor sit amet</h3>
+												<p class="text-secondary-50">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="product-watch text-center">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/jewel-tech.png" alt="image"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- product-feature end -->
+					<div class="oe_structure"/>
+					<!-- testimonial start -->
+					<section class="homepage-eight-testimonial pt64 pb64">
+						<div class="container">
+							<div class="testimonial-title mb-5 text-center">
+								<span class="text-muted">Lorem ipsum dolor sit amet</span>
+								<h1 class="text-secondary down-line mt-1">LOREM IPSUM <span class="text-primary">DOLOR SIT AMET</span></h1>
+							</div>
+							<div class="row">
+								<div id="testimonial-eight-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+												
+						          	<div class="carousel-inner" role="listbox">
+						            	<div class="carousel-item active ls-slide">
+						            		<div class="row text-center">
+						            			<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Alva Ono</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Amber Laha</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+										            </div>
+								              	</div>
+							              	</div>
+						            	</div>
+						            	<div class="carousel-item ls-slide">
+							              	<div class="row text-center">
+						            			<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Alva Ono</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Amber Laha</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+										            </div>
+								              	</div>
+							              	</div>
+							            </div>
+							            
+							            
+						          	</div>
+						          	<ol class="carousel-indicators mt-4">
+						            	<li data-target="#testimonial-eight-carousel" data-slide-to="0" class="active"/>
+						            	<li data-target="#testimonial-eight-carousel" data-slide-to="1"/>
+						          	</ol>
+						        </div>
+						    </div>
+						</div>
+					</section>
+					<!-- testimonial end -->
+					<div class="oe_structure"/>
+					<!-- feature-row start -->
+					<section class="homepage-eight-feature-row pt64 pb64 bg-light">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-white mx-auto text-center">
+											<span class="fa fa-recycle text-primary"/>
+										</div>
+										<h3 class="text-secondary mb-2">Lorem ipsum dolor sit amet</h3>
+										<p class="text-secondary-50"> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-white mx-auto text-center">
+											<span class="fa fa-diamond text-primary"/>
+										</div>
+										<h3 class="text-secondary mb-2">Lorem ipsum dolor sit amet</h3>
+										<p class="text-secondary-50"> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-white mx-auto text-center">
+											<span class="fa fa-flag-o text-primary"/>
+										</div>
+										<h3 class="text-secondary mb-2">Lorem ipsum dolor sit amet</h3>
+										<p class="text-secondary-50"> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- feature-row end -->
+					<div class="oe_structure"/>
+					<!-- video start -->
+					<section class="homepage-eight-video">
+						<div class="bg-img">
+							<img class="img img-fluid jewel-bg" src="/theme_vouge/static/src/img/jewel-bg.jpg" alt="image"/>
+							<div class="play-btn">
+								<img class="img img-fluid" src="/theme_vouge/static/src/img/jewel-playing-video.webp" alt="image"/>
+							</div>
+						</div>
+					</section>
+					<!-- video end -->
+					<div class="oe_structure"/>
+					<!-- blog start -->
+					<section class="aviat-blog pb64">
+						<t t-call="website_blog.s_blog_posts"/>
+					</section>
+					<!-- blog end -->
+					<div class="oe_structure"/>
+					<!-- subscribe start -->
+					<section class="homepage-eight-subscribe pt32 pb64 bg-light">
+						<div class="container">
+							<div class="subs-title text-center">
+								<span class="text-muted">our news</span>
+								<h1 class="text-secondary down-line mt-1">SIGN UP FOR LATEST NEWS</h1>
+							</div>
+							<div class="input-group js_subscribe" data-list-id="1">
+						        <input type="email" name="email" class="js_subscribe_email form-control bg-white" placeholder="your email..."/>
+						        <span class="input-group-append">
+						            <a role="button" href="#" class="btn btn-primary js_subscribe_btn">Subscribe</a>
+						            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none" disabled="disabled">Thanks</a>
+						        </span>
+						    </div>
+						</div>
+					</section>
+					<!-- subscribe end -->
+		</section>
+	</template>
+</odoo>

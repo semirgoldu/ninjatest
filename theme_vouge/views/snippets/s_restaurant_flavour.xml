@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_restaurant_flavour" name="Flavour Of Food">
+		<section class="restaurant-taste pt32 pb32">
+			<div class="container extended-container">
+				<div class="row justify-content-center">
+					<div class="taste-title">
+						<h2>The Flavour of Food</h2>
+						<div class="title-image">
+							<img src="/theme_vouge/static/src/img/pizza.png" class="img img-fluid"/>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-xl-4 col-lg-4 col-md-4">
+						<div class="taste-content">
+							<div class="image">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/restaurant-img1.jpg" class="img img-fluid"/>
+									<div class="ovrly"/>
+								</a>
+							</div>
+							<div class="info">
+								<a href="#">
+									<h4>Margherita Pizza</h4>
+								</a>
+								<div class="s_btn" data-name="Button">
+        							<a href="#" class="btn btn-secondary bizople_button">Read More</a>
+        						</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4">
+						<div class="taste-content">
+							<div class="image">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/restaurant-img2.jpg" class="img img-fluid"/>
+									<div class="ovrly"/>
+								</a>
+							</div>
+							<div class="info">
+								<a href="#">
+									<h4>Chicken Wings</h4>
+								</a>
+								<div class="s_btn" data-name="Button">
+        							<a href="#" class="btn btn-secondary bizople_button">Read More</a>
+        						</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4">
+						<div class="taste-content">
+							<div class="image">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/restaurant-img3.jpg" class="img img-fluid"/>
+									<div class="ovrly"/>
+								</a>
+							</div>
+							<div class="info">
+								<a href="#">
+									<h4>Cheese Burger</h4>
+								</a>
+								<div class="s_btn" data-name="Button">
+        							<a href="#" class="btn btn-secondary bizople_button">Read More</a>
+        						</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

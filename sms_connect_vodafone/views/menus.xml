@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<menuitem id="sms_connect_menu" name="SMS Connect" web_icon="sms_connect_vodafone,static/description/icon.png"/>/>
+	<menuitem id="sms_connect_config" name="Configuration" parent="sms_connect_vodafone.sms_connect_menu"  sequence="4" />
+
+	
+</odoo>

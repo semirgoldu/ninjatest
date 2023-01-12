@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage9_product_feature" name="Product Feature">
+		<section class="homepage-nine-product-feature pt64">
+			<div class="container">
+				<div class="title text-center pb-4">
+					<span class="text-muted">Lorem ipsum dolor sit amet</span>
+					<h1 class="text-secondary mt-1 down-line">CONSECTOTUE  <span class="text-primary">ADIPSICING ELIT</span></h1>
+				</div>
+				<div class="row border-bottom align-items-center pb-5 justify-content-center">
+					<div class="col-9 col-md-4 mb-4 mb-md-0">
+						<div class="product-img">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/headfone-product.png" alt="image"/>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="content">
+							<div class="row">
+								<div class="col-6">
+									<div class="box text-center">
+										<div class="icon bg-light text-center mb-3 mx-auto">
+											<span class="fa fa-phone text-warning"></span>
+										</div>
+										<p class="text-secondary-50">Nullam non nisi est sit amet facilisis magna etiam</p>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="box text-center">
+										<div class="icon bg-light text-center mb-3 mx-auto">
+											<span class="fa fa-play-circle-o text-success"></span>
+										</div>
+										<p class="text-secondary-50">Nullam non nisi est sit amet facilisis magna etiam</p>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="box text-center">
+										<div class="icon bg-light text-center mb-3 mx-auto">
+											<span class="fa fa-align-center text-info"></span>
+										</div>
+										<p class="text-secondary-50">Nullam non nisi est sit amet facilisis magna etiam</p>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="box text-center">
+										<div class="icon bg-light text-center mb-3 mx-auto">
+											<span class="fa fa-microphone text-primary"></span>
+										</div>
+										<p class="text-secondary-50">Nullam non nisi est sit amet facilisis magna etiam</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

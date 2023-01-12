@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="add_cover_quickview" inherit_id="website.layout" active="True">
+        <xpath expr="//header" position="before">
+            <div class="quick_modal_wrap oe_website_sale"></div>
+        </xpath>
+    </template>
+	
+    <template id="get_product_qv_details_template" name="Quick View Details">
+        <t t-if="product">
+            <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+            <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty or 1, pricelist=pricelist)"/>
+            <t t-set="product_variant" t-value="product.env['product.product'].browse(combination_info['product_id'])"/>
+            
+            <div class="quick-modal-backdrop"></div>
+
+            <div class="quick-modal">
+                <div itemscope="itemscope" itemtype="http://schema.org/Product" class="js_sale quick-popout">
+                    <button class="quick_close"><i class="lnr lnr-cross"></i></button>
+                    <div class="container oe_website_sale" id="product_detail">
+                        <div class="row">
+                            <div class="col-md-6 col-xl-7 product-img-section">
+                                <!-- Product Slider -->
+                                <div class="product-img-box">
+                                    <t t-call="website_sale.shop_product_carousel"/>
+                                </div>
+                                <div class="full-info-text">
+                                    <p class="mt16 mb-0">
+                                        <a href="#"></a>
+                                    </p>
+                                </div>
+                                <!-- End -->
+                            </div>
+                            <div class="col-md-6 col-xl-5" id="product_details">
+                                <div class="top-breadcrumbs">
+                                    <ol class="breadcrumb mb-1">
+                                        <li class="breadcrumb-item">
+                                            <a href="/shop">Products</a>
+                                        </li>
+                                        <li t-if="category" class="breadcrumb-item">
+                                            <a t-att-href="keep('/shop/category/%s' % slug(category))" t-field="category.name" />
+                                        </li>
+                                        <li class="breadcrumb-item active">
+                                            <span t-field="product.name" />
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="product-name-share d-flex align-items-center">
+                                    <h1 itemprop="name" t-field="product.name" class="product-name m-0">Product Name</h1>
+                                    <div class="dropdown ml-auto d-flex align-items-center">
+                                        <t t-if="is_view_active('website_sale.product_comment')">
+                                            <t t-call="theme_vouge.product_item_stars"/> 
+                                        </t>
+                                        <a role="button" class="nav-link dropdown-toggle p-0 ml-3" data-toggle="dropdown">
+                                            <span class="ri ri-share-line align-middle"/>
+                                        </a>
+                                        <div class="dropdown-menu share-dropdown">
+                                            <div class="s_share" data-name="Share">
+                                                <!-- <a t-att-href="'https://wa.me/?text='+ product.name" target="_blank" class="s_share_whatsapp">
+                                                    <i class="fa fa-1x fa-whatsapp rounded shadow-sm"></i>
+                                                </a> -->
+                                                <a t-att-href="'https://www.facebook.com/sharer/sharer.php?u='+ domain_url + product.website_url" target="_blank" class="s_share_facebook ">
+                                                    <i class="fa fa-1x fa-facebook rounded shadow-sm"></i>
+                                                </a>
+                                                <a t-att-href="'https://twitter.com/intent/tweet?text='+ product.name +'&amp;url='+ domain_url + product.website_url" target="_blank" class="s_share_twitter ">
+                                                    <i class="fa fa-1x fa-twitter rounded shadow-sm"></i>
+                                                </a>
+                                                <!-- <a t-att-href="'https://www.linkedin.com/sharing/share-offsite/?url='+ domain_url + product.website_url" target="_blank" class="s_share_linkedin ">
+                                                    <i class="fa fa-1x fa-linkedin rounded shadow-sm"></i>
+                                                </a> -->
+                                                <a t-att-href="'mailto:?body='+ domain_url + product.website_url + '&amp;subject='+ product.name" class="s_share_email ">
+                                                    <i class="fa fa-1x fa-envelope rounded shadow-sm"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span itemprop="url" style="display:none;" t-out="product.website_url"/>
+                                <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                    <div class="js_product js_main_product mt-2">
+                                        <div class="pro-desc" t-if="product.description_sale">
+                                            <p class="description mb-0" t-field="product.description_sale" />
+                                        </div>
+
+                                        <t t-if="website.enable_b2b_mode and request.env.user._is_public()">
+                                        </t>
+                                        <t t-else="">
+                                            <t t-call="website_sale.product_price" />
+                                        </t>
+                                        
+                                        <div class="compare-wish border-bottom">
+                                            <a role="button"
+                                                class="btn btn-default o_add_wishlist te_theme_button"
+                                                t-att-disabled='in_wish or None' title="Add to Wishlist"
+                                                t-att-data-product-product-id="product.product_variant_ids[0].id if product.product_variant_ids else '0'"
+                                                data-action="o_wishlist">
+                                                <span class="ri ri-heart-line align-middle" role="img"
+                                                aria-label="Add to wishlist"></span>Wishlist</a>
+                                            <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+                                            <button t-if="product_variant_id" type="button" role="button" class="btn btn-default o_add_compare te_theme_button" title="Compare" aria-label="Compare" t-att-data-product-product-id="product_variant_id" data-action="o_comparelist"><span class="ri ri-arrow-left-right-fill align-middle"></span>Compare</button>
+                                        </div>
+
+                                        <t t-placeholder="select">
+                                            <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
+                                            <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                                            <t t-if="combination" t-call="sale.variants">
+                                                <t t-set="ul_class" t-value="'flex-column mt-3 mb-0'" />
+                                                <t t-set="parent_combination" t-value="None" />
+                                            </t>
+                                            <t t-else="">
+                                                <ul class="d-none js_add_cart_variants" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                                            </t>
+                                        </t>
+                                       
+                                        <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+                                        <t t-if="website.enable_b2b_mode and request.env.user._is_public()">
+                                            <div class="pt-3">
+                                                <t t-if="request.website.viewref('theme_vouge.loginsignup_popup_bizt').active">
+                                                    <a href='#' data-toggle="modal" data-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name" class="btn btn-primary openpop d-block d-md-inline-block">
+                                                        <span class="fa fa-user-circle mr-1"/>Login to See Price
+                                                    </a>
+                                                </t>
+                                                <t t-else=''>
+                                                    <a role="button" class="btn btn-primary d-block d-md-inline-block" href="/web/login"><span class="fa fa-user-circle mr-1"/>Login to See Price</a>
+                                                </t>
+                                            </div>
+                                        </t>
+                                        <t t-else="">
+                                            <div class="d-flex mt16 mb16 align-items-center">
+                                                <t t-if="is_view_active('website_sale.product_quantity')">
+                                                    <div class="css_quantity input-group align-items-center vouge_quantity mt-2 product-detail-label-value" contenteditable="false">
+                                                        <div class="prod-attribute-label">
+                                                            <span class="text-label">Quantity</span>
+                                                        </div>
+                                                        <div class="prod-attribute-value control-qty-cart d-flex">
+                                                            <input type="text" class="form-control quantity" data-min="1" name="add_qty"
+                                                                t-att-value="add_qty or 1" />
+                                                            <div class="control-qty">
+                                                                <div class="input-group-append">
+                                                                    <a t-attf-href="#" class="btn qty_add float_left js_add_cart_json"
+                                                                        aria-label="Add one" title="Add one">
+                                                                        <i class="fa fa-plus"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="input-group-prepend">
+                                                                    <a t-attf-href="#" class="btn qty_remove js_add_cart_json"
+                                                                        aria-label="Remove one" title="Remove one">
+                                                                        <i class="fa fa-minus"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                            <div class="ajax_cart_modal_tools position-relative d-block d-md-inline-block">
+                                                <a href="#" class="button btn btn-cart btn-primary a-submit qv-ajax-cart qv-cart-btn d-block" data-toggle="modal">
+                                                    <span class="ri ri-shopping-cart-2-line align-middle mr-2"></span>
+                                                    <span>ADD TO CART</span>
+                                                </a>
+                                            </div>
+                                            <t t-if="is_view_active('website_sale.product_buy_now')">
+                                                <a role="button" id="buy_now" class="btn o_we_buy_now btn-outline-primary btn-lg sticky_cart_button d-block d-md-inline-block mt-3 mt-lg-0"
+                                                   href="#">
+                                                    <span class="icon icon-Goto align-middle mr-2"></span> <span>Buy Now</span>
+                                                </a>
+                                            </t>
+                                        </t>
+                                        <div class="product_info_list">
+                                            <t t-if="product.public_categ_ids">
+                                                <div class="vouge_categ">
+                                                    <p>
+                                                        <span class="categ-title"><b>Category: </b></span>
+                                                        <t t-foreach="product.public_categ_ids" t-as="categs">
+                                                            <a t-att-href="'/shop/category/%s' % (categs.id)" t-field="categs.name" />
+                                                            <span>, </span>
+                                                        </t>
+                                                    </p>
+                                                </div>
+                                            </t>
+                                            <t t-if="product.brand_id">
+                                                <div class="product-brand">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-9">
+                                                            <h3 class="brand-title">
+                                                                <span t-out="product.brand_id.name"/>
+                                                            </h3>
+                                                            <p class="brand-description m-0">
+                                                                <span t-out="product.brand_id.brand_decription"/>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <a t-field="product.brand_id.image" t-options="{'widget': 'image'}" t-att-href="'/shop?brand=' + slug(product.brand_id)"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p t-elif="not product.active" class="alert alert-warning">This product is no longer available.</p>
+                                <p t-else="" class="alert alert-warning">This product has no valid combination.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+        <t t-if="error">
+            <div class="quick-modal-backdrop"></div>
+            <div class="quick-modal">
+                <div class="quick-popout">
+                    <button class="quick_close"><i class="lnr lnr-cross"></i></button>
+                    <div class="alert alert-warning m-4" t-out="error"/>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- select variant popup start -->
+
+    <template id="get_product_so_details_template" name="Select Option Details">
+        <t t-if="product">
+            <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+            <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty or 1, pricelist=pricelist)"/>
+            <t t-set="product_variant" t-value="product.env['product.product'].browse(combination_info['product_id'])"/>
+            
+            <div class="select-modal-backdrop"></div>
+
+            <div class="select-modal">
+                <div itemscope="itemscope" itemtype="http://schema.org/Product" class="js_sale select-popout">
+                    <button class="select_close"><i class="lnr lnr-cross"></i></button>
+                    <div class="container oe_website_sale wineshop_product_page" id="product_detail">
+                        
+                        <div class="js_product js_main_product">
+                            <div class="row m-0">
+                            
+                                <div class="col-md-12 product-img-section p-0">
+                                    <div class="d-flex align-items-center">
+                                        <t t-set="is_background_color" t-value="is_view_active('theme_grocery_bizople.shop_page_image_bgcolor')"/>
+                                        <div t-attf-class="product-img-box #{'image_bg_color' if is_background_color else None}">
+                                            <span t-field="product.image_1920" t-options='{"widget": "image", "resize":"85x85"}' t-att-alt="product.name"/>
+                                        </div>
+                                        <div class="full-info-text ml-2">
+                                            <h6 itemprop="name" t-field="product.name" class="product-name mb-0">Product Name</h6>
+                                            <t t-call="website_sale.product_price" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center p-0" id="product_details">
+                                    <span itemprop="url" style="display:none;" t-out="product.website_url"/>
+                                    <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                            <t t-placeholder="select">
+                                                <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
+                                                <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                                                <t t-if="combination" t-call="sale.variants">
+                                                    <t t-set="ul_class" t-value="'flex-column select_variant_attr mb-0'" />
+                                                    <t t-set="parent_combination" t-value="None" />
+                                                </t>
+                                                <t t-else="">
+                                                    <ul class="d-none js_add_cart_variants" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                                                </t>
+                                            </t>
+                                            <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+
+                                            <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()" />
+                                            <div id="product_attributes_simple" class="mt-2" t-if="single_value_attributes">
+                                                <table t-attf-class="table table-sm text-muted mb-0 {{'' if single_value_attributes else 'd-none'}}">
+                                                    <t t-foreach="single_value_attributes" t-as="attribute">
+                                                        <div class="single_value_attributes product-detail-label-value">
+                                                            <div class="prod-attribute-label">
+                                                                <span class="text-label" t-out="attribute.name"></span>
+                                                            </div>
+                                                            <div class="prod-attribute-value">
+                                                                <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
+                                                                    <span t-field="ptal.product_template_value_ids._only_active().name" />
+                                                                    <t t-if="not ptal_last">, </t>
+                                                                </t>
+                                                            </div>
+                                                        </div>
+                                                    </t>
+                                                </table>
+                                            </div>
+
+                                            <div class="d-flex mt8 mb16 align-items-center justify-content-center">
+                                                <t t-if="is_view_active('website_sale.product_quantity')">
+                                                    <div class="css_quantity  input-group d-flex" contenteditable="false">
+                                                        <div class="input-group-prepend">
+                                                            <a t-attf-href="#" class="btn js_add_cart_json" aria-label="Remove one" title="Remove one">
+                                                                <i class="fa fa-minus"></i>
+                                                            </a>
+                                                        </div>
+                                                        <input type="text" class="form-control quantity js_quantity bg-transparent" data-min="1" name="add_qty" t-att-value="add_qty or 1"/>
+                                                        <div class="input-group-append">
+                                                            <a t-attf-href="#" class="btn float_left js_add_cart_json" aria-label="Add one" title="Add one">
+                                                                <i class="fa fa-plus"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                            <div class="cart-buy-btn d-block">
+                                                <div class="ajax_cart_modal_tools position-relative pb8">
+                                                    <a class="button btn btn-cart btn-primary a-submit ajax-cart-btn select-cart-btn" data-toggle="modal" >
+                                                    <span class="ri ri-shopping-cart-line  mr-2 align-middle text-white"></span><span class="align-middle text-white">ADD TO CART</span></a>
+                                                </div>
+                                                <t t-if="is_view_active('website_sale.product_buy_now')">
+                                                    <a role="button" id="buy_now" class="btn btn-secondary mt16 d-block o_we_buy_now" href="#">
+                                                        <span class="icon icon-Goto mr-2 align-middle"></span><span class="align-middle">Buy Now</span>
+                                                    </a>
+                                                </t>
+                                            </div>
+
+                                    </form>
+                                    <p t-elif="not product.active" class="alert alert-warning">This product is no longer available.</p>
+                                    <p t-else="" class="alert alert-warning">This product has no valid combination.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+        <t t-if="error">
+            <div class="select-modal-backdrop"></div>
+            <div class="select-modal">
+                <div class="select-popout">
+                    <button class="quick_close"><i class="fa fa-close"></i></button>
+                    <div class="alert alert-warning m-4" t-out="error"/>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- select variant popup end -->
+</odoo>

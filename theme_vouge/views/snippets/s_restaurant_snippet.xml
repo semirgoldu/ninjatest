@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_restaurant_snippet" name="Restaurant">
+		<section class="s_restaurant_snippet">
+			<div class="oe_structure"/>
+			<section class="restaurant-home-banner">
+				<div id="restaurant-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+		          	<div class="carousel-inner" role="listbox">
+		            	<div class="carousel-item active" style="background-image: url('/theme_vouge/static/src/img/restaurant-banner1.jpg');">
+		            		<div class="container extended-container">
+		            			<div class="row position-relative justify-content-center">
+		            				<div class="banner-content">
+		            					<div class="banner-icon">
+		            						<img src="/theme_vouge/static/src/img/restaurant.png" class="img img-fluid"/>
+		            					</div>
+		            					<div class="banner-info">
+		            						<h2>The Vouge World's Original Spicy<br></br>Arabita Pasta <span>/ 30% Off</span></h2>
+		            						<div class="s_btn" data-name="Button">
+		            							<a href="#" class="btn btn-light bizople_button">Order Now</a>
+		            						</div>
+		            					</div>
+		            				</div>
+		            			</div>
+		            		</div>
+		            	</div>
+		            	<div class="carousel-item" style="background-image: url('/theme_vouge/static/src/img/restaurant-banner2.jpg');">
+		            		<div class="container extended-container">
+		            			<div class="row position-relative justify-content-center">
+		            				<div class="banner-content">
+		            					<div class="banner-icon">
+		            						<img src="/theme_vouge/static/src/img/restaurant.png" class="img img-fluid"/>
+		            					</div>
+		            					<div class="banner-info">
+		            						<h2>Skinless Grilled Chicken<br></br><span>Our Spiciest Chicken...</span></h2>
+		            						<div class="s_btn" data-name="Button">
+		            							<a href="#" class="btn btn-light bizople_button">Order Now</a>
+		            						</div>
+		            					</div>
+		            				</div>
+		            			</div>
+		            		</div>
+		            	</div>
+		            	<div class="carousel-item" style="background-image: url('/theme_vouge/static/src/img/restaurant-banner3.jpg');">
+		            		<div class="container extended-container">
+		            			<div class="row position-relative justify-content-center">
+		            				<div class="banner-content">
+		            					<div class="banner-icon">
+		            						<img src="/theme_vouge/static/src/img/restaurant.png" class="img img-fluid"/>
+		            					</div>
+		            					<div class="banner-info">
+		            						<h2>BBQ Cotage Cheese<br></br><span>Discount Upto 40% Off</span></h2>
+		            						<div class="s_btn" data-name="Button">
+		            							<a href="#" class="btn btn-light bizople_button">Order Now</a>
+		            						</div>
+		            					</div>
+		            				</div>
+		            			</div>
+		            		</div>
+		            	</div>
+		          	</div>
+			        <div class="slider-control">
+	              		<a class="left carousel-control-prev text-white font-14" data-target="#restaurant-carousel" role="button" data-slide="prev">
+		                	<span class="fa fa-angle-left"/>
+		               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+		              	</a>
+		              	<a class="right carousel-control-next text-white font-14" data-target="#restaurant-carousel" role="button" data-slide="next">
+		                	<span class="fa fa-angle-right"/>
+		                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+		              	</a>
+		            </div>
+	        	</div>
+			</section>
+			<div class="oe_structure"/>
+			<section class="restaurant-taste pt32 pb32">
+				<div class="container extended-container">
+					<div class="row justify-content-center">
+						<div class="taste-title">
+							<h2>The Flavour of Food</h2>
+							<div class="title-image">
+								<img src="/theme_vouge/static/src/img/pizza.png" class="img img-fluid"/>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-xl-4 col-lg-4 col-md-4">
+							<div class="taste-content">
+								<div class="image">
+									<a href="#">
+										<img src="/theme_vouge/static/src/img/restaurant-img1.jpg" class="img img-fluid"/>
+										<div class="ovrly"/>
+									</a>
+								</div>
+								<div class="info">
+									<a href="#">
+										<h4>Margherita Pizza</h4>
+									</a>
+									<div class="s_btn" data-name="Button">
+            							<a href="#" class="btn btn-secondary bizople_button">Read More</a>
+            						</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4">
+							<div class="taste-content">
+								<div class="image">
+									<a href="#">
+										<img src="/theme_vouge/static/src/img/restaurant-img2.jpg" class="img img-fluid"/>
+										<div class="ovrly"/>
+									</a>
+								</div>
+								<div class="info">
+									<a href="#">
+										<h4>Chicken Wings</h4>
+									</a>
+									<div class="s_btn" data-name="Button">
+            							<a href="#" class="btn btn-secondary bizople_button">Read More</a>
+            						</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4">
+							<div class="taste-content">
+								<div class="image">
+									<a href="#">
+										<img src="/theme_vouge/static/src/img/restaurant-img3.jpg" class="img img-fluid"/>
+										<div class="ovrly"/>
+									</a>
+								</div>
+								<div class="info">
+									<a href="#">
+										<h4>Cheese Burger</h4>
+									</a>
+									<div class="s_btn" data-name="Button">
+            							<a href="#" class="btn btn-secondary bizople_button">Read More</a>
+            						</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="oe_structure"/>
+			<section class="restaurant-image-slider pt32 pb32">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-3 pl-md-0">
+							<section class="side-image h-100" style="background-image: url('/theme_vouge/static/src/img/restaurant-img4.jpg');">
+							</section>
+						</div>
+						<div class="col-md-6 p-0">
+							<div id="restaurant-slider-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+					          	<div class="carousel-inner" role="listbox">
+					            	<div class="carousel-item active">
+				            			<div class="row position-relative">
+				            				<div class="slider-content">
+				            					<div class="banner-image">
+				            						<img src="/theme_vouge/static/src/img/restaurant-img5.jpg" class="img img-fluid"/>
+				            					</div>
+				            					<div class="banner-info">
+				            						<h2>Spicy Tandoori Platter</h2>
+				            						<h3>10% Offer</h3>
+				            						<div class="s_btn" data-name="Button">
+				            							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+				            						</div>
+				            					</div>
+				            				</div>
+				            			</div>
+					            	</div>
+					            	<div class="carousel-item">
+				            			<div class="row position-relative">
+				            				<div class="slider-content">
+				            					<div class="banner-image">
+				            						<img src="/theme_vouge/static/src/img/restaurant-img6.jpg" class="img img-fluid"/>
+				            					</div>
+				            					<div class="banner-info">
+				            						<h2>Fast Food Platter</h2>
+				            						<h3>30% Offer</h3>
+				            						<div class="s_btn" data-name="Button">
+				            							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+				            						</div>
+				            					</div>
+				            				</div>
+				            			</div>
+					            	</div>
+					            	<div class="carousel-item">
+				            			<div class="row position-relative">
+				            				<div class="slider-content">
+				            					<div class="banner-image">
+				            						<img src="/theme_vouge/static/src/img/restaurant-img7.jpg" class="img img-fluid"/>
+				            					</div>
+				            					<div class="banner-info">
+				            						<h2>Veggy Cheese Wrap</h2>
+				            						<h3>40% Offer</h3>
+				            						<div class="s_btn" data-name="Button">
+				            							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+				            						</div>
+				            					</div>
+				            				</div>
+				            			</div>
+					            	</div>
+					          	</div>
+						        <div class="slider-control">
+				              		<a class="left carousel-control-prev text-white font-14" data-target="#restaurant-slider-carousel" role="button" data-slide="prev">
+					                	<span class="fa fa-angle-left"/>
+					               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+					              	</a>
+					              	<a class="right carousel-control-next text-white font-14" data-target="#restaurant-slider-carousel" role="button" data-slide="next">
+					                	<span class="fa fa-angle-right"/>
+					                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+					              	</a>
+					            </div>
+				        	</div>
+						</div>
+						<div class="col-md-3 pr-md-0">
+							<section class="side-image h-100" style="background-image: url('/theme_vouge/static/src/img/restaurant-img8.jpg');">
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="oe_structure"/>
+			<section class="restaurant-counter">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-12 p-0">
+							<div class="image">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/restaurant-counter.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12 p-0">
+							<div class="counter-content">
+								<h2>Feel the Flavour of Chicken</h2>
+								<p>Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing.</p>
+								<div class="row pt32">
+									<div class="col-lg-3 col-md-3 col-6">
+										<div class="counter-info counter-box">
+											<a href="#">
+												<img src="/theme_vouge/static/src/img/restaurant4.png" class="img img-fluid"/>
+											</a>
+											<div class="count-text counter">185</div>
+											<h6 class="text">Pizza</h6>
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-6">
+										<div class="counter-info counter-box">
+											<a href="#">
+												<img src="/theme_vouge/static/src/img/restaurant3.png" class="img img-fluid"/>
+											</a>
+											<div class="count-text counter">455</div>
+											<h6 class="text">Burger</h6>
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-6">
+										<div class="counter-info counter-box">
+											<a href="#">
+												<img src="/theme_vouge/static/src/img/restaurant2.png" class="img img-fluid"/>
+											</a>
+											<div class="count-text counter">163</div>
+											<h6 class="text">Wraps</h6>
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-6">
+										<div class="counter-info counter-box">
+											<a href="#">
+												<img src="/theme_vouge/static/src/img/restaurant1.png" class="img img-fluid"/>
+											</a>
+											<div class="count-text counter">245</div>
+											<h6 class="text">Chicken</h6>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="oe_structure"/>
+			<section class="restaurant-images pt32 pb32">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-8 col-md-8">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 p-0">
+									<div class="image-content">
+										<div class="image">
+											<a href="#">
+												<img src="/theme_vouge/static/src/img/restaurant-img9.jpg" class="img img-fluid"/>
+											</a>
+										</div>
+										<div class="image-info info1">
+											<h3>Grilled Chicken</h3>
+											<span>$ 25.00</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 p-0">
+									<div class="image-content">
+										<div class="image">
+											<a href="#">
+												<img src="/theme_vouge/static/src/img/restaurant-img10.jpg" class="img img-fluid"/>
+											</a>
+										</div>
+										<div class="image-info info1">
+											<h3>Cheese Burger</h3>
+											<span>$ 15.00</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 p-0">
+									<div class="image-content">
+										<div class="image">
+											<a href="#">
+												<img src="/theme_vouge/static/src/img/restaurant-img11.jpg" class="img img-fluid"/>
+											</a>
+										</div>
+										<div class="image-info info2">
+											<h3>Fast Food Platter</h3>
+											<span>$ 60.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 p-0">
+							<div class="image-content">
+								<div class="image">
+									<a href="#">
+										<img src="/theme_vouge/static/src/img/restaurant-img12.jpg" class="img img-fluid"/>
+									</a>
+								</div>
+								<div class="image-info info3">
+									<h3>Spicy Tacos</h3>
+									<span>$ 20.00</span>
+									<div class="s_btn mt16" data-name="Button">
+            							<a href="#" class="btn btn-light bizople_button">Shop Now</a>
+            						</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="oe_structure"/>
+			<section class="restaurant-service-block pt32 pb32">
+				<div class="container extended-container">
+					<div class="row">
+						<div class="col-lg-4 col-md-4">
+							<div class="support-section">
+								<section class="front-section text-center">
+									<div class="front-info">
+										<div class="icon">
+											<span class="fa fa-truck"/>
+										</div>
+										<div class="text">
+											<h6>Above $150</h6>
+											<p>Free Delivery</p>
+										</div>
+									</div>
+								</section>
+								<section class="back-section text-center">
+									<div class="back-info">
+										<div class="text">
+											<p>Delivery within 1 Hour</p>
+											<div class="s_btn" data-name="Button">
+		            							<a href="#" class="btn btn-light bizople_button">Read More</a>
+		            						</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<div class="support-section">
+								<section class="front-section text-center">
+									<div class="front-info">
+										<div class="icon">
+											<span class="fa fa-inr"/>
+										</div>
+										<div class="text">
+											<h6>24/7 Available</h6>
+											<p>Customer service</p>
+										</div>
+									</div>
+								</section>
+								<section class="back-section text-center">
+									<div class="back-info">
+										<div class="text">
+											<p>Call Us any time any day</p>
+											<div class="s_btn" data-name="Button">
+		            							<a href="#" class="btn btn-light bizople_button">Read More</a>
+		            						</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<div class="support-section">
+								<section class="front-section text-center">
+									<div class="front-info">
+										<div class="icon">
+											<span class="fa fa-credit-card"/>
+										</div>
+										<div class="text">
+											<h6>Above $350</h6>
+											<p>Special Discount</p>
+										</div>
+									</div>
+								</section>
+								<section class="back-section text-center">
+									<div class="back-info">
+										<div class="text">
+											<p>Delivery within 2 Hours</p>
+											<div class="s_btn" data-name="Button">
+		            							<a href="#" class="btn btn-light bizople_button">Read More</a>
+		            						</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="oe_structure"/>
+			<section class="restaurant-banner-image" style="background-image: url('/theme_vouge/static/src/img/restaurant-banner4.jpg');">
+				<div class="container extended-container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 mb16">
+							<div class="banner-content">
+								<h3>2021</h3>
+								<h4>The <span> Vouge </span></h4>
+								<p>BUY 1 PIECES TANDOORI PLATTER <br></br>CHICKEN &amp;<b>GET 1 CHEESE BURGER </b>FREE </p>
+								<div class="s_btn" data-name="Button">
+        							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+        						</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="row">
+								<div class="col-lg-4 col-md-4 mb16">
+									<div class="image">
+										<a href="#">
+											<img src="/theme_vouge/static/src/img/restaurant-img13.jpg" class="img img-fluid"/>
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 mb16">
+									<div class="image">
+										<a href="#">
+											<img src="/theme_vouge/static/src/img/restaurant-img14.jpg" class="img img-fluid"/>
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 mb16">
+									<div class="image">
+										<a href="#">
+											<img src="/theme_vouge/static/src/img/restaurant-img15.jpg" class="img img-fluid"/>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="oe_structure"/>
+		</section>
+	</template>
+
+</odoo>

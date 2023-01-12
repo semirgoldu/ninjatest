@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_homepage_watch" name="Watch">
+		<section class="s_homepage_watch">
+			<section class="homepage-three-banner">
+						<div id="banner-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active ls-slide" style="background-image: url('/theme_vouge/static/src/img/watch-banner1.jpg');">
+					              	<div class="banner-content text-white">
+					              		<h2 class="side-line text-white">Lorem ipsum dolor </h2>
+					              		<h1 class="text-white">Samsung <br/>Galaxy Watch</h1>
+					              		<p class="text-white">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					              		<div class="s_btn" data-name="Button">
+					              			<a href="#" class="btn btn-outline-light rounded-circle ">SHOP NOW</a>
+					              		</div>
+
+					              	</div>
+				            	</div>
+				            	<div class="carousel-item ls-slide" style="background-image: url('/theme_vouge/static/src/img/watch-banner2.jpg');">
+					              	<div class="banner-content text-white">
+					              		<h2 class="side-line text-white">Lorem ipsum dolor </h2>
+					              		<h1 class="text-white">Fossil Men's <br/>Gen 4</h1>
+					              		<p class="text-white">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					              		<div class="s_btn" data-name="Button">
+					              			<a href="#" class="btn btn-outline-light rounded-circle ">SHOP NOW</a>
+					              		</div>
+					              	</div>
+					            </div>
+					            <div class="slider-control d-none d-md-block">
+				              		<a class="left carousel-control-prev text-white font-14" data-target="#banner-carousel" role="button" data-slide="prev">
+					                	<span class="fa fa-angle-left"/>
+					               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+					              	</a>
+					              	<a class="right carousel-control-next text-white font-14" data-target="#banner-carousel" role="button" data-slide="next">
+					                	<span class="fa fa-angle-right"/>
+					                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+					              	</a>
+					            </div>
+				          	</div>
+				          	<ol class="carousel-indicators">
+				            	<li data-target="#banner-carousel" data-slide-to="0" class="active"/>
+				            	<li data-target="#banner-carousel" data-slide-to="1"/>
+				          	</ol>
+				        </div>
+					</section>
+					<!-- banner end -->
+					<div class="oe_structure"/>
+					<!-- feature-row start -->
+					<section class="homepage-three-feature-row pt64 pb64">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-warning mx-auto text-center">
+											<span class="fa fa-bullseye text-white"/>
+										</div>
+										<h3 class="text-secondary mb-3">Lorem ipsum dolor </h3>
+										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-primary mx-auto text-center">
+											<span class="fa fa-clock-o text-white"/>
+										</div>
+										<h3 class="text-secondary mb-3">Lorem ipsum dolor </h3>
+										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-info mx-auto text-center">
+											<span class="fa fa-shield text-white"/>
+										</div>
+										<h3 class="text-secondary mb-3">Lorem ipsum dolor </h3>
+										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- feature-row end -->
+					<div class="oe_structure"/>
+					<!-- aboutus start -->
+					<section class="homepage-three-aboutus pb96">
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-md-6">
+									<div class="watch-img">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/watches-about.png" alt="image"/>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="aboutus-content">
+										<div class="aboutus-title text-center mb-4">
+											<span class="text-muted">ABOUT US</span>
+											<h1 class="text-secondary down-line">LOREM IPSUM <span class="text-primary">DOLOR</span></h1>
+										</div>
+										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+										<div class="s_btn" data-name="Button">
+											<a href="#" class="btn btn-primary rounded-circle mt-2 ">
+												<span class="fa fa-mail-forward mr-1"/> Read More
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- aboutus end -->
+					<div class="oe_structure"/>
+					<!-- feature start -->
+					<section class="homepage-three-feature pt96 pb96 bg-light">
+						<div class="container">
+							<div class="feature-title text-center mb-4">
+								<span class="text-muted">LOREM IPSUM DOLOR</span>
+								<h1 class="text-secondary down-line">CONSECTETUR <span class="text-primary">ADIPISCING ELIT</span></h1>
+							</div>
+							<div class="row justify-content-center align-items-center">
+								<div class="col-md-4">
+									<div class="feature-content text-right">
+										<div class="feature-box d-flex mb-4">
+											<div class="text ml-auto">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+											<div class="icon bg-white ml-2">
+												<span class="fa fa-mail-reply text-primary"/>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="text ml-auto">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+											<div class="icon bg-white ml-2">
+												<span class="fa fa-battery-4 text-primary"/>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="text ml-auto">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+											<div class="icon bg-white ml-2">
+												<span class="fa fa-microphone text-primary"/>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="text ml-auto">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+											<div class="icon bg-white ml-2">
+												<span class="fa fa-sun-o text-primary"/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-md-3">
+									<div class="feature-watch">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/watches-feature.png" alt="image"/>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-content">
+										<div class="feature-box d-flex mb-4">
+											<div class="icon bg-white mr-2">
+												<span class="fa fa-heartbeat text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="icon bg-white mr-2">
+												<span class="fa fa-phone text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="icon bg-white mr-2">
+												<span class="fa fa-apple text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="icon bg-white mr-2">
+												<span class="fa fa-music text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- feature end -->
+					<div class="oe_structure"/>
+					<!-- product-feature start -->
+					<section class="homepage-three-product-feature pt96 pb96">
+						<div class="container">
+							<div class="row align-items-center justify-content-center">
+								<div class="col-md-6">
+									<div class="feature-content">
+										<h1 class="text-secondary">Lorem Ipsum <span class="text-primary">Dolor</span> Consectetur adipiscing elit.</h1>
+										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas. Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+										<div class="feature-box d-flex mb-4 mt-4 align-items-center">
+											<div class="icon mr-2">
+												<span class="fa fa-feed text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Pellentesque</h3>
+												<p class="text-muted"> Aliquam vulputate purus a ligula vehicula, vel porttitor nisl blandit</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4 align-items-center">
+											<div class="icon mr-2">
+												<span class="fa fa-microphone text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Pellentesque</h3>
+												<p class="text-muted"> Aliquam vulputate purus a ligula vehicula, vel porttitor nisl blandit</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4 align-items-center">
+											<div class="icon mr-2">
+												<span class="fa fa-sliders text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Pellentesque</h3>
+												<p class="text-muted"> Aliquam vulputate purus a ligula vehicula, vel porttitor nisl blandit</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-9 col-md-5 col-lg-4">
+									<div class="product-watch">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/watches-feature2.png" alt="image"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- product-feature end -->
+					<div class="oe_structure"/>
+					<!-- tech specs start -->
+					<section class="homepage-three-tech-specs pt64 pb64" style="background-image: url('/theme_vouge/static/src/img/watches-tech.jpg');">
+						<div class="container">
+							<div class="tech-title mb-4 text-center">
+								<span class="text-light">LOREM IPSUM DOLOR</span>
+								<h1 class="text-white down-line">MAURIS <span class="text-primary">MAXIMUS</span></h1>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="specs">
+										<ul>
+											<li class="text-white">Thickness:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">13.3mm</li>
+										</ul>
+										<ul>
+											<li class="text-white">Diameter:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">41mm</li>
+										</ul>
+										<ul>
+											<li class="text-white">Weight:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">60 grams</li>
+										</ul>
+										<ul>
+											<li class="text-white">Battery:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">Rechargeable Li-polymer 110mAh</li>
+										</ul>
+										<ul>
+											<li class="text-white">Nylon strap:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">Length: 26cm; Width: 2cm; Thickness: +/- 1mm</li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="specs">
+										<ul>
+											<li class="text-white">Casing:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">316L</li>
+										</ul>
+										<ul>
+											<li class="text-white">Glass:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">Sapphire Coated Glass</li>
+										</ul>
+										<ul>
+											<li class="text-white">Chipset:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">Nordic BLE</li>
+										</ul>
+										<ul>
+											<li class="text-white">Bluetooth:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">BLE (Bluetooth Low Energy) 4.0</li>
+										</ul>
+										<ul>
+											<li class="text-white">Sensors:</li>
+											<li class="dotted-line"/>
+											<li class="text-white">MEMS 3-axis accelerometer</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- tech specs end -->
+					<div class="oe_structure"/>
+					<!-- testimonial start -->
+					<section class="homepage-three-testimonial pt64 pb64 bg-light">
+						<div class="container">
+							<div class="testimonial-title mb-5 text-center">
+								<span class="text-muted">Lorem ipsum dolor sit amet</span>
+								<h1 class="text-secondary down-line mt-1">NAM VEL <span class="text-primary">TRISTIQUE MAURIS</span></h1>
+							</div>
+							<div class="row">
+								<div id="testimonial-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+												
+						          	<div class="carousel-inner" role="listbox">
+						            	<div class="carousel-item active ls-slide">
+						            		<div class="row text-center">
+						            			<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+										              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Alva Ono</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+										              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Amber Laha</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+										              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+										            </div>
+								              	</div>
+							              	</div>
+						            	</div>
+						            	<div class="carousel-item ls-slide">
+							              	<div class="row text-center">
+						            			<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+										              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Alva Ono</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+										              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Amber Laha</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+										              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+										            </div>
+								              	</div>
+							              	</div>
+							            </div>
+							            
+							            
+						          	</div>
+						          	<ol class="carousel-indicators mt-4">
+						            	<li data-target="#testimonial-carousel" data-slide-to="0" class="active"/>
+						            	<li data-target="#testimonial-carousel" data-slide-to="1"/>
+						          	</ol>
+						        </div>
+						    </div>
+						</div>
+					</section>
+					<!-- testimonial end -->
+					<div class="oe_structure"/>
+					<!-- blog start -->
+					<section class="aviat-blog">
+						<t t-call="website_blog.s_blog_posts"/>
+					</section>
+					<!-- blog end -->
+					<div class="oe_structure"/>
+					<!-- client-row start -->
+					<section class="homepage-three-clients pt64 pb64">
+						<div class="container">
+							<div class="client-title text-center mb-3 mb-md-5">
+								<h1 class="text-secondary down-line">LOGO BRANDS &amp; CLIENTS</h1>
+							</div>
+							<div id="client-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+			          	
+					          	<div class="carousel-inner" role="listbox">
+					            	<div class="carousel-item active ls-slide">
+						              	<div class="row text-center">
+											<div class="col-md-2 offset-md-1">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client1.png" alt="image"/>
+											</div>
+											<div class="col-md-2">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client2.png" alt="image"/>
+											</div>
+											<div class="col-md-2">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client3.png" alt="image"/>
+											</div>
+											<div class="col-md-2">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client4.png" alt="image"/>
+											</div>
+											<div class="col-md-2">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client5.png" alt="image"/>
+											</div>
+										</div>
+					            	</div>
+					            	<div class="carousel-item ls-slide">
+						              	<div class="row text-center">
+											<div class="col-md-2 offset-md-1">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client1.png" alt="image"/>
+											</div>
+											<div class="col-md-2">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client2.png" alt="image"/>
+											</div>
+											<div class="col-md-2">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client3.png" alt="image"/>
+											</div>
+											<div class="col-md-2">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client4.png" alt="image"/>
+											</div>
+											<div class="col-md-2">
+												<img class="img img-fluid" src="/theme_vouge/static/src/img/client5.png" alt="image"/>
+											</div>
+										</div>
+						            </div>
+						            <div class="slider-control d-none d-md-block">
+					              		<a class="left carousel-control-prev text-dark" data-target="#client-carousel" role="button" data-slide="prev">
+						                	<span class="fa fa-angle-left"/>
+						               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+						              	</a>
+						              	<a class="right carousel-control-next text-dark" data-target="#client-carousel" role="button" data-slide="next">
+						                	<span class="fa fa-angle-right"/>
+						                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+						              	</a>
+						            </div>
+					          	</div>
+					        </div>
+
+						</div>
+					</section>
+					<!-- client-row end -->
+					<div class="oe_structure"/>
+					<!-- subscribe start -->
+					<section class="homepage-three-subscribe pt32 pb64 bg-light">
+						<div class="container">
+							<div class="subs-title text-center">
+								<span class="text-muted">our news</span>
+								<h1 class="text-secondary down-line mt-1">SIGN UP FOR LATEST NEWS</h1>
+							</div>
+							<div class="input-group js_subscribe" data-list-id="1">
+						        <input type="email" name="email" class="js_subscribe_email form-control bg-white" placeholder="your email..."/>
+						        <span class="input-group-append">
+						            <a role="button" href="#" class="btn btn-primary js_subscribe_btn">Subscribe</a>
+						            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none" disabled="disabled">Thanks</a>
+						        </span>
+						    </div>
+						</div>
+					</section>
+		</section>
+	</template>
+</odoo>

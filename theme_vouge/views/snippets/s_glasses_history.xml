@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_glasses_history" name="History Of Us">
+		<section class="glass-about" style="background-image: url('/theme_vouge/static/src/img/glass-about-bg.jpg');">
+			<div class="container extended-container">
+				<div class="row">
+					<div class="col-xl-5 col-lg-6 col-md-8 ml-auto">
+						<div class="about-content">
+							<span>History Of Us</span>
+							<h3>See the world<br></br>With Vouge Glasses</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum.</p>
+							<div class="s_btn pt16" data-name="Button">
+    							<a href="#" class="btn btn-secondary bizople_button">SHOP NOW</a>
+    						</div>
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center pt64">
+					<div class="col-xl-5 col-lg-6 col-md-6 mb16">
+						<div class="image-content float-left">
+							<div class="image">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/glasses-about1.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+							<div class="image-info">
+								<h3>3 YEARS OF WARRANTY</h3>
+								<p>With Vouge Glasses</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-7 col-lg-6 col-md-6 mb16">
+						<div class="image-content float-right">
+							<div class="image">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/glasses-about2.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+							<div class="image-info">
+								<h3>FIND THE BEST GLASSES TO YOUR FACE</h3>
+								<p>Take a look to our new glasses</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

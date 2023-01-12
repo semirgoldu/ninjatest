@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage9_product_info" name="Product Info">
+		<section class="homepage-nine-product-info bg-light pt64 pb64" style="background-image: url('/theme_vouge/static/src/img/headfone-bg.jpg');">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6">
+						<div class="content text-center">
+							<h1 class="text-white mb-4">Lorem IPsum <span class="text-primary">Dolor</span>, Sit Amet</h1>
+							<p class="text-white-50">Lacus sed viverra tellus in hac habitasse. Enim lobortis scelerisque fermentum dui faucibus. Interdum velit euismod in pellentesque. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Commodo ullamcorper a lacus vestibulum sed arcu. Accumsan lacus vel facilisis volutpat est. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Dictum varius duis at consectetur lorem.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

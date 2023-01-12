@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_fashion_accesories_banner" name="Home Banner">
+		<section class="fashion-accesories-banner">
+			<div class="container extended-container">
+				<div id="fashion-accesories-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+		          	<div class="carousel-inner" role="listbox">
+		            	<div class="carousel-item pt152 pb152 active" style="background-image: url('/theme_vouge/static/src/img/accessories-banner1.jpg');">
+	            			<div class="row position-relative align-items-center">
+	            				<div class="col-md-5 col-8 offset-md-1">
+	            					<div class="banner-content">
+	            						<h1 class="title">Best Deals On<br></br>Backpacks</h1>
+	            						<div class="subtitle">Get Up to 30%<br></br>Discount</div>
+	            						<div class="s_btn" data-name="Button">
+	            							<a href="#" class="btn btn-outline-light bizople_button">Shop Now</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            			</div>
+		            	</div>
+		            	<div class="carousel-item pt152 pb152" style="background-image: url('/theme_vouge/static/src/img/accessories-banner2.jpg');">
+	            			<div class="row position-relative align-items-center">
+	            				<div class="col-md-5 col-8 offset-md-1">
+	            					<div class="banner-content">
+	            						<h1 class="title">New Arrivals<br></br>In Sunglasses</h1>
+	            						<div class="subtitle">Get Up to 30%<br></br>Discount</div>
+	            						<div class="s_btn" data-name="Button">
+	            							<a href="#" class="btn btn-outline-light bizople_button">Shop Now</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            			</div>
+		            	</div>
+		            	<div class="carousel-item pt152 pb152" style="background-image: url('/theme_vouge/static/src/img/accessories-banner3.jpg');">
+	            			<div class="row position-relative align-items-center">
+	            				<div class="col-md-5 col-8 offset-md-1">
+	            					<div class="banner-content">
+	            						<h1 class="title">New Stock<br></br>Winter Wears</h1>
+	            						<div class="subtitle">Get Up to 30%<br></br>Discount</div>
+	            						<div class="s_btn" data-name="Button">
+	            							<a href="#" class="btn btn-outline-light bizople_button">Shop Now</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            			</div>
+		            	</div>
+		          	</div>
+		          	<ol class="carousel-indicators">
+			            <li data-target="#fashion-accesories-carousel" data-slide-to="0" class="active"/>
+			            <li data-target="#fashion-accesories-carousel" data-slide-to="1"/>
+			            <li data-target="#fashion-accesories-carousel" data-slide-to="2"/>
+			        </ol>
+	        	</div>
+	        </div>
+		</section>
+	</template>
+
+</odoo>

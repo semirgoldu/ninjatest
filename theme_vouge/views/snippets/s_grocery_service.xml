@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_grocery_service" name="Our Services">
+		<section class="grocery-banner-service">
+			<div class="container extended-container">
+				<section class="homepage-one-service">
+					<div class="container">
+						<div class="row service-section mb-0">
+							<div class="col-md-6 col-xl-3 mb-4 mb-xl-0">
+									<div class="service-image">
+										<span class="icon icon-Truck fa-3x"></span>
+									</div>
+									<div class="service-info">
+										<h4>Free Shipping</h4>
+										<p>On all orders above $50.00</p>
+									</div>
+							</div>
+							<div class="col-md-6 col-xl-3 mb-4 mb-xl-0 border-md-0">
+									<div class="service-image">
+										<span class="icon icon-WorldWide fa-3x"></span>
+									</div>
+									<div class="service-info">
+										<h4>Returns Policy</h4>
+										<p>Returns within 3 days</p>
+									</div>
+							</div>
+							<div class="col-md-6 col-xl-3 mb-4 mb-md-0">
+									<div class="service-image">
+										<span class="icon icon-ClosedLock fa-3x"></span>
+									</div>
+									<div class="service-info">
+										<h4>100% Safe Payment</h4>
+										<p>Your payments are secure.</p>
+									</div>
+							</div>
+							<div class="col-md-6 col-xl-3">
+									<div class="service-image">
+										<span class="icon icon-Message fa-3x"></span>
+									</div>
+									<div class="service-info">
+										<h4>24/7 Support</h4>
+										<p>Contact us any time</p>
+									</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+	</template>
+
+</odoo>

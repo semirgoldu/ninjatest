@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage3_about_us" name="About Us">
+		<section class="homepage-three-aboutus pb96">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<div class="watch-img">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/watches-about.png" alt="image"/>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="aboutus-content">
+							<div class="aboutus-title text-center mb-4">
+								<span class="text-muted">ABOUT US</span>
+								<h1 class="text-secondary down-line">LOREM IPSUM <span class="text-primary">DOLOR</span></h1>
+							</div>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+							<div class="s_btn" data-name="Button">
+								<a href="#" class="btn btn-primary rounded-circle mt-2">
+									<span class="fa fa-mail-forward mr-1"/> Read More
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

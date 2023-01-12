@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="theme_common_footer8" inherit_id="website.layout" name="Footer Eight" active="False">
+       	<xpath expr="//div[@id='footer']" position="replace">
+       		<div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+				<section id="footer_theme_common8" class="footer_theme_common8 o_footer">
+					<section class="footer-section">
+						<div class="container extended-container">
+							<div class="row justify-content-center pt64 pb64">
+								<div class="col-md-4 mb-4 mb-md-0">
+									<div class="footer-logo mb-4">
+										<a href="/" class="navbar-brand logo p-0 m-0">
+								            <img src="/theme_vouge/static/src/img/vouge-logo-white.png" class="img-fluid"/>
+								        </a>
+									</div>
+									<div class="contact-content">
+										<div class="contact-info">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2 mb-4 mb-md-0">
+									<div class="footer-links">
+										<h6 class="mb-5">Our Categories</h6>
+										<p><a href="#">Electronics</a></p>
+										<p><a href="#">Clothing</a></p>
+										<p><a href="#">Furniture</a></p>
+										<p><a href="#">Grocery</a></p>
+									</div>
+								</div>
+								<div class="col-md-2 mb-4 mb-md-0">
+									<div class="footer-links">
+										<h6 class="mb-5">Quick Links</h6>
+										<p><a href="#">Home</a></p>
+										<p><a href="#">Contact Us</a></p>
+										<p><a href="#">About Us</a></p>
+										<p><a href="#">Policy</a></p>
+									</div>
+								</div>
+								<div class="col-md-4 mb-4 mb-md-0">
+									<div class="apps-link">
+										<div class="title">
+											<h6>Contact Info</h6>
+											<p>
+												<span t-out="res_company.street"/>,<br/>
+												<span t-out="res_company.city"/>,
+												<span t-out="res_company.zip"/>
+											</p>
+										</div>
+										<p class="contact-info">
+											<a href="#">
+												<span class="fa fa-phone mr-2"/>
+												<span t-out="res_company.phone"/>
+											</a>
+										</p>
+										<p class="contact-info">
+											<a href="#">
+												<span class="fa fa-envelope-o mr-2"/>
+												<span t-out="res_company.email"/>
+											</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="copyright-section py-4">
+						<div class="container extended-container">
+							<div class="row align-items-center">
+								<div class="col-md-7 mb-4 mb-md-0">
+									<p class="m-0 text-white">All Rights Are Reserved By ©<span t-field="res_company.name" /> 2020</p>
+								</div>
+								<div class="col-md-5">
+									<div class="social-share text-center text-md-right">
+										<a class="link" t-att-href="website.social_facebook" t-if="website.social_facebook" target="_blank">
+											<i class="fa fa-facebook" />
+										</a>
+										<a class="link" t-att-href="website.social_twitter" t-if="website.social_twitter" target="_blank">
+											<i class="fa fa-twitter" />
+										</a>
+										<a class="link" t-att-href="website.social_linkedin" t-if="website.social_linkedin" target="_blank">
+											<i class="fa fa-linkedin" />
+										</a>
+										<a class="link" t-att-href="website.social_youtube" t-if="website.social_youtube" target="_blank">
+											<i class="fa fa-youtube-play" />
+										</a>
+										<a class="link" t-att-href="website.social_instagram" t-if="website.social_instagram" target="_blank">
+											<i class="fa fa-instagram"></i>
+										</a>
+										<a class="link m-0" t-att-href="website.social_github" t-if="website.social_github" target="_blank">
+											<i class="fa fa-github"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</div>
+		</xpath>
+	</template>
+</odoo>

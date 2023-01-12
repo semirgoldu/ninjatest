@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage6_product_info" name="Product Info">
+		<section class="homepage-six-product-info pt32 pb64">
+			<div class="container">
+				<div class="row align-items-center justify-content-center mb-5">
+					<div class="col-md-5">
+						<div class="product-info">
+							<h1 class="text-secondary mb-3">Lorem <span class="text-primary">Ipsum</span></h1>
+							<p class="text-muted"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="product-img1">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/backpack-feature2.png" alt="image"/>
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center justify-content-center">
+					<div class="col-md-5">
+						<div class="product-img2">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/backpack-feature3.png" alt="image"/>
+						</div>
+					</div>
+					<div class="col-md-5 mb-4 mb-md-0 order">
+						<div class="product-info">
+							<h1 class="text-secondary mb-3">Lorem Ipsum Dolor <span class="text-primary">Sit</span> Amet</h1>
+							<p class="text-muted">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sms_connect_sms_form_view" model="ir.ui.view">
+        <field name="name">sms.connect.sms.form.view</field>
+        <field name="model">sms.connect.sms</field>
+        <field name="arch" type="xml">
+            <form string="SMS">
+            <header>
+            <button type="object" name="send_sms" string="Send SMS" states="draft" class="btn btn-primary btn-success"/>
+            <button type="object" name="cancel_sms" string="Cancel SMS" states="draft" class="btn btn-primary btn-danger"/>
+            <button type="object" name="retry_sms" string="Retry SMS" states="error"/>
+
+            <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+            <group>
+                <group>
+                    <field name="name" required="1" attrs="{'readonly':[('state','=','sent')]}"/>
+                     <field name="ttype" string="Type" required="1" attrs="{'readonly':[('state','=','sent')]}"/>
+                      <field name="number" attrs="{'invisible':[('ttype','=','contact')],'required':[('ttype','=','number')],'readonly':[('state','=','sent')]}"/>
+                      <field name="contact" attrs="{'invisible':[('ttype','=','number')],'required':[('ttype','=','contact')],'readonly':[('state','=','sent')]}"/>
+                
+                </group>
+                <group>
+                <field name="source" required="1" attrs="{'readonly':[('state','=','sent')]}"/>
+                <field name="date" required="1" attrs="{'readonly':[('state','=','sent')]}"/>
+                </group>
+            </group>
+            <notebook>
+            <page string="Content">
+            <group >
+                <field name="content" nolabel="1" required="1" widget="sms_widget" attrs="{'readonly':[('state','=','sent')]}"/>
+
+            </group>
+            </page>
+            <page string="Result">
+            <group>
+
+                <field nolabel="1" name="result" readonly="True"/>
+            </group>
+
+            </page>
+            </notebook>
+            </sheet>
+             
+               
+            </form>
+        </field>
+    </record>
+    <record id="sms_connect_sms_tree_view" model="ir.ui.view">
+        <field name="name">sms.connect.sms.tree.view</field>
+        <field name="model">sms.connect.sms</field>
+        <field name="arch" type="xml">
+            <tree>
+            <field name="name"/>
+            <field name="date"/>
+            <field name="source"/>
+            <field name="state"/>
+              
+            </tree>
+        </field>
+    </record>
+
+    <record id="sms_connect_sms_search_view" model="ir.ui.view">
+        <field name="name">sms.connect.sms.search.view</field>
+        <field name="model">sms.connect.sms</field>
+        <field name="arch" type="xml">
+            <search string="SMS Connect">
+                <field name="name" />
+                <field name="source"/>
+                <field name="state"/>
+               
+              
+                
+            </search>
+        </field>
+    </record>
+    <record id="sms_connect_sms_action" model="ir.actions.act_window">
+        <field name="name">SMS</field>
+        <field name="res_model">sms.connect.sms</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create a New SMS</p>
+        </field>
+    </record>
+       <menuitem id="sms_connect_sms_menu" name="SMS" parent="sms_connect_vodafone.sms_connect_menu" action="sms_connect_sms_action" sequence="1" />
+
+</odoo>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	
+     <template id="product_other_info" inherit_id="website_sale.product" name="Product Other Info Block" active="False" customize_show="False" >
+        <xpath expr="//section[@id='product_detail']/div[2]" position="inside">
+            <div class="col-md-3 col-sm-3 col-lg-2 col-xs-12">
+                <section class="product-services">
+                    <div class="container">
+                        <div class="row service-section">
+                            <ul class="">
+                                <li class="mb32">
+                                    <div class="service-image">
+                                        <img src="/theme_vouge/static/src/img/icon-1.png"/>
+                                    </div>
+                                    <div class="service-info">
+                                        <h4 class="text-primary"> Free Delivery</h4>
+                                        <p>From $59.89</p>
+                                    </div>
+                                </li>
+                                <li class="mb32">
+                                    <div class="service-image">
+                                        <img src="/theme_vouge/static/src/img/icon-2.png"/>
+                                    </div>
+                                    <div class="service-info">
+                                        <h4 class="text-primary">Support 24/7</h4>
+                                        <p>Online 24 hours</p>
+                                    </div>
+                                </li>
+                                <li class="mb32">
+                                    <div class="service-image">
+                                        <img src="/theme_vouge/static/src/img/icon-3.png"/>
+                                    </div>
+                                    <div class="service-info">
+                                        <h4 class="text-primary">Free Return</h4>
+                                        <p>365 a day</p>
+                                    </div>
+                                </li>
+                                <li class="mb32">
+                                    <div class="service-image">
+                                        <img src="/theme_vouge/static/src/img/icon-4.png"/>
+                                    </div>
+                                    <div class="service-info">
+                                        <h4 class="text-primary">Payment Method</h4>
+                                        <p>Secure payment</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+   <template id="products_brands" inherit_id="theme_vouge.vouge_attributes_inherited" active="False" customize_show="True" name="Brands">
+        <xpath expr="//ul[hasclass('shop_attributes')]" position="inside">
+            
+            <div class="oe_structure"/>
+            <t t-set="brands" t-value="website.get_product_brands(category)"/>
+            <t t-if="brands">
+                <li class="">
+                    
+                    <div data-toggle="collapse" aria-expanded="true" href="#vouge_brands" class="vouge-brands attribute_title collapse-title  collapsed">
+                        <strong>Brands</strong>
+                        <span class="collapse-icons ml-auto float-right">
+                            <i class="ti ti-plus"></i>
+                            <i class="ti ti-minus"></i>
+                        </span>
+                    </div>
+                    
+                    <ul class="collapse nav nav-pills brand-c collapse ml-0" id="vouge_brands">
+                        <span class="brand-height-overflow w-100">
+                            <t t-set="count_value" t-value="0"/>
+                            <t t-foreach="brands" t-as="b">
+                                <t t-set="count_value" t-value="count_value + 1"/>
+                                <div class="form-check">
+                                    <!-- <a t-att-href="'/shop?brand=' + slug(b)" t-attf-class="nav-link #{'active' if b.id in active_brand_list else None}" > -->
+                                        <input name="brand" t-att-id="'%s-%s' % (b.id,slug(b))" type="checkbox" class="form-check-input" t-att-value="slug(b)" t-att-checked="'checked' if b.id in active_brand_list else None"/>
+                                        <!-- <span t-field="b.name"></span> -->
+                                        <label class="form-check-label ml-2 font-weight-normal" t-att-for="'%s-%s' % (b.id,slug(b))" t-field="b.name"/>
+                                    <!-- </a> -->
+                                </div>
+                            </t>
+                        </span>
+                        <!-- <t t-if="count_value > 5">
+                            <a class="brand-show-more-btn text-black"
+                               href="javascript:void(0)">
+                                + Show more
+                            </a>
+                        </t> -->
+                    </ul>
+                </li>
+            </t>
+            <div class="oe_structure"/>
+        </xpath>
+    </template>
+
+    <template id="option_products_brands_count" inherit_id="theme_vouge.products_brands" name="Enable Brand Product Count" active="False" customize_show="True">
+        <xpath expr="//label[@t-field='b.name']" position="after">
+            <t t-if="is_view_active('theme_vouge.products_brands')">
+                <span class="product_count">
+                    <span class="badge badge-primary" style="font-size:12px !important;">
+                        <span>
+                            <t t-out="b.with_context(product_brand_search=search).brand_count" />
+                        </span>
+                    </span>
+                </span>
+            </t>
+        </xpath>
+    </template>
+    
+     <template id="hide_default_price_slider_layout" inherit_id="website_sale.filter_products_price">
+        <!-- <xpath expr="//div[@id='o_wsale_price_range_option']" position="replace"/> -->
+        <xpath expr="//label" position="attributes">
+            <attribute name="class" add="category-collapse-button" separator=" "/>
+        </xpath>
+     </template>
+</odoo>

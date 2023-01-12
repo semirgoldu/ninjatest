@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_fashion_banner" name="Home Banner">
+		<section class="fashion-home-banner">
+			<div id="fashion-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+	          	<div class="carousel-inner" role="listbox">
+	            	<div class="carousel-item active" style="background-image: url('/theme_vouge/static/src/img/fashion-banner1.jpg');">
+	            		<div class="container extended-container">
+	            			<div class="row position-relative">
+	            				<div class="col-md-5 offset-md-7">
+	            					<div class="banner-content">
+	            						<div class="subtitle">VOUGE<br></br>COLLECTION 2021 </div>
+	            						<h1 class="title1">SALE UP TO</h1>
+	            						<h1 class="title2">40% OFF</h1>
+	            						<div class="s_btn" data-name="Button">
+	            							<a href="#" class="btn btn-secondary btn-lg bizople_button">SHOP NOW</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            				<div class="side-editions d-none d-xl-block">
+	            					<div class="edition1">
+	            						<div class="text">2021 Collection</div>
+	            					</div>
+	            					<div class="edition2">
+	            						<div class="text">
+	            							<a class="link mb-3" href="#">
+												<span class="fa fa-facebook" />
+											</a>
+											<a class="link mb-3" hre="#">
+												<span class="fa fa-twitter" />
+											</a>
+											<a class="link mb-3" href="#">
+												<span class="fa fa-instagram"></span>
+											</a>
+											<a class="link mb-3" href="#">
+												<span class="fa fa-github"></span>
+											</a>
+											<span class="hrztl-line d-inline-block mt-5">Special Edition</span>
+										</div>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="carousel-item" style="background-image: url('/theme_vouge/static/src/img/fashion-banner2.jpg');">
+	            		<div class="container extended-container">
+	            			<div class="row position-relative">
+	            				<div class="col-md-5 offset-md-7">
+	            					<div class="banner-content">
+	            						<div class="subtitle">VOUGE<br></br>COLLECTION 2021 </div>
+	            						<h1 class="title1">SALE UP TO</h1>
+	            						<h1 class="title2">40% OFF</h1>
+	            						<div class="s_btn" data-name="Button">
+	            							<a href="#" class="btn btn-secondary btn-lg bizople_button">SHOP NOW</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            				<div class="side-editions d-none d-xl-block">
+	            					<div class="edition1">
+	            						<div class="text">2021 Collection</div>
+	            					</div>
+	            					<div class="edition2">
+	            						<div class="text">
+	            							<a class="link mb-3" href="#">
+												<span class="fa fa-facebook" />
+											</a>
+											<a class="link mb-3" hre="#">
+												<span class="fa fa-twitter" />
+											</a>
+											<a class="link mb-3" href="#">
+												<span class="fa fa-instagram"></span>
+											</a>
+											<a class="link mb-3" href="#">
+												<span class="fa fa-github"></span>
+											</a>
+											<span class="hrztl-line d-inline-block mt-5">Special Edition</span>
+										</div>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="carousel-item" style="background-image: url('/theme_vouge/static/src/img/fashion-banner3.jpg');">
+	            		<div class="container extended-container">
+	            			<div class="row position-relative">
+	            				<div class="col-md-5 offset-md-7">
+	            					<div class="banner-content">
+	            						<div class="subtitle">VOUGE<br></br>COLLECTION 2021 </div>
+	            						<h1 class="title1">SALE UP TO</h1>
+	            						<h1 class="title2">40% OFF</h1>
+	            						<div class="s_btn" data-name="Button">
+	            							<a href="#" class="btn btn-secondary btn-lg bizople_button">SHOP NOW</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            				<div class="side-editions d-none d-xl-block">
+	            					<div class="edition1">
+	            						<div class="text">2021 Collection</div>
+	            					</div>
+	            					<div class="edition2">
+	            						<div class="text">
+	            							<a class="link mb-3" href="#">
+												<span class="fa fa-facebook" />
+											</a>
+											<a class="link mb-3" hre="#">
+												<span class="fa fa-twitter" />
+											</a>
+											<a class="link mb-3" href="#">
+												<span class="fa fa-instagram"></span>
+											</a>
+											<a class="link mb-3" href="#">
+												<span class="fa fa-github"></span>
+											</a>
+											<span class="hrztl-line d-inline-block mt-5">Special Edition</span>
+										</div>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</div>
+	            	</div>
+	          	</div>
+	          	<div class="container extended-container position-relative">
+		          	<ol class="carousel-indicators">
+			            <li data-target="#fashion-carousel" data-slide-to="0" class="active"/>
+			            <li data-target="#fashion-carousel" data-slide-to="1"/>
+			            <li data-target="#fashion-carousel" data-slide-to="2"/>
+			        </ol>
+			    </div>
+        	</div>
+		</section>
+	</template>
+
+</odoo>

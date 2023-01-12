@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage15_discount" name="Discount">
+		<section class="homepage-fifteen-discount pt64 pb64 bg-primary">
+	        <div class="container">
+	        	<div class="row align-items-center">
+	        		<div class="col-md-6 mb-4 mb-md-0">
+	        			<img class="img img-fluid" src="/theme_vouge/static/src/img/shaver-3.png" alt="image"/>
+	        		</div>
+	        		<div class="col-md-6">
+				        <div class="discount-content text-right">
+				        	<h1 class="text-white w-100 w-xl-75 ml-auto">Lore Ipsum Dolor Sit Amet</h1>
+				        	<span class="text-white">Trimmer for Men:</span>
+				        	<p class="text-white">Upto 85% off + Upto 10% Cashback</p>
+				        </div>
+				    </div>
+			    </div>
+		    </div>
+      	</section>
+	</template>
+
+</odoo>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_homepage_wallet" name="Wallet">
+		<section class="s_homepage_wallet">
+					<section class="homepage-eleven-banner">
+						<div id="banner-eleven-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active ls-slide" style="background-image: url('/theme_vouge/static/src/img/wallet-banner1.jpg');">
+				            		<div class="container">
+						              	<div class="banner-content text-center">
+						              		<h2 class="side-line text-white">Lorem Ipsum Dolor Sit</h2>
+						              		<h1 class="text-white">Woman's Wallet</h1>
+						              		<div class="s_btn" data-name="Button">
+							              		<a href="#" class="btn btn-outline-light rounded-circle mt-4 ">SHOP NOW</a>
+							              	</div>
+						              	</div>
+					              	</div>
+				            	</div>
+				            	<div class="carousel-item ls-slide" style="background-image: url('/theme_vouge/static/src/img/wallet-banner2.jpg');">
+				            		<div class="container">
+						              	<div class="banner-content text-center">
+						              		<h2 class="side-line text-white">Lorem Ipsum Dolor Sit</h2>
+						              		<h1 class="text-white">Woman's Wallet</h1>
+						              		<div class="s_btn" data-name="Button">
+							              		<a href="#" class="btn btn-outline-light rounded-circle mt-4 ">SHOP NOW</a>
+							              	</div>
+						              	</div>
+					              	</div>
+					            </div>
+					            <div class="slider-control d-none d-md-block">
+				              		<a class="left carousel-control-prev text-white font-14" data-target="#banner-eleven-carousel" role="button" data-slide="prev">
+					                	<span class="fa fa-angle-left"/>
+					               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+					              	</a>
+					              	<a class="right carousel-control-next text-white font-14" data-target="#banner-eleven-carousel" role="button" data-slide="next">
+					                	<span class="fa fa-angle-right"/>
+					                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+					              	</a>
+					            </div>
+				          	</div>
+				          	<ol class="carousel-indicators">
+				            	<li data-target="#banner-eleven-carousel" data-slide-to="0" class="active"/>
+				            	<li data-target="#banner-eleven-carousel" data-slide-to="1"/>
+				          	</ol>
+				        </div>
+					</section>
+					<!-- banner end -->
+					<div class="oe_structure"/>
+					<!-- introduction start -->
+					<section class="homepage-eleven-introduction pt64 pb64">
+						<div class="container">
+							<div class="introduction-content text-center">
+								<span class="text-muted">Lorem ipsum dolor sit amet</span>
+								<h1 class="text-secondary mb-4 mt-1 down-line">ADIPISCING ELIT <span class="text-primary">CONSECTETUR</span></h1>
+								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam ut venenatis tellus in metus vulputate eu scelerisque. Nullam non nisi est sit amet facilisis magna etiam. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Lacus sed viverra tellus in hac habitasse. Enim lobortis scelerisque fermentum dui faucibus. Interdum velit euismod in pellentesque. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Commodo ullamcorper a lacus vestibulum sed arcu. Accumsan lacus vel facilisis volutpat est. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Dictum varius duis at consectetur lorem.
+								</p>
+								<div class="s_btn" data-name="Button">
+									<a href="#" class="btn btn-primary rounded-circle mt-4 ">
+										<span class="fa fa-mail-forward mr-1"/> Read More
+									</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- introduction end -->
+					<div class="oe_structure"/>
+						<!-- single-product start -->
+					<section class="homepage-eleven-single-product pb-4 pb-md-0">
+						<div class="container">
+							<div class="row align-items-center mb-md-5 mb-xl-0">
+								<div class="col-md-6">
+									<div class="product-img text-center">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/wallet-product1.png" alt="image"/>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="product-content">
+										<h1 class="text-secondary mb-4">Donec at nibh - <span class="text-primary">SOLLICITUDIN </span>Diam ultricies mattis.</h1>
+										<p class="text-muted mb-3">Nullam non nisi est sit amet facilisis magna etiam. Iaculis urna id volutpat lacus laoreet non curabitur gravida.</p>
+										<ul class="text-muted mb-4">
+											<li>Lorem ipsum dolor sit amet</li>
+											<li>Lorem ipsum dolor sit amet</li>
+											<li>Lorem ipsum dolor sit amet</li>
+										</ul>
+										<p class="price text-primary mb-4">$59.92</p>
+										<div class="s_btn" data-name="Button">
+											<a href="#" class="btn btn-outline-secondary rounded-circle ">
+												<span class="fa fa-mail-forward mr-1"/> View Product
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row align-items-center mb-md-5 mb-xl-0">
+								<div class="col-md-6">
+									<div class="product-content">
+										<h1 class="text-secondary mb-4">Donec at nibh - <span class="text-primary">SOLLICITUDIN </span>Diam ultricies mattis.</h1>
+										<p class="text-muted mb-3">Nullam non nisi est sit amet facilisis magna etiam. Iaculis urna id volutpat lacus laoreet non curabitur gravida.</p>
+										<ul class="text-muted mb-4">
+											<li>Lorem ipsum dolor sit amet</li>
+											<li>Lorem ipsum dolor sit amet</li>
+											<li>Lorem ipsum dolor sit amet</li>
+										</ul>
+										<p class="price text-primary mb-4">$69.96</p>
+										<div class="s_btn" data-name="Button">
+											<a href="#" class="btn  btn-outline-secondary rounded-circle ">
+												<span class="fa fa-mail-forward mr-1"/> Buy Now
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 order">
+									<div class="product-img2 text-center">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/wallet-product2.png" alt="image"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- single-product end -->
+					<div class="oe_structure"/>
+					<!-- feature start -->
+					<section class="homepage-eleven-feature pt32 pb32" style="background-image: url('/theme_vouge/static/src/img/wallet-bg.jpg');">
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-md-6">
+									<div class="feature-content">
+										<div class="title text-center">
+											<span class="text-muted">LOREM IPSUM DOLOR SIT AMET</span>
+											<h1 class="text-secondary mt-1 down-line">CONSECTETUR <span class="text-secondary">ADIPISCING ELIT</span></h1>
+										</div>
+										<div class="feature-box d-flex mb-4 mt-5 align-items-center">
+											<div class="icon mr-4 bg-white text-center">
+												<span class="fa fa-diamond text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor </h3>
+												<p class="text-secondary-50">Nullam non nisi est sit amet facilisis magna etiam. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Lacus sed viverra tellus in hac habitasse.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4 align-items-center">
+											<div class="icon mr-4 bg-white text-center">
+												<span class="fa fa-recycle text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor </h3>
+												<p class="text-secondary-50">Nullam non nisi est sit amet facilisis magna etiam. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Lacus sed viverra tellus in hac habitasse.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4 align-items-center">
+											<div class="icon mr-4 bg-white text-center">
+												<span class="fa fa-flag-o text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor </h3>
+												<p class="text-secondary-50">Nullam non nisi est sit amet facilisis magna etiam. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Lacus sed viverra tellus in hac habitasse.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- product-feature end -->
+					<div class="oe_structure"/>
+					<!-- feature-row start -->
+					<section class="homepage-eleven-feature-row pt64 pb64">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 mx-auto text-center">
+											<span class="fa fa-truck text-warning"/>
+										</div>
+										<h3 class="text-secondary">Lorem ipsum dolor</h3>
+										<p class="text-muted">Enim lobortis scelerisque fermentum dui faucibus. Interdum velit euismod in pellentesque.</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 mx-auto text-center">
+											<span class="fa fa-phone text-success"/>
+										</div>
+										<h3 class="text-secondary">Lorem ipsum dolor</h3>
+										<p class="text-muted">Enim lobortis scelerisque fermentum dui faucibus. Interdum velit euismod in pellentesque.</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 mx-auto text-center">
+											<span class="fa fa-flash text-info"/>
+										</div>
+										<h3 class="text-secondary">Lorem ipsum dolor</h3>
+										<p class="text-muted">Enim lobortis scelerisque fermentum dui faucibus. Interdum velit euismod in pellentesque.</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 mx-auto text-center">
+											<span class="fa fa-shield text-primary"/>
+										</div>
+										<h3 class="text-secondary">Lorem ipsum dolor</h3>
+										<p class="text-muted">Enim lobortis scelerisque fermentum dui faucibus. Interdum velit euismod in pellentesque.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- feature-row end -->
+					<div class="oe_structure"/>
+					<!-- testimonial start -->
+					<section class="homepage-eleven-testinomial bg-light pt64 pb64">
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-md-5">
+									<div class="testimonial-title text-md-right text-center">
+										<span class="text-muted">LOREM IPSUM DOLOR SIT AMET</span>
+										<h1 class="text-secondary mt-1 down-line">LOREM IPSUM <span class="text-primary">DOLOR SIT AMET</span></h1>
+									</div>
+								</div>
+								<div class="col-md-7">
+									<div class="carousel">
+										<div id="testimonial-eleven-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+												
+								          	<div class="carousel-inner" role="listbox">
+								            	<div class="carousel-item active ls-slide px-1 py-2">
+						            				<div class="team-box p-3 border text-center">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Commodo ullamcorper a lacus vestibulum sed arcu. Accumsan lacus vel facilisis volutpat est. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi.</a></p>
+										              	<p class="text-secondary ceo">Amber Laha</p>
+										            </div>
+								            	</div>
+								            	<div class="carousel-item ls-slide px-1 py-2">
+									              	<div class="team-box p-3 border text-center">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Commodo ullamcorper a lacus vestibulum sed arcu. Accumsan lacus vel facilisis volutpat est. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi.</a></p>
+										              	<p class="text-secondary ceo">Alva Ono</p>
+										            </div>
+									            </div>
+									            <div class="carousel-item ls-slide px-1 py-2">
+									              	<div class="team-box p-3 border text-center">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Commodo ullamcorper a lacus vestibulum sed arcu. Accumsan lacus vel facilisis volutpat est. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi.</a></p>
+										              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+										            </div>
+									            </div>
+									            <div class="carousel-item ls-slide px-1 py-2">
+									              	<div class="team-box p-3 border text-center">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Commodo ullamcorper a lacus vestibulum sed arcu. Accumsan lacus vel facilisis volutpat est. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi.xt-secondary ceo"&gt;Lavina Wilderman</a></p>
+										            </div>
+									            </div>
+								          	</div>
+								          	<ol class="carousel-indicators mt-4">
+								            	<li data-target="#testimonial-eleven-carousel" data-slide-to="0" class="active"/>
+								            	<li data-target="#testimonial-eleven-carousel" data-slide-to="1"/>
+								            	<li data-target="#testimonial-eleven-carousel" data-slide-to="2"/>
+								            	<li data-target="#testimonial-eleven-carousel" data-slide-to="3"/>
+								          	</ol>
+								        </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- testimonial end -->
+					<div class="oe_structure"/>
+					<!-- blog start -->
+					<section class="aviat-blog pt64 pb64">
+						<t t-call="website_blog.s_blog_posts"/>
+					</section>
+					<!-- blog end -->
+					<div class="oe_structure"/>
+					<!-- subscribe start -->
+					<section class="homepage-eleven-subscribe pt32 pb64 bg-light">
+						<div class="container">
+							<div class="subs-title text-center">
+								<span class="text-muted">our news</span>
+								<h1 class="text-secondary down-line mt-1">SIGN UP FOR LATEST NEWS</h1>
+							</div>
+							<div class="input-group js_subscribe" data-list-id="1">
+						        <input type="email" name="email" class="js_subscribe_email form-control bg-white" placeholder="your email..."/>
+						        <span class="input-group-append">
+						            <a role="button" href="#" class="btn btn-primary js_subscribe_btn">Subscribe</a>
+						            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none" disabled="disabled">Thanks</a>
+						        </span>
+						    </div>
+						</div>
+					</section>
+					<!-- subscribe end -->
+		</section>
+	</template>
+</odoo>

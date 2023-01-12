@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="product_services_template" inherit_id="theme_vouge.vouge_product_detail_inherited" name="Product Services Points" active="True" customize_show="True" priority="10">
+		<xpath expr="//div[@id='product_option_block']" position="before">
+			<t t-if="product.service_ids">
+			<div class="product-services mt-2 product-detail-label-value">
+				<div class="prod-attribute-label">
+					<span class="text-label">Services </span>
+				</div>
+				<div class="prod-attribute-value">
+					<ul class="flex-column point-ul pl-3 mb-0">
+						<li t-foreach="product.service_ids" t-as="services">
+							<span t-out="services.name"/>
+							<t t-if="services.visible_desc and services.description">
+								<a class="" data-container="body" data-toggle="popover" data-placement="left" t-att-data-content="services.description" data-html="true">
+								  <i class="fa fa fa-question info-icon"></i>
+								</a>
+							</t>
+						</li>
+					</ul>
+				</div>
+			</div>
+			</t>
+		</xpath>
+	</template>
+	
+	
+	<template id="product_highlights_template" inherit_id="theme_vouge.vouge_product_detail_inherited" name="Product Highlights Points" active="True" customize_show="True" priority="11">
+		<xpath expr="//div[@id='product_option_block']" position="before">
+			<t t-if="product.highlights_ids">
+			<div class="product-services mt-2 product-detail-label-value">
+				<div class="prod-attribute-label">
+					<span class="text-label">Highlights </span>
+				</div>
+				<div class="prod-attribute-value">
+					<ul class="flex-column point-ul pl-3 mb-0">
+						<li t-foreach="product.highlights_ids" t-as="high">
+							<span t-out="high.name"/>
+						</li>
+					</ul>
+				</div>
+			</div>
+			</t>
+		</xpath>
+	</template>
+
+	
+</odoo>

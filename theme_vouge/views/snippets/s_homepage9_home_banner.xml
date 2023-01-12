@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage9_home_banner" name="Home Banner">
+		<section class="homepage-nine-banner px-5">
+						<div id="banner-nine-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active ls-slide" style="background-image: url('/theme_vouge/static/src/img/headfones-banner1.jpg');">
+					              	<div class="banner-content">
+					              		<h2 class="side-line text-light">Lorem ipsum dolor</h2>
+					              		<h1 class="text-white">Headphones To <br/>Feel The Music</h1>
+					              		<p class="text-light">Facilisis leo vel fringilla est ullamcorper eget nulla facilisi.</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle mt-4">SHOP NOW</a>
+						              	</div>
+
+					              	</div>
+				            	</div>
+				            	<div class="carousel-item ls-slide" style="background-image: url('/theme_vouge/static/src/img/headfones-banner2.jpg');">
+					              	<div class="banner-content">
+					              		<h2 class="side-line text-light">Lorem ipsum dolor</h2>
+					              		<h1 class="text-white">Headphones To <br/>Feel The Music</h1>
+					              		<p class="text-light">Facilisis leo vel fringilla est ullamcorper eget nulla facilisi.</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle mt-4">SHOP NOW</a>
+						              	</div>
+
+					              	</div>
+					            </div>
+					            <div class="carousel-item ls-slide" style="background-image: url('/theme_vouge/static/src/img/headfones-banner3.jpg');">
+					              	<div class="banner-content">
+					              		<h2 class="side-line text-light">Lorem ipsum dolor</h2>
+					              		<h1 class="text-white">Headphones To <br/>Feel The Music</h1>
+					              		<p class="text-light">Facilisis leo vel fringilla est ullamcorper eget nulla facilisi.</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle mt-4">SHOP NOW</a>
+						              	</div>
+
+					              	</div>
+					            </div>
+					            <div class="slider-control d-none d-md-block">
+				              		<a class="left carousel-control-prev text-white font-14" data-target="#banner-nine-carousel" role="button" data-slide="prev">
+					                	<span class="fa fa-angle-left"/>
+					               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+					              	</a>
+					              	<a class="right carousel-control-next text-white font-14" data-target="#banner-nine-carousel" role="button" data-slide="next">
+					                	<span class="fa fa-angle-right"/>
+					                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+					              	</a>
+					            </div>
+				          	</div>
+				          	<ol class="carousel-indicators">
+				            	<li data-target="#banner-nine-carousel" data-slide-to="0" class="active"/>
+				            	<li data-target="#banner-nine-carousel" data-slide-to="1"/>
+				            	<li data-target="#banner-nine-carousel" data-slide-to="2"/>
+				          	</ol>
+				        </div>
+					</section>
+	</template>
+
+</odoo>

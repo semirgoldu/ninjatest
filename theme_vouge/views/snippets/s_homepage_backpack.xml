@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_homepage_backpack" name="Backpack">
+		<section class="s_homepage_backpack">
+					<!-- banner start -->
+					<section class="homepage-six-banner">
+						<div id="banner-six-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active ls-slide" style="background-image: url('/theme_vouge/static/src/img/bags-banner1.jpeg');">
+					              	<div class="banner-content">
+					              		<h2 class="side-line side-line-white text-white">Lorem Ipsum</h2>
+					              		<h1 class="text-white">Laptop <span class="text-primary">Backpack</span> <br/>With USB Port</h1>
+					              		<p class="text-white">Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle">SHOP NOW</a>
+						              	</div>
+					              	</div>
+				            	</div>
+				            	<div class="carousel-item ls-slide" style="background-image: url('/theme_vouge/static/src/img/bags-banner2.jpg');">
+					              	<div class="banner-content">
+					              		<h2 class="side-line">Lorem Ipsum</h2>
+					              		<h1 class="text-secondary">Travel <span class="text-primary">Backpack</span> <br/>With USB Port</h1>
+					              		<p class="text-dark">Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle">SHOP NOW</a>
+						              	</div>
+					              	</div>
+					            </div>
+					            <div class="slider-control d-none d-md-block">
+				              		<a class="left carousel-control-prev text-dark font-14" data-target="#banner-six-carousel" role="button" data-slide="prev">
+					                	<span class="fa fa-angle-left"/>
+					               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+					              	</a>
+					              	<a class="right carousel-control-next text-dark font-14" data-target="#banner-six-carousel" role="button" data-slide="next">
+					                	<span class="fa fa-angle-right"/>
+					                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+					              	</a>
+					            </div>
+				          	</div>
+				          	<ol class="carousel-indicators">
+				            	<li data-target="#banner-six-carousel" data-slide-to="0" class="active"/>
+				            	<li data-target="#banner-six-carousel" data-slide-to="1"/>
+				          	</ol>
+				        </div>
+					</section>
+					<!-- banner end -->
+					<div class="oe_structure"/>
+					<!-- feature start -->
+					<section class="homepage-six-feature pt64 pb64">
+						<div class="container">
+							<div class="feature-title text-center mb-4">
+								<span class="text-muted">LOREM IPSUM DOLOR</span>
+								<h1 class="text-secondary down-line">SIT <span class="text-primary">AMET</span></h1>
+							</div>
+							<div class="row align-items-center justify-content-center">
+								<div class="col-lg-4">
+									<div class="feature-content text-right">
+										<div class="feature-box d-flex mb-4">
+											<div class="text ml-auto">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+											<div class="icon ml-3">
+												<span class="fa fa-soccer-ball-o text-primary"/>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="text ml-auto">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+											<div class="icon ml-3">
+												<span class="fa fa-life-bouy text-primary"/>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="text ml-auto">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+											<div class="icon ml-3">
+												<span class="fa fa-gift text-primary"/>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="text ml-auto">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+											<div class="icon ml-3">
+												<span class="fa fa-bicycle text-primary"/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-8 col-lg-4 mb-0 mb-md-4 mb-lg-0">
+									<div class="feature-bag">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/backpack-feature1.png" alt="image"/>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="feature-content">
+										<div class="feature-box d-flex mb-4">
+											<div class="icon mr-3">
+												<span class="fa fa-balance-scale text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="icon mr-3">
+												<span class="fa fa-road text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="icon mr-3">
+												<span class="fa fa-certificate text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+										</div>
+										<div class="feature-box d-flex mb-4">
+											<div class="icon mr-3">
+												<span class="fa fa-universal-access text-primary"/>
+											</div>
+											<div class="text">
+												<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+												<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- feature end -->
+					<div class="oe_structure"/>
+					<!-- feature-row start -->
+					<section class="homepage-six-feature-row pt64 pb64 bg-primary">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-white mx-auto text-center">
+											<span class="fa fa-truck text-primary"/>
+										</div>
+										<h3 class="text-white mb-2">Lorem Ipsum</h3>
+										<p class="text-light">Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-white mx-auto text-center">
+											<span class="fa fa-headphones text-primary"/>
+										</div>
+										<h3 class="text-white mb-2">Lorem Ipsum</h3>
+										<p class="text-light">Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-white mx-auto text-center">
+											<span class="fa fa-shield text-primary"/>
+										</div>
+										<h3 class="text-white mb-2">Lorem Ipsum</h3>
+										<p class="text-light">Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- feature-row end -->
+					<div class="oe_structure"/>
+					<!-- product info start -->
+					<section class="homepage-six-product-info pt32 pb64">
+						<div class="container">
+							<div class="row align-items-center justify-content-center mb-5">
+								<div class="col-md-5">
+									<div class="product-info">
+										<h1 class="text-secondary mb-3">Lorem <span class="text-primary">Ipsum</span></h1>
+										<p class="text-muted"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="product-img1">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/backpack-feature2.png" alt="image"/>
+									</div>
+								</div>
+							</div>
+							<div class="row align-items-center justify-content-center">
+								<div class="col-md-5">
+									<div class="product-img2">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/backpack-feature3.png" alt="image"/>
+									</div>
+								</div>
+								<div class="col-md-5 mb-4 mb-md-0 order">
+									<div class="product-info">
+										<h1 class="text-secondary mb-3">Lorem Ipsum Dolor <span class="text-primary">Sit</span> Amet</h1>
+										<p class="text-muted">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- product info end -->
+					<div class="oe_structure"/>
+					<!-- product feature start -->
+					<section class="homepage-six-product-feature pt64 pb32 bg-light">
+						<div class="container">
+							<div class="row align-items-center justify-content-center">
+								<div class="col-lg-5 pb-0 pb-md-5 pb-lg-0">
+									<div class="screen-content py-4">
+										<h1 class="text-secondary">LOREM IPSUM-<span class="text-primary">DOLOR SIT</span></h1>
+										<p class="text-secondary">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+										<div class="row mb-4 mt-4">
+											<div class="col-md-6 col-6">
+												<div class="info-box d-flex align-items-center mb-3">
+													<div class="icon">
+														<span class="fa fa-leaf text-primary"/>
+													</div>
+													<div class="numeric ml-3">
+														<span class="text-secondary">ULTRA-LIGHTWEIGHT</span>
+														<p class="text-secondary">MD SOLE</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 col-6">
+												<div class="info-box d-flex align-items-center mb-3">
+													<div class="icon">
+														<span class="fa fa-money text-primary"/>
+													</div>
+													<div class="numeric ml-3">
+														<span class="text-secondary">Money Back Guarantee</span>
+														<p class="text-secondary">90 DAYS</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 col-6">
+												<div class="info-box d-flex align-items-center mb-3">
+													<div class="icon">
+														<span class="fa fa-heartbeat text-primary"/>
+													</div>
+													<div class="numeric ml-3">
+														<span class="text-secondary">Breathable Mesh Upper</span>
+														<p class="text-secondary">BREATHABILITY</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 col-6">
+												<div class="info-box d-flex align-items-center mb-3">
+													<div class="icon">
+														<span class="fa fa-bar-chart-o text-primary"/>
+													</div>
+													<div class="numeric ml-3">
+														<span class="text-secondary">COMPLETE SIZE</span>
+														<p class="text-secondary">0-11</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 col-6">
+												<div class="info-box d-flex align-items-center mb-3">
+													<div class="icon">
+														<span class="fa fa-rocket text-primary"/>
+													</div>
+													<div class="numeric ml-3">
+														<span class="text-secondary">Control range</span>
+														<p class="text-secondary">7 KM</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 col-6">
+												<div class="info-box d-flex align-items-center mb-3">
+													<div class="icon">
+														<span class="fa fa-tint text-primary"/>
+													</div>
+													<div class="numeric ml-3">
+														<span class="text-secondary">Complete Color</span>
+														<p class="text-secondary">CHOOSE ANY</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="s_btn" data-name="Button">
+											<a href="#" class="btn btn-outline-secondary rounded-circle">
+												<span class="fa fa-mail-forward mr-1"/> View Product
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-9 col-lg-7">
+									<div class="screen-img">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/backpack-feature.png" alt="image"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- product feature end -->
+					<div class="oe_structure"/>
+					<!-- testimonial start -->
+					<section class="homepage-six-testimonial pt32 pb64 bg-light">
+						<div class="container">
+							<div class="testimonial-title mb-5 text-center">
+								<span class="text-muted">Lorem ipsum dolor sit amet</span>
+								<h1 class="text-secondary down-line mt-1">LOREM IPSUM <span class="text-primary">DOLOR SIT AMET</span></h1>
+							</div>
+							<div class="row">
+								<div id="testimonial-six-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+												
+						          	<div class="carousel-inner" role="listbox">
+						            	<div class="carousel-item active ls-slide">
+						            		<div class="row text-center">
+						            			<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Alva Ono</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Amber Laha</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+										            </div>
+								              	</div>
+							              	</div>
+						            	</div>
+						            	<div class="carousel-item ls-slide">
+							              	<div class="row text-center">
+						            			<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Alva Ono</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Amber Laha</p>
+										            </div>
+								              	</div>
+								              	<div class="col-md-4">
+						            				<div class="team-box p-3 border">
+										              	<div class="carousel-img mx-auto mb-3">
+										              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+										              	</div>
+										              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+										              	<p><a href="#" class="text text-muted">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</a></p>
+										              	<span class="fa fa-quote-right text-secondary"/>
+										              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+										            </div>
+								              	</div>
+							              	</div>
+							            </div>
+							            
+							            
+						          	</div>
+						          	<ol class="carousel-indicators mt-4">
+						            	<li data-target="#testimonial-six-carousel" data-slide-to="0" class="active"/>
+						            	<li data-target="#testimonial-six-carousel" data-slide-to="1"/>
+						          	</ol>
+						        </div>
+						    </div>
+						</div>
+					</section>
+					<!-- testimonial end -->
+					<div class="oe_structure"/>
+					<!-- blog start -->
+					<section class="aviat-blog pt64 pb64">
+						<t t-call="website_blog.s_blog_posts"/>
+					</section>
+					<!-- blog end -->
+					<div class="oe_structure"/>
+					<!-- subscribe start -->
+					<section class="homepage-six-subscribe pt32 pb64 bg-light">
+						<div class="container">
+							<div class="subs-title text-center">
+								<span class="text-muted">our news</span>
+								<h1 class="text-secondary down-line mt-1">SIGN UP FOR LATEST NEWS</h1>
+							</div>
+							<div class="input-group js_subscribe" data-list-id="1">
+						        <input type="email" name="email" class="js_subscribe_email form-control bg-white" placeholder="your email..."/>
+						        <span class="input-group-append">
+						            <a role="button" href="#" class="btn btn-primary js_subscribe_btn">Subscribe</a>
+						            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none" disabled="disabled">Thanks</a>
+						        </span>
+						    </div>
+						</div>
+					</section>
+					<!-- subscribe end -->
+		</section>
+	</template>
+</odoo>

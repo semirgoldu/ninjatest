@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_wine_winemakers" name="Winemakers">
+		<section class="wine-text-image pt64 pb64">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 p-0">
+						<div class="image">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/wine1.jpg" alt="image"/>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 p-0">
+						<section class="content bg-o-color-3 h-100">
+							<div class="wine-content">
+								<div class="subtitle">FAMOUS WINE</div>
+								<div class="title">Our Best<br>Winemakers</br> </div>
+								<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare purus sit amet sapien condimentum maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla bibendum nunc purus, eu pretium justo fringilla vitae.</p>
+								<div class="s_btn mt16" data-name="Button">
+        							<a href="#" class="btn btn-link text-white">learn more</a>
+        						</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-lg-6 col-md-6 p-0 order">
+						<section class="content bg-o-color-3 h-100">
+							<div class="wine-content">
+								<div class="subtitle">THE WINEMAKER</div>
+								<div class="title">Paul Williams</div>
+								<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare purus sit amet sapien condimentum maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla bibendum nunc purus, eu pretium justo fringilla vitae.</p>
+								<div class="s_btn mt16" data-name="Button">
+        							<a href="#" class="btn btn-link text-white">learn more</a>
+        						</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-lg-6 col-md-6 p-0">
+						<div class="image">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/wine2.jpg" alt="image"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_acquirer_form" model="ir.ui.view">
+        <field name="name">SkipCash Acquirer Form</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment.payment_acquirer_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//group[@name="acquirer"]' position='inside'>
+                <group attrs="{'invisible': [('provider', '!=', 'skipcash')]}">
+                    <field name="skipcash_merchant_id" attrs="{'required':[ ('provider', '=', 'skipcash'), ('state', '!=', 'disabled')]}"/>
+                    <field name="skipcash_key_id" string="Key ID" attrs="{'required':[ ('provider', '=', 'skipcash'), ('state', '!=', 'disabled')]}"/>
+
+                    <field name="skipcash_secret" string="Secret Key" attrs="{'required':[ ('provider', '=', 'skipcash'), ('state', '!=', 'disabled')]}"/>
+                    <field name="skipcash_test_url" attrs="{'required':[ ('provider', '=', 'skipcash'), ('state', '!=', 'disabled')]}" groups='base.group_no_one'/>
+                    <field name="skipcash_prod_url" attrs="{'required':[ ('provider', '=', 'skipcash'), ('state', '!=', 'disabled')]}" groups='base.group_no_one'/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

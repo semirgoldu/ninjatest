@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sms_connect_source_form_view" model="ir.ui.view">
+        <field name="name">sms.connect.source.form.view</field>
+        <field name="model">sms.connect.source</field>
+        <field name="arch" type="xml">
+            <form string="Source">
+            <sheet>
+            <group>
+                <field name="name" required="1"/>
+                <field name="source" required="1"/>
+                <field name="mask" required="1"/>
+
+            </group>
+            </sheet>
+             
+               
+            </form>
+        </field>
+    </record>
+    <record id="sms_connect_source_tree_view" model="ir.ui.view">
+        <field name="name">sms.connect.source.tree.view</field>
+        <field name="model">sms.connect.source</field>
+        <field name="arch" type="xml">
+            <tree>
+            <field name="name"/>
+            <field name="source"/>
+            <field name="mask"/>
+              
+            </tree>
+        </field>
+    </record>
+
+    <record id="sms_connect_source_search_view" model="ir.ui.view">
+        <field name="name">sms.connect.source.search.view</field>
+        <field name="model">sms.connect.source</field>
+        <field name="arch" type="xml">
+            <search string="SMS Connect">
+                <field name="name" />
+                <field name="source"/>
+                <field name="mask"/>
+              
+                
+            </search>
+        </field>
+    </record>
+    <record id="sms_connect_source_action" model="ir.actions.act_window">
+        <field name="name">SMS Connect Source</field>
+        <field name="res_model">sms.connect.source</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create a New SMS Source</p>
+        </field>
+    </record>
+       <menuitem id="sms_connect_source_menu" name="SMS Connect Source" parent="sms_connect_vodafone.sms_connect_config" action="sms_connect_source_action" sequence="1" />
+
+</odoo>

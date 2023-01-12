@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="theme_vouge_header3" inherit_id="website.layout" name="Header Three" active="False">
+		<xpath expr="//header//nav" position="replace">
+			<nav data-name="Navbar" id="vouge-header3" t-attf-class="vouge-header3">
+				<div class="top-header d-none d-md-block">
+					<div class="container extended-container">
+						<div class="row">
+							<div class="col-md-5 col-lg-4 pl-md-0">
+								<div class="left-content">
+									<ul class="nav navbar-nav flex-row justify-content-center justify-content-md-start">
+										<li class="nav-item">
+											<a href="/help-center" class="nav-link">Support</a>
+										</li>
+										<li class="nav-item">
+											<a href="/shop" class="nav-link">Store</a>
+										</li>
+										<li class="nav-item">
+											<a href="/my/orders" class="nav-link">Order</a>
+										</li>
+										<t t-set="aut_assign_categs"
+											t-value="website.get_auto_assign_category()" />
+										<t t-set="categ_count" t-value="1"></t>
+							
+										<t t-foreach="aut_assign_categs" t-as="aut_assign_categ" t-if="categ_count == 1">
+											<t t-set="categ_count" t-value="categ_count + 1"></t>
+											<li class="nav-item">
+												<a class="nav-link" t-att-href="'/shop/category/%s' % slug(aut_assign_categ)">
+													<span class="text-primary" t-field="aut_assign_categ.name" />
+												</a>
+											</li>
+										</t>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 col-lg-4">
+								<div class="middle-content">
+									<span class="text-primary">Call Us:</span>
+									<span class="phone-number"><span t-out="res_company.phone"/></span>
+								</div>
+							</div>
+							<div class="col-md-4 pr-md-0">
+								<div class="right-content d-flex align-items-center justify-content-center justify-content-md-end">
+									<div class="account-login dropdown" t-ignore="true" t-if="not user_id._is_public()">
+										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+											<t t-call="theme_vouge.portal_frontend_user"/>
+											<span t-out="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name" />
+										</a>
+										<div class="dropdown-menu js_usermenu" role="menu">
+											<a t-attf-href="/my/home" role="menuitem" class="dropdown-item">My Account</a>
+											<t t-call="theme_vouge.my_address_link"/>
+											<a id="o_logout" class="dropdown-item"
+												t-attf-href="/web/session/logout?redirect=/"
+												role="menuitem">Logout</a>
+										</div>
+									</div>
+									<div groups="base.group_public" class="text-center">
+										<span t-if="request.website.viewref('theme_vouge.loginsignup_popup_bizt').active" class="nav-link openpop" data-toggle="modal" data-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name">
+											<span>Sign in</span>
+										</span>
+										<span t-else='' class="d-flex">
+											<a class="dropdown-item px-3 py-0" t-attf-href="/web/login">
+												<span>Sign in</span>
+											</a>
+											<a class="dropdown-item px-3 py-0" t-attf-href="/web/signup">
+												<span>Register</span>
+											</a>
+										</span>
+									</div>
+									<!-- Language Selector -->
+									<t t-call="website.placeholder_header_language_selector">
+										<t t-set="_div_classes" t-valuef="my-auto ml-0"/>
+									</t>
+									<!-- Pricelist Selector -->
+									<t t-call="theme_vouge.placeholder_vouge_header_pricelist"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle-header">
+					<div class="container extended-container">
+						<div class="row align-items-center">
+							<div class="col-md-3 d-flex d-md-block mbl-div pl-md-0">
+								<div class="mobile-sidebar-toggle d-block d-md-none">
+									<button type="button" id="show-sidebar" class="btn btn-sm btn-dark d-block d-md-none">
+										<span class="ti ti-view-grid text-secondary"></span>
+									</button>
+								</div>
+								<div class="vouge-logo text-center text-md-left">
+									<a href="/" class="navbar-brand logo m-0">
+										<span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name" />
+									</a>
+								</div>
+								<t t-call="theme_vouge.vouge_header_mobile_cart"/>
+							</div>
+							<div class="col-md-6 col-lg-7 mb-4 mb-md-0 d-none d-md-block">
+								<div class="bizople-search">
+									<div class="search">
+										<t t-call="theme_vouge.desktop_search_bar" />
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-lg-2 mb-3 mb-md-0 text-center text-md-right right-icons d-none d-md-block pr-md-0">
+								<div class="wishlist d-inline-block mr-4">
+									<t t-if="is_view_active('website_sale_wishlist.add_to_wishlist')">
+										<t t-call="website_sale_wishlist.header_wishlist_link">
+											<t t-set="_icon" t-value="True"/>
+											<t t-set="_icon_color" t-value="'text-secondary'"/>
+											<t t-set="_item_class" t-value="'nav-item'"/>
+											<t t-set="_link_class" t-value="'nav-link'"/>
+										</t>
+									</t>
+								</div>
+								<div class="cart d-inline-block bizople-add-to-cart">
+									<t t-if="is_view_active('website_sale.products_add_to_cart')">
+										<t t-set="website_sale_order" t-value="website.sale_get_order()" />
+										<t t-call="website_sale.header_cart_link">
+											<t t-set="_icon" t-value="True"/>
+											<t t-set="_icon_color" t-value="'text-secondary'"/>
+											<t t-set="_item_class" t-value="'nav-item'"/>
+											<t t-set="_link_class" t-value="'nav-link'"/>
+										</t>
+									</t>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-header d-none d-md-block bg-o-color-1">
+					<div class="container extended-container">
+						<div class="row align-items-center">
+							<div class="col-md-3 pl-md-0">
+								<div class="product-category">
+									
+								</div>
+							</div>
+							<div class="col-md-7 col pr-md-0 pr-lg-3 pr-xl-0">
+								<nav class="navbar navbar-expand-md p-0" id="bizople-header-three">
+									<div class="collapse navbar-collapse" id="header3-menuitem">
+										<ul class="nav navbar-nav align-items-center" id="top_menu">
+											<t t-foreach="website.menu_id.child_id" t-as="submenu">
+												<t t-call="website.submenu">
+													<t t-set="item_class" t-value="'nav-item'" />
+													<t t-set="link_class" t-value="'nav-link'" />
+												</t>
+											</t>
+										</ul>
+									</div>
+									<button type="button" class="navbar-toggler collapsed navbar-light ml-auto" data-toggle="collapse" data-target="#header3-mbl-menuitem" aria-expanded="false">
+										<span class="fa fa-bars"></span>
+									</button>
+								</nav>
+							</div>
+							<div class="col-md-2 pr-md-0 text-right">
+								<div class="deal-link ml-3 ml-md-auto">
+									<a class="" href="#">Today's Deals</a> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<t t-call="theme_vouge.bizople_mbl_category_bar"/>
+			</nav>
+		</xpath>
+		<xpath expr="//header" position="after">
+			<div class="d-block d-md-none">
+				<t t-call="theme_vouge.bizople_mobile_bottom_icon_bar"/>
+			</div>
+			<nav id="cart_sidebar" class="cart-sidebar bg-white oe_website_sale">
+				<t t-call="theme_vouge.cart_sidebar_content"/>
+			</nav>
+			<t t-call="theme_vouge.search_popup"/>
+		</xpath>
+	</template>
+
+	<template id="header3_product_category" inherit_id="theme_vouge.theme_vouge_header3" name="Show Header Product Category">
+		<xpath expr="//div[hasclass('product-category')]" postion="inside">
+			<div class="dropdown">
+				<a href="#" class="dropdown-btn text-white dropdown-toggle nav-link" data-toggle="dropdown">
+					<span class="fa fa-bars mr-2"/>
+					<span class="d-none d-md-inline-block">CATEGORIES</span>
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu vouge-header-category" id="mbl-target">
+					<t t-set="categories" t-value="website.get_categories() if website else None"/>
+					<t t-if="categories">
+						<t t-foreach="categories['categories']" t-as="categ">
+							<t t-call="theme_vouge.menu_categories_recursive"/>
+							
+						</t>
+					</t>
+				</ul>
+			</div>
+		</xpath>
+	</template>
+
+	<!-- Child Category Template -->
+	<template id="menu_categories_recursive" >
+		<li class="dropdown dropdown-submenu nav-item">
+			<a class="nav-link" t-att-href="'/shop/category/%s' % (categ.id)">
+				<span>
+					<span t-out="categ.name"/>
+					<t t-if="is_view_active('theme_vouge.categories_list_count')">
+						(<span>
+							<t t-out="categ.with_context(product_categ_search=search).product_tmpl_count"/>
+						</span>)
+					</t>
+				</span>
+				<i t-if="categ.child_id" class="ti ti-angle-right text-primary caret-icon-pos"/>
+			</a>
+			
+			<ul t-if="categ.child_id"
+				class="dropdown-menu">
+				<t t-foreach="categ.child_id" t-as="categ">
+					<t t-call="theme_vouge.menu_categories_recursive"/>
+				</t>
+			</ul>
+		</li>
+	</template>
+
+	<template id="header3_cart_sidebar_open" inherit_id="theme_vouge.theme_vouge_header3" name="Show Cart Sidebar" customize_show="True" active="True">
+		<xpath expr="//nav[@id='vouge-header3']" position="attributes">
+			<attribute name="t-attf-class" add="header-cart-sidebar" separator=" "></attribute>
+		</xpath>
+	</template>
+</odoo>

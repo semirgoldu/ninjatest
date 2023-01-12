@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_grocery_snippet" name="Grocery">
+		<section class="s_grocery_snippet">
+			<div class="oe_structure"/>
+			<!-- Home Banner Start -->
+			<section class="grocery-home-banner">
+				<div id="grocery-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+		          	<div class="carousel-inner" role="listbox">
+		          		<div class="carousel-item active" style="background-image: url('/theme_vouge/static/src/img/grocery-banner1.jpg');">
+			            	<div class="container">
+		            			<div class="row">
+		            				<div class="col-md-12">
+			            				<div class="d-inline-block">
+			            					<div class="banner-content">
+			            						<div class="subtitle">SALE UPTO 30% OFF</div>
+			            						<h2 class="title">Fresh Vegetables &amp;</h2>
+			            						<h2 class="title">Protien Rich Grains</h2>
+			            						<div class="s_btn mt32" data-name="Button">
+			            							<a href="#" class="btn btn-primary bizople_button">shop Now</a>
+			            						</div>
+			            					</div>
+			            				</div>
+			            			</div>
+		            			</div>
+		            		</div>
+			            </div>
+			            <div class="carousel-item" style="background-image: url('/theme_vouge/static/src/img/grocery-banner2.jpg');">
+		            		<div class="container">
+		            			<div class="row">
+		            				<div class="col-md-12">
+			            				<div class="d-inline-block">
+			            					<div class="banner-content">
+			            						<div class="subtitle">SALE UPTO 30% OFF</div>
+			            						<h2 class="title">Fresh Vegetables &amp;</h2>
+			            						<h2 class="title">Protien Rich Grains</h2>
+			            						<div class="s_btn mt32" data-name="Button">
+			            							<a href="#" class="btn btn-primary bizople_button">shop Now</a>
+			            						</div>
+			            					</div>
+			            				</div>
+			            			</div>
+		            			</div>
+		            		</div>
+			            </div>
+		          	</div>
+		          	<ol class="carousel-indicators">
+			            <li data-target="#grocery-carousel" data-slide-to="0" class="active"/>
+			            <li data-target="#grocery-carousel" data-slide-to="1"/>
+			        </ol>
+	        	</div>
+			</section>
+			<!-- Home Banner End -->
+			<div class="oe_structure"/>
+			<!-- Top Products Start-->
+			<section class="grocery-products pt32 pb32">
+				<div class="container extended-container">
+					<div class="row">
+						<div class="col-md-3 col-lg-3">
+							<div class="banner-box">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/grocery-product1.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-6">
+							<div class="banner-box">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/grocery-product2.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+						</div>
+						<div class="col-md-3 col-lg-3">
+							<div class="banner-box">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/grocery-product3.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Top Products End-->
+			<div class="oe_structure"/>
+			<!-- Client Testimonials Start  -->
+			<section class="grocery-client-testimonial" style="background-image: url('/theme_vouge/static/src/img/grocery-testimonial.jpg');">
+				<div class="container extended-container">
+					<div class="main-title">
+						<h2 class="title">Happy Customers</h2>
+						<div class="subtitle">What our customers say about us!</div>
+					</div>
+				</div>
+				<div id="client-testimonial-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+		          	<div class="carousel-inner" role="listbox">
+		          		<div class="carousel-item active">
+			            	<div class="container extended-container">
+		            			<div class="row">
+		            				<div class="col-lg-6 mb16">
+		            					<div class="item-testimonials">
+		            						<div class="item">
+		            							<div class="testimonial-content">
+		            								<div class="image">
+		            									<img src="/theme_vouge/static/src/img/vouge-team1.png" class="img img-fluid"/>
+		            								</div>
+		            								<div class="content">
+		            									<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus. Nulla tristique, tellus ut posuere facilisis!</div>
+		            									<div class="content-inner">
+		            										<div class="icon">
+		            											<span class="fa fa-quote-left"/>
+		            										</div>
+		            										<div class="auther">
+		            											<p class="name">Paul Williams</p>
+		            											<p class="email">customer@demo.com</p>
+		            										</div>
+		            									</div>
+		            								</div>
+		            							</div>
+		            						</div>
+		            					</div>
+		            				</div>
+		            				<div class="col-lg-6 mb16">
+		            					<div class="item-testimonials">
+		            						<div class="item">
+		            							<div class="testimonial-content">
+		            								<div class="image">
+		            									<img src="/theme_vouge/static/src/img/vouge-team2.png" class="img img-fluid"/>
+		            								</div>
+		            								<div class="content">
+		            									<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus. Nulla tristique, tellus ut posuere facilisis!</div>
+		            									<div class="content-inner">
+		            										<div class="icon">
+		            											<span class="fa fa-quote-left"/>
+		            										</div>
+		            										<div class="auther">
+		            											<p class="name">Anita Oliver</p>
+		            											<p class="email">customer@demo.com</p>
+		            										</div>
+		            									</div>
+		            								</div>
+		            							</div>
+		            						</div>
+		            					</div>
+		            				</div>
+		            			</div>
+		            		</div>
+			            </div>
+			            <div class="carousel-item">
+		            		<div class="container extended-container">
+		            			<div class="row">
+		            				<div class="col-lg-6 mb16">
+		            					<div class="item-testimonials">
+		            						<div class="item">
+		            							<div class="testimonial-content">
+		            								<div class="image">
+		            									<img src="/theme_vouge/static/src/img/vouge-team3.png" class="img img-fluid"/>
+		            								</div>
+		            								<div class="content">
+		            									<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus. Nulla tristique, tellus ut posuere facilisis!</div>
+		            									<div class="content-inner">
+		            										<div class="icon">
+		            											<span class="fa fa-quote-left"/>
+		            										</div>
+		            										<div class="auther">
+		            											<p class="name">Paul Williams</p>
+		            											<p class="email">customer@demo.com</p>
+		            										</div>
+		            									</div>
+		            								</div>
+		            							</div>
+		            						</div>
+		            					</div>
+		            				</div>
+		            				<div class="col-lg-6 mb16">
+		            					<div class="item-testimonials">
+		            						<div class="item">
+		            							<div class="testimonial-content">
+		            								<div class="image">
+		            									<img src="/theme_vouge/static/src/img/vouge-team4.png" class="img img-fluid"/>
+		            								</div>
+		            								<div class="content">
+		            									<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus. Nulla tristique, tellus ut posuere facilisis!</div>
+		            									<div class="content-inner">
+		            										<div class="icon">
+		            											<span class="fa fa-quote-left"/>
+		            										</div>
+		            										<div class="auther">
+		            											<p class="name">Anita Oliver</p>
+		            											<p class="email">customer@demo.com</p>
+		            										</div>
+		            									</div>
+		            								</div>
+		            							</div>
+		            						</div>
+		            					</div>
+		            				</div>
+		            			</div>
+		            		</div>
+			            </div>
+		          	</div>
+		          	<ol class="carousel-indicators">
+			            <li data-target="#client-testimonial-carousel" data-slide-to="0" class="active"/>
+			            <li data-target="#client-testimonial-carousel" data-slide-to="1"/>
+			        </ol>
+	        	</div>
+			</section>
+			<!-- Client Testimonials End  -->
+			<div class="oe_structure"/>
+			<!-- Service Start -->
+			<section class="grocery-banner-service">
+				<div class="container extended-container">
+					<section class="homepage-one-service">
+						<div class="container">
+							<div class="row service-section mb-0">
+								<div class="col-md-6 col-xl-3 mb-4 mb-xl-0">
+										<div class="service-image">
+											<span class="icon icon-Truck fa-3x"></span>
+										</div>
+										<div class="service-info">
+											<h4>Free Shipping</h4>
+											<p>On all orders above $50.00</p>
+										</div>
+								</div>
+								<div class="col-md-6 col-xl-3 mb-4 mb-xl-0 border-md-0">
+										<div class="service-image">
+											<span class="icon icon-WorldWide fa-3x"></span>
+										</div>
+										<div class="service-info">
+											<h4>Returns Policy</h4>
+											<p>Returns within 3 days</p>
+										</div>
+								</div>
+								<div class="col-md-6 col-xl-3 mb-4 mb-md-0">
+										<div class="service-image">
+											<span class="icon icon-ClosedLock fa-3x"></span>
+										</div>
+										<div class="service-info">
+											<h4>100% Safe Payment</h4>
+											<p>Your payments are secure.</p>
+										</div>
+								</div>
+								<div class="col-md-6 col-xl-3">
+										<div class="service-image">
+											<span class="icon icon-Message fa-3x"></span>
+										</div>
+										<div class="service-info">
+											<h4>24/7 Support</h4>
+											<p>Contact us any time</p>
+										</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</section>
+			<!-- Service End -->
+			<div class="oe_structure"/>
+			<!-- Product Banner Start-->
+			<section class="grocery-products pt32 pb32">
+				<div class="container extended-container">
+					<div class="row">
+						<div class="col-md-12 col-lg-12">
+							<div class="banner-box mb-0">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/grocery-banner.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Product Banner End-->
+			<div class="oe_structure"/>
+			<!-- Brand Slider Start-->
+			<section class="grocery-brand-slider pt40 pb40">
+				<div class="container extended-container brand">
+					<div id="brand1-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+			          	<div class="carousel-inner" role="listbox">
+		            	<div class="carousel-item active" >
+		            		<div class="row justify-content-center">
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand1.png"/>
+			            		</div>
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand2.png"/>
+			            		</div>
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand3.png"/>
+			            		</div>
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand4.png"/>
+			            		</div>
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand5.png"/>
+			            		</div>
+			            	</div>
+		            	</div>
+		            	<div class="carousel-item" >
+		            		<div class="row justify-content-center">
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand1.png"/>
+			            		</div>
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand2.png"/>
+			            		</div>
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand3.png"/>
+			            		</div>
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand4.png"/>
+			            		</div>
+			            		<div class="col-md-2 text-center mb-4 mb-md-0">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/furniture-brand5.png"/>
+			            		</div>
+			            	</div>
+			            </div>
+		          	</div>
+			          	<div class="slider-control d-none d-md-block">
+		              		<a class="left carousel-control-prev text-white font-14" data-target="#brand1-carousel" role="button" data-slide="prev">
+			                	<span class="fa fa-angle-left "/>
+			               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+			              	</a>
+			              	<a class="right carousel-control-next text-white font-14" data-target="#brand1-carousel" role="button" data-slide="next">
+			                	<span class="fa fa-angle-right"/>
+			                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+			              	</a>
+			            </div>
+			        </div>
+				</div>
+			</section>
+			<!-- Brand Slider End-->
+		</section>
+	</template>
+
+</odoo>

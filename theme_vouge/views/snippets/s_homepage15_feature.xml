@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage15_feature" name="Features">
+		<section class="homepage-fifteen-feature pt64 pb64 bg-light">
+			<div class="container">
+				<div class="feature-title text-center mb-4">
+					<span class="text-muted">LOREM IPSUM DOLOR</span>
+					<h1 class="text-secondary down-line">SIT AMET <span class="text-primary">FEATURES</span></h1>
+				</div>
+				<div class="row align-items-center justify-content-center">
+					<div class="col-lg-4">
+						<div class="feature-content text-right">
+							<div class="feature-box d-flex mb-4">
+								<div class="text ml-auto">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+								<div class="icon ml-3">
+									<span class="fa fa-soccer-ball-o text-primary"></span>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="text ml-auto">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+								<div class="icon ml-3">
+									<span class="fa fa-life-bouy text-primary"></span>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="text ml-auto">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+								<div class="icon ml-3">
+									<span class="fa fa-gift text-primary"></span>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="text ml-auto">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+								<div class="icon ml-3">
+									<span class="fa fa-bicycle text-primary"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8 col-lg-4 mb-md-4 mb-lg-0">
+						<div class="feature-shaver text-center">
+							<img class="img img-fluid mb-4 m-md-0" src="/theme_vouge/static/src/img/shaver-5.png" alt="image"/>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="feature-content">
+							<div class="feature-box d-flex mb-4">
+								<div class="icon mr-3">
+									<span class="fa fa-balance-scale text-primary"></span>
+								</div>
+								<div class="text">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="icon mr-3">
+									<span class="fa fa-road text-primary"></span>
+								</div>
+								<div class="text">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="icon mr-3">
+									<span class="fa fa-certificate text-primary"></span>
+								</div>
+								<div class="text">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="icon mr-3">
+									<span class="fa fa-universal-access text-primary"></span>
+								</div>
+								<div class="text">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

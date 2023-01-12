@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage3_testimonial" name="Testimonial">
+		<section class="homepage-three-testimonial pt64 pb64 bg-light">
+			<div class="container">
+				<div class="testimonial-title mb-5 text-center">
+					<span class="text-muted">Lorem ipsum dolor sit amet</span>
+					<h1 class="text-secondary down-line mt-1">NAM VEL <span class="text-primary">TRISTIQUE MAURIS</span></h1>
+				</div>
+				<div class="row">
+					<div id="testimonial-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+									
+			          	<div class="carousel-inner" role="listbox">
+			            	<div class="carousel-item active ls-slide">
+			            		<div class="row text-center">
+			            			<div class="col-md-4">
+			            				<div class="team-box p-3 border">
+							              	<div class="carousel-img mx-auto mb-3">
+							              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+							              	</div>
+							              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+							              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+							              	<span class="fa fa-quote-right text-secondary"></span>
+							              	<p class="text-secondary ceo">Alva Ono</p>
+							            </div>
+					              	</div>
+					              	<div class="col-md-4">
+			            				<div class="team-box p-3 border">
+							              	<div class="carousel-img mx-auto mb-3">
+							              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+							              	</div>
+							              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+							              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+							              	<span class="fa fa-quote-right text-secondary"></span>
+							              	<p class="text-secondary ceo">Amber Laha</p>
+							            </div>
+					              	</div>
+					              	<div class="col-md-4">
+			            				<div class="team-box p-3 border">
+							              	<div class="carousel-img mx-auto mb-3">
+							              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+							              	</div>
+							              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+							              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+							              	<span class="fa fa-quote-right text-secondary"></span>
+							              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+							            </div>
+					              	</div>
+				              	</div>
+			            	</div>
+			            	<div class="carousel-item ls-slide">
+				              	<div class="row text-center">
+			            			<div class="col-md-4">
+			            				<div class="team-box p-3 border">
+							              	<div class="carousel-img mx-auto mb-3">
+							              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+							              	</div>
+							              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+							              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+							              	<span class="fa fa-quote-right text-secondary"></span>
+							              	<p class="text-secondary ceo">Alva Ono</p>
+							            </div>
+					              	</div>
+					              	<div class="col-md-4">
+			            				<div class="team-box p-3 border">
+							              	<div class="carousel-img mx-auto mb-3">
+							              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+							              	</div>
+							              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+							              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+							              	<span class="fa fa-quote-right text-secondary"></span>
+							              	<p class="text-secondary ceo">Amber Laha</p>
+							            </div>
+					              	</div>
+					              	<div class="col-md-4">
+			            				<div class="team-box p-3 border">
+							              	<div class="carousel-img mx-auto mb-3">
+							              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+							              	</div>
+							              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit </a></h3>
+							              	<p><a href="#" class="text text-muted">Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu.</a></p>
+							              	<span class="fa fa-quote-right text-secondary"></span>
+							              	<p class="text-secondary ceo">Dewey Tetzlaff</p>
+							            </div>
+					              	</div>
+				              	</div>
+				            </div>
+				            
+				            
+			          	</div>
+			          	<ol class="carousel-indicators mt-4">
+			            	<li data-target="#testimonial-carousel" data-slide-to="0" class="active"/>
+			            	<li data-target="#testimonial-carousel" data-slide-to="1"/>
+			          	</ol>
+			        </div>
+			    </div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

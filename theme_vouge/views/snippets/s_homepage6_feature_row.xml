@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage6_feature_row" name="Feature Row">
+		<section class="homepage-six-feature-row pt64 pb64 bg-primary">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 bg-white mx-auto text-center">
+								<span class="fa fa-truck text-primary"></span>
+							</div>
+							<h3 class="text-white mb-2">Lorem Ipsum</h3>
+							<p class="text-light">Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 bg-white mx-auto text-center">
+								<span class="fa fa-headphones text-primary"></span>
+							</div>
+							<h3 class="text-white mb-2">Lorem Ipsum</h3>
+							<p class="text-light">Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 bg-white mx-auto text-center">
+								<span class="fa fa-shield text-primary"></span>
+							</div>
+							<h3 class="text-white mb-2">Lorem Ipsum</h3>
+							<p class="text-light">Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

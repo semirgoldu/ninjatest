@@ -239,7 +239,7 @@ class BizopleWebsiteSale(WebsiteSale):
                 req_ctx = request.context.copy()
                 req_ctx.setdefault('brand_id', int(brands))
                 request.context = req_ctx
-        if labels:
+        if labels: #check existing labels
             req_ctx = request.context.copy()
             req_ctx.setdefault('product_label_id', int(labels))
             request.context = req_ctx

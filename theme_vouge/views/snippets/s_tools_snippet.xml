@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_tools_snippet" name="Tools">
+		<section class="s_tools_snippet">
+			<div class="oe_structure"/>
+			<section class="tools-home-banner">
+				<div id="tools-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+		          	<div class="carousel-inner" role="listbox">
+		            	<div class="carousel-item active" style="background-image: url('/theme_vouge/static/src/img/tools-banner1.jpg');">
+		            		<div class="container">
+	            				<div class="col-lg-6 col-md-6 col-6 offset-md-6 offset-6">
+	            					<div class="banner-content text-right">
+		            					<h3>Sliding Paint Rollers</h3>
+		            					<h1>Winter Sale <span>Discount 30% off </span> Until End of February</h1>
+		            					<div class="s_btn" data-name="Button">
+	            							<a href="#" class="btn btn-secondary bizople_button">SHOP NOW! <span class="fa fa-angle-right ml-2"/></a>
+	            						</div>
+	            					</div>
+	            				</div>
+		            		</div>
+		            	</div>
+		            	<div class="carousel-item" style="background-image: url('/theme_vouge/static/src/img/tools-banner2.jpg');">
+		            		<div class="container">
+		            			<div class="col-lg-6 col-md-6 col-6">
+	            					<div class="banner-content text-left">
+		            					<h3>Tools for Home Usage</h3>
+		            					<h1>Winter Sale <span>Discount 30% off </span> Until End of February</h1>
+		            					<div class="s_btn" data-name="Button">
+	            							<a href="#" class="btn btn-secondary bizople_button">SHOP NOW! <span class="fa fa-angle-right ml-2"/></a>
+	            						</div>
+	            					</div>
+		            			</div>
+		            		</div>
+		            	</div>
+		          	</div>
+		          	<div class="d-block d-md-none">
+			          	<ol class="carousel-indicators">
+				            <li data-target="#tools-carousel" data-slide-to="0" class="active"/>
+				            <li data-target="#tools-carousel" data-slide-to="1"/>
+				        </ol>
+				    </div>
+			        <div class="slider-control d-none d-md-block">
+	              		<a class="left carousel-control-prev text-white font-14" data-target="#tools-carousel" role="button" data-slide="prev">
+		                	<span class="fa fa-angle-left"/>
+		               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+		              	</a>
+		              	<a class="right carousel-control-next text-white font-14" data-target="#tools-carousel" role="button" data-slide="next">
+		                	<span class="fa fa-angle-right"/>
+		                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+		              	</a>
+		            </div>
+	        	</div>
+			</section>
+			<div class="oe_structure"/>
+			<section class="tools-features">
+				<div class="container">
+					<div class="row service-section ">
+						<div class="col-md-4 col-xl-4 p-0">
+							<section class="feature-box d-flex align-items-center bg-1">
+								<div class="service-image">
+									<span class="fa fa-truck"></span>
+								</div>
+								<div class="service-info">
+									<h2>Express Shipping</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget sodales dui.</p>
+								</div>
+							</section>
+						</div>
+						<div class="col-md-4 col-xl-4 p-0">
+							<section class="feature-box d-flex align-items-center bg-2">
+								<div class="service-image">
+									<span class="fa fa-undo text-dark"></span>
+								</div>
+								<div class="service-info">
+									<h2>10 Days Return</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget sodales dui.</p>
+								</div>
+							</section>
+						</div>
+						<div class="col-md-4 col-xl-4 p-0">
+							<section class="feature-box d-flex align-items-center bg-3">
+								<div class="service-image">
+									<span class="fa fa-comments-o text-white"></span>
+								</div>
+								<div class="service-info">
+									<h2 class="text-white">24/7 Support</h2>
+									<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget sodales dui.</p>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="oe_structure"/>
+			<section class="tools-images pt32 pb32">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-xl-8 col-lg-8 col-md-8">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6">
+									<div class="image top-img">
+										<a href="#">
+											<img src="/theme_vouge/static/src/img/tools-img1.jpg" class="img img-fluid"/>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6">
+									<div class="image top-img">
+										<a href="#">
+											<img src="/theme_vouge/static/src/img/tools-img2.jpg" class="img img-fluid"/>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-12 col-lg-12 col-md-12">
+									<div class="image">
+										<a href="#">
+											<img src="/theme_vouge/static/src/img/tools-img3.jpg" class="img img-fluid"/>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4">
+							<div class="image">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/tools-img4.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="oe_structure"/>
+			<section class="tools-single-banner pt32 pb32">
+				<div class="container">
+					<div class="col-xl-12 col-lg-12 col-md-12 p-0">
+						<div class="tool-content">
+							<div class="image d-none d-md-block">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/tools-img5.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+							<div class="content">
+								<span class="subtitle">Festive Offer!</span>
+								<h2>Industrial <span class="text1">Equipment </span><br></br>Power Tools!</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="oe_structure"/>
+		</section>
+	</template>
+
+</odoo>

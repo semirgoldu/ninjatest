@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage12_discount" name="Discount">
+		<section class="homepage-twelve-discount pt96 pb64" style="background-image: url('/theme_vouge/static/src/img/coffee-bg.jpg');">
+	        <div class="container">
+		        <div class="discount-content text-center">
+		        	<span class="text-white">LOREM IPSUM DOLOR SIT AMET</span>
+		        	<h1 class="text-white mb-2 mt-3">Consectetur Adipiscing Elit</h1>
+		        	<h2 class="text-white mb-5">Et odio pellentesque diam volutpat commodo sed</h2>
+		        	<div class="s_btn" data-name="Button">
+			        	<a href="#" class="btn btn-outline-light">Buy now</a>
+						<a href="#" class="btn btn-outline-light ml-3">Learn More</a>
+					</div>
+		        </div>
+		    </div>
+      	</section>
+	</template>
+
+</odoo>

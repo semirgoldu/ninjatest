@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_restaurant_dishes" name="New Dishes">
+		<section class="restaurant-images pt32 pb32">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-8 col-md-8">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 p-0">
+								<div class="image-content">
+									<div class="image">
+										<a href="#">
+											<img src="/theme_vouge/static/src/img/restaurant-img9.jpg" class="img img-fluid"/>
+										</a>
+									</div>
+									<div class="image-info info1">
+										<h3>Grilled Chicken</h3>
+										<span>$ 25.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 p-0">
+								<div class="image-content">
+									<div class="image">
+										<a href="#">
+											<img src="/theme_vouge/static/src/img/restaurant-img10.jpg" class="img img-fluid"/>
+										</a>
+									</div>
+									<div class="image-info info1">
+										<h3>Cheese Burger</h3>
+										<span>$ 15.00</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12 p-0">
+								<div class="image-content">
+									<div class="image">
+										<a href="#">
+											<img src="/theme_vouge/static/src/img/restaurant-img11.jpg" class="img img-fluid"/>
+										</a>
+									</div>
+									<div class="image-info info2">
+										<h3>Fast Food Platter</h3>
+										<span>$ 60.00</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 p-0">
+						<div class="image-content">
+							<div class="image">
+								<a href="#">
+									<img src="/theme_vouge/static/src/img/restaurant-img12.jpg" class="img img-fluid"/>
+								</a>
+							</div>
+							<div class="image-info info3">
+								<h3>Spicy Tacos</h3>
+								<span>$ 20.00</span>
+								<div class="s_btn mt16" data-name="Button">
+        							<a href="#" class="btn btn-light bizople_button">Shop Now</a>
+        						</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

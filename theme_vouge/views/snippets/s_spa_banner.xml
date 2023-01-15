@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_spa_banner" name="Home Banner">
+		<section class="spa-home-banner">
+			<div id="spa-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+	          	<div class="carousel-inner" role="listbox">
+	            	<div class="carousel-item active" style="background-image: url('/theme_vouge/static/src/img/spa-banner1.jpg');">
+	            		<div class="container extended-container">
+	            			<div class="row position-relative">
+	            				<div class="col-lg-6 col-md-10 offset-md-1">
+	            					<div class="banner-content">
+	            						<span>WELCOME TO OUR VOUGE</span>
+	            						<h1 class="title1">Spa Legacy</h1>
+	            						<p>The Beauty &amp; Massage Center</p>
+	            						<div class="s_btn pt16" data-name="Button">
+	            							<a href="#" class="btn btn-outline-secondary bizople_button">Shop Now</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="carousel-item" style="background-image: url('/theme_vouge/static/src/img/spa-banner2.jpg');">
+	            		<div class="container extended-container">
+	            			<div class="row position-relative">
+	            				<div class="col-lg-6 col-md-10 offset-md-1">
+	            					<div class="banner-content">
+	            						<span>WELCOME TO OUR VOUGE</span>
+	            						<h1 class="title1">Facial Treatments</h1>
+	            						<p>The Beauty &amp; Massage Center</p>
+	            						<div class="s_btn pt16" data-name="Button">
+	            							<a href="#" class="btn btn-outline-secondary bizople_button">Shop Now</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</div>
+	            	</div>
+	          	</div>
+	          	<div class="">
+		          	<ol class="carousel-indicators">
+			            <li data-target="#spa-carousel" data-slide-to="0" class="active"/>
+			            <li data-target="#spa-carousel" data-slide-to="1"/>
+			        </ol>
+			    </div>
+        	</div>
+		</section>
+	</template>
+
+</odoo>

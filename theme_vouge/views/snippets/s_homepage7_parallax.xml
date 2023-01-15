@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage7_parallax" name="Sale">
+		<section class="homepage-seven-parallax pt96 pb96" style="background-image: url('/theme_vouge/static/src/img/shoes-sale-bg.jpg');">
+	        <div class="container">
+		        <div class="parallax-content px-3 text-center">
+		        	<span class="text-white">LOREM IPSUM DOLOR</span>
+		        	<h1 class="text-white mb-2 mt-3">consectetur adipiscing elit</h1>
+		        	<h2 class="text-white mb-5">Lorem ipsum dolor sit amet, consectetur elit</h2>
+		        	<div class="s_btn" data-name="Button">
+			        	<a href="#" class="btn btn-outline-light rounded-circle">Buy now</a>
+						<a href="#" class="btn btn-outline-light rounded-circle ml-3">Read More</a>
+					</div>
+		        </div>
+		    </div>
+	  	</section>
+	</template>
+
+</odoo>

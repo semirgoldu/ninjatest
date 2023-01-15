@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  -*- coding: utf-8 -*-  -->
+<!--  See LICENSE file for full copyright and licensing details.  -->
+<!--  Developed by Bizople Solutions Pvt. Ltd.  -->
+
+<odoo>
+	<record id="product_per_page_view" model="ir.ui.view">
+		<field name="name">product.per.page.count.bizople.tree</field>
+		<field name="type">tree</field>
+		<field name="model">product.per.page.count.bizople</field>
+		<field name="priority">2</field>
+		<field name="arch" type="xml">
+			<tree string="Product Per Page">
+				<field name="name" />
+			</tree>
+		</field>
+	</record>
+	<record id="product_per_page_view" model="ir.ui.view">
+		<field name="name">product.per.page.count.bizople.form</field>
+		<field name="type">form</field>
+		<field name="model">product.per.page.count.bizople</field>
+		<field name="arch" type="xml">
+			<form string="Product Per Page">
+				<sheet>
+					<group>
+						<div class="oe_left">
+							<!-- <field name="product_image_1920" widget="image" class="oe_avatar" /> -->
+						</div>
+					</group>
+					<group>
+						<field name="name"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+    <record id="product_per_page_action" model="ir.actions.act_window">
+		<field name="name">Product Per Page</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">product.per.page.count.bizople</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_id" eval="False" />
+	</record>
+
+	<menuitem id="menu_product_per_page_view" parent="website.menu_website_global_configuration"
+		name="Product Per Page" action="product_per_page_action" />
+
+</odoo>

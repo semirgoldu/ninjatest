@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage2_parallax" name="Parallax">
+		<section class="homepage-two-parallax s_cover parallax s_parallax_is_fixed pt96 pb96 s_parallax_no_overflow_hidden" data-scroll-background-ratio="1" data-name="Cover" style="background-image: none;">
+	        <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/theme_vouge/static/src/img/stroller-sale-bg.jpeg');background-attachment: fixed;"></span>
+	        <div class="container">
+		        <div class="parallax-content text-white px-3">
+		        	<p class="text-white">LOREM IPSUM DOLOR SIT AMET</p>
+		        	<h1 class="text-white mb-2 mt-3">consectetur adipiscing</h1>
+		        	<h2 class="text-white mb-4">Sed do eiusmod tempor incididunt.</h2>
+		        	<div class="s_btn" data-name="Button">
+			        	<a href="#" class="btn btn-outline-light rounded-circle">Buy now</a>
+						<a href="#" class="btn btn-outline-light rounded-circle ml-3">Learn more</a>
+					</div>
+		        </div>
+		    </div>
+      	</section>
+	</template>
+
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage9_parallax" name="Parallax">
+		<section class="homepage-nine-parallax s_cover parallax s_parallax_is_fixed pt96 pb96 s_parallax_no_overflow_hidden" data-scroll-background-ratio="1" data-name="Cover" style="background-image: none;">
+	        <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/theme_vouge/static/src/img/headfone-parallax.jpg');background-attachment: fixed;"></span>
+	        <div class="container">
+		        <div class="parallax-content text-white px-3">
+		        	<p class="text-white">DESIGN</p>
+		        	<h1 class="text-white mb-2 mt-3">Lorem Ipsum Dolor</h1>
+		        	<h2 class="text-white mb-5">Sit Amet Consectetur Adipiscing Elit</h2>
+		        	<div class="s_btn" data-name="Button">
+						<a href="#" class="btn btn-outline-light rounded-circle mx-3">Learn more</a>
+			        	<a href="#" class="btn btn-outline-light rounded-circle">Buy now</a>
+			        </div>
+		        </div>
+		    </div>
+      	</section>
+	</template>
+
+</odoo>

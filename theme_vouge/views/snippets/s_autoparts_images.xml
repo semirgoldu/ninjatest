@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_autoparts_images" name="Parts Images">
+		<section class="autoparts-images pt32 pb32">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 p-0">
+						<section class="image-inner" style="background-image: url('/theme_vouge/static/src/img/autopart-img1.jpg');">
+							<div class="img-info">
+								<h2>BODY PAINTS</h2>
+							</div>
+							<div class="img-button">
+								<div class="s_btn" data-name="Button">
+        							<a href="#" class="btn btn-autoparts bizople_button">Discover Now</a>
+        						</div>
+        					</div>
+						</section>
+					</div>
+					<div class="col-lg-3 col-md-6 p-0">
+						<section class="image-inner" style="background-image: url('/theme_vouge/static/src/img/autopart-img2.jpg');">
+							<div class="img-info">
+								<h2>PREMIUM TYRES</h2>
+							</div>
+							<div class="img-button">
+								<div class="s_btn" data-name="Button">
+        							<a href="#" class="btn btn-autoparts bizople_button">Discover Now</a>
+        						</div>
+        					</div>
+						</section>
+					</div>
+					<div class="col-lg-3 col-md-6 p-0">
+						<section class="image-inner" style="background-image: url('/theme_vouge/static/src/img/autopart-img3.jpg');">
+							<div class="img-info">
+								<h2>ENGINE REPAIR</h2>
+							</div>
+							<div class="img-button">
+								<div class="s_btn" data-name="Button">
+        							<a href="#" class="btn btn-autoparts bizople_button">Discover Now</a>
+        						</div>
+        					</div>
+						</section>
+					</div>
+					<div class="col-lg-3 col-md-6 p-0">
+						<section class="image-inner" style="background-image: url('/theme_vouge/static/src/img/autopart-img4.jpg');">
+							<div class="img-info">
+								<h2>PREMIUM INTERIORS</h2>
+							</div>
+							<div class="img-button">
+								<div class="s_btn" data-name="Button">
+        							<a href="#" class="btn btn-autoparts bizople_button">Discover Now</a>
+        						</div>
+        					</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

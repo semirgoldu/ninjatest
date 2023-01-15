@@ -1,0 +1,434 @@
+.autoparts-extended-container{
+	.container{
+		max-width: 1440px;
+	}
+}
+.autoparts-home-banner{
+	.carousel-item{
+		background-size: cover;
+		background-position: center;
+		padding: 275px 0;
+	}
+	.banner-content{
+		h3{
+			font-size:26px;
+			color:#fff;
+			font-weight:400;
+			margin-bottom: 15px;
+			font-family: "Playfair Display";
+			font-style:italic;
+			span{
+				color:theme-color('autoparts');
+			}
+		}
+		h1{
+			font-size:62px;
+			color:#fff;
+			font-weight:600;
+			line-height:60px;
+			text-transform: uppercase;
+			margin-bottom:15px;
+			span{
+				color:theme-color('autoparts');
+			}
+		}
+		p{
+			font-size: 18px;
+		    color: #fff;
+		    line-height: 1.7;
+		}
+		.btn{
+			margin-top:30px;
+			font-size: 15px;
+    		padding: 15px 30px;
+		    text-transform: uppercase;
+		    font-weight: 600;
+		}
+	}
+	.slider-control{
+		.carousel-control-prev , .carousel-control-next{
+			width: 10% !important;
+			z-index:3;
+			opacity:1;
+			span{
+				width: 70px;
+			    height: 70px;
+			    line-height: 70px;
+			    font-size: 30px;
+    			color: theme-color('autoparts');
+			    z-index: 10;
+			    cursor: pointer;
+			    background-color: #fff;
+			    transition: all 0.3s ease 0s;
+			    -moz-transition: all 0.3s ease 0s;
+			    -webkit-transition: all 0.3s ease 0s;
+			    -ms-transition: all 0.3s ease 0s;
+			    box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.15);
+			    -ms-box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.15);
+			    -moz-box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.15);
+			    -webkit-box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.15);
+			    transform: scale(0);
+			    -moz-transform: scale(0);
+			    -ms-transform: scale(0);
+			    border-radius:100%;
+			    &:hover{
+			    	background-color: theme-color('autoparts');
+			    	color: #fff;
+			    }
+			}
+		}
+	}
+	.bs-slider:hover{
+		.slider-control{
+			.carousel-control-prev , .carousel-control-next{
+				span{
+					transform: scale(1);
+				    -moz-transform: scale(1);
+				    -ms-transform: scale(1);
+				}
+			}
+		}
+	}
+	@media (max-width: 767.98px) {
+		.carousel-item{
+			padding: 60px 0 !important;
+		}
+		.banner-content{
+			h3{
+				font-size:15px;
+				margin-bottom: 5px;
+			}
+			h1{
+				font-size: 20px;
+				line-height: 25px;
+			}
+			p{
+				font-size: 7px;
+			}
+			.btn{
+				margin-top: 15px;
+			    font-size: 12px;
+			    padding: 10px 20px;
+			}
+		}
+		.slider-control{
+			.carousel-control-prev , .carousel-control-next{
+				width: 15% !important;
+				span{
+					width: 40px;
+				    height: 40px;
+				    line-height: 40px;
+				    font-size: 20px;
+				}
+			}
+		}
+	}
+	@media (min-width: 768px) and (max-width: 991.98px) {
+		.carousel-item{
+			padding: 100px 0 !important;
+		}
+		.banner-content{
+			h1{
+				font-size: 40px;
+				line-height: 50px;
+			}
+			p{
+				font-size:12px;
+			}
+		}
+	}
+	@media (min-width: 992px) and (max-width: 1199.98px) {
+		.carousel-item{
+			padding: 200px 0 !important;
+		}
+		.banner-content{
+			h1{
+				font-size: 50px;
+				line-height: 60px;
+			}
+		}
+	}
+}
+.autoparts-features{
+	.feature-box{
+		.service-image{
+			margin-right: 10px;
+			span{
+				height: 70px;
+			    width: 70px;
+			    border-radius: 50%;
+			    margin: 0 10px 0 0;
+			    background-color: #fff;
+			    text-align: center;
+			    display: inline-block;
+			    transition: all 0.3s ease 0s;
+			    border: 2px solid #e5e5e5;
+			    font-size:35px;
+			    line-height:65px;
+			    color: theme-color('autoparts');
+			}
+		}
+		.service-info{
+			h2{
+				font-size: 14px;
+			    color: #282828;
+			    margin: 0;
+			    font-weight: 600;
+			    text-transform: uppercase;
+			}
+			p{
+				margin: 0;
+    			color: #888;
+    			font-size: 14px;
+			}
+		}
+		&:hover{
+			h2{
+				color: theme-color('autoparts');
+			}
+		}
+	}
+}
+.autoparts-images{
+	.image{
+		
+	}
+	.img-info {
+	    color: #fff;
+	    position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    z-index: 101;
+	    white-space: nowrap;
+	    transform: translate(-50%, -50%);
+	    opacity: 1;
+	    visibility: visible;
+	    transition: all 0.2s ease 0s;
+
+	    h2 {
+		    font-size: 24px;
+		    font-weight: 600;
+		    margin-bottom: 7px;
+		    text-transform: uppercase;
+		    color: #fff;
+		}
+		p{
+			font-size: 16px;
+			color: #fff;
+		}
+	}
+	.img-button {
+	    position: absolute;
+	    left: 0px;
+	    right: 0px;
+	    bottom: 80px;
+	    z-index: 120;
+	    opacity: 0;
+	    visibility: hidden;
+	    transition: all 0.2s ease 0s;
+
+    	.btn{
+		    display: inline-block;
+		    height: 50px;
+		    line-height: 50px;
+		    font-size: 107.142%;
+		    text-transform: uppercase;
+		    padding: 0px 30px;
+		    border-radius: 25px;
+		    transition: all 0.2s ease 0s;
+		    text-decoration:none;
+		}
+	}
+	.image-inner{
+    	text-align: center;
+    	padding-right: 1px;
+    	height: 500px;
+    	background-size: cover;
+    	background-position: center;
+    	position: relative;
+		&:before{
+			content: "";
+		    display: block;
+		    background-color: rgba(0, 0, 0, 0.5);
+		    position: absolute;
+		    left: 0px;
+		    top: 0px;
+		    right: 0px;
+		    bottom: 0px;
+		    z-index: 100;
+		    opacity: 1;
+		    visibility: visible;
+		    transition: all 0.2s ease 0s;
+		}
+    	&:hover{
+    		&:before {
+			    opacity: 0;
+			    visibility: hidden;
+			}
+			.img-info{
+				opacity: 0;
+    			visibility: hidden;
+			}
+			.img-button{
+				opacity: 1;
+    			visibility: visible;
+			}
+    	}
+	}
+	@media (min-width: 768px) and (max-width: 991.98px) {
+		.img-info {
+			h2 {
+		    	font-size: 18px;
+		    }
+		}
+	}
+}
+
+.editor_enable{
+	.autoparts-images{
+		&:before {
+		    opacity: 1;
+		    visibility: visible;
+		}
+		.img-info{
+			opacity: 1 !important;
+			visibility: visible !important;
+		}
+		.img-button{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.autoparts-two-images{
+	.image{
+		overflow: hidden;
+	    position: relative;
+	    display: block;
+	    text-align: center;
+	    margin-bottom:15px;
+
+	    &:hover{
+	    	img{
+	    		opacity: 0.8;
+	    	}
+	    }
+	}
+}
+.autoparts-brands{
+	.heading{
+		span{
+			color: theme-color('autoparts');
+		    font-size: 14px;
+		    font-weight: 400;
+		    display: block;
+		    text-transform: uppercase;
+		}
+		.title{
+			padding: 0 18px;
+			display: inline-block;
+			color: #222;
+			font-size:36px;
+		    font-weight: 600;
+		    text-transform: uppercase;
+		    position: relative;
+		    &:before{
+		    	left: 0;
+    			right: auto;
+		    }
+		    &:after{
+		    	left: auto;
+    			right: 0;
+		    }
+		}
+		.title:after , .title:before{
+			position: absolute;
+		    content: '';
+		    height: 8px;
+		    width: 8px;
+		    border-radius: 50%;
+		    background-color: theme-color('autoparts');
+		    top: auto;
+		    bottom: 15px;
+		}
+	}
+	.b-left{
+		border-left: 1px solid #e5e5e5;
+	}
+	.brand-images {
+		padding: 20px;
+	    text-align: center;
+	    border-right: 1px solid #e5e5e5;
+	    border-top: 1px solid #e5e5e5;
+	    border-bottom: 1px solid #e5e5e5;
+	}
+	.slider-control{
+		.carousel-control-prev , .carousel-control-next{
+			width: 10% !important;
+			z-index:3;
+			opacity:1;
+			span{
+				width: 46px;
+			    height: 46px;
+			    line-height: 46px;
+			    font-size: 30px;
+    			color: theme-color('autoparts');
+			    z-index: 10;
+			    cursor: pointer;
+			    background-color: #fff;
+			    transition: all 0.3s ease 0s;
+			    -moz-transition: all 0.3s ease 0s;
+			    -webkit-transition: all 0.3s ease 0s;
+			    -ms-transition: all 0.3s ease 0s;
+			    box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.15);
+			    -ms-box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.15);
+			    -moz-box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.15);
+			    -webkit-box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.15);
+			    transform: scale(0);
+			    -moz-transform: scale(0);
+			    -ms-transform: scale(0);
+			    border-radius:100%;
+			    &:hover{
+			    	background-color: theme-color('autoparts');
+			    	color: #fff;
+			    }
+			}
+		}
+	}
+	.bs-slider:hover{
+		.slider-control{
+			.carousel-control-prev , .carousel-control-next{
+				span{
+					transform: scale(1);
+				    -moz-transform: scale(1);
+				    -ms-transform: scale(1);
+				}
+			}
+		}
+	}
+	@media (max-width: 767.98px) {
+		.heading{
+			.title{
+				font-size:24px;
+			}
+		}
+		.brand-images {
+			border-left: 1px solid #e5e5e5;
+			margin-bottom:20px;
+		}
+		.row{
+			margin-right: 0px;
+    		margin-left: 0px;
+		}
+
+		.slider-control{
+			.carousel-control-prev{
+				width: 20% !important;
+			}
+			.carousel-control-next{
+				width: 20% !important;
+			}
+		}
+	}
+}

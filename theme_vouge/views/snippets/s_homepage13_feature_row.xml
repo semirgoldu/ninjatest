@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage13_feature_row" name="Feature Row">
+		<section class="homepage-thirteen-feature-row pt64 pb64">
+			<div class="container">
+				<div class="title text-center mb-5">
+					<span class="text-muted">Experience</span>
+					<h1 class="text-secondary down-line">Lorem Ipsum Dolor</h1>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 mx-auto text-center">
+								<span class="fa fa-truck text-primary"></span>
+							</div>
+							<h3 class="text-secondary">Lorem Ipsum Dolor</h3>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 mx-auto text-center">
+								<span class="fa fa-phone text-primary"></span>
+							</div>
+							<h3 class="text-secondary">Lorem Ipsum Dolor</h3>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 mx-auto text-center">
+								<span class="fa fa-flash text-primary"></span>
+							</div>
+							<h3 class="text-secondary">Lorem Ipsum Dolor</h3>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 mx-auto text-center">
+								<span class="fa fa-shield text-primary"></span>
+							</div>
+							<h3 class="text-secondary">Lorem Ipsum Dolor</h3>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_medical_equipement_durability" name="Durability">
+		<section class="medical-Durability pt64 pb64">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-12 col-md-12 mb-4">
+						<div class="heading-content text-center">
+							<div class="title">
+								<span class="subtitle text-o-color-4">Durability</span>
+								<h3 class="text-o-color-4">Urban Face Mask</h3>
+								<p class="">Lorem ipsum dolor sit amet, consectetur adipiscing<br></br> pretium sit amet sollicitudin eu.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-12 mb-4">
+						<div class="image text-center">
+							<a href="#">
+								<img src="/theme_vouge/static/src/img/medical-eqp-mask.png" class="img img-fluid"/>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-12">
+						<div class="text-content">
+							<div class="content">
+								<h3>Anti-bacterial</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt accumsan turpis quis cursus. Nulla facilisi. Aliquam porttitor ligula enim.</p>
+							</div>
+							<div class="content">
+								<h3>Outside PP Layer</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt accumsan turpis quis cursus. Nulla facilisi. Aliquam porttitor ligula enim.</p>
+							</div>
+							<div class="content">
+								<h3>Active Carbon Layer</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt accumsan turpis quis cursus. Nulla facilisi. Aliquam porttitor ligula enim.</p>
+							</div>
+							<div class="content">
+								<h3> Anti-dust</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt accumsan turpis quis cursus. Nulla facilisi. Aliquam porttitor ligula enim.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

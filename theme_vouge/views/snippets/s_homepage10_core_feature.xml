@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage10_core_feature" name="Core Feature">
+		<section class="homepage-ten-core-feature pt64 pb64 bg-light">
+			<div class="container">
+				<div class="title text-center">
+					<span class="text-muted">LOREM IPSUM DOLOR</span>
+					<h1 class="text-secondary mt-1 down-line">CONSECTETUR <span class="text-primary">ADIPISCING</span></h1>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<div class="feature-img">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/bike-feature1.png" alt="image"/>
+						</div>
+					</div>
+					<div class="col-md-6 mt-4 mt-md-0">
+						<div class="content">
+							<h2 class="text-secondary mb-4 pr-2 p-md-0">Lacus sed viverra <span class="text-primary">tellus in hac </span>habitasse.</h2>
+							<p class="text-secondary-50"> Interdum velit euismod in pellentesque. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Commodo ullamcorper a lacus vestibulum sed arcu. Accumsan lacus vel facilisis volutpat est. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Dictum varius duis at consectetur lorem.</p>
+							<h6 class="text-secondary mb-2">Lorem ipsum dolor sit amet</h6>
+							<p class="text-secondary-50">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam ut venenatis tellus in metus vulputate eu scelerisque. Nullam non nisi est sit amet facilisis magna etiam. Iaculis urna id volutpat lacus laoreet non curabitur gravida.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-6 mt-5">
+						<div class="content">
+							<h2 class="text-secondary mb-4">Lorem Ipsum <span class="text-primary">Dolor Sit</span> Amet</h2>
+							<p class="text-secondary-50">Diam ut venenatis tellus in metus vulputate eu scelerisque. Nullam non nisi est sit amet facilisis magna etiam. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Lacus sed viverra tellus in hac habitasse. Enim lobortis scelerisque fermentum dui faucibus. Interdum velit euismod in pellentesque. </p>
+							<h6 class="text-secondary mb-2">Lorem ipsum dolor sit amet</h6>
+							<p class="text-secondary-50">Diam ut venenatis tellus in metus vulputate eu scelerisque. Nullam non nisi est sit amet facilisis magna etiam.</p>
+							<div class="s_btn" data-name="Button">
+								<a href="#" class="btn btn-primary rounded-circle mt-4">BUY NOW</a>
+								<a href="#" class="btn btn-primary rounded-circle mt-4 ml-2">READ MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 mt-5 order">
+						<div class="feature-img">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/bike-feature2.png" alt="image"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

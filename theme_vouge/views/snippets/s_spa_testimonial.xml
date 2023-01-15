@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_spa_testimonial" name="Testimonials">
+		<section class="spa-client-testimonial" style="background-image: url('/theme_vouge/static/src/img/spa-testimonial.jpg');">
+			<div class="container extended-container">
+				<div class="row justify-content-center">
+					<div class="col-lg-12 col-md-12">
+						<div class="heading-content text-center">
+							<div class="title">
+								<h3 class="text-white">Testimonials</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12">
+						<div id="spa-testimonial-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active">
+				            		<div class="container extended-container">
+				            			<div class="row position-relative justify-content-center">
+				            				<div class="col-lg-6 col-md-6 mb16">
+				            					<div class="client-content">
+				            						<div class="client-info">
+				            							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus.</p>
+				            						</div>
+				            						<div class="image-info d-flex align-items-center">
+				            							<div class="image mr-2">
+					            							<a href="#">
+																<img src="/theme_vouge/static/src/img/vouge-team1.png" class="img img-fluid"/>
+															</a>
+														</div>
+														<div class="author">
+															<h3>Anita Williams</h3>
+															<p>Happy Customer</p>
+														</div>
+				            						</div>
+				            					</div>
+				            				</div>
+				            				<div class="col-lg-6 col-md-6 mb16">
+				            					<div class="client-content">
+				            						<div class="client-info">
+				            							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus.</p>
+				            						</div>
+				            						<div class="image-info d-flex align-items-center">
+				            							<div class="image mr-2">
+					            							<a href="#">
+																<img src="/theme_vouge/static/src/img/vouge-team2.png" class="img img-fluid"/>
+															</a>
+														</div>
+														<div class="author">
+															<h3>Anita Williams</h3>
+															<p>Happy Customer</p>
+														</div>
+				            						</div>
+				            					</div>
+				            				</div>
+				            			</div>
+				            		</div>
+				            	</div>
+				            	<div class="carousel-item">
+				            		<div class="container extended-container">
+				            			<div class="row position-relative justify-content-center">
+				            				<div class="col-lg-6 col-md-6 mb16">
+				            					<div class="client-content">
+				            						<div class="client-info">
+				            							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus.</p>
+				            						</div>
+				            						<div class="image-info d-flex align-items-center">
+				            							<div class="image mr-2">
+					            							<a href="#">
+																<img src="/theme_vouge/static/src/img/vouge-team3.png" class="img img-fluid"/>
+															</a>
+														</div>
+														<div class="author">
+															<h3>Anita Williams</h3>
+															<p>Happy Customer</p>
+														</div>
+				            						</div>
+				            					</div>
+				            				</div>
+				            				<div class="col-lg-6 col-md-6 mb16">
+				            					<div class="client-content">
+				            						<div class="client-info">
+				            							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus.</p>
+				            						</div>
+				            						<div class="image-info d-flex align-items-center">
+				            							<div class="image mr-2">
+					            							<a href="#">
+																<img src="/theme_vouge/static/src/img/vouge-team4.png" class="img img-fluid"/>
+															</a>
+														</div>
+														<div class="author">
+															<h3>Anita Williams</h3>
+															<p>Happy Customer</p>
+														</div>
+				            						</div>
+				            					</div>
+				            				</div>
+				            			</div>
+				            		</div>
+				            	</div>
+				            	<div class="carousel-item">
+				            		<div class="container extended-container">
+				            			<div class="row position-relative justify-content-center">
+				            				<div class="col-lg-6 col-md-6 mb16">
+				            					<div class="client-content">
+				            						<div class="client-info">
+				            							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus.</p>
+				            						</div>
+				            						<div class="image-info d-flex align-items-center">
+				            							<div class="image mr-2">
+					            							<a href="#">
+																<img src="/theme_vouge/static/src/img/vouge-team1.png" class="img img-fluid"/>
+															</a>
+														</div>
+														<div class="author">
+															<h3>Anita Williams</h3>
+															<p>Happy Customer</p>
+														</div>
+				            						</div>
+				            					</div>
+				            				</div>
+				            				<div class="col-lg-6 col-md-6 mb16">
+				            					<div class="client-content">
+				            						<div class="client-info">
+				            							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus.</p>
+				            						</div>
+				            						<div class="image-info d-flex align-items-center">
+				            							<div class="image mr-2">
+					            							<a href="#">
+																<img src="/theme_vouge/static/src/img/vouge-team1.png" class="img img-fluid"/>
+															</a>
+														</div>
+														<div class="author">
+															<h3>Anita Williams</h3>
+															<p>Happy Customer</p>
+														</div>
+				            						</div>
+				            					</div>
+				            				</div>
+				            			</div>
+				            		</div>
+				            	</div>
+				          	</div>
+				          	<ol class="carousel-indicators">
+					            <li data-target="#spa-testimonial-carousel" data-slide-to="0" class="active"/>
+					            <li data-target="#spa-testimonial-carousel" data-slide-to="1"/>
+					            <li data-target="#spa-testimonial-carousel" data-slide-to="2"/>
+					        </ol>
+			        	</div>
+			        </div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

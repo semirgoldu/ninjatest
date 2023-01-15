@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage12_single_product" name="Single Product">
+		<section class="homepage-twelve-single-product pt64 pb64">
+			<div class="container">
+				<div class="row align-items-center mb-5 mb-xl-0">
+					<div class="col-md-6">
+						<div class="product-img text-center">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/coffee-product1.png" alt="image"/>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="product-content">
+							<h1 class="text-secondary mb-4">Lorem <span class="text-primary">Ipsum Dolor</span> sit amet, consectetur adipiscing elit.</h1>
+							<p class="text-muted mb-3"> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<ul class="text-muted mb-4">
+								<li>Lorem ipsum dolor sit amet</li>
+								<li>Lorem ipsum dolor sit amet</li>
+								<li>Lorem ipsum dolor sit amet</li>
+							</ul>
+							<p class="price text-primary mb-4">$59.92</p>
+							<div class="s_btn" data-name="Button">
+								<a href="#" class="btn btn-outline-secondary">
+									<span class="fa fa-mail-forward mr-1"/> View Product
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<div class="product-content">
+							<h1 class="text-secondary mb-4">Lorem <span class="text-primary">Ipsum Dolor</span> sit amet, consectetur adipiscing elit.</h1>
+							<p class="text-muted mb-3"> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<ul class="text-muted mb-4">
+								<li>Lorem ipsum dolor sit amet</li>
+								<li>Lorem ipsum dolor sit amet</li>
+								<li>Lorem ipsum dolor sit amet</li>
+							</ul>
+							<p class="price text-primary mb-4">$69.96</p>
+							<div class="s_btn" data-name="Button">
+								<a href="#" class="btn btn-outline-secondary">
+									<span class="fa fa-mail-forward mr-1"/> View Product
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 order">
+						<div class="product-img2 text-center">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/coffee-product2.png" alt="image"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage7_preorder" name="Preorder">
+		<section class="homepage-seven-preorder pt64 pb32 bg-light">
+			<div class="container">
+				<div class="preorder-title text-center">
+					<span class="text-muted">LOREM-IPSUM #DOLOR</span>
+					<h1 class="text-secondary mt-1 mb-5 mx-auto down-line">PHASELLUS ORNARE LECTUS <span class="text-primary">+ FEUGIAT LOBORTIS</span></h1>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-6 mb-4 mb-md-0">
+						<div class="product-img text-center">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/shoes-preorder.png" alt="image"/>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="preorder-content text-center">
+							<p class="text-secondary-50 mb-4">Donec et odio pellentesque diam volutpat commodo sed egestas. Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+							<div class="s_btn" data-name="Button">
+								<a href="#" class="btn btn-primary rounded-circle mt-2"> LEARN MORE </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

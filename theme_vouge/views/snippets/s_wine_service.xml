@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_wine_service" name="Service">
+		<section class="wine-features pt64 pb48">
+			<div class="container extended-container">
+				<div class="row service-section ">
+					<div class="col-md-4 col-xl-4 mb-4 ">
+						<div class="feature-box d-flex">
+							<div class="service-image">
+								<span class="icofont-grapes fa-3x"></span>
+							</div>
+							<div class="service-info">
+								<h2>Experiences of More than 25 years</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xl-4 mb-4 ">
+						<div class="feature-box d-flex service-item">
+							<div class="service-image">
+								<span class="icon icon-WineGlass fa-3x"></span>
+							</div>
+							<div class="service-info">
+								<h2>High-quality products for your vineyard</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xl-4 mb-4 ">
+						<div class="feature-box d-flex service-item">
+							<div class="service-image">
+								<span class="ti ti-truck fa-3x"></span>
+							</div>
+							<div class="service-info">
+								<h2>Free shipping and delivery services</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

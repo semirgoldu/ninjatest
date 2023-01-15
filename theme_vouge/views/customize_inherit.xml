@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="website_sale.add_grid_or_list_option" model="ir.ui.view">
+		<field name="active" eval="False"/>
+		<field name="customize_show" eval="False"/>
+	</record>
+
+	<record id="website_sale.sort" model="ir.ui.view">
+		<field name="active" eval="False"/>
+		<field name="customize_show" eval="False"/>
+	</record>
+
+	<record id="website_sale.products_categories" model="ir.ui.view">
+		<field name="active" eval="True"/>
+	</record>
+
+	<record id="website_sale.products_description" model="ir.ui.view">
+		<field name="active" eval="True"/>
+	</record>
+
+	<record id="website_sale.products_add_to_cart" model="ir.ui.view">
+		<field name="active" eval="True"/>
+	</record>
+
+	<record id="website_sale.option_collapse_products_categories" model="ir.ui.view">
+		<field name="active" eval="True"/>
+	</record>
+
+	<record id="website_sale.products_categories" model="ir.ui.view">
+		<field name="priority" eval="20"/>
+	</record>
+
+	<record id="website_sale.products_attributes" model="ir.ui.view">
+		<field name="priority" eval="25"/>
+	</record>
+
+	<record id="website_sale.filter_products_price" model="ir.ui.view">
+		<field name="active" eval="False"/>
+		<field name="customize_show" eval="True"/>
+	</record>
+
+
+</odoo>

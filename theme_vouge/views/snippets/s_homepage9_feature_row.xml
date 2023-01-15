@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage9_feature_row" name="Feature Row">
+		<section class="homepage-nine-feature-row pt64 pb64">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 bg-light mx-auto text-center">
+								<span class="fa fa-music text-warning"></span>
+							</div>
+							<p class="text-secondary-50">Lorem ipsum dolor sit amet</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 bg-light mx-auto text-center">
+								<span class="fa fa-headphones text-info"></span>
+							</div>
+							<p class="text-secondary-50">Lorem ipsum dolor sit amet</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 bg-light mx-auto text-center">
+								<span class="fa fa-bitbucket text-success"></span>
+							</div>
+							<p class="text-secondary-50">Lorem ipsum dolor sit amet</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="feature-box text-center">
+							<div class="icon mb-4 bg-light mx-auto text-center">
+								<span class="fa fa-deafness text-primary"></span>
+							</div>
+							<p class="text-secondary-50">Lorem ipsum dolor sit amet</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

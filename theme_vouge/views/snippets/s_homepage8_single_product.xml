@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage8_single_product" name="Single Product">
+		<section class="homepage-eight-single-product pt64 pb64">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-6 p-0">
+						<div class="product-img1">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/jewel-product1.jpg" alt="image"/>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="product-info text-center">
+							<h1 class="text-secondary mb-4">Lorem Ipsum <span class="text-primary">Dolor</span></h1>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p class="text-primary">$123.00</p>
+							<div class="s_btn" data-name="Button">
+								<a href="#" class="btn btn-outline-secondary rounded-circle mt-4">
+									<span class="fa fa-mail-forward mr-1"/> Shop The Collection
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<div class="product-info text-center">
+							<h1 class="text-secondary mb-4">Lorem Ipsum <span class="text-primary">Dolor</span></h1>
+							<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p class="text-primary">$321.00</p>
+							<div class="s_btn" data-name="Button">
+								<a href="#" class="btn btn-outline-secondary rounded-circle mt-4 mb-4 mb-md-0">
+									<span class="fa fa-mail-forward mr-1"/> Shop The Collection
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 p-0 order mt-4 mt-md-0">
+						<div class="jewel-product2.jpg">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/jewel-product2.jpg" alt="image"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

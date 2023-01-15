@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage1_parallax" name="Parallax">
+		<section class="aviat-parallax s_cover parallax s_parallax_is_fixed pt96 pb96 s_parallax_no_overflow_hidden" data-scroll-background-ratio="1" data-name="Cover" style="background-image: none;">
+	        <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/theme_vouge/static/src/img/drone-parallax-bg.jpeg');background-attachment: fixed;"></span>
+	        <div class="parallax-content text-white px-3">
+	        	<span class="fa fa-camera-retro fa-5x mb-4 text-white"/>
+	        	<h1 class="text-white">Lorem ipsum dolor</h1>
+	        	<h2 class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+	        </div>
+      	</section>
+	</template>
+
+</odoo>

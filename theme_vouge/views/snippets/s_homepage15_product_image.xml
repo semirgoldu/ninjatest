@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage15_product_image" name="Product Image">
+		<section class="homepage-fifteen-product-img">
+			<section class="bottom-content py-5 px-3 text-center text-white bg-primary">
+				<h3 class="mb-4 text text-white"><h3 class="mb-4 text text-white">Lacus sed viverra tellus in hac habitasse</h3></h3>
+				<div class="s_btn" data-name="Button">
+					<a href="#" class="btn btn-outline-light rounded-circle">SHOP NOW</a>
+				</div>
+			</section>
+		</section>
+</template>
+
+</odoo>

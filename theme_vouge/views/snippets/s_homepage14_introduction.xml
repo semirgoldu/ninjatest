@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage14_introduction" name="Introduction">
+		<section class="homepage-fourteen-introduction pt64">
+			<div class="container">
+				<div class="intro-title text-center mb-5">
+					<span class="text-muted">INTRODUCTION</span>
+					<h1 class="text-secondary down-line">LOREM IPSUM</h1>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<div class="intro-content mb-4">
+							<h1 class="text-secondary mb-4">Lorem ipsum <span class="text-primary">dolor sit amet </span>consectetur adipiscing elit</h1>
+							<p class="text-muted mb-5">Et odio pellentesque diam volutpat commodo sed. Arcu non odio euismod lacinia at. Accumsan tortor posuere ac ut consequat semper viverra. Maecenas sed enim ut sem viverra. Non consectetur a erat nam. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Amet consectetur adipiscing elit ut aliquam. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis. Gravida quis blandit turpis cursus in.</p>
+							<div class="s_btn" data-name="Button">
+								<a href="#" class="btn btn-primary rounded-circle">FIND OUT MORE</a>
+								<a href="#" class="btn btn-primary rounded-circle ml-2">WHERE TO BUY</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="stroller-img">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/handbag-overview.png" alt="image"/>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+		</section>
+	</template>
+
+</odoo>

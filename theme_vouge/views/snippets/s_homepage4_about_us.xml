@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage4_about_us" name="About Us">
+		<section class="homepage-four-aboutus pb64">
+			<div class="container">
+				<div class="aboutus-content text-center">
+					<span class="text-muted">Lorem ipsum dolor sit amet</span>
+					<h1 class="text-secondary mb-4 mt-1 down-line">NULLAM NON<span class="text-primary"> MOLESTIE LIGULA</span></h1>
+					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus ipsum vitae lectus eleifend lobortis. Aliquam vulputate purus a ligula vehicula, vel porttitor nisl blandit. Ut sodales vulputate blandit. Nullam non molestie ligula, sit amet suscipit mauris. Sed et dolor malesuada, blandit nunc id, laoreet magna. Cras non velit dolor. Nam vel tristique mauris. Aliquam ex erat, porta id varius non, tempor id elit. Nullam nunc risus, mollis sit amet purus et, rutrum auctor massa. Vestibulum malesuada efficitur semper. In vulputate libero eros, sed dictum justo porta eu. Sed eu orci auctor enim consectetur placerat sed nec est.</p>
+					<div class="s_btn" data-name="Button">
+						<a href="#" class="btn btn-primary rounded-circle mt-2">
+							<span class="fa fa-mail-forward mr-1"/> Read More
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

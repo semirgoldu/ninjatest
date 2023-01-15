@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage14_client_row" name="Client Row">
+		<section class="homepage-fourteen-clients pt64 pb64">
+			<div class="container">
+				<div class="client-title text-center mb-5">
+					<h1 class="text-secondary down-line">LOGO BRANDS &amp; CLIENTS</h1>
+				</div>
+				<div id="client-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+          	
+		          	<div class="carousel-inner" role="listbox">
+		            	<div class="carousel-item active ls-slide">
+			              	<div class="row text-center">
+								<div class="col-md-2 offset-md-1">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client1.png" alt="image"/>
+								</div>
+								<div class="col-md-2">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client2.png" alt="image"/>
+								</div>
+								<div class="col-md-2">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client3.png" alt="image"/>
+								</div>
+								<div class="col-md-2">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client4.png" alt="image"/>
+								</div>
+								<div class="col-md-2">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client5.png" alt="image"/>
+								</div>
+							</div>
+		            	</div>
+		            	<div class="carousel-item ls-slide">
+			              	<div class="row text-center">
+								<div class="col-md-2 offset-md-1">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client1.png" alt="image"/>
+								</div>
+								<div class="col-md-2">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client2.png" alt="image"/>
+								</div>
+								<div class="col-md-2">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client3.png" alt="image"/>
+								</div>
+								<div class="col-md-2">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client4.png" alt="image"/>
+								</div>
+								<div class="col-md-2">
+									<img class="img img-fluid" src="/theme_vouge/static/src/img/client5.png" alt="image"/>
+								</div>
+							</div>
+			            </div>
+			            <div class="slider-control d-none d-md-block">
+		              		<a class="left carousel-control-prev text-dark" data-target="#client-carousel" role="button" data-slide="prev">
+			                	<span class="fa fa-angle-left"/>
+			               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+			              	</a>
+			              	<a class="right carousel-control-next text-dark" data-target="#client-carousel" role="button" data-slide="next">
+			                	<span class="fa fa-angle-right"/>
+			                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+			              	</a>
+			            </div>
+		          	</div>
+		        </div>
+
+			</div>
+		</section>
+	</template>
+
+</odoo>

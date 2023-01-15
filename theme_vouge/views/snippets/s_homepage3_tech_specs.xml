@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage3_tech_specs" name="Tech Specs">
+		<section class="homepage-three-tech-specs pt64 pb64" style="background-image: url('/theme_vouge/static/src/img/watches-tech.jpg');">
+			<div class="container">
+				<div class="tech-title mb-4 text-center">
+					<span class="text-light">LOREM IPSUM DOLOR</span>
+					<h1 class="text-white down-line">MAURIS <span class="text-primary">MAXIMUS</span></h1>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="specs">
+							<ul>
+								<li class="text-white">Thickness:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">13.3mm</li>
+							</ul>
+							<ul>
+								<li class="text-white">Diameter:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">41mm</li>
+							</ul>
+							<ul>
+								<li class="text-white">Weight:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">60 grams</li>
+							</ul>
+							<ul>
+								<li class="text-white">Battery:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">Rechargeable Li-polymer 110mAh</li>
+							</ul>
+							<ul>
+								<li class="text-white">Nylon strap:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">Length: 26cm; Width: 2cm; Thickness: +/- 1mm</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="specs">
+							<ul>
+								<li class="text-white">Casing:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">316L</li>
+							</ul>
+							<ul>
+								<li class="text-white">Glass:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">Sapphire Coated Glass</li>
+							</ul>
+							<ul>
+								<li class="text-white">Chipset:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">Nordic BLE</li>
+							</ul>
+							<ul>
+								<li class="text-white">Bluetooth:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">BLE (Bluetooth Low Energy) 4.0</li>
+							</ul>
+							<ul>
+								<li class="text-white">Sensors:</li>
+								<li class="dotted-line"></li>
+								<li class="text-white">MEMS 3-axis accelerometer</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

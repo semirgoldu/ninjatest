@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage10_sale" name="Sale">
+		<section class="homepage-ten-sale" style="background-image: url('/theme_vouge/static/src/img/bike-bg.jpg');">
+		</section>
+	</template>
+
+</odoo>

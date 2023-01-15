@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_spa_single_banner" name="Single Banner">
+		<section class="spa-life-banner pt32 pb32">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="banner-content">
+						<div class="image">
+							<a href="#">
+								<img src="/theme_vouge/static/src/img/spa-img3.jpg" class="img img-fluid"/>
+							</a>
+						</div>
+						<div class="banner-info">
+							<h3>MASSAGE GIVES PEACE!</h3>
+							<p>When you get the massage, your stress is released.</p>
+							<div class="s_btn" data-name="Button">
+    							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+    						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

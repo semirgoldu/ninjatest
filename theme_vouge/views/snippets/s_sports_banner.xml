@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_sports_banner" name="Home Banner">
+		<section class="sport-home-banner">
+			<div id="sport-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+	          	<div class="carousel-inner" role="listbox">
+	            	<div class="carousel-item active" style="background-image: url('/theme_vouge/static/src/img/sport-banner1.jpg');">
+	            		<div class="container extended-container">
+	            			<div class="row position-relative">
+	            				<div class="col-lg-6 col-md-10">
+	            					<div class="banner-content">
+	            						<h1 class="title1">Running Wears</h1>
+	            						<p>New arrival in our running collection for women</p>
+	            						<div class="s_btn pt16" data-name="Button">
+	            							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="carousel-item" style="background-image: url('/theme_vouge/static/src/img/sport-banner2.jpg');">
+	            		<div class="container extended-container">
+	            			<div class="row position-relative">
+	            				<div class="col-lg-6 col-md-10">
+	            					<div class="banner-content">
+	            						<h1 class="title1">Workout Collection</h1>
+	            						<p>Get instant discount upto 45% on workout wears</p>
+	            						<div class="s_btn pt16" data-name="Button">
+	            							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="carousel-item" style="background-image: url('/theme_vouge/static/src/img/sport-banner3.jpg');">
+	            		<div class="container extended-container">
+	            			<div class="row position-relative">
+	            				<div class="col-lg-6 col-md-10">
+	            					<div class="banner-content">
+	            						<h1 class="title1">Boxing Gloves</h1>
+	            						<p>Protect your fist with our premium gloves</p>
+	            						<div class="s_btn pt16" data-name="Button">
+	            							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+	            						</div>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</div>
+	            	</div>
+	          	</div>
+	          	<div class="">
+		          	<ol class="carousel-indicators">
+			            <li data-target="#sport-carousel" data-slide-to="0" class="active"/>
+			            <li data-target="#sport-carousel" data-slide-to="1"/>
+			            <li data-target="#sport-carousel" data-slide-to="2"/>
+			        </ol>
+			    </div>
+        	</div>
+		</section>
+	</template>
+
+</odoo>

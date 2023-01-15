@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_wine_varieties" name="Varieties">
+		<section class="wine-varieties" style="background-image: url('/theme_vouge/static/src/img/wine-varieties.jpg');">
+			<div class="container extended-container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3">
+						<div class="varieties-content">
+							<div class="subtitle">VARIETIES</div>
+							<div class="title">The Reds</div>
+							<ul>
+								<li>-  Cabernet Sauvignon</li>
+								<li> -  Merlot</li>
+								<li> -  Tempranillo</li>
+							</ul>
+							<div class="s_btn mt32" data-name="Button">
+    							<a href="#" class="btn wine-btn btn-o-color-3 bizople_button"> Shop now</a>
+    						</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 ml-auto">
+						<div class="varieties-content">
+							<div class="subtitle">VARIETIES</div>
+							<div class="title">The Whites</div>
+							<ul>
+								<li>-  Chardonnay</li>
+								<li> -  Airén</li>
+								<li> -  Sauvignon Blanc</li>
+							</ul>
+							<div class="s_btn mt32" data-name="Button">
+    							<a href="#" class="btn wine-btn btn-o-color-3 bizople_button"> Shop now</a>
+    						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

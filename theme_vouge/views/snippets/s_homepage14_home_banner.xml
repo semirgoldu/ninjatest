@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage14_home_banner" name="Home Banner">
+		<section class="homepage-fourteen-banner px-3 px-md-5">
+						<div id="banner-fourteen-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active ls-slide" style="background-image: url('/theme_vouge/static/src/img/handbag-banner1.jpg');">
+					              	<div class="banner-content">
+					              		<h1 class="text-white">Women's <br/>Handbags</h1>
+					              		<p class="text-white">Diam ut venenatis tellus in metus vulputate eu scelerisque.</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle">SHOP NOW</a>
+						              	</div>
+
+					              	</div>
+				            	</div>
+				            	<div class="carousel-item ls-slide" style="background-image: url('/theme_vouge/static/src/img/handbag-banner2.jpg');">
+					              	<div class="banner-content">
+					              		<h1 class="text-white">Women's <br/>Handbags</h1>
+					              		<p class="text-white">IDiam ut venenatis tellus in metus vulputate eu scelerisque.</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle">SHOP NOW</a>
+						              	</div>
+					              	</div>
+					            </div>
+					            <div class="slider-control d-none d-md-block">
+				              		<a class="left carousel-control-prev text-light font-14" data-target="#banner-fourteen-carousel" role="button" data-slide="prev">
+					                	<span class="fa fa-angle-left"/>
+					               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+					              	</a>
+					              	<a class="right carousel-control-next text-light font-14" data-target="#banner-fourteen-carousel" role="button" data-slide="next">
+					                	<span class="fa fa-angle-right"/>
+					                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+					              	</a>
+					            </div>
+				          	</div>
+				          	<ol class="carousel-indicators">
+				            	<li data-target="#banner-fourteen-carousel" data-slide-to="0" class="active"/>
+				            	<li data-target="#banner-fourteen-carousel" data-slide-to="1"/>
+				          	</ol>
+				        </div>
+					</section>
+	</template>
+
+</odoo>

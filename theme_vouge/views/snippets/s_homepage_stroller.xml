@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_homepage_stroller" name="Stroller">
+		<section class="s_homepage_stroller">
+			<section class="homepage-two-banner">
+						<div id="banner-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active ls-slide">
+				            		<div class="container">
+				            			<div class="row align-items-center">
+				            				<div class="col-6">
+							              		<img class="img img-fluid" src="/theme_vouge/static/src/img/stroller-banner1.png" alt="image"/>
+							              	</div>
+				            				<div class="col-6">
+								              	<div class="banner-content ml-3">
+								              		<h2 class="side-line text-muted">Lorem ipsum dolor sit amet</h2>
+								              		<h1 class="text-secondary">Graco Verb Stroller</h1>
+								              		<p class="text-muted">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								              		<div class="s_btn" data-name="Button">
+								              			<a href="#" class="btn btn-dark rounded-circle ">SHOP NOW</a>
+								              		</div>
+
+								              	</div>
+								        	</div>
+						          		</div>
+					              	</div>
+				            	</div>
+				            	<div class="carousel-item ls-slide">
+				            		<div class="container">
+				            			<div class="row align-items-center">
+				            				<div class="col-6">
+							              		<img class="img img-fluid" src="/theme_vouge/static/src/img/stroller-banner2.png" alt="image"/>
+							              	</div>
+				            				<div class="col-6">
+								              	<div class="banner-content ml-3">
+								              		<h2 class="side-line text-muted">Lorem ipsum dolor sit amet</h2>
+								              		<h1 class="text-secondary">Graco Aire3 Stroller</h1>
+								              		<p class="text-muted">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								              		<div class="s_btn" data-name="Button">
+								              			<a href="#" class="btn btn-dark rounded-circle ">SHOP NOW</a>
+								              		</div>
+
+								              	</div>
+							              	</div>
+						          		</div>
+					              	</div>
+					            </div>
+					            <div class="slider-control d-none d-md-block">
+				              		<a class="left carousel-control-prev text-dark font-14" data-target="#banner-carousel" role="button" data-slide="prev">
+					                	<span class="fa fa-angle-left"/>
+					               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+					              	</a>
+					              	<a class="right carousel-control-next text-dark font-14" data-target="#banner-carousel" role="button" data-slide="next">
+					                	<span class="fa fa-angle-right"/>
+					                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+					              	</a>
+					            </div>
+				          	</div>
+				          	
+				        </div>
+					</section>
+					<!-- homepage-two-banner end -->
+					<div class="oe_structure"/>
+					<!-- feature-row start -->
+					<section class="homepage-two-feature-row pt64 pb64 bg-light">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-white mx-auto text-center">
+											<span class="fa fa-opencart text-primary"/>
+										</div>
+										<h3 class="text-secondary mb-3">Lorem ipsum dolor</h3>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-white mx-auto text-center">
+											<span class="fa fa-shield text-primary"/>
+										</div>
+										<h3 class="text-secondary mb-3">Lorem ipsum dolor</h3>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="feature-box text-center">
+										<div class="icon mb-4 bg-white mx-auto text-center">
+											<span class="fa fa-cart-plus text-primary"/>
+										</div>
+										<h3 class="text-secondary mb-3">Lorem ipsum dolor</h3>
+										<p class="text-muted">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- feature-row end -->
+					<div class="oe_structure"/>
+					<!-- introduction start -->
+					<section class="homepage-two-introduction pt64">
+						<div class="container">
+							<div class="intro-title text-center mb-5">
+								<span class="text-muted">CONDECTETUR</span>
+								<h1 class="text-secondary down-line">TINCIDUNT</h1>
+							</div>
+							<div class="row align-items-center justify-content-center">
+								<div class="col-lg-6">
+									<div class="intro-content mb-4">
+										<h1 class="text-secondary mb-4">Lorem <span class="text-primary">Ipsum</span> Dolor Sit</h1>
+										<p class="text-muted mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus ipsum vitae lectus eleifend lobortis. Aliquam vulputate purus a ligula vehicula, vel porttitor nisl blandit. Ut sodales vulputate blandit. Nullam non molestie ligula, sit amet suscipit mauris. Sed et dolor malesuada, blandit nunc id, laoreet magna. Cras non velit dolor. </p>
+										<p class="text-muted mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus ipsum vitae lectus eleifend lobortis. Aliquam vulputate purus a ligula vehicula, vel porttitor nisl blandit. Ut sodales vulputate blandit. Nullam non molestie ligula, sit amet suscipit mauris. Sed et dolor malesuada, blandit nunc id, laoreet magna. Cras non velit dolor. </p>
+										<div class="s_btn" data-name="Button">
+											<a href="#" class="btn btn-primary rounded-circle ">FIND OUT MORE</a>
+											<a href="#" class="btn btn-primary rounded-circle ml-2 ">WHERE TO BUY</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-9 col-lg-6">
+									<div class="stroller-img">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/stroller-overview.png" alt="image"/>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<section class="bottom-content py-5 px-3 mt64 text-center text-white bg-primary">
+							<h3 class="mb-4 text-white">Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras.</h3>
+							<div class="s_btn" data-name="Button">
+								<a href="#" class="btn btn-outline-light rounded-circle ">VIEW DETAILS</a>
+							</div>
+						</section>
+					</section>
+					<!-- introduction end -->
+					<div class="oe_structure"/>
+					<!-- single product start -->
+					<section class="homepage-two-single-product">
+						<div class="container">
+							<div class="row align-items-center mb-0 mb-md-5 mb-xl-0">
+								<div class="col-md-6 mt-4 mt-md-0">
+									<div class="product-img">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/stroller-product1.png" alt="image"/>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="product-content">
+										<h1 class="text-secondary mb-4">Mauris <span class="text-primary">maximus</span> - ipsum vitae lectus eleifend lobortis.</h1>
+										<p class="text-muted mb-3"> Sed eu orci auctor enim consectetur placerat sed nec est.</p>
+										<ul class="text-muted mb-4">
+											<li> Sed eu orci auctor enim consectetur placerat sed nec est.</li>
+											<li> Sed eu orci auctor enim consectetur placerat sed nec est.</li>
+											<li> Sed eu orci auctor enim consectetur placerat sed nec est.</li>
+										</ul>
+										<p class="price text-primary mb-4">$59.92</p>
+										<div class="s_btn" data-name="Button">
+											<a href="#" class="btn btn-outline-secondary rounded-circle ">
+												<span class="fa fa-mail-forward mr-1"/> View Product
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row align-items-center mb-4">
+								<div class="col-md-6">
+									<div class="product-content">
+										<h1 class="text-secondary mb-4">Mauris <span class="text-primary">maximus</span> - ipsum vitae lectus eleifend lobortis.</h1>
+										<p class="text-muted mb-3">Sed eu orci auctor enim consectetur placerat sed nec est.</p>
+										<ul class="text-muted mb-4">
+											<li>Sed eu orci auctor enim consectetur placerat sed nec est.</li>
+											<li>Sed eu orci auctor enim consectetur placerat sed nec est.</li>
+											<li>Sed eu orci auctor enim consectetur placerat sed nec est.</li>
+										</ul>
+										<p class="price text-primary mb-4">$59.92</p>
+										<div class="s_btn" data-name="Button">
+											<a href="#" class="btn btn-outline-secondary rounded-circle ">
+												<span class="fa fa-mail-forward mr-1"/> View Product
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 order">
+									<div class="product-img2">
+										<img class="img img-fluid" src="/theme_vouge/static/src/img/stroller-product2.png" alt="image"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- single product end -->
+					<div class="oe_structure"/>
+					<!-- testimonial start -->
+					<section class="homepage-two-testimonial pt64 pb64 bg-light">
+						<div class="container-fluid">
+							<div class="testimonial-title mb-5 text-center">
+								<span class="text-muted">Lorem ipsum dolor sit amet</span>
+								<h1 class="text-secondary down-line mt-1">LOREM IPSUM<span class="text-primary">DOLOR SIT AMET</span></h1>
+							</div>
+							<div id="testimonial-two-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+					          	<div class="carousel-inner" role="listbox">
+					            	<div class="carousel-item active ls-slide">
+					            		<div class="row text-center justify-content-center">
+					            			<div class="col-xl-6">
+					            				<div class="team-box">
+									              	<div class="carousel-img mx-auto mb-3">
+									              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial2.jpeg" alt="image"/>
+									              	</div>
+									              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+									              	<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas. Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+									              	<span class="fa fa-quote-right text-secondary"/>
+									              	<p class="text-primary ceo">Alva Ono</p>
+									            </div>
+							              	</div>
+						              	</div>
+					            	</div>
+					            	<div class="carousel-item ls-slide">
+						              	<div class="row text-center justify-content-center">
+							              	<div class="col-xl-6">
+					            				<div class="team-box">
+									              	<div class="carousel-img mx-auto mb-3">
+									              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+									              	</div>
+									              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+									              	<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas. Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+									              	<span class="fa fa-quote-right text-secondary"/>
+									              	<p class="text-primary ceo">Amber Laha</p>
+									            </div>
+							              	</div>
+						              	</div>
+						            </div>
+						            <div class="carousel-item ls-slide">
+						              	<div class="row text-center justify-content-center">
+							              	<div class="col-xl-6">
+					            				<div class="team-box">
+									              	<div class="carousel-img mx-auto mb-3">
+									              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial1.jpeg" alt="image"/>
+									              	</div>
+									              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+									              	<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas. Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+									              	<span class="fa fa-quote-right text-secondary"/>
+									              	<p class="text-primary ceo">Dewey Tetzlaff</p>
+									            </div>
+							              	</div>
+						              	</div>
+						            </div>
+						            <div class="carousel-item ls-slide">
+						              	<div class="row text-center justify-content-center">
+							              	<div class="col-xl-6">
+					            				<div class="team-box">
+									              	<div class="carousel-img mx-auto mb-3">
+									              		<img class="img img-fluid mb-3" src="/theme_vouge/static/src/img/testimonial3.jpeg" alt="image"/>
+									              	</div>
+									              	<h3><a href="#" class="title text-secondary mt-4">Lorem ipsum dolor sit amet</a></h3>
+									              	<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed egestas. Ut porttitor leo a diam sollicitudin tempor. Enim ut sem viverra aliquet eget sit amet tellus cras. Tincidunt vitae semper quis lectus nulla at volutpat.</p>
+									              	<span class="fa fa-quote-right text-secondary"/>
+									              	<p class="text-primary ceo">John Doe</p>
+									            </div>
+							              	</div>
+						              	</div>
+						            </div>
+					          	</div>
+					          	<ol class="carousel-indicators mt-4">
+					            	<li data-target="#testimonial-two-carousel" data-slide-to="0" class="active"/>
+					            	<li data-target="#testimonial-two-carousel" data-slide-to="1"/>
+					            	<li data-target="#testimonial-two-carousel" data-slide-to="2"/>
+					            	<li data-target="#testimonial-two-carousel" data-slide-to="3"/>
+					          	</ol>
+					        </div>
+						</div>
+					</section>
+					<!-- testimonial end -->
+					<div class="oe_structure"/>
+					<!-- parallax start -->
+					<section class="homepage-two-parallax s_cover parallax s_parallax_is_fixed pt96 pb96 s_parallax_no_overflow_hidden" data-scroll-background-ratio="1" data-name="Cover" style="background-image: none;">
+				        <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url('/theme_vouge/static/src/img/stroller-sale-bg.jpeg');background-attachment: fixed;"/>
+				        <div class="container">
+					        <div class="parallax-content text-white px-3">
+					        	<p class="text-white">LOREM IPSUM DOLOR SIT AMET</p>
+					        	<h1 class="text-white mb-2 mt-3">consectetur adipiscing</h1>
+					        	<h2 class="text-white mb-4">Sed do eiusmod tempor incididunt.</h2>
+					        	<div class="s_btn" data-name="Button">
+						        	<a href="#" class="btn btn-outline-light rounded-circle ">Buy now</a>
+									<a href="#" class="btn btn-outline-light rounded-circle ml-3 ">Learn more</a>
+								</div>
+					        </div>
+					    </div>
+			      	</section>
+					<!-- parallax end -->
+					<div class="oe_structure"/>
+					<!-- subscribe start -->
+					<section class="homepage-two-subscribe pt32 pb64">
+						<div class="container">
+							<div class="subs-title text-center">
+								<span class="text-muted">our news</span>
+								<h1 class="text-secondary down-line mt-1">SIGN UP FOR LATEST NEWS</h1>
+							</div>
+							<div class="input-group js_subscribe" data-list-id="1">
+						        <input type="email" name="email" class="js_subscribe_email form-control bg-light" placeholder="your email..."/>
+						        <span class="input-group-append">
+						            <a role="button" href="#" class="btn btn-primary js_subscribe_btn">Subscribe</a>
+						            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none" disabled="disabled">Thanks</a>
+						        </span>
+						    </div>
+						</div>
+					</section>
+		</section>
+	</template>
+</odoo>

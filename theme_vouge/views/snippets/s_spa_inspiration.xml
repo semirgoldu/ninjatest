@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_spa_inspiration" name="Inspiration">
+		<section class="spa-inspiration pt48 pb48">
+			<div class="container extended-container">
+				<div class="title text-center">
+					<h3>Inspiration</h3>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-xl-5 col-lg-5 col-md-6 o-2 mt32">
+						<div class="inspiration-content">
+							<h4>How To Do Massage At Home</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus. Nulla tristique, tellus ut posuere facilisis.</p>
+							<div class="s_btn" data-name="Button">
+    							<a href="#" class="btn btn-outline-secondary bizople_button">Read More</a>
+    						</div>
+						</div>
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 o-1 mt32">
+						<div class="image">
+							<a href="#">
+								<img src="/theme_vouge/static/src/img/spa-text-image1.jpg" class="img img-fluid"/>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-xl-7 col-lg-7 col-md-6 mt32">
+						<div class="image">
+							<a href="#">
+								<img src="/theme_vouge/static/src/img/spa-text-image2.jpg" class="img img-fluid"/>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 mt32">
+						<div class="inspiration-content">
+							<h4>How To Find Out Best Product For Skin?</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id lacinia nulla. Nulla suscipit semper mauris et dictum. Integer ut eros vel purus tristique finibus. Nulla tristique, tellus ut posuere facilisis.</p>
+							<div class="s_btn" data-name="Button">
+    							<a href="#" class="btn btn-outline-secondary bizople_button">Read More</a>
+    						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

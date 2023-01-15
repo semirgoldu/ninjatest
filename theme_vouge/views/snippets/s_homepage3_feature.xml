@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage3_feature" name="Features">
+		<section class="homepage-three-feature pt96 pb96 bg-light">
+			<div class="container">
+				<div class="feature-title text-center mb-4">
+					<span class="text-muted">LOREM IPSUM DOLOR</span>
+					<h1 class="text-secondary down-line">CONSECTETUR <span class="text-primary">ADIPISCING ELIT</span></h1>
+				</div>
+				<div class="row justify-content-center align-items-center">
+					<div class="col-md-4">
+						<div class="feature-content text-right">
+							<div class="feature-box d-flex mb-4">
+								<div class="text ml-auto">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+								<div class="icon bg-white ml-2">
+									<span class="fa fa-mail-reply text-primary"></span>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="text ml-auto">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+								<div class="icon bg-white ml-2">
+									<span class="fa fa-battery-4 text-primary"></span>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="text ml-auto">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+								<div class="icon bg-white ml-2">
+									<span class="fa fa-microphone text-primary"></span>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="text ml-auto">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+								<div class="icon bg-white ml-2">
+									<span class="fa fa-sun-o text-primary"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-md-3">
+						<div class="feature-watch">
+							<img class="img img-fluid" src="/theme_vouge/static/src/img/watches-feature.png" alt="image"/>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="feature-content">
+							<div class="feature-box d-flex mb-4">
+								<div class="icon bg-white mr-2">
+									<span class="fa fa-heartbeat text-primary"></span>
+								</div>
+								<div class="text">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="icon bg-white mr-2">
+									<span class="fa fa-phone text-primary"></span>
+								</div>
+								<div class="text">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="icon bg-white mr-2">
+									<span class="fa fa-apple text-primary"></span>
+								</div>
+								<div class="text">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+							<div class="feature-box d-flex mb-4">
+								<div class="icon bg-white mr-2">
+									<span class="fa fa-music text-primary"></span>
+								</div>
+								<div class="text">
+									<h3 class="text-secondary mb-2">Lorem ipsum dolor</h3>
+									<p class="text-muted">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

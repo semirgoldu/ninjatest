@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_glasses_features" name="Features">
+		<section class="glass-feature-row pt48 pb48">
+			<div class="container extended-container">
+				<div class="row service-section ">
+					<div class="col-md-6 col-xl-3">
+						<div class="feature-box d-flex align-items-center">
+							<div class="service-image">
+								<span class="fa fa-gitlab"></span>
+							</div>
+							<div class="service-info">
+								<h2>Light Materials</h2>
+								<p>No Weight Frames</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-xl-3">
+						<div class="feature-box d-flex align-items-center">
+							<div class="service-image">
+								<span class="fa fa-eye"></span>
+							</div>
+							<div class="service-info">
+								<h2>UV Protected Lenses</h2>
+								<p>No Harm to your eyes</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-xl-3">
+						<div class="feature-box d-flex align-items-center">
+							<div class="service-image">
+								<span class="fa fa-medium"></span>
+							</div>
+							<div class="service-info">
+								<h2>Stylish Design</h2>
+								<p>Showoff with your Glasses</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-xl-3">
+						<div class="feature-box d-flex align-items-center">
+							<div class="service-image">
+								<span class="fa fa-cubes"></span>
+							</div>
+							<div class="service-info">
+								<h2>All Sizes</h2>
+								<p>All sizes are available</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

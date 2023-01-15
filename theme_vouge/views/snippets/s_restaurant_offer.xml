@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_restaurant_offer" name="Best Offers">
+		<section class="restaurant-image-slider pt32 pb32">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-3 pl-md-0">
+						<section class="side-image h-100" style="background-image: url('/theme_vouge/static/src/img/restaurant-img4.jpg');">
+						</section>
+					</div>
+					<div class="col-md-6 p-0">
+						<div id="restaurant-slider-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active">
+			            			<div class="row position-relative">
+			            				<div class="slider-content">
+			            					<div class="banner-image">
+			            						<img src="/theme_vouge/static/src/img/restaurant-img5.jpg" class="img img-fluid"/>
+			            					</div>
+			            					<div class="banner-info">
+			            						<h2>Spicy Tandoori Platter</h2>
+			            						<h3>10% Offer</h3>
+			            						<div class="s_btn" data-name="Button">
+			            							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+			            						</div>
+			            					</div>
+			            				</div>
+			            			</div>
+				            	</div>
+				            	<div class="carousel-item">
+			            			<div class="row position-relative">
+			            				<div class="slider-content">
+			            					<div class="banner-image">
+			            						<img src="/theme_vouge/static/src/img/restaurant-img6.jpg" class="img img-fluid"/>
+			            					</div>
+			            					<div class="banner-info">
+			            						<h2>Fast Food Platter</h2>
+			            						<h3>30% Offer</h3>
+			            						<div class="s_btn" data-name="Button">
+			            							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+			            						</div>
+			            					</div>
+			            				</div>
+			            			</div>
+				            	</div>
+				            	<div class="carousel-item">
+			            			<div class="row position-relative">
+			            				<div class="slider-content">
+			            					<div class="banner-image">
+			            						<img src="/theme_vouge/static/src/img/restaurant-img7.jpg" class="img img-fluid"/>
+			            					</div>
+			            					<div class="banner-info">
+			            						<h2>Veggy Cheese Wrap</h2>
+			            						<h3>40% Offer</h3>
+			            						<div class="s_btn" data-name="Button">
+			            							<a href="#" class="btn btn-secondary bizople_button">Shop Now</a>
+			            						</div>
+			            					</div>
+			            				</div>
+			            			</div>
+				            	</div>
+				          	</div>
+					        <div class="slider-control">
+			              		<a class="left carousel-control-prev text-white font-14" data-target="#restaurant-slider-carousel" role="button" data-slide="prev">
+				                	<span class="fa fa-angle-left"/>
+				               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+				              	</a>
+				              	<a class="right carousel-control-next text-white font-14" data-target="#restaurant-slider-carousel" role="button" data-slide="next">
+				                	<span class="fa fa-angle-right"/>
+				                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+				              	</a>
+				            </div>
+			        	</div>
+					</div>
+					<div class="col-md-3 pr-md-0">
+						<section class="side-image h-100" style="background-image: url('/theme_vouge/static/src/img/restaurant-img8.jpg');">
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

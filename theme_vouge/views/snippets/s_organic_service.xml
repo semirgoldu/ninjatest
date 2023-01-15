@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_organic_service" name="Our Services">
+		<section class="organic-service-area" style="background-image: url('/theme_vouge/static/src/img/organic-banner3.jpg');">
+			<div class="container extended-container">
+				<div class="row justify-content-center">
+					<div class="col-xl-8 col-lg-8">
+						<div class="section-content mb32">
+							<div class="section-icon mb8">
+								<img src="/theme_vouge/static/src/img/icon1.png" class="img img-fluid"/>
+							</div>
+							<h1>Our Services</h1>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmotempor incididunt labore dolore magna  aliqua minim veniam incididunt labore dolore magna  aliqua minim veniam</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div id="homepage-service-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+			          	<div class="carousel-inner" role="listbox">
+			          		<div class="carousel-item active">
+				            	<div class="">
+			            			<div class="row">
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service1.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Green Apple</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service2.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Fresh Strawberry</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service3.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Mangos</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            			</div>
+			            		</div>
+				            </div>
+				           <div class="carousel-item">
+				            	<div class="">
+			            			<div class="row">
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service4.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Products</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service5.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Products</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service6.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Products</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            			</div>
+			            		</div>
+				            </div>
+				            <div class="carousel-item">
+				            	<div class="">
+			            			<div class="row">
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service7.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Products</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service8.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Products</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service9.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Products</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            			</div>
+			            		</div>
+				            </div>
+				            <div class="carousel-item">
+				            	<div class="">
+			            			<div class="row">
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service10.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Products</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service11.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Products</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            				<div class="col-lg-4 mb16">
+			            					<section class="service-wrapper text-center">
+			            						<div class="service-img">
+			            							<img src="/theme_vouge/static/src/img/service12.png" class="img img-fluid"/>
+			            						</div>
+			            						<div class="service-text">
+			            							<h3>Organic Products</h3>
+			            							<p>Lorem ipsum dolor sit ameconecte ur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magnad </p>
+			            							<div class="s_btn mt32" data-name="Button">
+				            							<a href="#" class="btn btn-organic bizople_button ">Read More<span class="fa fa-long-arrow-right ml-1"/></a>
+				            						</div>
+			            						</div>
+			            					</section>
+			            				</div>
+			            			</div>
+			            		</div>
+				            </div>
+			          	</div>
+			          	<ol class="carousel-indicators">
+				            <li data-target="#homepage-service-carousel" data-slide-to="0" class="active"/>
+				            <li data-target="#homepage-service-carousel" data-slide-to="1"/>
+				            <li data-target="#homepage-service-carousel" data-slide-to="2"/>
+				            <li data-target="#homepage-service-carousel" data-slide-to="3"/>
+				        </ol>
+		        	</div>
+				</div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

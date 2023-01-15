@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="theme_common_footer3" inherit_id="website.layout" name="Footer Three" active="False">
+	    <xpath expr="//div[@id='footer']" position="replace">
+	    	<div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+				<section id="footer_theme_common" class="footer_theme_common3 o_footer">
+					<section class="subscribe-content">
+						<div class="container">
+							<div class="row align-items-center">
+								<div class="col-lg-6 col-md-12 mt8">
+									<div class="social-container d-flex align-items-center">
+										<div class="title mr-4">Follow Socials
+										</div>
+										<div class="media">
+											<a class="link mr-3" t-att-href="website.social_facebook"
+												t-if="website.social_facebook" target="_blank">
+												<i class="fa fa-facebook" />
+											</a>
+											<a class="link mr-3" t-att-href="website.social_twitter"
+												t-if="website.social_twitter" target="_blank">
+												<i class="fa fa-twitter" />
+											</a>
+											<a class="link mr-3" t-att-href="website.social_linkedin"
+												t-if="website.social_linkedin" target="_blank">
+												<i class="fa fa-linkedin" />
+											</a>
+											<a class="link mr-3" t-att-href="website.social_youtube"
+												t-if="website.social_youtube" target="_blank">
+												<i class="fa fa-youtube-play" />
+											</a>
+											<a class="link mr-3" t-att-href="website.social_instagram"
+												t-if="website.social_instagram" target="_blank">
+												<i class="fa fa-instagram"></i>
+											</a>
+											<a class="link mr-3" t-att-href="website.social_github"
+												t-if="website.social_github" target="_blank">
+												<i class="fa fa-github"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-12 d-flex align-items-center mt8 subscribe-btn">
+									<div class="title mr-4">Sign Up For Newsletter
+									</div>
+									<div class="block-subscribe">
+										<form class="input-group js_subscribe d-flex" data-list-id="1">
+											<input type="email" name="email" class="js_subscribe_email form-control bg-white" placeholder="Email Address"/>
+											<span class="input-group-append">
+									            <a role="button" href="#" class="btn btn-secondary js_subscribe_btn">Subscribe</a>
+									            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none" disabled="disabled">Thanks</a>
+									        </span>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="middle-footer font-14">
+						<div class="f2-middle">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-4 col-md-6">
+										<div class="block-footer">
+											<div class="title-block-footer">
+												<h4 class="text-secondary">About Store</h4>
+											</div>
+											<div class="content-block-footer">
+												<ul class="contact-list">
+													<li class="address-contact d-flex">
+														<p class="m-0"><span class="icon icon-House mr-3"/></p>
+														<p class="m-0"><span t-out="res_company.street"/>,<span t-out="res_company.city"/>,<span t-out="res_company.zip"/></p>
+													</li>
+													<li class="address-contact d-flex">
+														<p class="m-0"><span class="ri ri-mail-send-line mr-3"/></p>
+														<p class="m-0"><span t-out="res_company.email"/></p>
+													</li>
+													<li class="address-contact d-flex">
+														<p class="m-0"><span class="lnr lnr-phone-handset mr-3"/></p>
+														<p class="m-0"><span t-out="res_company.phone"/></p>
+													</li>
+													<li class="address-contact d-flex">
+														<p class="m-0"><span class="icofont icofont-wall-clock mr-3"/></p>
+														<p class="m-0"><span>Open Time: 8:00AM - 6:00PM</span></p>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-lg-2">
+										<div class="block-footer">
+											<div class="title-block-footer">
+												<h4 class="text-secondary">Our Services</h4>
+											</div>
+											<div class="content-block-footer">
+												<ul class="footer-links">
+													<li>
+														<a title="About Store" href="#">
+															About Store
+														</a>
+													</li>
+													<li>
+														<a title="About Store" href="#">
+															New Collection
+														</a>
+													</li>
+													<li>
+														<a title="About Store" href="#">
+															Contact Us
+														</a>
+													</li>
+													<li>
+														<a title="About Store" href="#">
+															Latest News
+														</a>
+													</li>
+													<li>
+														<a title="About Store" href="#">
+															Our Sitemap
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-lg-2">
+										<div class="block-footer">
+											<div class="title-block-footer">
+												<h4 class="text-secondary">Information</h4>
+											</div>
+											<div class="content-block-footer">
+												<ul class="footer-links">
+													<li>
+														<a title="About Store" href="#">
+															About Store
+														</a>
+													</li>
+													<li>
+														<a title="About Store" href="#">
+															New Collection
+														</a>
+													</li>
+													<li>
+														<a title="About Store" href="#">
+															Contact Us
+														</a>
+													</li>
+													<li>
+														<a title="About Store" href="#">
+															Latest News
+														</a>
+													</li>
+													<li>
+														<a title="About Store" href="#">
+															Our Sitemap
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-6">
+										<div class="block-footer">
+											<div class="title-block-footer">
+												<h4 class="text-secondary">Popular Tags</h4>
+											</div>
+											<ul class="tags-footer">
+												<li>
+													<a href="#">Iphone 6 Plus</a>
+												</li>
+												<li>
+													<a href="#">Washing Machine</a>
+												</li>
+												<li>
+													<a href="#">Galaxy S8+</a>
+												</li>
+												<li>
+													<a href="#">Bestsellers</a>
+												</li>
+												<li>
+													<a href="#">Ipad Mini 4</a>
+												</li>
+												<li>
+													<a href="#">Rice Cooker</a>
+												</li>
+												<li>
+													<a href="#">Sale Off</a>
+												</li>
+												<li>
+													<a href="#">Laptop Dell</a>
+												</li>
+												<li>
+													<a href="#">Camera Sony</a>
+												</li>
+												<li>
+													<a href="#">New Arrivals</a>
+												</li>
+												<li>
+													<a href="#">Computer</a>
+												</li>
+												<li>
+													<a href="#">Playstation 2</a>
+												</li>
+												<li>
+													<a href="#">Headphone</a>
+												</li>
+												<li>
+													<a href="#">Game</a>
+												</li>
+												<li>
+													<a href="#">Washing Machine</a>
+												</li>
+												<li>
+													<a href="#">Mackbook Air</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="copyright text-default py-4">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 ">
+									<div class="payment-content">
+										<img src="/theme_vouge/static/src/img/payment-footer.png" class="img-fluid"/>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6  company text-right">
+									<span class="">
+										SM Theme Common © 2017 Demo Store. All Rights Reserved. Designed by
+										<span t-field="res_company.name" />
+									</span>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</div>
+		</xpath>
+	</template>
+</odoo>

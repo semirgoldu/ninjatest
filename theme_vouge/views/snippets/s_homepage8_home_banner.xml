@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_homepage8_home_banner" name="Home Banner">
+		<section class="homepage-eight-banner">
+						<div id="banner-eight-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+				          	<div class="carousel-inner" role="listbox">
+				            	<div class="carousel-item active ls-slide" style="background-image: url('/theme_vouge/static/src/img/jewel-banner1.jpg');">
+					              	<div class="banner-content">
+					              		<h2 class="side-line text-white">Lorom Ipsum Dolor </h2>
+					              		<h1 class="text-primary">Real Sea Pearl <br/>Necklesh</h1>
+					              		<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle mt-4">SHOP NOW</a>
+						              	</div>
+
+					              	</div>
+				            	</div>
+				            	<div class="carousel-item ls-slide" style="background-image: url('/theme_vouge/static/src/img/jewel-banner2.jpeg');">
+					              	<div class="banner-content">
+					              		<h2 class="side-line text-white">Lorom Ipsum Dolor </h2>
+					              		<h1 class="text-primary">Real Diamond <br/>Ring</h1>
+					              		<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+					              		<div class="s_btn" data-name="Button">
+						              		<a href="#" class="btn btn-primary rounded-circle mt-4">SHOP NOW</a>
+						              	</div>
+
+					              	</div>
+					            </div>
+					            <div class="slider-control d-none d-md-block">
+				              		<a class="left carousel-control-prev text-dark font-14" data-target="#banner-eight-carousel" role="button" data-slide="prev">
+					                	<span class="fa fa-angle-left"/>
+					               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+					              	</a>
+					              	<a class="right carousel-control-next text-dark font-14" data-target="#banner-eight-carousel" role="button" data-slide="next">
+					                	<span class="fa fa-angle-right"/>
+					                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+					              	</a>
+					            </div>
+				          	</div>
+				        </div>
+					</section>
+	</template>
+
+</odoo>

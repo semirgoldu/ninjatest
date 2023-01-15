@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="s_sports_brands" name="Our Brands">
+		<section class="sport-brand-slider pt40 pb40">
+			<div class="container-fluid brand">
+				<div id="sport-brand-carousel" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
+		          	<div class="carousel-inner" role="listbox">
+		            	<div class="carousel-item active" >
+		            		<div class="row justify-content-center">
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand1.png"/>
+			            		</div>
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand2.png"/>
+			            		</div>
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand3.png"/>
+			            		</div>
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand4.png"/>
+			            		</div>
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand5.png"/>
+			            		</div>
+			            	</div>
+		            	</div>
+		            	<div class="carousel-item" >
+		            		<div class="row justify-content-center">
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand1.png"/>
+			            		</div>
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand2.png"/>
+			            		</div>
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand3.png"/>
+			            		</div>
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand4.png"/>
+			            		</div>
+			            		<div class="col-md-2 col-6 mb16 text-center">
+			            			<img class="img-fluid" src="/theme_vouge/static/src/img/sport-brand5.png"/>
+			            		</div>
+			            	</div>
+			            </div>
+	          		</div>
+		          	<div class="slider-control d-none">
+	              		<a class="left carousel-control-prev text-white font-14" data-target="#sport-brand-carousel" role="button" data-slide="prev">
+		                	<span class="fa fa-angle-left "/>
+		               	 	<b class="sr-only font-normal o_default_snippet_text">Previous</b>
+		              	</a>
+		              	<a class="right carousel-control-next text-white font-14" data-target="#sport-brand-carousel" role="button" data-slide="next">
+		                	<span class="fa fa-angle-right"/>
+		                	<b class="sr-only font-normal o_default_snippet_text">Next</b>
+		              	</a>
+		            </div>
+		        </div>
+			</div>
+		</section>
+	</template>
+
+</odoo>

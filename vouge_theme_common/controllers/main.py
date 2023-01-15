@@ -344,7 +344,7 @@ class BizopleWebsiteSale(WebsiteSale):
             limit=None, order=self._get_search_order(post), options=options)
         search_product = details[0].get('results', request.env['product.template']).with_context(bin_size=True)
         if not post.get('order') :
-            search_product = search_product.sorted('id',reversed=True)
+            search_product = search_product.sorted('id',reverse=True)
         if label_list :
             search_product = search_product.sudo().search([('product_label_id.id', "in", label_list)])
             product_count = len(search_product)

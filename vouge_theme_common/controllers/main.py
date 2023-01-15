@@ -343,11 +343,11 @@ class BizopleWebsiteSale(WebsiteSale):
         product_count, details, fuzzy_search_term = request.website._search_with_fuzzy("products_only", search,
             limit=None, order=self._get_search_order(post), options=options)
         search_product = details[0].get('results', request.env['product.template']).with_context(bin_size=True)
-        if not post.get('order') :
-            search_product = search_product.sorted('id',reverse=True)
-        if label_list :
-            search_product = search_product.sudo().search([('product_label_id.id', "in", label_list)])
-            product_count = len(search_product)
+        if not post.get('order') : #check condition of order in post
+            search_product = search_product.sorted('id',reverse=True) #get search product zith id desc order
+        if label_list : #check if the customer has checked one or more product label filter
+            search_product = search_product.sudo().search([('product_label_id.id', "in", label_list)]) #filter search product list using checked label(s)
+            product_count = len(search_product) #update product count in case of checked labels
         filter_by_price_enabled = request.website.is_view_active('website_sale.filter_products_price')
         if filter_by_price_enabled:
             # TODO Find an alternative way to obtain the domain through the search metadata.

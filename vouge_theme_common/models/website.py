@@ -119,6 +119,7 @@ class Website(models.Model):
         return brands
     
     def get_product_labels(self, category, **post):
+        # function to fetch labels from product.label.bizople model
         domain = []
         if category:
             cat_id = []

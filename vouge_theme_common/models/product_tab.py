@@ -58,8 +58,3 @@ class ProductLabelBizople (models.Model):
      label_font_color = fields.Char(string="Label Font Color", required=True, default="#ffffff")
      label_style = fields.Selection(
         string='Label Style', selection=_SELECTION_STYLE, default='rounded')
-     product_ids = fields.One2many(
-         'product.template',
-         'product_label_id',
-         string='Product Labels',
-     )

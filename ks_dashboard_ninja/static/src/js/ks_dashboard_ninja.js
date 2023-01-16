@@ -1338,7 +1338,7 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
 
             this.chart_container[chart_id] = ksMyChart;
             if (chart_data && chart_data["datasets"].length > 0) self.ksChartColors(item.ks_chart_item_color, ksMyChart, chart_type, chart_family, item.ks_bar_chart_stacked, item.ks_semi_circle_chart, item.ks_show_data_value, chart_data, item);
-
+            }
         },
 
         ksHideFunction: function(options, item, ksChartFamily, chartType) {

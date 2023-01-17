@@ -75,11 +75,11 @@ Dashboard Ninja v15.0,
 
 	'maintainer': 'Ksolves India Ltd.',
 
-	'live_test_url': 'https://dn15demo.kappso.com/web#cids=1&menu_id=599&ks_dashboard_id=1&action=835',
+	'live_test_url': 'https://dn15demo.kappso.com/web/demo_login',
 
 	'category': 'Tools',
 
-	'version': '15.0.1.2.0',
+	'version': '15.0.1.1.8',
 
 	'support': 'sales@ksolves.com',
 

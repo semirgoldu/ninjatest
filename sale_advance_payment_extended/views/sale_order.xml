@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="taqat_view_order_form" model="ir.ui.view">
+        <field name="name">taqat.sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_template_id']" position="after">
+                <field name="partner_credit"/>
+            </xpath>
+            <xpath expr="//button[@name='action_cancel']" position="after">
+                <field name="advance_done" invisible="1"/>
+                <button name="action_advance_payment" string="Advance Payment" type="object" class="btn btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="sale_advance_payment_view_order_form" model="ir.ui.view">
+        <field name="name">sale_advance_payment_form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_advance_payment.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='%(sale_advance_payment.action_view_account_voucher_wizard)d']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

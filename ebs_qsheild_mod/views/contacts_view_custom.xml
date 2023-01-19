@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="custom_contacts_view" model="ir.ui.view">
+            <field name="name">custom.contacts.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='company_type']" position="replace">
+                    <field name="company_type" invisible="1" widget="radio" class="oe_edit_only"
+                           options="{'horizontal': true}"/>
+
+                    <field name="person_type"
+                           widget="radio"
+                           invisible="context.get('readonly_person_type', False)"
+                           class="oe_edit_only"
+                           options="{'horizontal': true}"
+                           default_focus="1"
+                    />
+                </xpath>
+<!--                <xpath expr="//field[@name='parent_id']//.." position="replace">-->
+<!--                </xpath>-->
+
+                <xpath expr="//field[@name='name']" position="replace">
+                    <h1>
+                        <field name="name" placeholder="Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+                    </h1>
+                </xpath>
+
+                <xpath expr="//field[@name='name']//.." position="after">
+                    <h3>
+                        <field name="ref" required="False" style="width:70%" placeholder="Reference"/>
+                        <field name="id" invisible="1"/>
+                    </h3>
+                </xpath>
+                <xpath expr="//notebook//page[@name='internal_notes']" position="after">
+                    <page name="contract_page" string="Contracts"
+                          attrs="{'invisible':[('person_type','!=','company')]}">
+                        <field
+                                name="contracts"
+                                context="{
+                                'invisible_contact':True,
+                                'required_contact':False,
+                                'default_contact_id':id
+                                }"
+                        />
+                    </page>
+                </xpath>
+
+                <xpath expr="//notebook//page[@name='internal_notes']" position="after">
+                    <page name="payments_page" string="Payments" attrs="{'invisible':[('person_type','=','child')]}">
+                        <field name="payment_ids" readonly="True">
+                            <tree create="0" delete="0">
+                                <field name="amount"/>
+                                <field name="currency_id"/>
+                                <field name="create_date"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//notebook//page[@name='internal_notes']" position="after">
+                    <page name="services_page" string="Services">
+                        <field name="service_ids"
+                               context="{
+                                'invisible_contact':True,
+                                'default_partner_id':id
+                                }"
+                        />
+                    </page>
+                </xpath>
+
+
+                <!--                 <xpath expr="//notebook//page[@name='internal_notes']" position="after">-->
+                <!--                    <page name="document_archive_page" string="Documents Archived">-->
+                <!--                        <field name="document_o2m_archived" />-->
+                <!--                    </page>-->
+                <!--                </xpath>-->
+
+                <xpath expr="//notebook//page[@name='internal_notes']" position="after">
+                    <page name="document_page" string="Documents">
+                        <button name="%(create_contact_document_view_action)d"
+                                string="Create Document"
+                                type="action" class="oe_highlight"
+                                context="{
+                                'default_contact_id':id,
+                                'upload_contact':True
+                                }"/>
+                        <field name="document_o2m"/>
+                    </page>
+                </xpath>
+
+
+                <xpath expr="//notebook//page[@name='internal_notes']" position="before">
+                    <page name="address_page" string="Address" attrs="{'invisible':[('person_type','=','child')]}">
+                        <group>
+                            <field name="type" groups="base.group_no_one"/>
+                            <label for="type" name="address_name">
+                                <b attrs="{'invisible': [('type', '!=', 'contact')]}">Company Address</b>
+                                <b attrs="{'invisible': [('type', '!=', 'invoice')]}">Invoice Address</b>
+                                <b attrs="{'invisible': [('type', '!=', 'delivery')]}">Delivery Address</b>
+                                <b attrs="{'invisible': [('type', '!=', 'other')]}">Other Address</b>
+                                <b attrs="{'invisible': [('type', '!=', 'private')]}">Private Address</b>
+                                <b attrs="{'invisible': [('type', '!=', False)]}">Address</b>
+                            </label>
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="city" placeholder="City" class="o_address_city"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="state_id" class="o_address_state" placeholder="State"
+                                       options="{&quot;no_open&quot;: True}"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                                       context="{'country_id': country_id, 'zip': zip}"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country"
+                                       options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"
+                                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                            </div>
+                            <field name="vat" invisible='1' placeholder="e.g. BE0477472701"
+                                   attrs="{'readonly': [('parent_id','!=',False)]}"/>
+                        </group>
+                    </page>
+                </xpath>
+
+                <xpath expr="//notebook//page[@name='internal_notes']" position="before">
+                    <page name="employee_page" string="Employees"
+                          attrs="{'invisible':[('person_type','!=','company')]}">
+                        <field name="company_employees" context="{
+                        'default_person_type':'emp',
+                         'default_company_type':'person',
+                         'default_parent_id':id,
+                         'default_sponsor':sponsor,
+                        'readonly_person_type':True,
+                        'readonly_parent_id':True
+                        }"
+
+                        >
+                            <tree>
+                                <field name="name"/>
+                                <field name="qatar_id_doc"/>
+                                <field name="qatarid_exp_date"/>
+                                <field name="date" string="Date of Birth"/>
+                                <field name="gender"/>
+                                <field name="image_1920" widget="image" height="30"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//notebook//page[@name='internal_notes']" position="before">
+                    <page name="visitor_page" string="Visitors"
+                          attrs="{'invisible':[('person_type','!=','company')]}">
+                        <field name="company_visitors" context="{
+                        'default_person_type':'visitor',
+                        'default_company_type':'person',
+                        'default_parent_id':id,
+                        'default_sponsor':sponsor,
+                        'readonly_person_type':True,
+                        'readonly_parent_id':True
+                        }"
+
+                        >
+                            <tree>
+                                <field name="name"/>
+                                 <field name="qatar_id_doc"/>
+                                <field name="qatarid_exp_date"/>
+                                <field name="date" string="Date of Birth"/>
+                                <field name="gender"/>
+                                <field name="image_1920" widget="image" height="30"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+
+                <xpath expr="//notebook//page[@name='internal_notes']" position="before">
+                    <page name="company_dependant_page" string="Employees Dependants"
+                          attrs="{'invisible':[('person_type','!=','company')]}">
+                        <field name="dependants" readonly="True">
+                            <tree>
+                                <field name="name"/>
+                                <field name="parent_id"/>
+                                 <field name="qatar_id_doc"/>
+                                 <field name="qatarid_exp_date"/>
+                                <field name="date" string="Date of Birth"/>
+                                <field name="gender"/>
+                                <field name="image_1920" widget="image" height="30"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+
+                <xpath expr="//notebook//page[@name='internal_notes']" position="before">
+                    <page name="dependant_page" string="Dependants"
+                          attrs="{'invisible':[('person_type','!=','emp')]}">
+                        <field name="employee_dependants" context="{
+                        'default_person_type':'child',
+                        'default_parent_id':id,
+                        'default_sponsor':sponsor,
+                        'default_company_type':'person',
+                        'readonly_person_type':True,
+                        'readonly_parent_id':True
+                        }">
+                            <tree>
+                                <field name="name"/>
+                                 <field name="qatar_id_doc"/>
+                                <field name="qatarid_exp_date"/>
+                                <field name="date" string="Date of Birth"/>
+                                <field name="gender"/>
+                                <field name="image_1920" widget="image" height="30"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+
+                <xpath expr="//notebook//page[@name='internal_notes']" position="before">
+                    <page name="sponsor_page" string="Sponsor For"
+                          attrs="{'invisible':[('person_type','!=','company')]}">
+                        <field name="sponsor_for" context="{
+                        'readonly_person_type':True,
+                        'readonly_parent_id':True
+                        }"
+
+                        >
+                            <tree>
+                                <field name="name"/>
+                                <field name="date" string="Date of Birth"/>
+                                <field name="gender"/>
+                                <field name="person_type"/>
+                                <field name="parent_id"/>
+                                <field name="image_1920" widget="image" height="30"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//sheet//group//group[1]" position="after">
+                    <group>
+
+						<field name="type" invisible="True"/>
+                        <field name="is_miscellaneous"/>
+                        <field name="parent_id" readonly="context.get('readonly_parent_id', False)"
+                               string="Related Contact"
+                               options="{'no_create': True, 'no_create_edit':True}"
+                               attrs="{'invisible':[('person_type','=','company')]}"
+                               domain="[('person_type','=', (
+						   (person_type in ('emp','visitor') and 'company')
+						   or
+						   (person_type in ('child') and 'emp')
+						   ))]"/>
+                        <field name="related_company" readonly="True"
+                               attrs="{'invisible':[('person_type','!=','child')]}"/>
+                        <!-- attrs="{'invisible':[('person_type','not in',('emp','visitor'))]}"-->
+                        <field name="sponsor" options="{'no_create': True, 'no_create_edit':True}"/>
+
+                        <field name="contact_relation_type_id" attrs="{'invisible':[('person_type','!=','child')]}"/>
+                        <field name="date_join" attrs="{'invisible':[('person_type','!=','emp')]}"/>
+                        <field  name="date_stop_renew"/>
+                        <field name="date_termination" attrs="{'invisible':[('person_type','!=','emp')]}"/>
+
+                        <field name="passport_doc" options="{'no_create': True, 'no_create_edit':True}"
+                               attrs="{'invisible':[('person_type','=', 'company')]}"
+                               domain="[('partner_id','=',id)]"
+
+                        />
+                        <field name="passport_exp_date" attrs="{'invisible':[('passport_doc','=', False)]}"/>
+
+
+                        <field name="qatar_id_doc" domain="[('partner_id','=',id)]"
+                               options="{'no_create': True, 'no_create_edit':True}"
+                               attrs="{'invisible':[('person_type','in', ('company','visitor'))]}"/>
+
+                        <field name="qatarid_exp_date"
+                               attrs="{'invisible':[('qatar_id_doc','=', False)]}"/>
+
+                        <field name="account_manager" attrs="{'invisible':[('person_type','!=', 'company')]}"/>
+
+                        <field name="computer_card_doc" domain="[('partner_id','=',id)]"
+                               options="{'no_create': True, 'no_create_edit':True}"
+                               attrs="{'invisible':[('person_type','!=', 'company')]}"/>
+
+                        <field name="comp_card_exp_date" attrs="{'invisible':[('computer_card_doc','=', False)]}"/>
+
+                        <field name="cr_number_doc" domain="[('partner_id','=',id)]"
+                               options="{'no_create': True, 'no_create_edit':True}"
+                               attrs="{'invisible':[('person_type','!=', 'company')]}"/>
+
+                        <field name="cr_exp_date" attrs="{'invisible':[('cr_number_doc','=', False)]}"/>
+
+                        <field name="trade_licence_doc" domain="[('partner_id','=',id)]"
+                               options="{'no_create': True, 'no_create_edit':True}"
+                               attrs="{'invisible':[('person_type','!=', 'company')]}"/>
+
+                        <field name="trade_licence_date" attrs="{'invisible':[('trade_licence_doc','=', False)]}"/>
+
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="before">
+
+                    <field name="nationality" attrs="{'invisible':[('company_type','=', 'company')]}"/>
+                    <field name="gender" attrs="{'invisible':[('company_type','=', 'company')]}"/>
+                    <field name="date" string="Date of Birth"
+                           attrs="{'invisible':[('company_type','=', 'company')]}"/>
+                </xpath>
+                <xpath expr="//sheet//notebook//page[1]" position="attributes">
+                    <attribute name="attrs">{'invisible':[('company_type','!=', 'company')]}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='website']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('company_type','!=', 'company')]}</attribute>
+                </xpath>
+
+
+                <xpath expr="//field[@name='title']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('person_type','in', ('company','child'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('person_type','in', ('company','child'))]}</attribute>
+                </xpath>
+
+                <xpath expr="//notebook//page[@name='sales_purchases']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//notebook//page[1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_see_services" type="object" class="oe_stat_button"
+                            icon="fa-file-text-o">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="service_count"/>
+                            </span>
+                            <span class="o_stat_text">Services</span>
+                        </div>
+                    </button>
+
+                </xpath>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="res_partner_custom_tree">
+            <field name="name">res.partner.custom.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="priority">16</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+
+                <xpath expr="//tree//field[@name='display_name']" position="replace">
+                    <field name="name" string="Name"/>
+                </xpath>
+                <xpath expr="//tree//field[@name='name']" position="after">
+                    <field name="parent_id" optional="show"/>
+                </xpath>
+                <xpath expr="//tree//field[@name='parent_id']" position="after">
+                    <field name="sponsor" optional="show"/>
+                </xpath>
+                <xpath expr="//tree//field[@name='sponsor']" position="after">
+                    <field name="related_company" optional="show"/>
+                </xpath>
+                <xpath expr="//tree//field[@name='vat']" position="replace">
+                </xpath>
+                <xpath expr="//tree//field[@name='email']" position="after">
+                    <field name="person_type" string="Type" optional="show"/>
+                    <field  name="date_stop_renew" optional="hide"/>
+                </xpath>
+                <xpath expr="//tree//field[@name='person_type']" position="after">
+                    <field name="image_1920" widget="image" height="30"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="res_partner_custom_kanban">
+            <field name="name">res.partner.custom.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="priority">16</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='display_name']" position="replace">
+                    <field name="name"/>
+                </xpath>
+                <xpath expr="//field[@name='title']" position="after">
+                    <field name="person_type"/>
+                </xpath>
+                <xpath expr="//kanban//templates//field[@name='display_name']" position="replace">
+                    <field name="name"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="res_partner_custom_filter">
+            <field name="name">res.partner.custom.filter</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='parent_id']" position="replace">
+                    <field name="related_company" domain="[('person_type', '=', 'company')]" string="Related Company"
+                           operator="child_of"/>
+                    <field name="parent_id" domain="[('person_type', '=', 'emp')]" string="Related Contact"
+                           operator="child_of"/>
+                </xpath>
+
+                <xpath expr="//filter[@name='type_person']" position="replace">
+
+                </xpath>
+
+<!--                <xpath expr="//filter[@name='salesperson']" position="replace">-->
+
+<!--                </xpath>-->
+
+<!--                <xpath expr="//filter[@name='group_country']" position="replace">-->
+
+<!--                </xpath>-->
+                <xpath expr="//filter[@name='group_company']" position="replace">
+                    <filter name="group_related_company" string="Related Company"
+                            context="{'group_by': 'related_company'}"/>
+
+                </xpath>
+                <xpath expr="//filter[@name='group_related_company']" position="after">
+                    <filter name="group_parents" string="Related Contact" context="{'group_by': 'parent_id'}"/>
+                </xpath>
+                <xpath expr="//filter[@name='group_parents']" position="after">
+                    <filter name="group_type" string="Type" context="{'group_by': 'person_type'}"/>
+                </xpath>
+
+                <xpath expr="//filter[@name='group_type']" position="after">
+                    <filter name="group_sponsor" string="Sponsor" context="{'group_by': 'sponsor'}"/>
+                </xpath>
+
+                <xpath expr="//filter[@name='type_company']" position="after">
+                    <filter string="Employee's" name="employee" domain="[('person_type', '=', 'emp')]"/>
+                    <filter string="Visitors" name="visitor" domain="[('person_type', '=', 'visitor')]"/>
+                    <filter string="Dependents" name="dependent" domain="[('person_type', '=', 'child')]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

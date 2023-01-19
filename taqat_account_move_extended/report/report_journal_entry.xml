@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_journal_entry_document">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <t t-set="total_debit" t-value="0"/>
+                <t t-set="total_credit" t-value="0"/>
+                <t t-set="o" t-value="doc"/>
+                <div class="page" style="font-size: 12pt !important;">
+                    <div class="row col-12 p-0 m-0">
+                        <div class="col-8">
+                        </div>
+                        <div class="col-4 p-0">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                 style="width:120%" alt="Logo"/>
+                        </div>
+                    </div>
+                    <center>
+                        <h3>
+                            <b>Journal Entry Number
+                                <br/>
+                                <span t-field="o.name"/>
+                            </b>
+                        </h3>
+                    </center>
+                    <br/>
+                    <br/>
+                    <table style="border:none !important;">
+                        <tbody style="border:none !important;">
+                            <tr style="border:none !important;">
+
+                                <th style="border:none !important;">Date</th>
+                                <td style="border:none !important;">:</td>
+                                <td style="border:none !important;">
+                                    <span style="font-weight: bold;" t-field="o.date"/>
+                                </td>
+
+
+                            </tr>
+                            <tr style="border:none !important;">
+                                <th style="border:none !important;">Journal</th>
+                                <td style="border:none !important;">:</td>
+                                <td style="border:none !important;">
+                                    <span style="font-weight: bold;" t-field="o.journal_id"/>
+                                </td>
+
+                            </tr>
+                            <tr style="border:none !important;">
+
+                                <th style="border:none !important;">Ref.</th>
+                                <td style="border:none !important;">:</td>
+                                <td style="border:none !important;;">
+                                    <span style="font-weight: bold;" t-field="o.ref"/>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <br/>
+                    <br/>
+
+
+                    <table style="width: 100%;height=90%">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;background-color:#B0C4DE;width: 70%">Account</th>
+                                <th style="text-align:center;background-color:#B0C4DE;width: 15%">Debit</th>
+                                <th style="text-align:center;background-color:#B0C4DE;width: 15%">Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.line_ids" t-as="l">
+                                <td style="width: 70%">
+                                    <span t-field="l.account_id"/>
+                                </td>
+
+
+                                <td style="width: 15%">
+                                    <span t-field="l.debit"/>
+                                </td>
+                                <t t-set="total_debit" t-value="total_debit+l.debit"/>
+                                <td style="width: 15%;background-color: white;">
+                                    <span t-field="l.credit"/>
+                                </td>
+                                <t t-set="total_credit" t-value="total_credit+l.credit"/>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <table style="width: 100%;height=90%">
+                        <tfoot>
+                            <tr>
+                                <td class="text-center"
+                                    style="border: 1px solid #000;font-weight: bold;font-size: 20px;width: 70%">
+                                    Total
+                                </td>
+                                <td class="text-center"
+                                    style="border: 1px solid #000;font-weight: bold;font-size: 16px;width: 15%">
+                                    <span t-esc="total_debit"
+                                          style="direction: rtl; font-size: 16px; font-weight: bold;"/>
+                                    <span t-esc="o.currency_id.symbol"/>
+                                </td>
+                                <td class="text-center"
+                                    style="border: 1px solid #000; font-weight: bold;font-size: 16px;width: 15%">
+                                    <span t-esc="total_credit"
+                                          style="direction: rtl; font-size: 16px; font-weight: bold;"/>
+                                    <span t-esc="o.currency_id.symbol"/>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <style>
+                        table{
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                        }
+                        td{
+                        border: 1px solid black;
+                        padding: 5px 5px 5px 5px;
+                        }
+                        tr{
+                        border: 1px solid black;
+                        }
+                        tbody{
+                        border: 1px solid black;
+                        }
+                        thead{
+                        border: 1px solid black;
+                        }
+                        th{
+                        border: 1px solid black;
+                        padding: 5px 5px 5px 5px;
+                        font-weight: bold;
+                        }
+                    </style>
+                </div>
+            </t>
+        </t>
+    </template>
+    <!--TEMPLATE [JOURNAL ENTRY REPORT]-->
+    <template id="report_journal_entry">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="taqat_account_move_extended.report_journal_entry_document"/>
+            </t>
+        </t>
+    </template>
+    <record id="paperformat_taqat_journal_entry" model="report.paperformat">
+        <field name="name">Tenancy Contract A4</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+    <report id="action_report_journal_entry"
+            model="account.move"
+            string="Journal Entries"
+            report_type="qweb-pdf"
+            name="taqat_account_move_extended.report_journal_entry"
+            file="taqat_account_move_extended.report_journal_entry"
+            paperformat="taqat_account_move_extended.paperformat_taqat_journal_entry"
+    />
+</odoo>

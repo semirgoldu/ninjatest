@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="add_free_rent_template">
+        <t t-call="web.basic_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+            <div class="page">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6 p-0">
+                            <table style="border:1px solid black; width:100%;line-height: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <td class="font-weight-bold p-1" style="border:1px solid black;">Reference:</td>
+                                        <td class="p-1" style="border:1px solid black;">
+                                            <t t-if="doc.reference_no" t-esc="doc.reference_no"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-weight-bold p-1" style="border:1px solid black;">Eff Date:</td>
+                                        <td class="p-1" style="border:1px solid black;">
+                                            <t t-esc="datetime.date.today()"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-weight-bold p-1" style="border:1px solid black;">Lease Number:
+                                        </td>
+                                        <td class="p-1" style="border:1px solid black;">
+                                            <t t-if="doc.name" t-esc="doc.name"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <div class="row">
+                        <div class="col-12" style="text-align: center;margin: auto">
+                            <h5 class="font-weight-bold">ADDENDUM To THE LEASE CONTRACT FOR</h5>
+                            <span class="font-weight-bold"><t t-if="doc.property_id" t-esc="doc.property_id.name"/></span><br/>
+                            <span class="font-weight-bold" style="font-size: 19px"><t t-if="doc.location_code" t-esc="doc.location_code"/></span><br/>
+                            <span class="font-weight-bold"><t t-if="doc.tenant_id" t-esc="doc.tenant_id.name"/></span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-12">
+                            <span style="font-size: 16px;">It is on this <b><t t-if="datetime.date.today()" t-esc="datetime.date.today().strftime('%A')"/></b> corresponding to <b><t t-if="datetime.date.today()" t-esc="datetime.date.today().strftime('%d-%b-%Y')"/></b> this addendum to the lease contract commences. An agreement has been reached by and between:</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-12">
+                            <span>LESSOR: <t t-if="doc.company_id" t-esc="doc.company_id.name"/></span><br/>
+                            <p class="font-weight-bold">Represented by <t t-if="doc.company_id" t-esc="doc.company_id.name"/>, authorized to sign the contract as per power of authority number: 2017/60031. Dated 29/11/2017,Tel: <t t-if="doc.company_id" t-esc="doc.company_id.phone"/> Fax: , P.O. Box: , Qatar, Email: <t t-if="doc.company_id" t-esc="doc.company_id.email"/>,   First Party.</p>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-12">
+                            <div style="text-align: center;margin: auto">(First Party – Lessor - Landlord)</div><br/>
+                            <p class="font-weight-bold">LESSEE: <t t-if="doc.tenant_id" t-esc="doc.tenant_id.name"/>, Nationality: <t t-if="doc.tenant_id.country_id" t-esc="doc.tenant_id.country_id.name"/>, Tel: <t t-if="doc.tenant_id" t-esc="doc.tenant_id.phone"/>, Fax: <t t-if="doc.tenant_id" t-esc="doc.tenant_id.fax"/> , P.O. Box: ,Doha, Qatar Second Party.</p>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-12">
+                            <div style="text-align: center;margin: auto">(Second Party – Lessee - Tenant)</div><br/>
+                            <p>Both the Lessor and the Lessee may hereinafter be referred to as “Landlord” and “Tenant” and collectively as “Parties”. NOW, Therefore the Parties agreed as follows:</p>
+                            <br/>
+                            <table style="border: 1px solid black;">
+                                <tr style="width: 100%;">
+                                    <td class="p-1" style="width: 50%;border-right: 1px solid black;">Two Parties agreed that after the completion of the contract period. There will be a free period from <b><t t-if="doc.free_from" t-esc="doc.free_from"/></b> until <b><t t-if="doc.free_to" t-esc="doc.free_to"/></b>.</td>
+                                    <td class="p-1" style="width: 50%;direction:rtl;text-align:right;">اتفق الطرفان على انه بعد اكتمال فترة العقد بالكامل <br/>
+                                        سيتــم احتســــاب فترة مجانــيــــــة مــــن تاريـــخ<br/>
+                                    <b><t t-if="doc.free_to" t-esc="doc.free_from"/></b> و حتى <b><t t-if="doc.free_from" t-esc="doc.free_to"/></b>
+                                    </td>
+                                </tr>
+                                <tr style="width: 100%;">
+                                    <td class="p-1" style="width: 50%;border-right: 1px solid black;">
+                                        1. the free period is not convertible to cash <br/>
+                                        2. the free period is not transferrable or moveable <br/>
+                                        3. the free period shall only be valid with the current existing contract in its full term
+                                    </td>
+                                    <td class="p-1" style="width: 50%;direction:rtl;text-align: right;">
+                                            1. الفترة المجانية غير قابلة للتحويل إلى نقد<br/>
+                                        2. الفترة المجانية غير قابلة للتحويل من عقد لأخر أو لمستأجر  أخر.<br/>
+                                        3. تكون الفترة المجانية سارية فقط مع العقد الحالي لكامل مدة العقد.<br/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="p-0">
+                                Further as the lease contract is system generated and any changes or amendments on its terms and conditions are not permissible, this addendum is hereby written as the official confirmation and acceptance by both parties in correlation to the aforementioned amendment Once again, all other terms and conditions on the same contract remains valid and in full effect.
+                            </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row" style="text-align: center;margin: auto">
+                        <div class="col-6 font-weight-bold">
+                            First Party – Landlord
+                        </div>
+                        <div class="col-6 font-weight-bold">
+                            Second Party – Tenant
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="add_free_rent">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="taqat_property_management.add_free_rent_template" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,304 @@
+<odoo>
+    <template id="report_invoice_payment_request_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="taqat_account_move_extended.report_invoice_payment"/>
+            </t>
+        </t>
+    </template>
+    <template id="report_invoice_payment">
+        <t t-call="web.basic_layout">
+            <t t-set="o" t-value="o"/>
+            <div class="page container">
+                <div class="row">
+                    <div class="col-8"/>
+                    <div class="col-4" style="float: right">
+                        <div class="w-100 float-left" style="text-align: center;">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                 class="" style="width:50%;margin-right: 20px;" alt="Logo"/>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="row" style="text-align: center;padding-top: 20px;font-size: 24px;line-height:2;">
+                    <div class="col-8"
+                         style="border-top: 1px solid #2596be;border-bottom: 1px solid #2596be; margin: auto;">
+                        <strong>
+                            <span>
+                                <t t-if="o.subject" t-esc="o.subject"/>
+                                <t t-if="o.name" t-esc="o.name"/>
+                            </span>
+                        </strong>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:30px;">
+                    <div class="col-12">
+                        <table style="border: 1px solid black;text-align: center;width:100%">
+                            <tr style="line-height: 30px;">
+                                <td colspan="2" style="border: 1px solid black;width:35%;">
+                                    <strong>
+                                        <span>Invoice No</span>
+                                    </strong>
+                                    |
+                                    <strong>
+                                        <span style="direction: rtl;">فاتورة رقم</span>
+                                    </strong>
+                                </td>
+                                <td style="border: 1px solid black;width:30%;">
+                                    <strong>
+                                        <t t-esc="o.name"/>
+                                    </strong>
+                                </td>
+                                <td style="border: 1px solid black;width:35%;text-align:right;padding-right: 3px;"></td>
+                            </tr>
+                            <tr style="line-height: 30px;">
+                                <td colspan="2" style="border: 1px solid black;width:35%;">
+                                    <strong>
+                                        <span>REF.NO:</span>
+                                        <span>
+                                            <t t-esc="o.ref_document_number"/>
+                                        </span>
+                                    </strong>
+                                </td>
+                                <td style="border: 1px solid black;width:30%;">
+                                    <strong>
+                                        <t t-if="o.partner_id" t-esc="o.partner_id.name"/>
+                                    </strong>
+                                </td>
+                                <td style="border: 1px solid black;width:35%;text-align:right;padding-right: 3px;">
+                                    <strong>
+                                        <span>
+                                            Customer
+                                        </span>
+                                        |
+                                        <span style="direction: rtl;">
+                                            العميل
+                                        </span>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr style="line-height: 30px;">
+                                <td style="border: 1px solid black;width: 20%;">
+                                    <strong>
+                                        <span>
+                                            <t t-esc="o.invoice_date"/>
+                                        </span>
+                                    </strong>
+                                </td>
+                                <td style="border: 1px solid black;width: 20%;">
+                                    <strong>
+                                        <span>
+                                            Date
+                                        </span>
+                                        |
+                                        <span style="direction: rtl;">
+                                            التاريخ
+                                        </span>
+                                    </strong>
+                                </td>
+                                <td style="border: 1px solid black;width:30%;">
+                                    <strong>
+                                        <t t-if="o.partner_id" t-esc="o.partner_id.mobile"/>
+                                    </strong>
+                                </td>
+                                <td style="border: 1px solid black;width:35%;text-align:right;padding-right: 3px;">
+                                    <strong>
+                                        <span style="direction: rtl;">
+                                            الهاتف
+                                        </span>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="row ">
+                    <div class="col-12">
+                        <table style="text-align: center;">
+                            <thead>
+                                <tr style="border: 1px solid black;line-height: 30px;background: lightblue;">
+                                    <th style="border: 1px solid black;width:25%">
+                                        <span>السعر الإجمالي</span>
+                                        <br/>
+                                        <span>Total Price</span>
+                                    </th>
+                                    <th style="border: 1px solid black;width:25%">
+                                        <span>سعر الوحدة</span>
+                                        <br/>
+                                        <span>Unit Price</span>
+                                    </th>
+                                    <th style="border: 1px solid black;width:10%">
+                                        <span>الكمية</span>
+                                        <br/>
+                                        <span>Quantity</span>
+                                    </th>
+                                    <th style="border: 1px solid black;width:20%">
+                                        <span>اسم الصنف</span>
+                                        <br/>
+                                        <span>Product Name</span>
+                                    </th>
+                                    <th style="border: 1px solid black;width:10%">
+                                        <span>رمز الصنف</span>
+                                        <br/>
+                                        <span>Item Code</span>
+                                    </th>
+                                    <th style="border: 1px solid black;width: 10%;">
+                                        <span>#</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="counter" t-value="1"/>
+                                <t t-foreach="o.invoice_line_ids" t-as="line">
+                                    <tr style="line-height: 30px;">
+                                        <td style="border: 1px solid black;width:25%">
+                                            <t t-esc="line.price_subtotal"
+                                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                        <td style="border: 1px solid black;width:25%">
+                                            <t t-esc="line.price_unit"
+                                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                        <td style="border: 1px solid black;width:10%">
+                                            <t t-if="line.quantity" t-esc="line.quantity"/>
+                                        </td>
+                                        <td style="border: 1px solid black;width:20%;word-wrap: break-word;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;max-width: 0px;">
+                                            <t t-if="line.name" t-esc="line.name"/>
+                                        </td>
+                                        <td style="border: 1px solid black;width:10%;word-wrap: break-word;word-break: break-word;">
+                                            <t t-if="line.product_id" t-esc="line.product_id.default_code"/>
+                                        </td>
+                                        <td style="border: 1px solid black;width:10%;">
+                                            <t t-esc="counter"/>
+                                        </td>
+                                        <t t-set="counter" t-value="counter+1"/>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <table style="text-align: center;width:50%;">
+                                <tbody style="page-break-inside: avoid; display:block">
+                                    <tr style="line-height: 30px;">
+                                        <td style="border-bottom: 1px solid black;border-right: 1px solid black;border-left: 1px solid black;width:25%;">
+                                            <strong>
+                                                <t t-if="o.amount_total" t-esc="o.amount_total"
+                                                   t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </strong>
+                                        </td>
+                                        <td style="border-bottom: 1px solid black;border-right: 1px solid black;border-left: 1px solid black;width:25%;">
+                                            <strong>
+                                                <span>
+                                                    Total
+                                                </span>
+                                                |
+                                                <br/>
+                                                <span style="direction: rtl;">
+                                                    المبلغ الكلي
+                                                </span>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr style="border: 1px solid black;line-height: 30px;">
+                                        <td style="border: 1px solid black;width:25%;">
+                                            <strong>
+                                                -
+                                            </strong>
+                                        </td>
+                                        <td style="border: 1px solid black;width:25%;">
+                                            <strong>
+                                                <span>
+                                                    Paid Amount
+                                                </span>
+                                                |
+                                                 <br/>
+                                                <span style="direction: rtl;">
+                                                    المبلغ المدفوع
+                                                </span>
+                                            </strong>
+                                        </td>
+
+                                    </tr>
+                                    <tr style="border: 1px solid black;line-height: 30px;">
+                                        <td style="border: 1px solid black;width:25%;">
+                                            <strong>
+                                                <t t-if="o.amount_residual" t-esc="o.amount_residual"
+                                                   t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </strong>
+                                        </td>
+                                        <td style="border: 1px solid black;width:25%;">
+                                            <strong>
+                                                <span>
+                                                    Total Due
+                                                </span>
+                                                |
+                                                 <br/>
+                                                <span style="direction: rtl;">
+                                                    المبلغ المستحق
+                                                </span>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr style="border: 1px solid black;line-height: 30px;">
+                                        <td style="border: 1px solid black;width:25%;">
+                                        </td>
+                                        <td style="border: 1px solid black;width:25%;">
+                                            <strong>
+                                                <span style="direction: rtl;">
+                                                    المبلغ المستحق على الدفعة
+                                                </span>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>
+                                                <span style="direction: rtl;">
+                                                    محمد بن عبدالله اليافعي اليزيدي
+                                                </span>
+                                                <br/>
+                                                <span style="direction: rtl;">
+                                                    طاقات للتجارة وحلول الأعمال
+                                                </span>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" style="page-break-inside: avoid;width:90%;margin: auto;padding-top: 30px;">
+                    <div class="col-6" style="padding-left: 0px !important;padding-right: 0px !important;"></div>
+                    <div class="col-6"
+                         style="padding-top: 10px;padding-left: 0px !important;padding-right: 0px !important;">
+                        <div style="border: 1px solid black; padding-left: 10px;">
+                            <div style="text-align: right;padding-right: 7px;padding-top:5px;">
+                                <strong>
+                                    <span style="direction: rtl;">يرجى إرسال حو الاتكم الى مصرف الريان كما يأتي</span>
+                                </strong>
+                                <br/>
+                            </div>
+                            <br/>
+                            <span>Bank Name:</span>
+                            <span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].bank_name"/>
+                            <br/>
+                            <span>Account Name:</span>
+                            <span t-if="o.company_id" t-esc="o.company_id.name"/>
+                            <br/>
+                            <span>Branch:</span>
+                            <span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].bank_name"/>
+                            <br/>
+                            <span>Current Account:</span>
+                            <span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].acc_number"/>
+                            <br/>
+                            <span>IBAN:</span>
+                            <span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].iban_no"/>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

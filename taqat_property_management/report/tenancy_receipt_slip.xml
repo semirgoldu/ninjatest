@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_tenancy_receipt_slip_document">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <t t-set="o" t-value="doc"/>
+
+                <div class="page" style="font-size: 12pt !important;">
+                    <div class="row col-12 p-0 m-0">
+                        <div class="col-8 mt-5">
+                            <table style="border:none !important;">
+                                <tbody style="border:none !important;">
+                                    <tr style="border:none !important;">
+                                        <th style="border:none !important;">PO Box No.</th>
+                                        <td style="border:none !important;">:</td>
+                                        <td style="border:none !important;">
+                                            <span style="font-weight: bold;" t-field="o.company_id.partner_id.po_box"/>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:none !important;">
+                                        <th style="border:none !important;">Phone No.</th>
+                                        <td style="border:none !important;">:</td>
+                                        <td style="border:none !important;">
+                                            <span style="font-weight: bold;" t-field="o.company_id.phone"/>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:none !important;">
+                                        <th style="border:none !important;">Acknowledgement No.</th>
+                                        <td style="border:none !important;">:</td>
+                                        <td style="border:none !important;;">
+                                            <span style="font-weight: bold;" t-field="o.acknowledgment_no"/>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="col-4 p-0">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                 style="width:120%" alt="Logo"/>
+                        </div>
+                    </div>
+                    <center>
+                        <h3>
+                            <b>Receipt Slip Acknowledgement
+                            </b>
+                        </h3>
+                    </center>
+                    <br/>
+                    <br/>
+                    <div class="row col-12">
+                        <div class="col-8 p-0">
+                            <table class="table-sm" style="border:none !important;float:left;">
+                                <tbody style="border:none !important;">
+                                    <tr style="border:none !important;">
+                                        <th style="border:none !important;">Tenant Name</th>
+                                        <td style="border:none !important;">
+                                            <span style="font-weight: bold;" t-field="o.tenant_id"/>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:none !important;">
+                                        <th style="border:none !important;width:50%">Property Name</th>
+                                        <td style="border:none !important;">
+                                            <span style="font-weight: bold;" t-field="o.property_id"/>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:none !important;">
+                                        <th style="border:none !important;">Lease No.</th>
+                                        <td style="border:none !important;;">
+                                            <span style="font-weight: bold;" t-field="o.reference_no"/>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:none !important;">
+                                        <th style="border:none !important;">Location Code</th>
+                                        <td style="border:none !important;">
+                                            <span style="font-weight: bold;" t-field="o.location_code"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-4 ">
+                            <table style="border:none !important;float:right;">
+                                <tbody style="border:none !important;">
+                                    <tr style="border:none !important;">
+                                        <th colspan="2" style="border:none !important;">Collection Date</th>
+                                        <td style="border:none !important;">
+                                            <span style="font-weight: bold;" t-field="o.ten_date"/>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:none !important;">
+                                        <th colspan="2" style="border:none !important;">Lease Start Date</th>
+                                        <td style="border:none !important;">
+                                            <span style="font-weight: bold;" t-field="o.date_start"/>
+                                        </td>
+                                    </tr>
+                                    <tr style="border:none !important;">
+                                        <th colspan="2" style="border:none !important;">Lease End Date</th>
+                                        <td style="border:none !important;">
+                                            <span style="font-weight: bold;" t-field="o.date"/>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+
+                            </table>
+                        </div>
+                    </div>
+                    <t t-set="amount" t-value="0"/>
+
+                    <table style="width: 100%;height=90%">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;background-color:#B0C4DE;">Sr No.</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Description</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Check Number</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Maturity Date</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Check start Date</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Check End Date</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Pyment Status</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Receipt Date</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Old Cheque</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Bank Name</th>
+                                <th style="text-align:center;background-color:#B0C4DE;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="count" t-value="1"/>
+                            <tr t-foreach="o.rent_schedule_ids.filtered(lambda x:x.is_print_report==True)" t-as="l">
+                                <td>
+                                    <span t-esc="count"/>
+                                </td>
+                                <t t-if="l.is_deposit == True">
+                                    <td>
+                                        <span>Deposit</span>
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                    <td>
+                                        <span>Rent</span>
+                                    </td>
+                                </t>
+                                <td>
+                                    <span t-field="l.cheque_detail"/>
+                                </td>
+                                <td>
+                                    <span t-field="l.maturity_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="l.start_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="l.end_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="l.rent_status"/>
+                                </td>
+                                <td>
+                                    <span t-field="l.receipt_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="l.old_cheques"/>
+                                </td>
+                                <td>
+                                    <span t-field="l.bank_name"/>
+                                </td>
+                                <td>
+                                    <span t-field="l.amount"/>
+                                </td>
+                                <t t-set="amount" t-value="amount+l.amount"/>
+                                <t t-set="count" t-value="count+1"/>
+                            </tr>
+                            <tr>
+                                <td class="text-center" colspan="2"
+                                    style="border: 1px solid #000;font-weight: bold;font-size: 20px;">
+                                    Amount In Words
+                                </td>
+                                <td class="text-center" colspan="7"
+                                    style="border: 1px solid #000;font-weight: bold;font-size: 16px;">
+                                    <span t-esc="o.currency_id.amount_to_text(amount)"
+                                          style="font-size: 16px; font-weight: bold;"/>
+                                </td>
+                                <td class="text-center"
+                                    style="border: 1px solid #000;font-weight: bold;font-size: 20px;">
+                                    Total
+                                </td>
+                                <td class="text-center"
+                                    style="border: 1px solid #000; font-weight: bold;font-size: 16px;">
+                                    <span t-esc="amount"
+                                          style="font-size: 16px; font-weight: bold;"/>
+                                    <span t-esc="o.currency_id.symbol"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <style>
+                        table{
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                        }
+                        td{
+                        border: 1px solid black;
+                        padding: 5px 5px 5px 5px;
+                        }
+                        tr{
+                        border: 1px solid black;
+                        }
+                        tbody{
+                        border: 1px solid black;
+                        }
+                        thead{
+                        border: 1px solid black;
+                        }
+                        th{
+                        border: 1px solid black;
+                        padding: 5px 5px 5px 5px;
+                        font-weight: bold;
+                        }
+                    </style>
+                    <br/>
+                    <br/>
+                    <div>
+                        <h5><b>REMARKS</b>&#160;&#160;&#160;&#160;<span t-field="o.lease_type"/>
+                        </h5>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="row col-12 p-0">
+                        <div class="col-4">
+                            <h5>
+                                <b>PREPARED BY</b>
+                                <br/>
+                                <br/>
+                                <t t-esc="request.env.user.name"/>
+                            </h5>
+                        </div>
+                        <div class="col-4">
+                            <h5>
+                                <b>APPROVED BY</b>
+                            </h5>
+                        </div>
+                        <div class="col-4">
+                            <h5>
+                                <b>RECEIVED BY</b>
+                            </h5>
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+    <!--TEMPLATE [Tenancy Receipt Slip]-->
+    <template id="report_tenancy_receipt_slip">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="taqat_property_management.report_tenancy_receipt_slip_document"/>
+            </t>
+        </t>
+    </template>
+    <report id="action_report_tenancy_receipt_slip"
+            model="account.analytic.account"
+            string="Tenancy Receipt Slip"
+            report_type="qweb-pdf"
+            name="taqat_property_management.report_tenancy_receipt_slip"
+            file="taqat_property_management.report_tenancy_receipt_slip"
+            paperformat="taqat_property_management.paperformat_taqat_tenancy_contract"
+    />
+</odoo>

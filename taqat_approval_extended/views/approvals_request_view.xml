@@ -1,0 +1,145 @@
+<odoo>
+
+    <record id="taqat_approval_request_view" model="ir.ui.view">
+        <field name="name">approval.request.view</field>
+        <field name="model">approval.request</field>
+        <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <field name="uniq_name"/>
+            </xpath>
+            <xpath expr="//field[@name='date_confirmed']" position="before">
+                <field name="subject"/>
+                <field name="vendor_id"/>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="is_procurement_manager" invisible="1"/>
+                <field name="project_id" attrs="{'readonly': [('request_status', 'not in', ['new'])]}"/>
+            </xpath>
+            <xpath expr="//field[@name='product_line_ids']" position="attributes">
+               <attribute name="attrs"></attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_create_purchase_orders']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|','|','|',('approval_type', '!=', 'purchase'),('request_status', '!=', 'approved'),('purchase_order_count', '&gt;', 0), ('purchase_agreement_count', '&gt;', 0), ('purchase_bill_count', '&gt;', 0),]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_cancel']" position="before">
+                <button name="action_create_purchase_agreement" type="object"
+                    groups="taqat_approval_extended.group_procurement_manager"
+                    string="Create Purchase Agreement" class="btn-primary"
+                    data-hotkey="g" attrs="{'invisible': [
+                        '|','|','|','|',
+                            ('approval_type', '!=', 'purchase'),
+                            ('request_status', '!=', 'approved'),
+                            ('purchase_order_count', '&gt;', 0),
+                            ('purchase_agreement_count', '&gt;', 0),
+                            ('purchase_bill_count', '&gt;', 0),
+                    ]}"/>
+            </xpath>
+            <xpath expr="//button[@name='action_cancel']" position="before">
+                <button name="action_create_purchase_bill" type="object"
+                    groups="taqat_approval_extended.group_procurement_manager"
+                    string="Create Bill" class="btn-primary"
+                    data-hotkey="g" attrs="{'invisible': [
+                        '|','|','|','|',
+                            ('approval_type', '!=', 'purchase'),
+                            ('request_status', '!=', 'approved'),
+                            ('purchase_order_count', '&gt;', 0),
+                            ('purchase_agreement_count', '&gt;', 0),
+                            ('purchase_bill_count', '&gt;', 0),
+                    ]}"/>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button name="action_open_purchase_agreement" type="object"
+                    class="oe_stat_button" icon="fa-handshake-o"
+                    groups="taqat_approval_extended.group_procurement_manager"
+                    attrs="{'invisible': [('purchase_agreement_count', '=', 0)]}">
+                    <field name="purchase_agreement_count" string="Purchase Agreement" widget="statinfo"/>
+                </button>
+                <button name="action_open_purchase_bill" type="object"
+                    class="oe_stat_button" icon="fa-pencil-square-o"
+                    groups="taqat_approval_extended.group_procurement_manager"
+                    attrs="{'invisible': [('purchase_bill_count', '=', 0)]}">
+                    <field name="purchase_bill_count" string="Bill" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_approval_request_view_form_inherit" model="ir.ui.view">
+        <field name="name">taqat.approval.request.view.inherit</field>
+        <field name="model">approval.request</field>
+        <field name="inherit_id" ref="approvals_purchase.approval_purchase_request_view_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_open_purchase_orders']" position="attributes">
+                <attribute name="groups">taqat_approval_extended.group_procurement_manager</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_create_purchase_orders']" position="replace">
+                <button name="action_create_purchase_orders" type="object"
+                    groups="taqat_approval_extended.group_procurement_manager"
+                    string="Create RFQ's" class="btn-primary"
+                    data-hotkey="g" attrs="{'invisible': [
+                        '|', '|',
+                            ('approval_type', '!=', 'purchase'),
+                            ('request_status', '!=', 'approved'),
+                            ('purchase_order_count', '&gt;', 0)
+                    ]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_approval_request_tree_view" model="ir.ui.view">
+        <field name="name">approval.request.tree.view</field>
+        <field name="model">approval.request</field>
+        <field name="inherit_id" ref="approvals.approval_request_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='request_owner_id']" position="before">
+                <field name="subject"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="uniq_name"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_approval_product_view" model="ir.ui.view">
+        <field name="name">approval.product.line.view</field>
+        <field name="model">approval.product.line</field>
+        <field name="inherit_id" ref="approvals.approval_product_line_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="attributes">
+                <attribute name="attrs">{'readonly': [('parent.is_procurement_manager', '=',False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="price_unit"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_approval_request_kanban_view" model="ir.ui.view">
+        <field name="name">taqat_approval_request_kanban_view</field>
+        <field name="model">approval.request</field>
+        <field name="inherit_id" ref="approvals.approval_request_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_kanban_content')]" position="inside">
+                <div>
+                    <strong class="o_kanban_record_title"><field name="uniq_name"/></strong>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+     <record model="ir.ui.menu" id="approvals.approvals_menu_root">
+        <field name="groups_id" eval="[(4,ref('approvals.group_approval_user')),(4,ref('approvals.group_approval_manager'))]"/>
+    </record>
+
+    <record id="sequence_self_approval_request" model="ir.sequence">
+       <field name="name">Approval Request</field>
+       <field name="code">approval.request</field>
+       <field name="active">TRUE</field>
+       <field name="prefix">AR-</field>
+       <field name="padding">5</field>
+       <field name="number_next">1</field>
+       <field name="number_increment">1</field>
+    </record>
+
+</odoo>

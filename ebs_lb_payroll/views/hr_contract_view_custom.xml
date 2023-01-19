@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+
+
+        <record id="custom_hr_contract_view" model="ir.ui.view">
+            <field name="name">custom.hr.contract.view</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='job_id']" position="after">
+                    <field name="payroll_grade" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='wage_type']" position="after">
+                    <field name="package" invisible="1"/>
+                    <field name="wage_rate" invisible="1"/>
+                </xpath>
+                <xpath expr="//group[@name='yearly_advantages']" position="before">
+                    <group>
+                    <field name="accommodation"/>
+                    <field name="transport_allowance"/>
+                    <field name="living_allowance"/>
+                    <field name="other_allowance"/>
+                    <field name="food_allowance"/>
+                    <field name="mobile_allowance"/>
+                    <field name="package" readonly="1" force_save="1"/>
+                    </group>
+
+                </xpath>
+                <xpath expr="//page[@name='information']//group" position="inside">
+                    <group name="ticket" string="">
+                        <field name="maximum_ticket_allowance"/>
+                        <field name="eligible_after"/>
+                        <field name="eligible_every_year"/>
+                    </group>
+
+
+                </xpath>
+                <xpath expr="//div[@name='wage']" position="replace">
+                    <div class="o_row" name="wage">
+                        <field name="wage" nolabel="1"/>
+
+                    </div>
+                </xpath>
+            </field>
+
+        </record>
+
+    </data>
+</odoo>

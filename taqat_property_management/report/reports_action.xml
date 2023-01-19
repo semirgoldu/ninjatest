@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="action_parent_property_report_xlsx_report"
+            model="parent.property.report"
+            string="بيان العقارات"
+            report_type="xlsx"
+            name="taqat_property_management.parent_property_report_xlsx"
+            file="taqat_property_management.parent_property_report_xlsx"
+            attachment_use="False"
+    />
+
+    <report
+            id="action_maintenance_report_xlsx_report"
+            model="maintenance.report"
+            string="تقرير الصيانة"
+            report_type="xlsx"
+            name="taqat_property_management.maintenance_report_xlsx"
+            file="taqat_property_management.maintenance_report_xlsx"
+            attachment_use="False"
+    />
+
+    <report
+            id="action_real_estate_tenant_tenancies_xlsx_report"
+            model="real.estate.tenancies"
+            string="تقرير العقود"
+            report_type="xlsx"
+            name="taqat_property_management.real_estate_tenancies_xlsx"
+            file="taqat_property_management.real_estate_tenancies_xlsx"
+            attachment_use="False"
+    />
+
+    <report
+            id="action_real_tenant_tenancies_lines_xlsx_report"
+            model="real.estate.tenancies.lines"
+            string="تقرير المتأخرات"
+            report_type="xlsx"
+            name="taqat_property_management.tenancies_lines_xlsx"
+            file="taqat_property_management.tenancies_lines_xlsx"
+            attachment_use="False"
+    />
+
+    <report
+            id="action_vacancies_report_xlsx_report"
+            model="vacancies.report"
+            string="تقرير الوحدات الشاغرة"
+            report_type="xlsx"
+            name="taqat_property_management.vacancies_report_xlsx"
+            file="taqat_property_management.vacancies_report_xlsx"
+            attachment_use="False"
+    />
+
+    <report
+            id="action_real_tenant_expense_xlsx_report"
+            model="real.estate.expense"
+            string="تقرير المصروفات العقارية"
+            report_type="xlsx"
+            name="taqat_property_management.expense_xlsx_report"
+            file="taqat_property_management.expense_xlsx_report"
+            attachment_use="False"
+    />
+
+    <report
+            id="action_real_tenant_revenue_xlsx_report"
+            model="real.estate.revenue"
+            string="تقرير الايرادات العقارية"
+            report_type="xlsx"
+            name="taqat_property_management.revenue_xlsx_report"
+            file="taqat_property_management.revenue_xlsx_report"
+            attachment_use="False"
+    />
+</odoo>

@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <!--list view -->
+        <record id="contracts_tree" model="ir.ui.view">
+            <field name="name">Contracts Tree</field>
+            <field name="model">ebs_mod.contracts</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="contact_id"/>
+                    <field name="contract_type"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_contracts_filter" model="ir.ui.view">
+            <field name="name">Contracts Filters</field>
+            <field name="model">ebs_mod.contracts</field>
+            <field name="arch" type="xml">
+                <search string="Search Contract">
+                    <field name="name"/>
+                    <field name="contact_id" domain="[('is_company', '=', True)]"/>
+                    <separator/>
+<!--                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>-->
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="group_type" string="Contract Type" context="{'group_by': 'contract_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="contracts_form" model="ir.ui.view">
+            <field name="name">Contracts Form</field>
+            <field name="model">ebs_mod.contracts</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                                <field name="contact_id" required="context.get('required_contact', True)"
+                                       invisible="context.get('invisible_contact', False)"
+                                        options="{'no_create': True, 'no_create_edit':True}"
+                                       />
+                            </group>
+                            <group name="group_right">
+                                <field name="contract_type"/>
+                                <field name="payment_term"
+                                       attrs="{'invisible':[('contract_type','!=','retainer_agreement')]}"/>
+                                <field name="payment_amount"
+                                       attrs="{'invisible':[('contract_type','!=','retainer_agreement')]}"/>
+                                <field name="currency_id"
+                                       attrs="{'invisible':[('contract_type','!=','retainer_agreement')]}"/>
+                            </group>
+                        </group>
+                        <group name="group_bottom">
+                            <field name="desc"/>
+                            <field name="hide_notebook" invisible="True"/>
+                        </group>
+
+                        <notebook attrs="{'invisible':[('hide_notebook','=',True)]}">
+                            <page name="employee_page" string="Employees">
+                                <button name="add_all_employee" type="object" string="Add Employees"
+                                        class="btn btn-primary" style="margin-right:10px"/>
+                                <button name="remove_all_employee" type="object" string="Remove Employees"
+                                        class="btn btn-secondary"/>
+                                <field name="employee_list"
+                                       options="{'no_create': True, 'no_create_edit':True}"
+                                       domain="[
+                                      ('parent_id','=',contact_id ),('person_type','=','emp')
+                                      ]"
+                                >
+                                      <tree>
+                                        <field name="name"/>
+                                        <field name="sponsor"/>
+                                         <field name="phone"/>
+                                         <field name="email"/>
+                                        <field name="person_type"/>
+                                        <field name="image_1920" widget="image" height="30"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page name="visitor_page" string="Visitors">
+                                <button name="add_all_visitor" type="object" string="Add Visitors"
+                                        class="btn btn-primary" style="margin-right:10px"/>
+                                <button name="remove_all_visitor" type="object" string="Remove Visitors"
+                                        class="btn btn-secondary"/>
+                                <field name="visitor_list"
+                                       options="{'no_create': True, 'no_create_edit':True}"
+                                       domain="[
+                                      ('parent_id','=',contact_id ),('person_type','=','visitor')
+                                      ]"
+                                >
+                                      <tree>
+                                        <field name="name"/>
+                                        <field name="sponsor"/>
+                                         <field name="phone"/>
+                                         <field name="email"/>
+                                        <field name="person_type"/>
+                                        <field name="image_1920" widget="image" height="30"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page name="dependent_page" string="Dependants">
+                                <button name="add_all_dependent" type="object" string="Add Dependants"
+                                        class="btn btn-primary" style="margin-right:10px"/>
+                                <button name="remove_all_dependent" type="object" string="Remove Dependants"
+                                        class="btn btn-secondary"/>
+                                <field name="dependant_list"
+                                       options="{'no_create': True, 'no_create_edit':True}"
+
+                                       domain="[
+                                      ('related_company','=',contact_id ),('person_type','=','child')
+                                      ]"
+                                >
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="sponsor"/>
+                                         <field name="phone"/>
+                                         <field name="email"/>
+                                        <field name="person_type"/>
+                                        <field name="image_1920" widget="image" height="30"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page name="services_page" string="Services">
+                                 <button name="add_all_services" type="object" string="Add Services"
+                                        class="btn btn-primary" style="margin-right:10px"/>
+                                <button name="remove_all_services" type="object" string="Remove Services"
+                                        class="btn btn-secondary"/>
+                                <field name="service_ids"  options="{'no_create': True, 'no_create_edit':True}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--window -->
+        <record id="contracts_window" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="res_model">ebs_mod.contracts</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--menu -->
+
+
+    </data>
+</odoo>

@@ -1,0 +1,129 @@
+<odoo>
+
+<!--    Container Receipt search View-->
+        <record id="taqat_container_order_search_view" model="ir.ui.view">
+            <field name="name">Container.Order.search</field>
+            <field name="model">container.order</field>
+            <field name="arch" type="xml">
+                <search string="Container Receipt">
+                    <filter name="Owner_draft" string="Owner and Draft" domain="[('state', '=', 'draft'), ('owner_id', '=', uid)]"/>
+                    <filter name="Owner" string="Owner" domain="[('owner_id', '=', uid)]"/>
+                    <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                </search>
+<!--                <group expand="0" string="Group By">-->
+<!--                    <filter name="group_by_owner" string="Owner" domain="[]" context="{'group_by': 'owner_id'}"/>-->
+<!--                </group>-->
+            </field>
+        </record>
+
+    <!--Container Receipt Form View-->
+    <record id="taqat_container_order_form_view" model="ir.ui.view">
+        <field name="name">Container.Order.form</field>
+        <field name="model">container.order</field>
+        <field name="arch" type="xml">
+            <form string="Container Receipt">
+                    <header>
+                        <button string="Confirm" name="action_order_confirm" type="object" class="oe_highlight" attrs="{'invisible':['|',('state', 'not in', ['draft']), ('can_confirm', '!=', True)]}"/>
+                        <button string="Reset To Draft" name="action_reset_to_draft" type="object" class="oe_highlight" attrs="{'invisible':['|', ('state', 'not in', ['cancel']),('can_confirm', '=', False)]}"/>
+                        <button string="Cancel" name="action_order_cancel" type="object" class="oe_highlight"
+                                attrs="{'invisible':['|', ('state', 'not in', ['draft']), ('can_confirm', '!=', True)]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm"/>
+    <!--                    <button string="Receive" name="button_receive" type="object" class="oe_highlight"-->
+    <!--                            states="approved"/>-->
+    <!--                    <button string="Complete" name="button_complete" type="object" class="oe_highlight"-->
+    <!--                            groups="stock.group_stock_manager" states="received"/>-->
+    <!--                    <button string="Print Report" name="button_print_slip" type="object" class="oe_highlight"-->
+    <!--                            states="delivered"/>-->
+    <!--                    <button string="Generate Receipt" name="button_generate_slip" groups="stock.group_stock_manager"-->
+    <!--                            type="object" class="oe_highlight"-->
+    <!--                            attrs="{'invisible': ['|',('is_generate_receipt', '=', True),('state', '!=', 'delivered')]}"/>-->
+    <!--                    <button string="Reset to draft" name="button_reset_to_draft" type="object" class="oe_highlight"-->
+    <!--                            states="approved,received"/>-->
+    <!--                    <widget name="attach_document" string="Attach Document" highlight="1"/>-->
+    <!--                    <field name="state" widget="statusbar"/>-->
+    <!--                    <widget name="body_map"/>-->
+                    </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object"  name="action_view_orders"
+                            class="oe_stat_button"
+                            icon="fa-pencil-square-o" attrs="{'invisible':[('order_count', '=', 0)]}">
+                            <field name="order_count" widget="statinfo" string="Orders"/>
+                        </button>
+                        <button type="object"
+                                name="action_get_donation_transfer_view"
+                                class="oe_stat_button"
+                                icon="fa-truck"
+                                groups="stock.group_stock_user">
+                            <b>Receipt</b>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="can_confirm" invisible="1"/>
+                            <field name="is_created_by_donation" invisible="1"/>
+                            <field name="container_id" required="1" attrs="{'readonly':[('is_created_by_donation', '=', True)]}"/>
+                            <field name="order_number" context="{'order_number': order_number}" required="1" attrs="{'readonly':[('is_created_by_donation', '=', True)]}"/>
+                            <field name="picking_type_id" required="1" attrs="{'readonly':[('is_created_by_donation', '=', True)]}"/>
+                            <field name="date" attrs="{'readonly':[('is_created_by_donation', '=', True)]}"/>
+                        </group>
+                        <group>
+                            <field name="driver_id" required="1" attrs="{'readonly':[('is_created_by_donation', '=', True)]}"/>
+                            <field name="parent_id" context="{'parent_id': parent_id}" invisible="1" attrs="{'readonly':[('is_created_by_donation', '=', True)]}"/>
+                            <field name="owner_id" attrs="{'readonly':[('is_created_by_donation', '=', True)]}"/>
+                            <field name="total_weight" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                            <field name="inspection_user_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'required': [('parent_id', '=', False)],'readonly':[('state', 'not in', ['draft'])], 'invisible':[('parent_id', '!=', False)]}"/>
+                            <field name="is_wholesale" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="order_lines" string="Order Line">
+                            <field name="order_lines"  attrs="{'readonly':[('state', '!=', 'draft')]}">
+                                <tree editable="bottom" create="0" delete="0">
+                                    <field name="container_id" readonly="context.get('parent_id') == True or context.get('order_number') != True"/>
+                                    <field name="nbr_of_bags"/>
+                                    <field name="operation_type" required="1" readonly="context.get('parent_id') == True or context.get('order_number') != True"/>
+                                    <field name="comments" readonly="context.get('parent_id') != True or context.get('order_number') != True"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Container Receipt Tree View-->
+
+    <record id="taqat_container_order_tree" model="ir.ui.view">
+        <field name="name">container.order.tree</field>
+        <field name="model">container.order</field>
+        <field name="arch" type="xml">
+            <tree string="Container Receipt">
+                <field name="date"/>
+                <field name="container_id"/>
+                <field name="order_number"/>
+                <field name="picking_type_id"/>
+                <field name="driver_id"/>
+                <field name="owner_id"/>
+                <field name="total_weight"/>
+                <field name="state" widget="badge" decoration-success="state == 'confirm'" decoration-info="state not in ('confirm', 'draft')" decoration-muted="state == 'draft'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Action for Container Receipt Views -->
+    <record id="action_taqat_container_order_view" model="ir.actions.act_window">
+        <field name="name">Container Receipt</field>
+        <field name="res_model">container.order</field>
+        <field name="view_mode">tree,form</field>
+<!--        <field name="domain">[('parent_id', '=', False)]</field>-->
+        <field name="context">{'search_default_Owner_draft': 1}</field>
+        <field name="search_view_id" ref="taqat_container_order_search_view"/>
+    </record>
+
+
+    <menuitem id="menu_container_order" name="Container Receipt" parent="stock.menu_stock_root"
+              action="action_taqat_container_order_view"/>
+
+</odoo>

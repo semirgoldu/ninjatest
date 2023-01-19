@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+        <record id="attendance_api_log_tree_view" model="ir.ui.view">
+            <field name="name">attendance.api.log.tree.view</field>
+            <field name="model">attendance.api.log</field>
+            <field name="arch" type="xml">
+                <tree create="0" delete="0">
+                    <field name="device_id"/>
+                    <field name="emp_code"/>
+                    <field name="employee_id"/>
+                    <field name="punch_time"/>
+                    <field name="punch_state_display"/>
+                    <field name="verify_type"/>
+                    <field name="verify_type_display"/>
+                    <field name="terminal_alias"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="attendance_api_log_form_view" model="ir.ui.view">
+            <field name="name">attendance.api.log.form.view</field>
+            <field name="model">attendance.api.log</field>
+            <field name="arch" type="xml">
+                <form create="0" edit="0" delete="0">
+                    <sheet>
+                        <widget name="web_ribbon" title="Done"
+                                attrs="{'invisible': ['|','&amp;',('attendance_id','!=',False),('error','!=',False),
+                                                        '&amp;',('attendance_id','=',False),('error','!=',False)]}"/>
+                        <group>
+                            <group>
+                                <field name="device_id"/>
+                                <field name="emp_code"/>
+                                <field name="employee_id"/>
+                                <field name="punch_time"/>
+                                <field name="punch_state_display"/>
+                                <field name="verify_type"/>
+                                <field name="verify_type_display"/>
+                                <field name="terminal_alias"/>
+                            </group>
+                            <group>
+                                <field name="attendance_id" options="{'no_create_edit': True, 'no_open': True, 'no_create':True}"/>
+                                <field name="zk_attendance_id" options="{'no_create_edit': True, 'no_open': True, 'no_create':True}"/>
+                                <field name="is_mask"/>
+                                <field name="work_code"/>
+                                <field name="gps_location"/>
+                                <field name="area_alias"/>
+                                <field name="terminal_sn"/>
+                                <field name="temperature"/>
+                                <field name="error"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id='action_attendance_api_log' model='ir.actions.act_window'>
+            <field name="name">Attendance api log</field>
+            <field name="res_model">attendance.api.log</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_attendance_api_log" name="ZK Attendance api log"
+                  action="action_attendance_api_log"
+                  parent="hr_attendance.menu_hr_attendance_root"/>
+
+    </data>
+</odoo>

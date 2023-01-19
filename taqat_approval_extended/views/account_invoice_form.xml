@@ -1,0 +1,18 @@
+<odoo>
+    <record id="taqat_account_move_form_view" model="ir.ui.view">
+        <field name="name">account.move.form.view</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button name="get_purchase_approval"
+                        type="object"
+                        class="oe_stat_button"
+                        attrs="{'invisible': [('approval_count', '=', 0)]}"
+                        icon="fa-check-circle">
+                    <field name="approval_count" widget="statinfo" string="Approval"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <record id="taqat_tenant_partner_inherit_view" model="ir.ui.view">
+        <field name="name">tenant.partner.inherit.view</field>
+        <field name="model">tenant.partner</field>
+        <field name="inherit_id" ref="property_management.property_tenant_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="arabic_name" placeholder="Arabic Name"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

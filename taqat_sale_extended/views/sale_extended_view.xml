@@ -1,0 +1,33 @@
+<odoo>
+
+    <!-- Inherit Form View  Modify for subject field -->
+    <record id="taqat_sale_form_view_inherit" model="ir.ui.view">
+        <field name="name">Sale.order>inherit.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='sale_order_template_id']" position="after">
+                <field name="subject"/>
+                <field name="valid_days"/>
+            </xpath>
+            <xpath expr="//button[@name='action_view_invoice']" position="after">
+                <button name="get_sale_crm"
+                        type="object"
+                        class="oe_stat_button"
+                        attrs="{'invisible': [('crm_count', '=', 0)]}"
+                        icon="fa-handshake-o">
+                    <field name="crm_count" widget="statinfo" string="Crm Lead"/>
+                </button>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.menu" id="sale.sale_menu_root">
+        <field name="groups_id"
+               eval="[(4,ref('sales_team.group_sale_salesman_all_leads')),(4,ref('sales_team.group_sale_salesman')),(4,ref('sales_team.group_sale_manager'))]"/>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="taqat_groups_access_rights_extended.taqat_group_inventory_manager" model="res.users.role">
+            <field name="implied_ids" eval="[(4, ref('taqat_donation.group_donation_manager'))]"/>
+        </record>
+
+        <record id="ir_rule_driver_show_own_records" model="ir.rule">
+            <field name="name">Donation order: Driver See own lines</field>
+            <field name="model_id" ref="taqat_donation.model_donation_order"/>
+            <field name="domain_force">[('driver_id', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('taqat_donation.group_driver'))]"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="taqat_donation_manager_role" model="res.users.role">
+            <field name="name">Taqat Donation Manager</field>
+            <field name="group_id" eval="ref('taqat_donation.group_donation_manager')"/>
+            <field name="menu_items_ids"
+                   eval="[(4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('ebs_fusion_contacts.menu_suppliers')), (4, ref('contacts.menu_contacts')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('ebs_fusion_contacts.menu_companies')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('hr_appraisal.menu_hr_appraisal_root')),(4, ref('planning.planning_menu_root')), (4, ref('hr.menu_hr_root')), (4, ref('hr_holidays.menu_hr_holidays_root')), (4, ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('fleet.fleet_group_manager'),
+           ref('stock.group_stock_manager')])]"/>
+        </record>
+
+        <record id="taqat_driver_role" model="res.users.role">
+            <field name="name">Taqat Driver</field>
+            <field name="group_id" eval="ref('taqat_donation.group_driver')"/>
+            <field name="menu_items_ids"
+                   eval="[(4, ref('fleet.fleet_vehicle_menu')), (4, ref('utm.menu_link_tracker_root')), (4, ref('fleet.fleet_vehicle_log_contract_menu')), (4, ref('fleet.fleet_vehicle_log_services_menu')), (4, ref('fleet.menu_fleet_reporting')), (4, ref('fleet.fleet_configuration')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('ebs_fusion_contacts.menu_suppliers')), (4, ref('contacts.menu_contacts')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('ebs_fusion_contacts.menu_companies')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('hr_appraisal.menu_hr_appraisal_root')),(4, ref('planning.planning_menu_root')), (4, ref('hr.menu_hr_root')), (4, ref('hr_holidays.menu_hr_holidays_root')), (4, ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('fleet.fleet_group_user'),
+                   ref('stock.group_stock_manager')])]"/>
+        </record>
+
+        <record id="ir_rule_donation_show_own_records" model="ir.rule">
+            <field name="name">Donation order: Inventory Clerk See without Container</field>
+            <field name="model_id" ref="taqat_donation.model_donation_order"/>
+            <field name="domain_force">[('is_container', '=', False)]</field>
+            <field name="groups" eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_clerk'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="ir_rule_container_show_own_records" model="ir.rule">
+            <field name="name">Donation order: Inventory Clerk See with Container</field>
+            <field name="model_id" ref="taqat_donation.model_donation_order"/>
+            <field name="domain_force">[('is_container', '=', True)]</field>
+            <field name="groups" eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_container_clerk'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="ir_rule_ic_show_own_donation_records" model="ir.rule">
+            <field name="name">Donation order: Inventory Clerk See own</field>
+            <field name="model_id" ref="taqat_donation.model_donation_order"/>
+            <field name="domain_force">[('donator_id', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_clerk')), (4, ref('taqat_groups_access_rights_extended.taqat_group_inspection_user'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="ir_rule_ic_show_own_container_records" model="ir.rule">
+            <field name="name">Container order: Inventory Clerk See own</field>
+            <field name="model_id" ref="taqat_donation.model_container_order"/>
+            <field name="domain_force">[('owner_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_clerk')), (4, ref('taqat_groups_access_rights_extended.taqat_group_inspection_user'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="ir_rule_is_show_own_container_records" model="ir.rule">
+            <field name="name">Container order: Inspection User See own</field>
+            <field name="model_id" ref="taqat_donation.model_container_order"/>
+            <field name="domain_force">[('inspection_user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_inspection_user'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="ir_rule_ic_show_insp_container_records" model="ir.rule">
+            <field name="name">Container order: Inventory Clerk See Inspection</field>
+            <field name="model_id" ref="taqat_donation.model_container_order"/>
+            <field name="domain_force">[('picking_type_id.operation_type', '=', 'inspection')]</field>
+            <field name="groups" eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_inspection_user'))]"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="ir_rule_driver_co_no_edit_records" model="ir.rule">
+            <field name="name">Container order: Driver no edit</field>
+            <field name="model_id" ref="taqat_donation.model_container_order"/>
+            <field name="domain_force">[('driver_id', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('taqat_donation.group_driver'))]"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+    </data>
+</odoo>

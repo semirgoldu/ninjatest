@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="taqat_donation_stock_move_form_view_inherit" model="ir.ui.view">
+        <field name="name">stock.move.form.inherit</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_stock_move_operations"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[1]/group" position="inside">
+                <field name="picking_code" invisible="1"/>
+                <label for="from_serial_number" attrs="{'invisible': [('picking_code', '!=', 'internal')]}"/>
+                <div class="o_row" attrs="{'invisible': [('picking_code', '!=', 'internal')]}">
+                    <span>
+                        <field name="from_serial_number"/>
+                    </span>
+                    TO
+                    <span>
+                        <field name="to_serial_number"/>
+                    </span>
+                    <button name="action_assign_serial_number" type="object"
+                            class="btn-link" data-hotkey="k"
+                            title="Assign Price Unit">
+                        <span>Assign Serial Numbers</span>
+                    </button>
+                    <button name="action_clear_serial_number" type="object"
+                            class="btn-link" data-hotkey="y"
+                            title="Clear Price Unit">
+                        <span>Clear Serial Numbers</span>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_property_rent_report_report_rent_voucher_details,report_property_rent_report_report_rent_voucher_details,model_report_property_rent_report_report_rent_voucher_details,,1,1,1,1

@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+
+"access_zk_attendance","zk_attendance","model_zk_attendance",,1,1,1,1
+"access_zk_attendance_api_log","zk_attendance.api.log","model_attendance_api_log",,1,1,1,1
+"access_zk_machine_attendance","zk.machine.attendance","model_zk_machine_attendance",,1,1,1,1

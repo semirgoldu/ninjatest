@@ -1,0 +1,22 @@
+<odoo>
+
+    <record id="taqat_custom_hr_custody_view" model="ir.ui.view">
+        <field name="name">custom.hr.custody.view</field>
+        <field name="model">hr.custody</field>
+        <field name="inherit_id" ref="hr_custody.hr_custody_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='custody_name']" position="attributes">
+                <attribute name="required">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="before">
+                <field name="responsible_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_custody.hr_custody_main_menu">
+        <field name="groups_id" eval="[(4,ref('taqat_groups_access_rights_extended.group_custody'))]"/>
+    </record>
+
+
+</odoo>

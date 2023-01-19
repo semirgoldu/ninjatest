@@ -1,0 +1,23 @@
+<odoo>
+    <record id="taqat_project_form_view_inherit" model="ir.ui.view">
+        <field name="name">project.project.inherit.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="budget" string="Budget">
+                    <group>
+                        <field name="budget_position_id" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="position_id"/>
+                                <field name="description"/>
+                                <field name="amount"/>
+                                <field name="spent_amount"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

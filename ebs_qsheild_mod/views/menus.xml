@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+
+
+    <menuitem
+            id="contact_relation_type_view_menu"
+            name="Contact Relation Types"
+            action="contact_relation_type_window"
+            parent="contacts.res_partner_menu_config"
+            sequence="2"
+    />
+    <record model="ir.ui.menu" id="contacts.res_partner_menu_config">
+        <field name="sequence" eval="20"/>
+    </record>
+
+
+    <menuitem
+            id="contracts_view_menu"
+            name="Contracts"
+            action="contracts_window"
+            parent="contacts.menu_contacts"
+            sequence="5"
+    />
+
+
+    <menuitem
+            id="contract_payment_view_menu"
+            name="Payment Gateway"
+            parent="contacts.menu_contacts"
+            groups="ebs_qsheild_mod.qshield_payment_gateway_manager,ebs_qsheild_mod.qshield_payment_gateway_user"
+    />
+
+
+    <menuitem
+            id="contact_payments_menu"
+            name="Payments"
+            action="contact_payment_window"
+            parent="contract_payment_view_menu"
+            sequence="5"
+    />
+
+     <menuitem
+            id="contact_transactions_menu"
+            name="All Transactions"
+            action="contact_payment_transaction_window"
+            parent="contract_payment_view_menu"
+            sequence="10"
+    />
+
+
+
+    <menuitem
+            id="document_type_view_menu"
+            name="Document Types"
+            action="document_type_window"
+            parent="documents.Config"
+            sequence="6"
+    />
+
+
+    <menuitem
+            name="Services"
+        id="qshield_services"
+        sequence="7"
+        web_icon="approvals,static/description/icon.png"/>
+
+      <menuitem
+            id="service_request_view_menu"
+            name="Service Requests"
+            action="service_request_window"
+            parent="qshield_services"
+            sequence="5"
+    />
+    <menuitem
+            id="service_expenses_view_menu"
+            name="Services Expenses"
+            action="service_expenses_window"
+            parent="qshield_services"
+            sequence="7"
+    />
+
+    <menuitem
+            id="service_request__workflow_view_menu"
+            name="Service Requests Tasks"
+            action="service_request_workflow_window"
+            parent="qshield_services"
+            sequence="10"
+    />
+
+    <menuitem
+            id="services_config"
+            name="Configuration"
+            parent="qshield_services"
+            sequence="15"
+    />
+
+     <menuitem
+            id="service_type_view_menu"
+            name="Service Types"
+            action="service_type_window"
+            parent="services_config"
+            sequence="5"
+    />
+
+     <menuitem
+            id="expense_type_view_menu"
+            name="Expense Types"
+            action="expense_type_window"
+            parent="services_config"
+            sequence="10"
+    />
+    <menuitem
+            id="service_workflow_config_view_menu"
+            name="Service Workflow Configuration"
+            action="service_workflow_config_window"
+            parent="services_config"
+            sequence="15"
+    />
+
+</odoo>
+

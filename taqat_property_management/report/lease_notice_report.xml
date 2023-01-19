@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="lease_notice_template">
+         <t t-call="web.basic_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+            <div class="page">
+                <div class="container-fluid">
+                    <div class="row justify-content-end">
+                        <div class="col-6">
+                            <table style="border:1px solid black; width:100%;line-height: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <td class="font-weight-bold p-1" style="border:1px solid black;">Reference: </td>
+                                        <td class="p-1" style="border:1px solid black;"><t t-if="doc.reference_no" t-esc="doc.reference_no"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-weight-bold p-1" style="border:1px solid black;">Lease No: </td>
+                                        <td class="p-1" style="border:1px solid black;"><t t-if="doc.name" t-esc="doc.name"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-weight-bold p-1" style="border:1px solid black;">Notice Date: </td>
+                                        <td class="p-1" style="border:1px solid black;"><t t-if="doc.ten_date" t-esc="doc.ten_date.strftime('%d-%b-%Y')"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row p-0">
+                        <div class="col-6 p-0">
+                            <span class="font-weight-bold"><t t-if="doc.tenant_id" t-esc="doc.tenant_id.name"/></span><br/>
+                            <span>Mobile No: <t t-if="doc.mobile" t-esc="doc.mobile"/></span><br/>
+                            <span>Fax Number: </span><br/>
+                            <span>PO Box: </span>
+                        </div>
+                    </div>
+                    <div class="row p-0">
+                        <br/>
+                        <span class="font-weight-bold">Greetings,</span>
+                    </div>
+                    <br/>
+                    <div class="row p-0">
+                        <table class="w-100">
+                            <tbody style="border: 1px solid black;">
+                                <tr class="w-100 p-2">
+                                    <td class="w-50 p-2" style="border-right: 1px solid black;">
+                                        <div style="text-align: center;">
+                                        <u>
+                                        <span class="font-weight-bold">Subject: Lease expiry notice for the leased<br/>
+                                            Unit No. <t t-if="doc.property_id" t-esc="doc.property_id.location_code"/> - <t t-if="doc.code" t-esc="doc.code"/><br/>
+                                            Located at <t t-if="doc.property_id" t-esc="doc.property_id.name"/>
+                                        </span>
+                                        </u>
+                                        </div>
+                                    </td>
+                                    <td class="w-50 p-2">
+                                        <div style="text-align: center;">
+                                            <span class="font-weight-bold">الموضوع: إشعار بإنتهاء عقد إيجار وحدة رقم<br/>
+                                                <t t-if="doc.property_id" t-esc="doc.property_id.location_code"/> - <t t-if="doc.code" t-esc="doc.code"/><br/>
+                                                <t t-if="doc.property_id" t-esc="doc.property_id.name"/>الكائنة بالعقار
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="w-100 p-1">
+                                    <td class="w-50 p-2" style="border-right: 1px solid black;">
+                                        <br/>
+                                        <span>
+                                            With reference to the above subject we would like to<br/>
+                                            inform you that the lease for the unit mentioned above<br/>
+                                            will end in <t t-if="doc.date" t-esc="doc.date"/>.
+                                        </span>
+                                    </td>
+                                    <td class="w-50 p-2" style="text-align: right;">
+                                        <br/>
+                                        <span style="direction:rtl;">
+                                            بالإشارة إلى الموضوع أعلاه نود أن نحيطكم علماً بأن<br/>
+                                            عقد الإيجار
+                                             للوحدة المذكورة أعلاه سينتهى فى<t t-if="doc.date" t-esc="doc.date"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="w-100 p-1">
+                                    <td class="w-50 p-2" style="border-right: 1px solid black;">
+                                        <br/>
+                                        <span class="p-0">
+                                            We are hereby inviting you to pass by the office of <t t-if="doc.company_id" t-esc="doc.company_id.name"/> <t t-if="doc.company_id" t-esc="doc.company_id.street"/> <t t-if="doc.company_id" t-esc="doc.company_id.street2"/> <t t-if="doc.company_id" t-esc="doc.company_id.city"/> <t t-if="doc.company_id.state_id" t-esc="doc.company_id.state_id.name"/> <t t-if="doc.company_id.country_id" t-esc="doc.company_id.country_id.name"/> <t t-if="doc.company_id" t-esc="doc.company_id.zip"/><t t-if="doc.company_id.phone"> or call <t t-esc="doc.company_id.phone"/></t>
+                                            and this is within a week from the date of this
+                                            notice in order to sign a new lease with the rent amount
+                                            <t t-esc="doc.rent"/> Starting from <t t-if="doc.date"><t t-esc="(doc.date + datetime.timedelta(days=1)).strftime('%Y-%m-%d')"/></t>.
+                                        </span>
+                                    </td>
+                                    <td class="w-50 p-2" style="text-align: right;">
+                                        <br/>
+                                        <span style="direction:rtl;">
+                                            <t t-if="doc.company_id" t-esc="doc.company_id.name"/> <t t-if="doc.company_id" t-esc="doc.company_id.street"/> <t t-if="doc.company_id" t-esc="doc.company_id.street2"/> <t t-if="doc.company_id" t-esc="doc.company_id.city"/> <t t-if="doc.company_id.state_id" t-esc="doc.company_id.state_id.name"/> <t t-if="doc.company_id.country_id" t-esc="doc.company_id.country_id.name"/> <t t-if="doc.company_id" t-esc="doc.company_id.zip"/><t t-if="doc.company_id.phone"> or call <t t-esc="doc.company_id.phone"/></t>لذا يرجى  الحضور إلى <br/>
+                                            وذلك في غضون أسبوع من تاريخ  هذا<br/>
+                                            <t t-esc="doc.rent"/>  الإشعار وذلك لتوقيع عقد إيجار جديد بقيمة<br/>
+                                            .<t t-if="doc.date"><t t-esc="(doc.date + datetime.timedelta(days=1)).strftime('%Y-%m-%d')"/></t>  إعتبارا  من تاريخ<br/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="w-100 p-1">
+                                    <td class="w-50 p-2" style="border-right: 1px solid black;">
+                                        <br/>
+                                        <span class="p-0 font-weight-bold" style="color: red;">
+                                            For two years contract. Please visit our office for contract signing and payment arrangement before The <t t-set ="first_date" t-value="datetime.date.today().replace(day=1) - datetime.timedelta(days=1)"/><t t-esc="(first_date + relativedelta(months=1)).strftime('%Y-%m-%d')"/>.
+                                        </span>
+                                    </td>
+                                    <td class="w-50 p-2" style="text-align: right;">
+                                        <br/>
+                                        <span class="font-weight-bold" style="direction:rtl;color: red;">
+                                            العقد لمدة سنتين . يرجى زيارة المكتب لدينا لتوقيع<br/>
+                                            <t t-set ="first_date" t-value="datetime.date.today().replace(day=1) - datetime.timedelta(days=1)"/><t t-esc="(first_date + relativedelta(months=1)).strftime('%Y-%m-%d')"/>  عقدالايجار قبل تاريخ
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="w-100 p-1">
+                                    <td class="w-50 p-2" style="border-right: 1px solid black;">
+                                        <br/>
+                                        <span class="p-0">
+                                            We are informing you that in the case you didn’t come to our office to sign the new contract and that if you continue to occupy the leased property after the expiry of this Agreement’s term, this Agreement shall be renewed automatically with an increase of 25% in the rent amount for the new period without the requirement for execution of a new lease agreement.
+                                        </span>
+                                    </td>
+                                    <td class="w-50 p-2" style="text-align: right;">
+                                        <br/>
+                                        <span style="direction:rtl;">
+                                            ونحن نؤكد لكم أنه في حالة عدم حضوركم لتوقيع العقد الجديد وإستمراركم فى شغل الوحدة بعد انتهاء عقد الإيجار الحالي ، فإن ذلك سيكون تأكيد منكم على تفعيل البند الثامن من عقد الإيجار الحالي ، وبالتالي فإن عقد الإيجار الحالى سيتجدد تلقائياً بزيادة فى قيمة الإيجار بنسبة %25
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="w-100 p-1">
+                                    <td class="w-50 p-2" style="border-right: 1px solid black;">
+                                        <br/>
+                                        <span class="p-0">
+                                            This is for notification and effectiveness. This notice shall not jeopardize in any way whatsoever, nor shall it be considered as a waiver or modification to the contractual and other lawful rights.
+                                        </span>
+                                    </td>
+                                    <td class="w-50 p-2" style="text-align: right;">
+                                        <br/>
+                                        <span style="direction:rtl;">
+                                            هذا للعلم ونفاذ مفعول ماورد بهذا الإشعار، مع حفظ<br/>
+                                            ،،،جميع حقوقنا القانونية الأخرى
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="w-100 p-1">
+                                    <td class="w-50 p-2" style="border-right: 1px solid black;">
+                                        <br/>
+                                        <span class="p-0 font-weight-bold">
+                                            <t t-if="doc.company_id" t-esc="doc.company_id.name"/>
+                                        </span>
+                                    </td>
+                                    <td class="w-50 p-2" style="text-align: right;">
+                                        <br/>
+                                        <span class="font-weight-bold">
+                                            <t t-if="doc.company_id" t-esc="doc.company_id.name"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+         </t>
+    </template>
+    <template id="lease_notice">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="taqat_property_management.lease_notice_template" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

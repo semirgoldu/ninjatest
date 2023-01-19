@@ -1,0 +1,438 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* property_commission
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0e+e-20200102\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-23 21:25+0000\n"
+"PO-Revision-Date: 2021-02-23 23:47+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_report_template2
+msgid "<strong>From:</strong>"
+msgstr "<strong>من:</strong>"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_report_template2
+msgid "<strong>To:</strong>"
+msgstr "<strong>إلى:</strong>"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_account_analytic_account__agent
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__agent
+#: model:ir.model.fields,field_description:property_commission.field_res_partner__agent
+#: model:ir.model.fields,field_description:property_commission.field_res_users__agent
+#: model:ir.model.fields,field_description:property_commission.field_tenant_partner__agent
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_report_template2
+#: model_terms:ir.ui.view,arch_db:property_commission.view_partner_form_agent3
+msgid "Agent"
+msgstr "وكيل"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.view_res_partner_filter
+msgid "Agent Partners"
+msgstr "شركاء الوكيل"
+
+#. module: property_commission
+#: model:ir.actions.act_window,name:property_commission.action_agent_form
+#: model:ir.ui.menu,name:property_commission.menu_agent_form
+#: model_terms:ir.ui.view,arch_db:property_commission.view_res_partner_filter
+msgid "Agents"
+msgstr "عملاء"
+
+#. module: property_commission
+#: model:ir.model,name:property_commission.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Are you sure you want to Close"
+msgstr "هل أنت متأكد أنك تريد الإغلاق"
+
+#. module: property_commission
+#: model:ir.model.fields.selection,name:property_commission.selection__account_analytic_account__commission_type__fixedcost
+#: model:ir.model.fields.selection,name:property_commission.selection__commission_invoice__commission_type__fixedcost
+#: model:ir.model.fields.selection,name:property_commission.selection__commission_invoice_line__commission_type__fixedcost
+msgid "By Fixed Cost"
+msgstr "حسب التكلفة الثابتة"
+
+#. module: property_commission
+#: model:ir.model.fields.selection,name:property_commission.selection__commission_invoice__state__cancel
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: property_commission
+#: model:ir.model.fields,help:property_commission.field_res_partner__agent
+#: model:ir.model.fields,help:property_commission.field_res_users__agent
+#: model:ir.model.fields,help:property_commission.field_tenant_partner__agent
+msgid "Check this box if this contact is a Agent."
+msgstr "حدد هذا المربع إذا كانت جهة الاتصال هذه وكيلاً."
+
+#. module: property_commission
+#: model_terms:ir.actions.act_window,help:property_commission.action_commission_invoice
+msgid "Click to create commission record."
+msgstr "انقر لإنشاء سجل العمولة."
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_report_template2
+msgid "Collected Commission"
+msgstr "جباية العمولة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__color
+msgid "Color Index"
+msgstr "معرف اللون"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_account_analytic_account__commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__commission_line
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__commission_id
+#: model:ir.model.fields,field_description:property_commission.field_res_partner__commission_line
+#: model:ir.model.fields,field_description:property_commission.field_res_users__commission_line
+#: model:ir.model.fields,field_description:property_commission.field_tenant_partner__commission_line
+#: model:ir.module.category,name:property_commission.category_commission_pay
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_report_template2
+#: model_terms:ir.ui.view,arch_db:property_commission.inherited_view_analytic_form_id
+msgid "Commission"
+msgstr "عمولة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__amount
+msgid "Commission Amount"
+msgstr "مبلغ العمولة"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.view_partner_form_agent3
+msgid "Commission History"
+msgstr "تاريخ اللجنة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__number
+msgid "Commission ID"
+msgstr "معرف العمولة"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+#: model_terms:ir.ui.view,arch_db:property_commission.inherited_view_analytic_form_id
+msgid "Commission Information"
+msgstr "معلومات العمولة"
+
+#. module: property_commission
+#: model:ir.ui.menu,name:property_commission.menu_invoice_commissions
+msgid "Commission Inovice"
+msgstr "فاتورة العمولة"
+
+#. module: property_commission
+#: model:ir.actions.act_window,name:property_commission.action_commission_invoice
+#: model:ir.model,name:property_commission.model_commission_invoice
+#: model:ir.model,name:property_commission.model_tenancy_rent_schedule
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Commission Invoice"
+msgstr "فاتورة العمولة"
+
+#. module: property_commission
+#: model:ir.model,name:property_commission.model_commission_invoice_line
+msgid "Commission Invoice Line"
+msgstr "خط فاتورة العمولة"
+
+#. module: property_commission
+#: model:ir.actions.report,name:property_commission.commission_owner_invoice_report
+msgid "Commission Invoice Owner"
+msgstr "صاحب فاتورة العمولة"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.property_commission_invoice_search
+msgid "Commission Invoice Search"
+msgstr "بحث فاتورة العمولة"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Commission Line"
+msgstr "خط العمولة"
+
+#. module: property_commission
+#: model:res.groups,name:property_commission.groups_commission_pay_manager
+msgid "Commission Manager"
+msgstr "مدير اللجنة"
+
+#. module: property_commission
+#: model:ir.actions.report,name:property_commission.commission_for_invoice_report
+msgid "Commission Report"
+msgstr "تقرير اللجنة"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Commission Type"
+msgstr "نوع العمولة"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.view_partner_form_agent3
+msgid "Commission information"
+msgstr "معلومات العمولة"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Commission#"
+msgstr "عمولة#"
+
+#. module: property_commission
+#: model:ir.ui.menu,name:property_commission.menu_commissions
+msgid "Commissions"
+msgstr "اللجان"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_tree
+msgid "Commissions Invoice"
+msgstr "فاتورة العمولات"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__company_id
+#: model_terms:ir.ui.view,arch_db:property_commission.property_commission_invoice_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: property_commission
+#: model:ir.model,name:property_commission.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_account_analytic_account__commission_create
+msgid "Create"
+msgstr "إنشاء"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Create Invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__create_uid
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__create_date
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__date
+#: model_terms:ir.ui.view,arch_db:property_commission.property_commission_invoice_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_report_template2
+msgid "Date:"
+msgstr "التاريخ:"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__description
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__name
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Description"
+msgstr "الوصف"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Discription"
+msgstr "وصف"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__display_name
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_account_analytic_account__fix_cost
+msgid "Fixed Cost"
+msgstr "تكلفة ثابتة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_account_analytic_account__fix_qty
+msgid "Fixed Percentage(%)"
+msgstr "النسبة الثابتة (٪)"
+
+#. module: property_commission
+#: model:ir.model.fields.selection,name:property_commission.selection__account_analytic_account__commission_type__fixed
+#: model:ir.model.fields.selection,name:property_commission.selection__commission_invoice__commission_type__fixed
+#: model:ir.model.fields.selection,name:property_commission.selection__commission_invoice_line__commission_type__fixed
+msgid "Fixed percentage"
+msgstr "نسبة ثابتة"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.property_commission_invoice_search
+msgid "Group by..."
+msgstr "تجميع حسب..."
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__id
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__inv
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__inv
+msgid "INV"
+msgstr "فاتورة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__invc_id
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__invc_id
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: property_commission
+#: model:ir.model.fields.selection,name:property_commission.selection__commission_invoice__state__invoice
+msgid "Invoiced"
+msgstr "مفوتر"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice____last_update
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__write_uid
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__write_date
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: property_commission
+#: model:ir.model.fields,help:property_commission.field_commission_invoice__patner_id
+msgid "Name of tenant where from commission is taken"
+msgstr "اسم المستأجر الذي تم أخذ العمولة منه"
+
+#. module: property_commission
+#: model:ir.model.fields.selection,name:property_commission.selection__commission_invoice__state__draft
+msgid "Open"
+msgstr "فتح"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Open Invoice"
+msgstr "افتح الفاتورة"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Other Information"
+msgstr "معلومات أخرى"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__company_id
+msgid "OwnerCompany"
+msgstr "الشركة المالكة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__patner_id
+#: model_terms:ir.ui.view,arch_db:property_commission.property_commission_invoice_search
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: property_commission
+#: model:ir.model,name:property_commission.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: property_commission
+#: code:addons/property_commission/models/property_commission.py:0
+#, python-format
+msgid "Please First close  Tenancy!"
+msgstr "الرجاء أولا إغلاق الإيجار!"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__property_id
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_report_template2
+#: model_terms:ir.ui.view,arch_db:property_commission.property_commission_invoice_search
+msgid "Property"
+msgstr "خاصية"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__rent_amt
+msgid "Rent Amount"
+msgstr "مقدار الايجار"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__date
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__state
+msgid "State"
+msgstr "المحافظة"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__tenancy
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_report_template2
+#: model_terms:ir.ui.view,arch_db:property_commission.property_commission_invoice_search
+msgid "Tenancy"
+msgstr "الإيجار"
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Tenant"
+msgstr "مستأجر"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__amount_total
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_account_analytic_account__total_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.view_partner_form_agent3
+msgid "Total Commission"
+msgstr "إجمالي العمولة"
+
+#. module: property_commission
+#: code:addons/property_commission/models/property_commission.py:0
+#, python-format
+msgid "Total Commission must be grater than zero."
+msgstr "يجب أن يكون إجمالي العمولة أكبر من الصفر."
+
+#. module: property_commission
+#: model_terms:ir.ui.view,arch_db:property_commission.commission_invoice_form
+msgid "Total Rent"
+msgstr "إجمالي الإيجار"
+
+#. module: property_commission
+#: model:ir.model.fields,field_description:property_commission.field_account_analytic_account__commission_type
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice__commission_type
+#: model:ir.model.fields,field_description:property_commission.field_commission_invoice_line__commission_type
+msgid "Type"
+msgstr "النوع"

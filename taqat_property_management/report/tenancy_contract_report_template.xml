@@ -1,0 +1,1936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="tenancy_contract_report_template">
+         <t t-call="web.basic_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+            <div class="page">
+                <div class="container-fluid">
+                    <div class="row p-0" style="align-items: flex-end !important;-webkit-box-pack: end;justify-content: right;">
+                        <div class="col-8 p-0">
+                            <div class="w-100 float-left">
+                                <span>
+                                    T:
+                                    <t t-esc="doc.company_id.mobile"/>    
+                                    F:
+                                    <t t-esc="doc.company_id.partner_id.fax"/>   
+                                    E:
+                                    <t t-esc="doc.company_id.email"/>    /   
+                                    PO BOX:
+                                    <t t-esc="doc.company_id.partner_id.po_box"/>
+                                    <t t-esc="doc.company_id.city"/>
+                                    <t t-esc="doc.company_id.country_id.name"/>
+                                </span>
+                            </div>
+                            <div class="w-100 float-left " style="direction:rtl">
+                                : ص.ب     /   
+                                <t t-esc="doc.company_id.partner_id.po_box"/>
+                                <t t-esc="doc.company_id.city"/>
+                                <t t-esc="doc.company_id.country_id.name"/>
+                                : ف
+                                <t t-esc="doc.company_id.partner_id.fax"/>   
+                                : ب
+                                <t t-esc="doc.company_id.email"/>
+                                : ت
+                                <t t-esc="doc.company_id.mobile"/>    
+                            </div>
+                            <div class="w-100 float-left">
+                                <h4 style="direction: rtl;">
+                                    المقر الرئيسي (HEADQUARTERS(HQ
+                                </h4>
+                                <t t-if="doc.lease_type == 'renewal'">
+                                    <div class="w-100 float-left">
+                                        <h4>Renewal</h4>
+                                    </div>
+                                </t>
+                                <table class="table table-sm mt-5" style="border:1px solid black; width:90%">
+
+                                    <tr style="border:1px solid black;">
+                                        <td style="border:1px solid black;">LEASE NUMBER:</td>
+                                        <td style="border:1px solid black;">
+                                            <t t-esc="doc.name"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-4 p-0">
+                            <div class="w-100 float-left" style="text-align: right;">
+                                <img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)"
+                                     class="float-right" style="width:50%" alt="Logo"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 p-0">
+                            <table class="table table-sm mt-5 table-borderless" style="border:1px solid black; ">
+                                <tr>
+                                    <td style="border:1px solid black" colspan="3">
+                                        <center>
+                                            <u>Lease Agreement of Residential Unit</u>
+                                            <br/>
+                                            <t t-esc="doc.property_id.name"/>
+                                        </center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span>This Agreement Was made between the following
+                                            parties :
+                                        </span>
+                                        <br/>
+                                        <br/>
+
+                                        <b>1. M/S.
+                                            <t t-esc="doc.company_id.name"/>
+                                            <br/>
+                                            Represented by
+                                            <t t-esc="doc.property_id.name"/>
+                                            , authorized to sign the contract as per power of authority number : Dated:
+                                            <t t-esc="datetime.datetime.now().date()"/>
+                                        </b>
+                                        <br/>
+                                        <br/>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Tel</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.company_id.mobile"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Fax</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.company_id.partner_id.fax"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.company_id.email"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Web</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.company_id.website"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>P.O.Box
+                                        <br/>
+                                        <t t-esc="doc.company_id.city"/>,
+                                        <t t-esc="doc.company_id.country_id.name"/>
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.company_id.partner_id.po_box"/>
+                                    </td>
+                                    <tr style="border-bottom:1px solid black">
+                                        <td colspan="3">
+                                            <center>(First Party – Lessee)</center>
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                </tr>
+
+
+                                <tr>
+                                    <td colspan="3">
+                                        <b>2. Mr.
+                                            <t t-esc="doc.tenant_id.name"/>
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Holder of ID No</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.tenant_id.id_attachment"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nationality</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.tenant_id.country_id.name"/>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Tel</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.tenant_id.mobile"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Fax</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.tenant_id.fax"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.tenant_id.mobile"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>:</td>
+                                    <td class="w-50">
+                                        <t t-esc="doc.tenant_id.email"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>P.O.Box
+                                        <br/>
+                                        <t t-esc="doc.company_id.city"/>,
+                                        <t t-esc="doc.company_id.country_id.name"/>
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.tenant_id.po_box"/>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3">
+                                      <br/>
+                                        <center>(Second Party – Lessee)</center>
+                                        <br/>
+                                        The parties hereto declare that they are legally qualified to act and agreed to
+                                        enter into this Agreement in accordance with the following terms:
+                                        <br/><br/><br/><br/><br/>
+                                    </td>
+                                </tr>
+
+
+                                <tr style="border-top:1px solid black">
+                                    <td colspan="3">
+                                        <b>Clause 1 :
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Subject to this Lease Agreement, the Lessee rented from the
+                                        Lessor.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Property Type</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.property_id.type_id.name"/>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>System Unit No</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.property_id.code"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>No of Bedroom</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.property_id.bedroom"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Classification</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.property_id.furnished"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Electricity No</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.property_id.electricity_no"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Water No
+                                        <br/>
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.property_id.water_no"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Parent Property</td>
+                                    <td>:</td>
+                                    <td style="width:50%">
+                                        <t t-esc="doc.property_id.parent_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Area</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.property_id.city"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Street</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.property_id.street"/>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td>Property Area</td>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="doc.property_id.zone"/>
+                                        <t t-esc="doc.property_id.street"/>
+                                        <t t-esc="doc.property_id.building"/>
+                                        <t t-esc="doc.property_id.township"/>
+                                        <t t-esc="doc.property_id.country_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black ;font-size:14px">
+                                    <td colspan="3">
+                                        <u>Clause 2:</u>
+                                        <br/>
+                                        The Lessee undertakes to utilize the leased property as residence for
+                                        itself/himself/its employees and it/his family only. The Lessee shall neither
+                                        utilize the leased property as residence for singles nor for another purpose
+                                        other than housing.
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 3:</u>
+                                        <br/>
+                                        The term of this Lease Agreement shall be
+                                        <t t-esc="doc.rent_type_id.name"/>
+                                        <t t-esc="doc.rent_type_id.renttype"/>. which commences on <t t-esc="doc.date_start"/>. and ends
+                                        on <t t-esc="doc.date"/>. This Agreement shall not be renewed automatically. And
+                                        the Lessee shall
+                                        expresses his desire to make a new agreement at least 60 days before the expiry
+                                        date of this Agreement. In such case, the new Lease Agreement shall be subject
+                                        to the approval of the Lessor and the issuance of a new Agreement with new
+                                        conditions subject to the provisions of Clause 8 of this Agreement.
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 4</u>
+                                        <br/>
+                                        The rent of the leased property shall be a sum of QR
+                                        <t t-esc="doc.rent"/>
+                                        .
+                                        <t t-esc="doc.currency_id.amount_to_text(doc.rent)"/>
+                                        Only.
+                                        that shall be paid in advance. The Lessee shall not be discharged from the
+                                        responsibility for the rent unless the amount of rent is paid in full against a
+                                        receipt or upon disbursement of a cheque with the amount of rent from the bank,
+                                        as the case may be.
+                                        <br/><br/>
+
+                                        <b>Cheques shall be made payable to Qatar Charity.</b>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 5:</u>
+                                        <br/>
+                                        The Tenant shall have the right to use the Common Property of the property where
+                                        the Unit is located subject to the applicable Regulations, the Rules and the
+                                        Constitution.
+                                        <br/>
+                                        <br/>
+                                        The Lessor may add an additional charge for usage of the common areas within the
+                                        building or the residential complex by the Lessee, such as the entertainment
+                                        halls Multipurpose halls etc,
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 6:</u>
+                                        <br/>
+                                        The Lessee shall pay to the Lessor a rental amount of one month as security
+                                        deposit
+                                        <t t-esc="doc.deposit"/>
+                                        . (<t t-esc="doc.currency_id.amount_to_text(doc.deposit)"/>only) that shall be
+                                        refunded upon the expiry of this
+                                        Agreement, subject to vacation and delivery of the leased property in a good
+                                        condition. And will be processed within 15-30 working days after completion and
+                                        receipt of final inventory report, final settlement of all utility bills &amp;
+                                        clearance form and other charges due as well other relevant documents required,
+                                        if any. The value of any damages or rent arrears shall be deducted from the
+                                        security deposit amount. The Lessor shall be entitled to claim the value of the
+                                        damages or rent arrears that exceed the security deposit amount.
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 7:</u>
+                                        <br/>
+                                        The Lessee shall pay the rent amount in full in a timely manner without delay.
+                                        The Lessee declares that in the event of delay or failure to pay the rent
+                                        amount, the Lessor shall consider this Agreement as null and void without
+                                        justifications or court judgment for termination of this Agreement. The Lessee
+                                        declares that in the event of termination of this Agreement, he shall pay the
+                                        amounts of rent arrears in addition to the rent amount for all the remaining
+                                        period of the Agreement’s term.
+                                        <br/>
+                                        <br/>
+
+                                        The Lessee declares that in the event of delay in paying the rent for any reason
+                                        whatsoever, he shall, in addition to payment of the amounts of rent arrears and
+                                        for the remaining period of the Agreement’s term, be liable for paying a late
+                                        fee of 10% of the monthly rent amount for each month of delay. Such fee shall be
+                                        added to the monthly rent and shall be deemed as an integral part of the delayed
+                                        monthly rent.
+                                        <br/>
+                                        <br/>
+
+                                        This Clause has been duly considered by the parties hereto upon the conclusion
+                                        of this Agreement.
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 8:</u>
+                                        <br/>
+                                        The Lessee expressly declares that if he continues to occupy the leased property
+                                        after the expiry of this Agreement’s term set out in Clause 3 above, this
+                                        Agreement shall be renewed automatically for a similar period with an increase
+                                        of 25% each month without the requirement for execution of a new lease
+                                        agreement.
+                                        This Clause has been duly considered by the parties hereto upon the conclusion
+                                        of this Agreement.
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 9:</u>
+                                        <br/>
+                                        The Lessee shall undertake to pay the electricity, water, telephone, satellite,
+                                        internet charges and other charges for any other services supplied to the leased
+                                        property. as well as charges for other services rendered now or in the future by
+                                        the government or taxes shall be borne solely and entirely by Tenant, even if
+                                        they are imposed on Landlord.
+                                        <br/>
+                                        <br/>
+                                        <div style="font-size:12px">
+                                            <li>The connection of electricity and water shall be done before move-in.
+                                            </li>
+                                            <li>The disconnection of electricity and water shall be done after the
+                                                move-out inspection with the final electricity and water bill receipt to
+                                                be submitted on
+                                                the day of the move-out inventory inspection. After the mentioned
+                                                period, First
+                                                Party will be enforced to provide the necessary arrangements for the
+                                                disconnection and any amount incurred plus QR 700 will be deducted from
+                                                the rent
+                                                security deposit.
+                                            </li>
+                                        </div>
+                                        <b>The lessor shall undertake to pay electricity, water, telephone, satellite,
+                                            internet charges
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 10:</u>
+                                        <br/>
+                                        The Lessee declares that he has inspected the property subject to this Agreement
+                                        in a duly manner and received the contents thereof in a tenantable condition,
+                                        free of any visible or hidden defects, complete with all accessories. The Lessee
+                                        undertakes to maintain the leased property and the contents thereof in a good
+                                        condition and shall repair any damages caused by him or any of his subordinates
+                                        to the leased property. The Lessee acknowledges that he has received all the
+                                        household items in the leased property in a good condition. The Lessee shall be
+                                        solely responsible for any loss or damage of any of such items and the value of
+                                        such loss or damage shall be deducted from the security deposit amount. If the
+                                        security deposit amount is not sufficient to cover such losses or damages, the
+                                        Lessee shall pay the difference.
+                                        <br/>
+                                        <br/>
+                                        Upon the expiry this Agreement’s term, the Lessee shall deliver the leased
+                                        property to the Lessor as well as the keys thereof and any cards or posters
+                                        belonging to the residential building or the leased property after being
+                                        inspected by the Lessor. The Lessee shall not be released from responsibility
+                                        towards the delivery of the leased property unless upon obtaining a letter from
+                                        the Lessor stating that the Lessor has received the aforesaid and the Lessee
+                                        shall not follow any other means to deliver the leased property except as the
+                                        aforesaid.
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black ;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 11:</u>
+                                        <br/>
+                                        The Lessor shall carry out all repairs and maintenance works in a proper manner
+                                        to maintain the main structure of the building and the common facilities
+                                        attached thereto, including décor, accessories, furniture, electricity, water
+                                        and sewerage system including manholes, pipes, cables, ventilation and
+                                        equipments that are not related to Kahramaa. Such items shall be repaired and
+                                        maintained in a highly professional, modern manner and quality identical to that
+                                        of the existing building.
+                                        <br/>
+                                        <br/>
+                                        The Lessor shall be responsible for the maintenance of the building, the annexes
+                                        thereof, electrical equipments and furniture. In the event of misuse of the
+                                        Lessee of the leased property and its contents, including electrical equipments
+                                        and furniture, or in the event of occurrence of any malfunction or damage due to
+                                        the misuse of the Lessee, replacement of items shall be on the account of the
+                                        Lessee who shall pay the value of any spare part, any piece of furniture or the
+                                        total value of the electrical equipments (such as water heaters, exhaust fans,
+                                        electrical switches, air conditioners, oven, washing machine, refrigerator or
+                                        any other electrical equipments in the leased property).
+                                        <br/>
+                                        <br/>
+                                        Tenant shall solely be responsible for replacement of damages lamps within the
+                                        leased premises.
+                                        <br/>
+                                        <br/>
+                                        The Tenant must advise the Landlord immediately in writing of any damage to the
+                                        Unit or Contents whether it be of a major or minor nature.
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black ;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 12:</u>
+                                        <br/>
+                                        All improvements, alterations, additions and repairs carried out by the Lessee
+                                        to the leased property throughout the lease term shall be deemed as an integral
+                                        part of the leased property and shall become the property of the Lessor upon the
+                                        expiry of this Agreement’s term. The Lessee may not remove any such fixed items
+                                        nor claim compensation therefor under any circumstances.
+                                        <br/>
+                                        <br/>
+                                        The Lessee shall maintain the internal and external shape of the building where
+                                        the leased property is located and shall not damage anything. The Lessee shall
+                                        not cause any damage to the leased property nor make alterations or
+                                        modifications inside or outside the leased property without the Lessor's written
+                                        consent.
+                                        <br/>
+                                        <br/>
+                                        This Clause has been duly considered by the parties hereto upon the conclusion
+                                        of this Agreement.
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black ;">
+                                    <td colspan="3" style="font-size:14px">
+                                        <u>Clause 13:</u>
+                                        <br/>
+                                        The Lessee may insure his personal belongings available in the leased property
+                                        on his own account without any obligation on the Lessor. The Lessor shall be
+                                        solely responsible for covering the damages caused to the leased property, the
+                                        facilities attached thereto, any parts thereof and any other items owned by the
+                                        Lessor in or outside the leased property. The Lessor shall only be responsible
+                                        for the damages caused to the Tenant’s belongings in the event of damages arise
+                                        out of the acts of the Landlord provided that such act and damages are evidenced
+                                        by the Tenant whose coverage shall be limited to the insurance policy obtained
+                                        by the Landlord.
+                                        <br/>
+                                        <br/>
+                                        The Lessee shall compensate the Lessor against any damages in connection with
+                                        injury or death of any person or any damages caused to the movables or
+                                        non-movable items, any breach, disturbance, breakage or any other damages caused
+                                        to the leased property, building or complex, directly or indirectly by the
+                                        Lessee or any of his family members, servants, guests, visitors, employees or
+                                        subordinates. Such liability shall also extend to include any damages caused to
+                                        the properties adjacent to the leased property by the Lessee or any of his
+                                        subordinates.
+                                        <br/>
+                                        <br/>
+                                        The Lessee shall not claim any compensation due to any failure in service,
+                                        maintenance, repair, any shortage in equipments or any damage caused by fire or
+                                        accident resulted by events out of the control of the Lessor.
+
+                                    </td>
+                                </tr>
+
+
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                <u><b>Clause 14:</b></u>
+                <br/>
+                Upon delivery of the leased property following the expiry of this Agreement’s
+                term or in case of vacation of the leased property, the Lessee shall not remove
+                any items fixed inside the walls of the property such as electrical cables,
+                water pipes, sanitary items etc that may cause damage to the wall.
+                <br/>
+                <br/>
+                Upon the expiry of this Agreement’s term, the Lessee shall deliver the leased
+                property with the same excellent condition as it was when he received it. Upon
+                delivery of the leased property in a condition that is contrary to its original
+                condition, the Lessee shall compensate the Lessor for the damages caused to the
+                leased property and shall be responsible for the repair charges of the damaged
+                items and obliged to bring it back to its original condition upon contracting,
+                subject to the provisions of Clause 17 of this Agreement.
+                <br/>
+                <br/>
+                    This Clause has been duly considered by the parties hereto upon the
+                    conclusion of this Agreement.
+
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black ;">
+
+            <td colspan="3" style="font-size:14px">
+                <b>
+                    <u>Clause 15:</u>
+                </b>
+                <br/>
+                The Lessee shall neither sub-lease the leased property, whether partially or
+                totally, nor shall he assign this Agreement to a third party. In the event of
+                violation of this Clause, this Agreement shall be automatically terminated
+                without any notice or court judgment.
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black ;">
+
+            <td colspan="3" style="font-size:14px">
+                <b>
+                    <u>Clause 16:</u>
+                </b>
+                <br/>
+                The Lessee shall comply with the rules, regulations, instructions and internal
+                regulations issued by the management of the building or the complex including
+                but not limited to instructions in connection with car park etc. as well as the
+                organizational rules aimed at improving the image and quality of service.
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                  <b>
+                    <u>Clause 17:</u>
+                </b>
+                <br/>
+                If the Lessee wishes to vacate the leased property, he shall submit the latest
+                edition and a release certificate from Kahramaa, clearance certificate from
+                Ooredoo and other fees for the services utilized in the leased property
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:13px">
+                <b>
+                    <u>Clause 18:</u>
+                </b>
+                <br/>
+                In case of vacating the leased property before the expiry of the Agreement's
+                term, the Lessee shall be obliged to pay the rent amount for all the remaining
+                period, whether he has cut the services extended to the property such as water
+                and electricity or deposited the keys of the leased property with the court
+                through the appropriate process. All this shall not release the Lessee from
+                paying the rent amount for all the remaining period of the Agreement’s term.
+                Accordingly, the Lessee shall be obliged to pay the rent amount for all the
+                remaining period of the Agreement’s term and shall not claim that he is not
+                committed to pay the rent of the leased property due to non-use of the property
+                since he will be solely responsible for such non-use.
+                <br/>
+                <br/>
+
+                In case of permanent departure from the country and vacating the leased property
+                before the expiry of the Agreement’s term, the Lessee shall be obliged to
+                provide the Lessor with one (1) month notice in advance, pay a penalty charge of
+                one month rental and submit to the Lessor the cancellation documents confirming
+                the Lessee’s departure from the country.
+                <br/>
+                <br/>
+
+                This Clause has been duly considered by the parties hereto upon the conclusion
+                of this Agreement.
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                <b>
+                    <u>Clause 19:</u>
+                </b>
+                <br/>
+                The Lessee may not make any changes to the leased property, including
+                destruction, building or additions without obtaining the written approval of the
+                Lessor. In case of breach of this Clause by the Lessee, this Agreement shall be
+                terminated automatically without justifications or court judgment and the Lessee
+                shall be obliged to return the leased property to the condition as it was before
+                such changes. If the Lessee fails to return the leased property to the condition
+                as it was before the changes, the Lessor may do so on the account of the Lessee.
+                The cost for returning the leased property to its original condition shall be
+                deemed as a debt and the Lessee shall not be discharged from such debt until it
+                is paid in full.
+                <br/>
+                <br/>
+                This Clause has been duly considered by the parties hereto upon the conclusion
+                of this Agreement.
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                <b>
+                    <u>Clause 20:</u>
+                </b>
+                <br/>
+                It is agreed between the parties hereto that the Lessor shall have access to the
+                leased property during the appropriate times during the day (subject to a 24
+                hour notice) to inspect the condition of the leased property. The Lessee shall
+                enable the Lessor to have access to leased property at the time specified in the
+                notice.
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                 <b>
+                    <u>Clause 21:</u>
+                </b>
+                <br/>
+                The Lessee shall not bring any kind of alcoholic drinks or Shisha to the
+                swimming pool or the other facilities and shall not walk around in public
+                facilities with swimwear. The Lessee shall wear suitable clothes and abide by
+                the customs and traditions of the State of Qatar.
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                  <b>
+                    <u>Clause 22:</u>
+                </b>
+                <br/>
+                It is agreed between the parties hereto that the Lessor shall not be obliged to
+                provide a swimming rescuer or a first-aider for the club or the gymnasium. The
+                Lessee shall ensure the safety of himself and his family members, guests and
+                employees.
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                 <b>
+                    <u>Clause 23:</u>
+                </b>
+                <br/>
+                <u>Subject to this Clause, the Lessor may open the leased property for the
+                    following reasons:
+                </u>
+                <div style="font-size:12px">
+                    <li>In case of emergency.</li>
+                    <li>The Lessee leaves the leased property before the expiry of the
+                        Agreement’s term, whether subject to a prior notice to the Lessor or
+                        not.
+                    </li>
+                    <li>The Lessee leaves the country permanently.</li>
+                    <li>The Lessee has not utilized the leased property for over two successive
+                        months, provided that such non-utilization is coupled with non-payment
+                        of the rent amounts.
+                    </li>
+                    <li>After 15 days from the Lessee’s failure to pay the rent on the due
+                        dates.
+                    </li>
+                    <br/>
+                    <li>Death of Lessee and the absence of a legal beneficiary of the Lease
+                        Agreement.
+                    </li>
+                    <br/>
+                    <li>One week following the expiry date of this Agreement’s term.</li>
+                    <li>The day following the occurrence of any of the violations that result in
+                        the termination of this Agreement automatically pursuant to the terms of
+                        this Agreement.
+                    </li>
+                    <li>The day following the occurrence of any of the violations where the
+                        Lessor may consider this Agreement as null and void pursuant to the
+                        terms of this Agreement.
+                    </li>
+                    <li>Upon the occurrence of any of the events (2 to 9) of this Clause, the
+                        Lessor may open the leased property and take possession thereof. In such
+                        case, the Lease Agreement shall be automatically terminated from the
+                        date of occurrence of such event and the Lessor shall be entitled to
+                        lease the property to a new tenant.
+                    </li>
+                    <li>The Lessee declares that the Lessor shall not be responsible for any
+                        personal belongings that might be available inside the leased property
+                        during the opening and re-renting of the leased property. The Lessee
+                        shall release the Lessor from liability towards any loss or damage of
+                        such belongings. The Lessor may store such belongings on the account of
+                        the Lessee.
+                    </li>
+                </div>
+                The Lessee declares that the implementation of the provisions of this Clause
+                shall not need any notice, court judgment or order from the judge of instant
+                issues and shall be enforceable on the parties hereto upon the occurrence of any
+                of the above events (2 to 9) and that such Clause shall be deemed as a final and
+                irrevocable authorization from the Lessee to the Lessor for all the above
+                actions. The Lessee shall not be entitled to file any proceedings against the
+                Lessor, whether civil or criminal proceedings, even if the implementation of
+                this Clause may cause damage or loss of the personal belongings of the Lessee.
+                Further, the Lessee declares that he shall not file any civil or criminal
+                proceedings against the Lessor in connection with the implementation of this
+                Clause. Further, the Lessee declares that the Lessor shall be entitled to open
+                the leased property and re-rent it to a third party and the Lessee shall not
+                file any civil or criminal proceedings against the Lessor in this regard.
+                <br/>
+                <br/>
+                The parties hereto acknowledge that the provisions of this Clause shall not
+                involve any breach of the general rules, and what is stated herein reflects the
+                genuine will of the parties hereto and that this Clause and the rest of the
+                Clauses of this Agreement may not be revoked by the will of a single party. The
+                parties hereto acknowledge that this Clause shall not be subject to the
+                discretion of the committee for the settlement of rental disputes. If any
+                dispute in connection of this Clause is referred to the court, such clause shall
+                not be construed or interpreted out of the apparent meaning of it or the obvious
+                will of the parties hereto. Further, the parties hereto declare that this Clause
+                has been duly considered upon signing this Agreement.
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                <b>
+                    <u>Clause 24:</u>
+                </b>
+                <br/>
+                The Lessee shall respect the rights of his neighbors and shall not permit any
+                disturbance or annoyance to the neighbors or do anything which may be in
+                violation of morals and public order or breach of the applicable laws. In
+                addition, neither of the management of the complex nor the security of the
+                building or complex shall be responsible for the safety of children within the
+                complex and the children’s parents shall use the appropriate means for the
+                safety of their children.
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                 <b>
+                    <u>Clause 25:</u>
+                </b>
+                <br/>
+                In the event of violation of any Clause of this Agreement by the Lessee, this
+                Agreement shall be terminated automatically and the Lessor shall be entitled to
+                open the property and re-rent it. The Lessee undertakes to pay the rent amount
+                for all the remaining period of the Agreement’s term and shall not be discharged
+                from the responsibility for the rent unless the amount of rent is paid in full.
+                <br/>
+                <br/>
+                This Clause has been duly considered upon the conclusion of this Agreement.
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                <b>
+                    <u>Clause 26:</u>
+                    <br/>
+                </b>
+                The parties hereto have reviewed all the terms and conditions of this Agreement,
+                approved it in full and declared that it shall be binding on them. Each of the
+                parties hereto may not amend, revoke or violate the terms and conditions of this
+                Agreement, otherwise this Agreement shall be terminated automatically and the
+                party in breach shall bear the responsibility of such breach, termination and
+                compensation resulting from breach of it.
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                <b>
+                    <u>Clause 27:</u>
+                </b>
+                <br/>
+                This Lease Agreement shall be governed by the Property Lease Law no. 4 of 2008,
+                as revised or supplemented. Anything not provided for in this Agreement shall be
+                subject to the above-mentioned law.
+                <br/>
+                <br/>
+                The Lessor hereby irrevocably acknowledges that if in the future he needs to
+                register this contract at the Ministry of the municipality or at any other
+                authority, he will bear alone the registration costs and fees without any
+                liability from the part of the Lessor in this regards.
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                 <b>
+                    <u>Clause 28:</u>
+                    <br/>
+                </b>
+                Any dispute that arises in respect of this Agreement shall be settled by the
+                committee for rental dispute settlement or any other authority specified by the
+                law.
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                 <b>
+                    <u>Clause 29:</u>
+                </b>
+                <br/>
+                This Agreement is issued in both Arabic and English languages. In case of any
+                conflict between the Arabic and the English versions, the Arabic version shall
+                prevail.
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                 <b>
+                    <u>Clause 30:</u>
+                </b>
+                <br/>
+                The parties hereto acknowledge the correctness of their respective addresses
+                indicated above in this Agreement and that all correspondences and notifications
+                addressed to such addresses shall be valid and legally effective.
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+                 <b>
+                    <u>Clause 31:</u>
+                </b>
+                <br/>
+                This Agreement consists of thirty one Clauses and was issued in two original
+                copies. Each party was given a copy thereof to act in accordance therewith
+            </td>
+        </tr>
+         <tr style="border-bottom:1px solid black ;">
+            <td colspan="2" style="font-size:14px">
+                <b>First Party-Lessor</b>
+                 <br/>
+                  <br/>
+                   <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+            </td>
+
+            <td style="font-size:14px" class="text-right">
+                <b>Second Party-Lessor</b>
+                 <br/>
+                  <br/>
+                   <br/>
+                   <br/>
+                   <br/>
+
+            </td>
+        </tr>
+         <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px">
+               <b>Extra Terms &amp; Condition</b>
+               <br/>
+               <span><t t-esc="doc.description"/></span>
+            </td>
+
+        </tr>
+
+                            </table>
+                        </div>
+                        <div class="col-6 p-0" style="direction:rtl;">
+                            <table class="table table-sm mt-5 table-borderless" style="border:1px solid black; ">
+                                <tr>
+                                    <td style="border:1px solid black " class="text-right" colspan="3">
+                                        <center>
+                                            <u>عقد إيجار وحدة سكنية</u>
+                                            <br/>
+                                            <t t-esc="doc.property_id.name"/>
+                                        </center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right" colspan="3">
+                                        تم الاتفاق بين كل من:
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <b>1. السيدة.
+                                            <t t-esc="doc.company_id.name"/>
+                                            <br/>
+                                            يمثلها بالتوقيع
+                                            <t t-esc="doc.property_id.name"/>
+                                            , للمشاريع العقارية بموجب توكيل خاص رقم :
+                                            <t t-esc="datetime.datetime.now().date()"/>
+                                            بتاريخ :
+                                            <t t-esc="datetime.datetime.now().date()"/>
+                                        </b>
+                                        <br/>
+                                        <br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">هاتف</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.company_id.mobile"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">فاكس</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.company_id.partner_id.fax"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">بريد إلكتروني</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.company_id.email"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">موقع الإلكتروني</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.company_id.website"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">ص.ب
+                                        <br/>
+                                        <t t-esc="doc.company_id.city"/>,
+                                        <t t-esc="doc.company_id.country_id.name"/>
+                                    </td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.company_id.partner_id.po_box"/>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right">
+                                        <center>(طرف أول - مؤجر)</center>
+                                        <br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right" colspan="3">
+                                        <b>2. السيد
+                                            <t t-esc="doc.tenant_id.arabic_name"/>
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right" style="font-size:13px">يحمل بطاقة قطرية رقم</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.tenant_id.id_attachment"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">بطاقة رقم</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.tenant_id.country_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">هاتف</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.tenant_id.mobile"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">فاكس</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.tenant_id.fax"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">جوال</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.tenant_id.mobile"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">بريد إلكتروني</td>
+                                    <td>:</td>
+                                    <td class="text-right" style="width-50%">
+                                        <t t-esc="doc.tenant_id.email"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-right">ص.ب
+                                        <br/>
+                                        <t t-esc="doc.company_id.city"/>,
+                                        <t t-esc="doc.company_id.country_id.name"/>
+                                    </td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.tenant_id.po_box"/>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right">
+                                        <center>(طرف ثانى - مستأجر)</center>
+                                        <br/>
+                                        وبعد أن أقر طرفى العقد بكامل أهليتهما القانونية لإبرام هذا العقد، فقد تلاقت
+                                        إرادتهما على إبرام هذا العقد وفقاً للبنود الآتية :
+                                     <br/><br/><br/><br/><br/><br/>
+                                    </td>
+                                </tr>
+
+
+                                <tr style="border-top:1px solid black; page-break-after: always">
+                                    <td class="text-right" colspan="3">
+
+                                        <b>البند الأول :</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right" colspan="3">
+
+                                        <br/>بموجب هذا العقد إستأجر المستأجر من المؤجر.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">نوع الملكية</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.property_id.type_id.name"/>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td class="text-right">رقم وحدة النظام</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.property_id.code"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">عدد غرف النوم</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.property_id.bedroom"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">تصنيف</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.property_id.furnished"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">الكهرباء لا</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.property_id.electricity_no"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">ماء لا
+                                        <br/>
+                                    </td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.property_id.water_no"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">ملكية الأصل</td>
+                                    <td>:</td>
+                                    <td class="text-right w-50">
+                                        <t t-esc="doc.property_id.parent_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">منطقة</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.property_id.city"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">شارع</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.property_id.street"/>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td class="text-right">منطقة الملكية</td>
+                                    <td>:</td>
+                                    <td class="text-right">
+                                        <t t-esc="doc.property_id.zone"/>
+                                        <t t-esc="doc.property_id.street"/>
+                                        <t t-esc="doc.property_id.building"/>
+                                        <t t-esc="doc.property_id.township"/>
+                                        <t t-esc="doc.property_id.country_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند الثانى :</u>
+                                        <br/>
+                                        يتعهد المستأجر بأن يستعمل العين المؤجرة كسكن له ولعائلته أو موظفيه كعائلة واحدة
+                                        فقط، ولا يسمح له بإستخدامها فى سكن العزاب على الإطلاق ، كما لا يجوز له أن يستخدم
+                                        العين المؤجرة فى أى غرض آخر غير غرض السكن .
+                                        <br/>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند الثالث:</u>
+                                        <br/>
+                                        مدة هذا العقد
+                                        <t t-esc="doc.rent_type_id.renttype"/>
+                                        <t t-esc="doc.rent_type_id.name"/>
+                                        تبدأ من تاريخ
+                                         <t t-esc="doc.date_start"/>
+                                       وتنتهى بتاريخ    &#160;<t t-esc="doc.date"/>   ولا
+                                        يتجدد هذا العقد تلقائياً ابداً. و علي المستأجر ابداء رغبته فى التعاقد لمدة جديدة
+                                        قبل إنتهاء مدة العقد بستين يوماً على الاقل وفى هذه الحالة يكون اصدار العقد
+                                        الجديد مشروط بموافقة المؤجر وتحرير عقد إيجار جديد بالشروط الجديدة ، هذا كله مع
+                                        مراعاة البند الثامن من هذا العقد.
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند الرابع :</u>
+                                        <br/>
+                                        تحددت القيمة الإيجارية الشهرية للعين محل هذا العقد بمبلغ
+                                        <t t-esc="doc.rent"/>
+                                        ريال قطرى
+                                        <t t-esc="doc.currency_id.with_context(lang='ar_001').amount_to_text(doc.rent)"/>
+                                        شهرياً، تدفع مقدماً، ولا تبرأ ذمة المستأجر من الأجرة إلا
+                                        بالسداد الكامل للأجرة بموجب الإيصال اللازم أو صرف شيك الأجرة من البنك بحسب
+                                        الأحوال.
+                                        <br/>
+                                         <br/>
+                                         <br/>
+                                        <b>يتم اصدار الشيكات الايجارية الشهرية باسم قطر الخيرية.</b>
+                                        <br/>
+                                        <br/>
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند الخامس :</u>
+                                        <br/>
+                                        يحق للمستأجر استخدام جميع المرافق العامة بداخل العقار وذلك طبقاً للقواعد و
+                                        القوانين.
+                                        <br/>
+                                        <br/>
+                                        يحق للمؤجر أن يضيف للأجرة مبلغاً إضافياً نتيجة إستخدام المستأجر للمناطق العامة
+                                        بداخل العقار أو المجمع السكنى مثل قاعات الأفراح ,و القاعات متعددة الاغراض ألخ
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند السادس :</u>
+                                        <br/>
+                                        يلتزم المستأجر بأن يدفع للمؤجر قيمة إيجار شهر كامل .
+                                        <t t-esc="doc.deposit"/>
+                                        (ريال قطرى<t t-esc="doc.currency_id.with_context(lang='ar_001').amount_to_text(doc.deposit)"/>)
+                                        وذلك كتأمين يتم رده مرة أخرى بعد إنتهاء مدة العقد وإخلاء وتسليم العين
+                                        المؤجرة بحالة جيدة، ويتم ارجاع قيمة التأمين (اذا وجد) في خلال 15-30 يوم عمل بعد
+                                        استكمال جميع الاجراءات و استلام تقارير الجرد النهائي و جميع المخالصات و الفواتير
+                                        النهائية لاي خدمات قد تم ادخالها للعين المؤجرة و خصم اي خسائر او مبالغ مستحقة و
+                                        استكمال اي اوراق ذات صلة.و بعد استلام قائمة الجرد النهائية و خصم اي مبالغ مستحقه
+                                        و خصم قيمة التلفيات أو الأجرة المتأخرة من مبلغ التأمين، مع حفظ حق المؤجر فى
+                                        المطالبة بقيمة التلفيات أو متأخرات الأجرة فيما زاد عن مبلغ التأمين .
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند السابع :</u>
+                                        <br/>
+                                        يتعهد المستأجر بإلتزامه بسداد الأجرة فى الموعد المحدد لسدادها دون تأخير ، ويقر
+                                        بأنه فى حالة التأخير أو عدم السداد يجوز للمؤجر إعتبار هذا العقد مفسوخاً فسخاً
+                                        نهائياً بدون الحاجة إلى أى إعذار أو حكم بالفسخ ، ويقر المستأجر بأنه فى حالة فسخ
+                                        العقد لذلك فإنه يكون ملتزماً بسداد القيمة الإيجارة المتأخرة فضلاً عن القيمة
+                                        الإيجارية المتبقية فى مدة العقد بالكامل .
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+                                        ويقر المستأجر بأنه فى حالة تأخره فى سداد الأجرة لأى سبب من الأسباب فإنه يكون
+                                        فضلاً عن إلتزامه بسداد الأجرة المتأخرة و أجرة المدة المتبقية فى العقد بالكامل،
+                                        فإنه يكون أيضاً ملتزماً بسداد مبلغ وقدره 10% من القيمة الإيجارية الشهرية كرسوم
+                                        متأخرات عن كل شهر تأخير فى السداد وتضاف قيمة هذه النسبة لمبلغ الأجرة الشهرية
+                                        وتكون جزءاً لا يتجزأ من القيمة الإيجارية الشهرية المتأخرة.
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+                                        وكان هذا بنداً من البنود التى كانت محلاً لإعتبار الطرفين عند التعاقد.
+                                        <br/>
+                                        <br/>
+
+
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند الثامن :</u>
+                                        <br/>
+                                        يقر المستأجر إقرار صريحاً ونهائياً بأنه لو بقى شاغلاً للعين بعد إنتهاء مدة العقد
+                                        الواردة بالبند الثالث و دون الحاجة لإبرام عقد جديد مع المالك فإن عقد الإيجار
+                                        يتجدد تلقائياً لمدة أخرى مماثلة بزيادة فى القيمة الإيجارية نسبتها 25%شهرياً.
+                                        وكان هذا بنداً من البنود التى كانت محلاً لإعتبار الطرفين عند التعاقد.
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند التاسع :</u>
+                                        <br/>
+                                        يتحمل المستأجر رسوم إستهلاك الكهرباء والماء والهاتف والستالايت والإنترنت وأية
+                                        خدمات أخرى يكون المستأجر قد أدخلها للعين المؤجرة. بالاضافة الي اي خدمات سوف يتم
+                                        تقديمها من قبل الشركة او فيما بعد من قبل الحكومة او الضرائب حتي ان كانت ملزمة من
+                                        المؤجر.
+<br/>
+<br/>
+                                        <div>
+                                            <li>
+
+                                                يجب ان يتم توصيل الكهرباء و الماء قبل دخول العين المؤجرة
+                                            </li>
+                                            <li>
+
+                                                يجب ان يتم انهاء الكهرباء و الماء في خلال ثلاثة ايام بعد اخلاء العين
+                                                المؤجرة ويلتزم المستاجر باحضار الفاتورة النهائية للكهرماء و في حالة
+                                                التاخير
+                                                يتم خصم 700 ريال من قيمة التامين.
+
+                                            </li>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+
+
+                                        <b>يتحمل المؤجر رسوم إستهلاك الكهرباء ، الماء ، الهاتف ، الستالايت ، الإنترنت.
+                                        </b>
+
+
+
+
+
+
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند العاشر :</u>
+                                        <br/>
+                                        يقر المستأجر بأنه قد عاين العين محل هذا العقد قبل إستلامها المعاينة التامة
+                                        النافية لأية جهالة، ويُقر بإستلامه للعين ومحتوياتها وأنها خالية من أية عيوب
+                                        ظاهرة أو خفية ، و يتعهد ببذل عناية الرجل الحريص فى الحفاظ على العين ومحتوياتها،
+                                        و يلتزم بإصلاح ماقد يتلفه هو أو أى أحد من تابعيه فى المكان المستأجر. و في حالة
+                                        فقدان أي من المستلزمات أو تلفها، يكون المستأجر مسئولا عنها مسؤولية كاملة، و تخصم
+                                        قيمة الفقدان أو التلف من قيمة التأمين المودع، و إذا كانت هذه القيمة لا تكفي
+                                        لتغطيتها يكون المستأجر ملزما بدفع الفرق.
+
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+                                        عند انتهاء مدة العقد يجب علي المستأجر تسليم العين المؤجرة للمؤجر وذلك بتسليمه
+                                        لكل المفاتيح الخاصة بالعين المؤجرة، او أي بطاقات او ملصقات خاصة بالعقار او العين
+                                        المؤجرة وذلك بعد معاينتها من قبل المؤجر، ولا تبرأ ذمة المستأجر من إلتزام تسليم
+                                        العين المؤجرة إلا بموجب كتاب يصدر من المؤجر يفيد إستلامه ما سلف ذكره، ولا يجوز
+                                        للمستأجر سلوك أى طريق آخر لتسليم العين المؤجرة غير الطريق السالف الذكر.
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+
+
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند الحادى عشر :</u>
+                                        <br/>
+
+                                        يلتزم المؤجربتنفيذ الإصلاحات وأعمال الصيانة بطريقة مناسبة لسلامة الهيكل الرئيسى
+                                        للمبنى والمرافق العامة الملحقه به، بما فى ذلك الديكور وجميع الإكسسوارات
+                                        والمفروشات والكهرباء والمياه والخدمات الصحية والتى تشمل غرف التفتيش والصرف
+                                        والأنابيب والكابلات والتهوية أو المعدات التى ليس صلة لها بالكهرماء، ويتم تنفيذ
+                                        وإصلاح وصيانة هذه المواد بطريقة مهنية وذلك بطريقة عصرية وجودة مطابقة للبناء
+                                        القائم.
+                                        <br/>
+                                        <br/>
+                                       <br/>
+
+                                        يكون المؤجر مسئول عن صيانة المبنى وملاحقه والأجهزة الكهربائية والأثاث، أما فى
+                                        حالة إساءة إستعمال المستأجر للعين وملاحقها ومحتوياتها والأجهزة الكهربائية
+                                        والأثاث وحدوث أى عطل أو ضرر بسبب سؤ إستعمال المستأجر ففي هذه الحالة يكون
+                                        الإستبدال على نفقة المستأجر، ويلتزم المستأجر بدفع قيمة أي قطعة غيار أو قطعة أثاث
+                                        أو القيمة الكاملة للأجهزة مثل (سخانات المياه / مراوح الشفط / مفاتيح الكهرباء /
+                                        المكيفات / الفرن / الغسالة / الثلاجة أو أي أجهزة أخرى موجودة في العين المؤجرة).
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+
+                                        يكون المستأجر مسؤول فقط عن تغيير لمبات الاضاءة في حالة التلف بالعين المؤجرة.
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+
+
+                                        يجب علي المستأجر اخطار المالك كتابيأ في حالة وجود اي خسائر بالعين المؤجرة في
+                                        حالة اذا كانت هذه الخسائر صغيرة ام كبيرة.
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند الثانى عشر :</u>
+                                        <br/>
+
+                                        كافة التحسينات والتعديلات والإضافات والإصلاحات التى أجراها المستأجر فى العين
+                                        المؤجرة خلال مدة العقد أصبحت معمارياً جزءاً لا يتجزأ من العين المؤجرة و أصبحت من
+                                        حق المالك عند نهاية مدة العقد ولا يحق للمستأجر نزعها أو المطالبة بقيمتها أو
+                                        التعويض عنها بأى حال من الأحوال.
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        يلتزم المستأجر بالحفاظ على الشكل الداخلى و الخارجى للعقار الكائن به العين محل
+                                        هذا العقد و عدم إتلاف أى شئ، وفى حالة رغبته فى عمل أى تعديل أو تغيير داخل العين
+                                        أو خارجها فيجب على المستأجر أخذ موافقة كتابية من المؤجر.
+
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+
+                                        وكان هذا بنداً من البنود التى كانت محلاً لإعتبار الطرفين عند التعاقد.
+
+                                        <br/>
+                                        <br/>
+
+
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom:1px solid black">
+                                    <td colspan="3" class="text-right" style="font-size:14px">
+                                        <u>البند الثالث عشر :</u>
+                                        <br/>
+                                        المستأجر حر في اختيار أي نوع من التأمينات التي يراها مناسبة على متعلقاته الشخصية
+                                        الموجودة بالعين المؤجرة وفقاً لعقد التأمين الذى يرغب فيه على نفقته الخاصة دون أي
+                                        إلتزام أو مسئولية على المؤجر، أما المؤجر فيكون مسئول فقط عن تغطية الأضرار التى
+                                        تحدث للعين المؤجرة ولملاحق العين وأى أجزاء تتعلق بهما ومحتوياتهما فقط، أما
+                                        المتعلقات الشخصية للمستأجر أو أى شئ يخصه فيكون المؤجر مسئولاً عنها عنها فقط فى
+                                        حالة الضرر الناتج عن أعمال المؤجر وتكون التغطية في ضل نوع و مبلغ التأمين و يكون
+                                        عبء الإثبات عن الضرر على المستأجر.
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        يلتزم المستأجر أو أى من تابعيه قد تسبب فه بتعويض المؤجر عن أي مسئوليات تتعلق
+                                        بإصابة أو وفاة أي شخص، أو الأضرار التي لحقت أي أشياء منقولة أو غير منقولة أو
+                                        إنتهاك أو مضايقة أو كسر، أو أي ضرر يلحق بالعين المؤجرة أو المبنى أو المجمع بصورة
+                                        مباشرة أو غير مباشرة من قبل المستأجر أو أي من أفراد أسرته أو خدمه، وكذا من ضيوفه
+                                        وزواره أو موظفيه أو أى من تابعيه، ويمتد هذا الإلتزام أيضاً إلى أى ضرر قد يصيب
+                                        العقارات الملاصقة للعين المؤجرة.
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                         <br/>
+                                           <br/>
+
+                                        لا يحق للمستأجر طلب أي تعويضات بسبب أي تقصير في الخدمة أو في الصيانة أو الاصلاح
+                                        أو أي نقص في المعدات أو أي تلف يحدث نتيجة حريق أو حادث نتيجة لأحداث تحدث خارج
+                                        نطاق سيطرة من المالك.
+
+                                        <br/>
+
+
+
+
+                                    </td>
+                                </tr>
+
+
+
+
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <u><b>البند الرابع عشر :</b></u>
+                <br/>
+                عند تسليم العين بعد إنتهاء مدة
+                العقد أو فى حالة الإخلاء يتعهد المستأجر بألا يزيل
+                أى شئ ثبته فى جدران العين مثل مد الأسلاك الكهربائية وأنابيب الماء و الصوان و
+                جميع الأدوات الصحية وغيرها التى تسبب أضرار للجدار.
+                <br/>
+                <br/>
+                <br/>
+
+                كما يلتزم المستأجر بأن يسلم العين محل هذا العقد عند نهاية مدة العقد أو فى حالة
+                الإخلاء بالحالة الممتازة التى تسلمها عليها، وفى حالة تسليمها فى حالة مخالفة لما
+                تسلمها عليها، يلتزم بتعويض المؤجر عن الأضرار التى لحقت بالعين وتكاليف إصلاحها
+                وإعادتها لما كانت عليه عند التعاقد، هذا مع مراعاة ما ورد بالبند السابع عشر من
+                هذا العقد.
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+                    وكان هذا بنداً من البنود التى كانت محلاً لإعتبار الطرفين عند التعاقد .
+               <br/><br/>
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند الخامس عشر :</u>
+                </b>
+                <br/>
+                لا يحق للمستأجر تأجير العين محل هذا العقد من الباطن سواء كان التأجير من الباطن
+                جزئياً أو كلياً ، كما لا يحق له التنازل عن هذا العقد للغير، و فى حالة مخالفة ذلك
+                يُعتبر العقد مفسوخاً من تلقاء نفسه فسخاً نهائياً بدون الحاجة إلى إعذار أو حكم
+                قضائى.
+<br/>
+<br/>
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند السادس عشر :</u>
+                </b>
+                <br/>
+                يجب على المستأجر الإلتزام بالقواعد والأنظمة والتعليمات واللوائح الداخلية الصادرة
+                عن إدارة المبنى أو المجمع دون الحصر إلى التعليمات المتعلقة بموقف السيارات ألخ
+                وكذلك القواعد التنظيمية المصممة لتحسين صورة ومستوى الخدمة.
+                <br/>
+                <br/>
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند السابع عشر :</u>
+                </b>
+                <br/>
+                عند إخلاء العين المؤجرة، يلتزم المستأجر بتقديم الإصدار النهائي وشهادة براءة ذمة
+                من كهرماء ، وكذا شهادة مخالصة من اوريدوو وغيرها من رسوم الخدمات التي قام
+                بإستخدامها العين المؤجرة.
+                <br/>
+                <br/>
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:13px">
+                <b>
+                    <u>البند الثامن عشر :</u>
+                </b>
+                <br/>
+                يقر المستأجر بأنه فى حالة قيامه بإخلاء العين المؤجرة قبل إنتهاء مُدة هذا العقد
+                فإنه يكون ملتزماً بسداد الأجرة المتبقية فى العقد بالكامل سواء قام بقطع الخدمات
+                عن العين كالماء والكهرباء وحتى لو قام بإيداع مفاتيح العين بالمحكمة بموجب محضر
+                الإيداع اللازم لذلك، فكل هذا لا يغنى عن إلتزام الطرف الثانى المستأجر بسداد
+                الأجرة المتبقية فى مدة العقد بالكامل، وعليه فإن المستأجر يقر بإلتزامه بسداد
+                الأجرة المتبقية فى العقد بالكامل ولا يحق له الإدعاء بعدم إلتزامه بسداد الأجرة
+                لعدم إنتفاعه بالعين لأنه سيكون هو المتسبب بنفسه فى عدم الإنتفاع.
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                 <br/>
+
+                يقر المستأجر بأنه فى حالة قيامه بمغادرة البلد نهائيا قبل إنتهاء مدة هذا العقد
+                فإنه يكون ملتزماً بإخطار المؤجر في مدة لا تقل عن شهر من إخلاء العين المؤجر ودفع
+                غرامة مقدارها قيمة إيجار شهر مع تقديم صورة من إلغاء الإقامة.
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+
+                وكان هذا بنداً من البنود التى كانت محلاً لإعتبار الطرفين عند التعاقد.
+                <br/>
+               <br/>
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند التاسع عشر :</u>
+                </b>
+                <br/>
+                لا يُسمح للمستأجر أن يجرى أية تغييرات على العين المؤجر سواء كانت تلك التغييرات
+                بالهدم أو البناء أو الإضافة إلا بموجب موافقة كتابية من المؤجر، وفى حالة مخالفة
+                المستأجر ذلك يكون هذا العقد مفسوخاً فسخاً تلقائياً نهائياً بدون الحاجة لإعذار أو
+                حكم قضائى، ويقع على المستأجر إلتزام بإعادة العين إلى ما كانت عليه قبل التغييرات،
+                وفى حالة عدم إعادتها للحالة التى كانت عليها يحق للمؤجر أن يعيدها بنفسه للحالة
+                التى كانت عليها على نفقة المستأجر وتكون تكلفة إعادة العين إلى الحالة التى كانت
+                عليها ديناً فى ذمة المستأجر ولا تبرأ ذمة المستاجر من هذا الدين إلا بالسداد
+                التام.
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                وكان هذا بنداً من البنود التى كانت محلاً لإعتبار الطرفين عند التعاقد.
+                <br/>
+                <br/>
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند العشرون :</u>
+                </b>
+                <br/>
+                من المتفق عليه بين طرفى العقد أنه يحق للمؤجر دخول العين المؤجرة خلال أوقات
+                معقولة من النهار، (بعد إعطاء إشعار قبل الدخول ب 24 ساعة ( لتفقد أحوال العين
+                المؤجرة، ويجب على المستأجر تمكين المؤجر من دخول العين فى الموعد المُحدد
+                بالإشعار.
+                <br/>
+                <br/>
+                <br/>
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <u><b>البند الحادى والعشرين :</b></u>
+                <br/>
+                لا يسمح للمستأجر بإحضار أي نوع من أنواع المشروبات الكحولية والكحول أو الأرجيلة
+                (الشيشة) لحمام السباحة والمرافق العامة، ولا يسمح بالتحرك في المرافق العامة بزي
+                السباحة و لكن يجب أن يرتدي زي مناسب، وأن يحافظ على عادات وتقاليد دولة قطر.
+            <br/><br/>
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند الثاني والعشرين :</u>
+                </b>
+                <br/>
+                ومن المتفق عليه بين الطرفين أن المستأجر ليس ملتزماً بتوفير منقذ سباحة أو عامل
+                إسعافات أولية للنادي أو الصالة الرياضية وعلي المستأجر تأمين السلامة لنفسه وأفراد
+                الأسرة والضيوف والموظفين.
+                <br/>
+                <br/>
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند الثالث والعشرين :</u>
+                </b>
+                <br/>
+                <u>
+                    بموجب هذا البند يحق للمؤجر فتح العين المؤجرة للأسباب التالية :-
+                </u>
+                <br/>
+                <br/>
+                <div style="font-size:12px">
+                    <li>فى حالة الطوارئ.</li>
+                    <li>فى حالة ترك المستأجر للعين قبل إنتهاء مُدة العقد ، سواء كان الترك مبنياً
+                        على إخطار مُسبق من المستأجر أو بدون إخطار.
+                    </li>
+
+                    <li>فى حالة مغادرة الثانى المستأجر للبلاد مغادرة نهائية.</li>
+                    <li>فى حالة عدم إنتفاع المستأجر بالعين لمدة تزيد على شهرين متتاليين، شريطة
+                        أن يكون عدم الإنتفاع مقروناً بالتوقف عن سداد الأجرة.
+                    </li>
+                    <br/>
+                    <li>فى حالة عدم سداد الأجرة فى موعد إستحقاقها وبعد مرور خمسة عشر يوماً على
+                        عدم السداد فى تاريخ الإستحقاق.
+                    </li>
+                    <li>فى حالة وفاة المستأجر لاقدر الله وعدم وجود من يستفيد قانوناً بالإمتداد
+                        القانونى لعقد الإيجار.
+                    </li>
+                    <li>فى مدة اسبوع من تاريخ إنتهاء مدة هذا العقد.</li>
+                    <li>فى اليوم التالى لتحقق أى مخالفة من المخالفات التى يترتب عليها فسخ هذا
+                        العقد تلقائياً وفقاً لشروط هذا العقد.
+                    </li>
+                    <br/>
+                    <li>فى اليوم التالى لتحقق أى مخالفة من المخالفات التى يجوز فيها للطرف الأول
+                        المؤجر إعتبار هذا العقد مفسوخاً فسخاً نهائياً وفقاً لشروط هذا العقد.
+                    </li>
+                    <li>فى حالة تحقق أى سبب من الأسباب (من 2 إلى 9) بهذا البند يحق للمؤجر فضلاً
+                        عن فتح العين، أن يضع اليد عليها ويعتبر عقد الإيجار مفسوخاً فسخاً
+                        تلقائياً نهائياً من اليوم الذى تحقق فيه السبب، ومن ثم يحق للمؤجر إعادة
+                        تأجير العين لمستأجر جديد.
+                    </li>
+                    <br/>
+                    <li>يقر المستأجر بعدم مسئوليةالمؤجر عن أى متعلقات شخصية قد تكون قد وجدت داخل
+                        العين أثناء فتح العين وإعادة تأجيرها، ويخلى المستأجر مسئولية المؤجر من
+                        ذلك ويُبرئ ذمته من فقدان أو تلف تلك المتعلقات، كما يحق للمؤجر تخزين تلك
+                        المتعلقات على نفقة المستأجر الخاصة.
+                    </li>
+                    <br/>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+
+                ويقر المستأجر بأن تنفيذ ما جاء بهذا البند لا يحتاج لإعذار أو إنذار أو حكم قضائى
+                أو أمراً من قاضى الأمور الوقتية ، وأنه واجب النفاذ بين طرفيه بمجرد تحقق سبب من
+                الأسباب الواردة فى النقاط (من 2 إلى 9) منه، وأن هذا البند يُعد بمثابة تفويض منه
+                للمؤجر بكل ما سبق، وأن هذا التفويض نهائى وغير قابل للإلغاء، وأنه لا يحق له أن
+                يرجع على المؤجر فى حالة تنفيذ هذا البند بأى دعوى مدنية كانت أو جنائية حتى لو
+                ترتب على تنفيذ هذا البند تلف أو فقدان المتعلقات الشخصية للمستأجر، ويقر المستأجر
+                من الآن بتنازله عن الرجوع على المؤجر بأى دعوى مدنية أو جنائية تكون مبنية على
+                تنفيذ هذا البند، كما يقر بأحقية المؤجر فى فتح العين وإعادة تأجيرها للغير وتنازله
+                عن أى دعوى مدنية أو جنائية بهذا الخصوص.
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+
+                كما يقر طرفى هذا العقد بأن ما ورد بهذا البند لا مخالفة فيه للنظام العام، وأن ما
+                ورد بهذا العقد يعبر عن إرادة الطرفين الحقيقية وأن هذا البند وباقى بنود العقد هى
+                شريعة طرفى العقد التى لا يجوز نقضها بإرادة أحد الطرفين المنفردة، كما يقرا بعدم
+                خضوع هذا البند للسلطة التقديرة للجنة فض المنازعات الإيجارية أو القضاء، وأنه فى
+                حالة عرض النزاع على القضاء بخصوص هذا البند فلا يجوز تفسير أو تأويل هذا البند بما
+                يخرج عن المعنى الظاهر منه أو عن إرادة الطرفين الجلية فيه، و يقرا أيضاً بأن هذا
+                البند كان محلاً لإعتبار الطرفين عند التوقيع على هذا العقد.
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+
+            </td>
+        </tr>
+
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                 <u><b>البند الرابع والعشرين :</b></u>
+                <br/>
+                يتعهد المستأجر بإحترام حقوق جيرانه والإلتزام بالهدوء وعدم إزعاج جيرانه الذين
+                يعيشون في البناية أوالمجمع ومراعاة مشاعر الآخرين والإلتزام بالآداب العامة
+                والنظام العام ، بالإضافة إلى ذلك لا تكون إدارة المجمع أو أمن البناية مسئولة عن
+                سلامة الأطفال داخل المجمع ويجب على آبائهم وأولياء أمورهم استخدام الوسائل
+                المناسبة لسلامتهم.
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند الخامس والعشرين :</u>
+                </b>
+                <br/>
+                فى حالة مخالفة المستأجر لأى بند من بنود هذا العقد ووقوع الفسخ التلقائى أو
+                الجوازى فإن هذا العقد يكون مفسوخاً فسخاً نهائياً، ويحق للمؤجر فتح العين وإعادة
+                تأجيرها، و يقر المستأجر بإلتزامه بسداد القيمة الإيجارية المتبقية فى مدة العقد
+                بالكامل ،ومبلغ الأجرة المتبقية بالكامل يُعد ديناً فى ذمة المستأجر للمؤجر ولا
+                تبرأ ذمته من هذا الدين إلا بالسداد التام.
+                <br/>
+                <br/>
+                <br/>
+                وكان هذا بنداً من البنود التى كانت محلاً لإعتبار الطرفين عند التعاقد.
+                <br/>
+                <br/>
+
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند السادس والعشرين :</u>
+                </b>
+                <br/>
+                راجع الطرفين كافة بنود وشروط هذا العقد وأقرا برضائهما به بالكامل وأنه أصبح نهائى
+                فى حقهما وأنه قد أصبح مُلزم لهما ولا يجوز لأى منهما الرجوع فيه أو تغييره أو نقضه
+                أو الإخلال بشروطه و أحكامه وإلا يُعتبر العقد مفسوخاً ويتحمل الطرف المُخل مسئولية
+                إخلاله و الفسخ والتعويض المترتب عليه.
+                <br/>
+                <br/>
+                <br/>
+
+
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند السابع والعشرين :</u>
+                </b>
+                <br/>
+                هذا العقد خاضع لأحكام قانون إيجار العقارات رقم 4 لسنة 2008 و القوانين المُعدلة
+                له و القوانين اللاحقة عليه، وكل ما لم يرد بشأنه نص فى هذا العقد يُرجع فيه إلى
+                القانون سالف الذكر.
+                <br/>
+                <br/>
+                <br/>
+                كما يقر المستأجر إقراراً صريحاً ونهائياً بأنه لو أصبح فى حاجة مستقبلاً لتسجيل
+                عقد الإيجار فى وزارة البلدية أو فى أى جهة أخرى فإن نقات ورسوم التسجيل ستكون على
+                عاتقه هو شخصياً دون أن تتحمل الشركة المؤجرة أية رسوم أو مصاريف فى هذا الشأن .
+           <br/>
+           <br/>
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند الثامن والعشرين :</u>
+                </b>
+                <br/>
+                تختص لجان فض المنازعات الإيجارية دون غيرها بالفصل فى أى نزاع ينشأ لاقدر الله
+                بخصوص هذا العقد ، أو أي جهة أخرى يُحددها القانون لاحقاً.
+
+
+
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند التاسع والعشرين :</u>
+                </b>
+                <br/>
+                حُررت بنود ذا العقد باللغتين العربية والإنجليزية ، وفى حالة إختلاف النص العربى
+                عن الإنجليزى ، فإن النص العربى هو الذى يعمل به.
+                <br/>
+                <br/>
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند الثلاثون :</u>
+                </b>
+                <br/>
+                يقر طرفى العقد بصحة عناوينهما المذكورة فى صدر هذا العقد، وأن كافة المراسلات
+                والإخطارات التى تتم على تلك العناوين تكون صحيحة ومنتجة لآثارها القانونية.
+                <br/>
+                <br/>
+
+            </td>
+        </tr>
+        <tr style="border-bottom:1px solid black">
+            <td colspan="3" class="text-right" style="font-size:14px">
+                <b>
+                    <u>البند الحادي والثلاثين :</u>
+                </b>
+                <br/>
+                يتكون هذا العقد من واحد وثلاثون بنداً وقد تحرر من نسختين أصلية . نسخة بيد كل طرف
+                نسخة للعمل بموجبها
+                <br/>
+                <br/>
+            </td>
+        </tr>
+           <tr style="border-bottom:1px solid black ;">
+            <td colspan="2" style="font-size:14px" class="text-right">
+
+<b>      الطرف الأول-المؤجر</b>
+                <br/>
+                 <br/>
+                  <br/>
+                   <br/>
+                    <br/>
+                     <br/>
+
+            </td>
+
+
+            <td style="font-size:14px" class="text-left">
+                   <b>الطرف الثانى-المستأجر</b>
+                    <br/>
+                     <br/>
+                      <br/>
+                       <br/>
+            </td>
+        </tr>
+         <tr style="border-bottom:1px solid black ;">
+            <td colspan="3" style="font-size:14px" class="text-right">
+        <b>شروط وأحكام إضافية</b>
+        <br/>
+        <span>
+          <t t-esc="doc.description"/></span>
+            </td>
+
+        </tr>
+
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </t>
+    </template>
+    <template id="tenancy_contract">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="taqat_property_management.tenancy_contract_report_template" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

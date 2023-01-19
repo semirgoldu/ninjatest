@@ -1,0 +1,14 @@
+<odoo>
+
+    <record model="ir.ui.menu" id="fleet.fleet_vehicle_menu">
+        <field name="groups_id" eval="[(6,0,[ref('fleet.fleet_group_manager')])]"/>
+    </record>
+    <record model="ir.ui.menu" id="fleet.fleet_vehicle_log_contract_menu">
+        <field name="groups_id" eval="[(6,0,[ref('fleet.fleet_group_manager')])]"/>
+    </record>
+    <record model="ir.ui.menu" id="fleet.fleet_vehicle_log_services_menu">
+        <field name="groups_id" eval="[(6,0,[ref('fleet.fleet_group_manager')])]"/>
+    </record>
+
+
+</odoo>

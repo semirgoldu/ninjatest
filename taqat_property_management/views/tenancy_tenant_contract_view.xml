@@ -1,0 +1,147 @@
+<odoo>
+
+
+    <record id="taqat_property_analytic_view_form_view" model="ir.ui.view">
+        <field name="name">account.analytic.account.view</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="property_management.property_analytic_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="contract_send_by_mail" type="object" string="Send By Mail"/>
+            </xpath>
+            <xpath expr="//field[@name='currency_id']" position="before">
+                <field name="mobile" widget="phone"/>
+                <field name="location_code"/>
+                <field name="is_tenant_tenancy" invisible="1"/>
+                <field name="reference_no"/>
+                <field name="acknowledgment_no"/>
+                <field name="lease_type"/>
+                <field name="old_tenancy_contract" attrs="{'invisible':[('lease_type','!=','renewal')]}"/>
+            </xpath>
+            <xpath expr="//page[@name='rent_schedule']//field[@name='rent_schedule_ids']" position="before">
+                <group>
+                    <group>
+                        <button name="set_detail" type="object" string="Update Detail Cheque"/>
+                    </group>
+                    <group>
+                        <field name="cheque_detail"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <button name="set_maturity_date" type="object" string="Update Maturity Date"/>
+                    </group>
+                    <group>
+                        <field name="maturity_date_line"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <button name="set_bank_name" type="object" string="Update Bank Name"/>
+                    </group>
+                    <group>
+                        <field name="bank_name"/>
+                    </group>
+                </group>
+            </xpath>
+
+            <xpath expr="//page[@name='rent_schedule']//field[@name='rent_schedule_ids']//tree//field[@name='start_date']"
+                   position="before">
+                <field name="is_print_report"/>
+                <field name="is_deposit"/>
+            </xpath>
+            <xpath expr="//page[@name='rent_schedule']//field[@name='rent_schedule_ids']//tree//field[@name='start_date']"
+                   position="attributes">
+                <attribute name="string">From Date</attribute>
+            </xpath>
+            <xpath expr="//page[@name='rent_schedule']//field[@name='rent_schedule_ids']//tree//field[@name='start_date']"
+                   position="after">
+                <field name="end_date"/>
+                <field name="maturity_date"/>
+            </xpath>
+            <xpath expr="//field[@name='message_ids']" position="after">
+                <field name="activity_ids"/>
+            </xpath>
+            <xpath expr="//page[@name='rent_schedule']//field[@name='rent_schedule_ids']//tree//field[@name='inv']"
+                   position="after">
+                <field name="bank_name"/>
+                <field name="payment_method"/>
+                <field name="rent_status"/>
+            </xpath>
+            <xpath expr="//page[@name='rent_schedule']//field[@name='rent_schedule_ids']//tree//field[@name='invc_id']"
+                   position="before">
+                <field name="receipt_date"/>
+                <field name="old_cheques"/>
+            </xpath>
+            <xpath expr="//field[@name='contract_attachment']" position="after">
+                <field name="free_months"/>
+                <field name="active_free_rent"/>
+            </xpath>
+            <xpath expr="//field[@name='main_cost']" position="after">
+                <field name="frequency"/>
+            </xpath>
+            <xpath expr="//field[@name='active_free_rent']" position="after">
+                <field name="free_from" attrs="{'invisible':[('active_free_rent','=',False)]}"/>
+                <field name="free_to" attrs="{'invisible':[('active_free_rent','=',False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--Action For Analytic Account -->
+    <record model="ir.actions.act_window" id="analytic.action_account_analytic_account_form">
+        <field name="domain">[('is_tenant_tenancy','=',False)]</field>
+    </record>
+    <!--Action For Property Tenancy -->
+    <record model="ir.actions.act_window" id="property_management.action_property_analytic_view">
+        <field name="context">{'default_is_tenant_tenancy':1,'search_default_date_expiration': 1}</field>
+    </record>
+
+    <record id="taqat_invoice_analytic_form_view" model="ir.ui.view">
+        <field name="name">account.move.inherit.form.view</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@id='invoice_tab']//field[@name='invoice_line_ids']//tree//field[@name='analytic_account_id']"
+                   position="attributes">
+                <attribute name="domain">[('is_tenant_tenancy','=',False),'|', ('company_id', '=', False),
+                    ('company_id', '=', parent.company_id)]
+                </attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='analytic_account_id']"
+                   position="attributes">
+                <attribute name="domain">[('is_tenant_tenancy','=',False),'|', ('company_id', '=', False),
+                    ('company_id', '=', parent.company_id)]
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_tenancy_contract_search_view" model="ir.ui.view">
+        <field name="name">Account.Analytic.Account.</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="property_management.property_analytic_search_view"/>
+        <field name="arch" type="xml">
+            <filter name="tenant" position="after">
+                <filter string="Expiration Date" name="date_expiration"
+                        domain="[('date','&gt;=',context_today().strftime('%%Y-%%m-%%d')),('date','&lt;=', (context_today() + relativedelta(months=2)).strftime('%%Y-%%m-%%d'))]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="analytic.action_account_analytic_account_form" model="ir.actions.act_window">
+        <field name="name">Analytic Accounts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.analytic.account</field>
+        <field name="search_view_id" ref="analytic.view_account_analytic_account_search"/>
+        <field name="context">{'search_default_active':1}</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('analytic.view_account_analytic_account_list')}), (0, 0, {'view_mode': 'kanban', 'view_id': ref('analytic.view_account_analytic_account_kanban')}),(0, 0, {'view_mode': 'form', 'view_id': ref('analytic.view_account_analytic_account_form')})]"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Add a new analytic account
+          </p>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pos_config_view_form_inherit_ip" model="ir.ui.view">
+            <field name="name">pos.config.view.form.inherit.ip</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='accounting_section']" position="inside">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Analytic Account</span>
+                            <div class="text-muted">
+                                Configuration for Analytic Account of PoS orders
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="analytic_account_id" domain="[('company_id', '=', company_id)]"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Analytic Tags</span>
+                            <div class="text-muted">
+                                Configuration for Analytic Tags of PoS orders
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="analytic_tag_ids" widget="many2many_tags"/>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+                <xpath expr="//div[@id='category_reference']" position="after">
+                    <div class="col-12 col-lg-6 o_setting_box" title="Default Customer.">
+                        <div class="o_setting_right_pane">
+                            <label for="default_customer_id"/>
+                            <div class="text-muted">
+                                Default Customer.
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="default_customer_id" colspan="4" nolabel="1"/>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

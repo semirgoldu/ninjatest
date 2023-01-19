@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="OrderLinesReceipt" t-inherit="point_of_sale.OrderLinesReceipt" t-inherit-mode="extension" owl="1">
+		    <xpath expr="//t[@t-if='line.pack_lot_lines']//li" position="replace">
+                <li>
+                    SN <t t-esc="lot.attributes['lot_name']"/>
+                    ---
+                    <t t-esc="env.pos.format_currency_no_symbol(lot.attributes['price_unit'])"/>
+                </li>
+		    </xpath>
+		</t>
+</templates>

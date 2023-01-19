@@ -1,0 +1,114 @@
+<odoo>
+
+    <!--Containers Schedule Form View-->
+
+    <record id="taqat_containers_schedule_form_view" model="ir.ui.view">
+        <field name="name">containers.schedule.form</field>
+        <field name="model">containers.schedule</field>
+        <field name="arch" type="xml">
+            <form string="Donation Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="driver_id"/>
+                              <field name="from_date"/>
+                        </group>
+                        <group>
+                            <field name="day_of_week_ids" invisible="1" widget="many2many_tags" options="{'no_create': True, 'no_edit': True, 'delete': False, 'no_open': True}"/>
+                            <field name="to_date"/>
+                        </group>
+                        <group>
+                            <field name="containers_ids" invisible="1" widget="many2many_tags"/>
+                            <field name="containers_id" invisible="1"/>
+                        </group>
+                        <field name="container_ids">
+                            <tree editable="bottom">
+                                <field name="containers_ids" widget="many2many_tags"/>
+                                <field name="day_of_week_ids" widget="many2many_tags"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Containers Schedule Tree View-->
+
+    <record id="taqat_containers_schedule_tree" model="ir.ui.view">
+        <field name="name">containers.schedule.tree</field>
+        <field name="model">containers.schedule</field>
+        <field name="arch" type="xml">
+            <tree string="Donation Schedule">
+                <field name="driver_id"/>
+                <field name="from_date"/>
+                <field name="to_date"/>
+                <field name="day_of_week_ids" invisible="1" widget="many2many_tags"/>
+                <field name="containers_ids" invisible="1" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Action for Containers Schedule Views -->
+    <record id="action_taqat_containers_schedule_view" model="ir.actions.act_window">
+        <field name="name">Containers Schedule</field>
+        <field name="res_model">containers.schedule</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Containers Schedule Week Form View-->
+    <record id="taqat_containers_schedule_week_form_view" model="ir.ui.view">
+        <field name="name">containers.schedule.week.form</field>
+        <field name="model">containers.schedule.week</field>
+        <field name="arch" type="xml">
+            <form string="Week">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                              <field name="code"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+      <!--Containers Schedule Week Tree View-->
+
+    <record id="taqat_containers_schedule_week_tree" model="ir.ui.view">
+        <field name="name">containers.schedule.week.tree</field>
+        <field name="model">containers.schedule.week</field>
+        <field name="arch" type="xml">
+            <tree string="Week">
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!--Action for Containers Schedule Week Views -->
+    <record id="action_taqat_containers_schedule_week_view" model="ir.actions.act_window">
+        <field name="name">Containers Schedule Week</field>
+        <field name="res_model">containers.schedule.week</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="containers_schedule_cron" model="ir.cron">
+        <field name="name">Containers Schedule</field>
+        <field name="model_id" ref="taqat_donation.model_containers_schedule"/>
+        <field name="state">code</field>
+        <field name="code">model._create_donation_order()</field>
+        <field name='interval_number'>1</field>
+        <field name='interval_type'>days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+    <!--Containers Schedule Menu-->
+
+    <menuitem id="menu_containers_schedule" name="Containers Schedule" parent="taqat_donation.menu_main_donation"
+              action="action_taqat_containers_schedule_view"/>
+
+
+</odoo>

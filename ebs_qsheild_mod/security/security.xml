@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+
+    <record model="ir.module.category" id="module_category_qshield">
+        <field name="name">QShield Management</field>
+        <field name="description">Category for QShield</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record model="res.groups" id="qshield_admin">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_category_qshield"/>
+    </record>
+
+    <record model="res.groups" id="qshield_user">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_qshield"/>
+    </record>
+
+
+
+     <record model="ir.module.category" id="module_category_qshield_contact">
+        <field name="name">QShield Contact</field>
+        <field name="description">Category for QShield</field>
+        <field name="sequence">45</field>
+    </record>
+
+    <record model="res.groups" id="qshield_contact_admin">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_category_qshield_contact"/>
+    </record>
+
+    <record model="res.groups" id="qshield_contact_user">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_qshield_contact"/>
+    </record>
+
+
+     <record model="ir.module.category" id="module_category_qshield_accountant">
+        <field name="name">QShield Accountant</field>
+        <field name="description">Category for QShield</field>
+        <field name="sequence">55</field>
+    </record>
+
+    <record model="res.groups" id="qshield_accountant_admin">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_category_qshield_accountant"/>
+    </record>
+
+    <record model="res.groups" id="qshield_accountant_user">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_qshield_accountant"/>
+    </record>
+
+
+    <record model="ir.module.category" id="module_category_qshield_payment_gateway">
+        <field name="name">Payment Gateway</field>
+        <field name="description">Category for QShield</field>
+        <field name="sequence">55</field>
+    </record>
+
+    <record model="res.groups" id="qshield_payment_gateway_manager">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_category_qshield_payment_gateway"/>
+    </record>
+    <record model="res.groups" id="qshield_payment_gateway_user">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_qshield_payment_gateway"/>
+    </record>
+
+</odoo>

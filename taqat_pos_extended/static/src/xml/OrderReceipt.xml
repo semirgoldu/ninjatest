@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//t[@t-foreach='receipt.paymentlines']" position="after">
+            <t t-if="receipt.visa_number">
+                <div>
+                    Visa Number :  <span t-esc="receipt.visa_number"></span>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-if='receipt.cashier']" position="after">
+            <t t-if='env.pos.config.name'>
+                <div>
+                    <strong><span>Shop : <t t-esc="env.pos.config.name" /></span></strong>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

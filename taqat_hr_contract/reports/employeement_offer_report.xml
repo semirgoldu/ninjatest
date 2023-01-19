@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="employment_report_template">
+        <t t-call="web.basic_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.employee_id.lang)"/>
+            <div class="page">
+                <div class="container-fluid" style="font-size:17px;padding:30px;">
+                    <div class="row">
+                        <div class="col-12" style="text-align: center;font-size:20px;">
+                            <span class="font-weight-bold" style="letter-spacing: 1px;">EMPLOYMENT OFFER (PRIVATE AND CONFIDENTIAL)</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-6" style="font-size:18px;">
+                            <span class="font-weight-bold"><t t-if="doc.employee_id" t-esc="doc.employee_id.name"/></span><br/>
+                            <span><t t-if="doc.date_start" t-esc="doc.date_start.strftime('%B %Y')"/></span><br/>
+                            <span class="font-weight-bold">Mobile: <t t-if="doc.employee_id" t-esc="doc.employee_id.mobile_phone"/> <t t-if="doc.employee_id" t-esc="doc.employee_id.work_phone"/></span><br/>
+                            <span class="font-weight-bold">Email: <t t-if="doc.employee_id" t-esc="doc.employee_id.work_email"/></span><br/>
+                        </div>
+                        <div class="col-6" style="font-size:18px;text-align:right;">
+                            <span>Doha, <t t-if="datetime.date.today()" t-esc="datetime.date.today().strftime('%d')"/><sup><t t-esc="doc.suffix(datetime.date.today().strftime('%d'))"/></sup></span>
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="font-weight-bold">Dear <t t-if="doc.employee_id" t-esc="doc.employee_id.name"/>,</span><br/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-12">
+                            <span>
+                                With reference to the recent interview that you have had with Taqat LLC, we are pleased to offer you the position of <b><t t-if="doc.job_id" t-esc="doc.job_id.name"/></b>, and you will be reporting to the <b><t t-if="doc.employee_id.parent_id" t-esc="doc.doc.employee_id.parent_id.name"/></b> on the following main terms and conditions:
+                            </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-12">
+                            <table style="border: 1px solid black;width:100%;">
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Employment Status </td>
+                                    <td class="p-1" style="width:50%;"> <t t-if="doc.employment_status" t-esc="dict(doc.fields_get(allfields=['employment_status'])['employment_status']['selection'])[doc.employment_status]"/> </td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Grade </td>
+                                    <td class="p-1" style="width:50%;"> <t t-if="doc.grade" t-esc="doc.grade"/> </td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Duration of Contract </td>
+                                    <td class="p-1" style="width:50%;"> <t t-if="doc.contract_type_id" t-esc="doc.contract_type_id.name"/> </td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Total Salary </td>
+                                    <td class="p-1" style="width:50%;"> QR <t t-if="doc.package" t-esc="doc.package"/>/ per month, which will be subject to annual review by Management at its discretion.</td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Transport Allowance </td>
+                                    <td class="p-1" style="width:50%;">
+                                        <t t-if="doc.is_car_provided">
+                                            The company provides a car.
+                                        </t>
+                                        <t t-else="">
+                                            QR <t t-if="doc.transport_allowance" t-esc="doc.transport_allowance"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Annual Leave </td>
+                                    <td class="p-1" style="width:50%;">As per labor of law (21) working days.</td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Airfares </td>
+                                    <td class="p-1" style="width:50%;">
+                                        As per Taqat HR Policy.<br/>
+                                        Home Country: <t t-if="doc.employee_id.nationality_id or doc.employee_id.country_id" t-esc="doc.employee_id.nationality_id.name or doc.employee_id.country_id.name"/><br/>
+                                        Airport: <t t-if="doc.airport" t-esc="doc.airport"/>
+                                    </td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Healthcare and Insurance </td>
+                                    <td class="p-1" style="width:50%;">Taqat shall provide you, with medical insurance coverage as per Taqat HR Policy and Qatar Labor Law. .</td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">End of service Benefit </td>
+                                    <td class="p-1" style="width:50%;">Based on Qatar Labor law.</td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Probationary Period </td>
+                                    <td class="p-1" style="width:50%;">Three (3) months based on performance might be extended to Six (6) months.</td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Notice Period </td>
+                                    <td class="p-1" style="width:50%;">2 Weeks’ notice during probationary period, thereafter termination of service shall be after serving a 2 months’ notice by either party.</td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Working Hours </td>
+                                    <td class="p-1" style="width:50%;">8 hours per day from, the requirements of the employment call for flexibility and you shall be expected to work such additional hours as are required to fulfill the duties and responsibilities of your role.</td>
+                                </tr>
+                                <tr style="border: 1px solid black;">
+                                    <td class="p-1 font-weight-bold" style="width:50%;border-right: 1px solid black;">Working Week </td>
+                                    <td class="p-1" style="width:50%;"> Sunday to Thursday.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="employment_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="taqat_hr_contract.employment_report_template" t-lang="doc.employee_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

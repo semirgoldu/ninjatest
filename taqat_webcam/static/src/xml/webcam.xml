@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="body_map_view">
+        <div>
+            <button name="body_map" class="btn  btn-primary attachment_web_cam pt-1 pb-1">
+                <span class="o_attach_document">Webcam</span></button>
+
+        </div>
+
+
+    </t>
+
+    <t t-name="image_open_template">
+            <div>
+                <div class="modal" id="open_webcam" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document" >
+    <div class="modal-content">
+
+      <div class="modal-body">
+       <div class="play-area">
+            <input type="text"  class="image_data" style="display:none;"/>
+                <div class="play-area-sub">
+                    <h3>The Stream</h3>
+                    <video id="stream" class="w-100"></video>
+                </div>
+                <div class="play-area-sub">
+                    <h3>Capture Image</h3>
+                    <canvas id="capture" class="w-100" style="display:none"></canvas>
+                    <div id="snapshot" class="w-100"></div>
+                </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary capture_image">Capture</button>
+        <button type="button" class="btn btn-primary save_image">Save Image</button>
+        <button type="button" class="btn btn-secondary close_popup" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+        </t>
+</templates>

@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sms_connect_sms,access_sms_connect_sms,model_sms_connect_sms,sms_connect_vodafone.group_user,1,1,1,1
-access_sms_connect_source,access_sms_connect_source,model_sms_connect_source,sms_connect_vodafone.group_user,1,1,1,1

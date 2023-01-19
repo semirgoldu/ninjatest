@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.module.category" id="employee_type_access_category">
+        <field name="name">Employee Type Access</field>
+        <field name="description">Access Employee Type</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="group_access_fusion_employee" model="res.groups">
+        <field name="name">Access Of Main Company Employee</field>
+        <field name="category_id" ref="employee_type_access_category"/>
+        <field name="comment">The user will be able to access employee type of Main Company employee.</field>
+    </record>
+
+    <record id="group_access_other_employee" model="res.groups">
+        <field name="name">Access Of Outsourced Employees</field>
+        <field name="category_id" ref="employee_type_access_category"/>
+        <field name="comment">The user will be able to access employee type of Outsourced Employees.</field>
+    </record>
+
+    <record id="group_access_client_employee" model="res.groups">
+        <field name="name">Access Of Client Employee</field>
+        <field name="category_id" ref="employee_type_access_category"/>
+        <field name="comment">The user will be able to access employee type of client employee.</field>
+    </record>
+
+    <record id="access_fusion_employee" model="ir.rule">
+        <field name="name">Access Of Main Company Employee</field>
+        <field name="model_id" ref="model_hr_employee"/>
+        <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_fusion_employee'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="domain_force">[('employee_type','=', 'fusion_employee')]</field>
+    </record>
+
+    <record id="access_other_employee" model="ir.rule">
+        <field name="name">Access Of Outsourced Employees</field>
+        <field name="model_id" ref="model_hr_employee"/>
+        <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_other_employee'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="domain_force">[('employee_type','=', 'fos_employee')]</field>
+    </record>
+
+    <record id="access_client_employee" model="ir.rule">
+        <field name="name">Access Of Client Employee</field>
+        <field name="model_id" ref="model_hr_employee"/>
+        <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_client_employee'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="domain_force">[('employee_type','=', 'client_employee')]</field>
+    </record>
+
+</odoo>

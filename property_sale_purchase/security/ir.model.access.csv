@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_investment_analysis_report_user","access_investment_analysis_report_user","property_sale_purchase.model_investment_analysis_report","property_management.group_property_user",1,1,1,0
+"access_investment_analysis_report_agent","access_investment_analysis_report_agent","property_sale_purchase.model_investment_analysis_report","property_management.group_property_agent",1,1,1,0
+"access_investment_analysis_report_manager","access_investment_analysis_report_manager","property_sale_purchase.model_investment_analysis_report","property_management.group_property_manager",1,1,1,1
+"access_investment_analysis_report_owner","access_investment_analysis_report_owner","property_sale_purchase.model_investment_analysis_report","property_management.group_property_owner",1,1,1,1

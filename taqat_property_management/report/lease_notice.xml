@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_lease_notice" model="ir.actions.report">
+        <field name="name">Expiry Lease Notice</field>
+        <field name="model">account.analytic.account</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">taqat_property_management.lease_notice</field>
+        <field name="report_file">taqat_property_management.lease_notice</field>
+        <field name="print_report_name">'Lease Notice'</field>
+        <field name="binding_model_id" ref="property_management.model_account_analytic_account"/>
+        <field name="paperformat_id" ref="taqat_property_management.paperformat_taqat_tenancy_contract"/>
+        <field name="binding_type">report</field>
+    </record>
+
+   <record id="action_report_free_rent" model="ir.actions.report">
+        <field name="name">Free Rent</field>
+        <field name="model">account.analytic.account</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">taqat_property_management.add_free_rent</field>
+        <field name="report_file">taqat_property_management.add_free_rent</field>
+        <field name="print_report_name">'Free Rent'</field>
+        <field name="binding_model_id" ref="property_management.model_account_analytic_account"/>
+        <field name="paperformat_id" ref="taqat_property_management.paperformat_taqat_tenancy_contract"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

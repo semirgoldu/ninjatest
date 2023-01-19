@@ -1,0 +1,191 @@
+<odoo>
+
+    <!--Donation Containers search View-->
+    <record id="taqat_donation_order_search_view" model="ir.ui.view">
+            <field name="name">Donation.Order.search</field>
+            <field name="model">donation.order</field>
+            <field name="arch" type="xml">
+                <search string="Donation Order">
+                    <field name="order_number" string="Order" filter_domain="[('order_number','ilike',self)]"/>
+                    <field name="driver_id" string="Driver"/>
+                    <field name="donator_id" string="Donator"/>
+                    <field name="donation_type" string="Donation Type"/>
+                    <filter name="state" string="Draft" domain="[('state', '=', 'draft')]"/>
+                    <filter name="dstate" string="Not Delivered" domain="[('state', '!=', 'delivered')]"/>
+                    <filter name="delivered" string="Delivered" domain="[('state', '=', 'delivered')]"/>
+                    <filter name="is_generate_receipt" string="Generate Receipt" domain="[('is_generate_receipt', '=', True)]"/>
+                    <filter name="is_not_generate_receipt" string="Not Generate Receipt" domain="[('is_generate_receipt', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+    <!--Donation Containers Form View-->
+    <record id="taqat_donation_order_form_view" model="ir.ui.view">
+        <field name="name">Donation.Order.form</field>
+        <field name="model">donation.order</field>
+        <field name="arch" type="xml">
+            <form string="Donation Order">
+                <header>
+                    <button string="Approve" name="button_approve" type="object" class="oe_highlight" states="draft"/>
+                    <button string="Receive" name="button_receive" type="object" class="oe_highlight" states="approved"/>
+                    <button string="Complete" name="button_complete" type="object" class="oe_highlight" groups="taqat_donation.group_driver,taqat_donation.group_donation_manager,taqat_groups_access_rights_extended.taqat_group_inventory_clerk,taqat_groups_access_rights_extended.taqat_group_inventory_container_clerk,taqat_groups_access_rights_extended.taqat_group_inventory_manager_role"  states="received"/>
+                    <button string="Print Receipt" name="button_print_slip" type="object" class="oe_highlight" states="delivered"/>
+                    <button string="Generate Receipt" name="button_generate_slip" groups="taqat_donation.group_donation_manager,taqat_groups_access_rights_extended.taqat_group_inventory_manager_role,taqat_groups_access_rights_extended.taqat_group_inventory_clerk,taqat_groups_access_rights_extended.taqat_group_inventory_container_clerk" type="object" class="oe_highlight" attrs="{'invisible': ['|',('show_generate_receipt', '=', False),('state', '!=', 'delivered')]}"/>
+                    <button string="Cancel" name="button_cancel" type="object" groups="taqat_donation.group_donation_manager,taqat_groups_access_rights_extended.taqat_group_inventory_manager_role" class="oe_highlight" states="approved,received,delivered"/>
+                    <button string="Reset to draft" name="button_reset_to_draft" type="object" groups="taqat_donation.group_donation_manager,taqat_groups_access_rights_extended.taqat_group_inventory_manager_role,taqat_groups_access_rights_extended.taqat_group_inventory_clerk,taqat_groups_access_rights_extended.taqat_group_inventory_container_clerk" class="oe_highlight" states="approved,received"/>
+                    <button string="Print Container Code" name="button_print_container_code" type="object" class="oe_highlight" attrs="{'invisible': [('is_container', '=', False)]}"/>
+                    <widget name="attach_document" string="Attach Document" groups="taqat_donation.group_donation_manager,taqat_groups_access_rights_extended.taqat_group_inventory_manager_role,taqat_groups_access_rights_extended.taqat_group_inventory_clerk,taqat_groups_access_rights_extended.taqat_group_inventory_container_clerk"  highlight="1" />
+                    <field name="state" widget="statusbar"/>
+                     <widget name="body_map" class="hide-on-desktop" groups="taqat_donation.group_driver,taqat_donation.group_donation_manager,taqat_groups_access_rights_extended.taqat_group_inventory_manager_role"/>
+                </header>
+                <sheet>
+                    <div class="o_not_full oe_button_box">
+
+                        <button name="action_get_attachment_view"
+                                class="oe_stat_button"
+                                icon="fa-book"
+                                type="object"
+                                attrs="{'invisible': [('attachment_number', '=', 0)]}">
+                            <field name="attachment_number" widget="statinfo" string="Documents"
+                                   options="{'reload_on_button': true}"/>
+                        </button>
+
+                        <button type="object"
+                                name="action_get_donation_transfer_view"
+                                class="oe_stat_button"
+                                icon="fa-truck" attrs="{'invisible':['|', ('is_generate_receipt','=', False), ('is_container','=', True)]}"
+                                groups="stock.group_stock_user">
+                            <b>Receipt</b>
+                        </button>
+                        <button type="object"
+                                name="action_get_container_view"
+                                class="oe_stat_button"
+                                icon="fa-align-justify"
+                                attrs="{'invisible':['|', ('is_generate_receipt','=', False), ('is_container','=', False)]}"
+                                >
+                            <span>Container Receipt</span>
+                        </button>
+                    </div>
+                    <field name="is_driver" invisible="1"/>
+                    <field name="show_generate_receipt" invisible="1"/>
+                    <group attrs="{'invisible': [('is_driver', '=', True)]}">
+                        <div class="oe_title" colspan="4">
+                            <h1><field name="order_number" readonly="1"/></h1>
+                        </div>
+                        <group>
+                            <field name="order_date" required="1" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            <field name="driver_id" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            <field name="donator_id" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            <field name="donation_type" required="1" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            <field name="is_generate_receipt" invisible="1" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                        </group>
+                        <group>
+                            <field name="mobile_no" widget="phone" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            <field name="zone" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            <field name="street" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            <field name="description" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            <field name="building_no" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            <field name="is_container" invisible="1"/>
+                        </group>
+                    </group>
+                    <group attrs="{'invisible': [('is_driver', '=', False)]}">
+                        <div class="oe_title" colspan="4">
+                            <h1><field name="order_number" readonly="1"/></h1>
+                        </div>
+                        <group>
+                            <field name="order_date" required="1" readonly="1" force_save="1"/>
+                            <field name="driver_id" readonly="1" force_save="1"/>
+                            <field name="donator_id" readonly="1" force_save="1"/>
+                            <field name="donation_type" readonly="1" force_save="1"/>
+                            <field name="is_generate_receipt" invisible="1" readonly="1" force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="mobile_no" widget="phone" readonly="1" force_save="1"/>
+                            <field name="zone" readonly="1" force_save="1"/>
+                            <field name="street" readonly="1" force_save="1"/>
+                            <field name="description" readonly="1" force_save="1"/>
+                            <field name="building_no" readonly="1" force_save="1"/>
+                            <field name="is_container" invisible="1" readonly="1" force_save="1"/>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page id="page_donation_order_line" string="Donation Order Line" attrs="{'invisible': [('is_container', '=', True)]}">
+                            <field name="donation_order_line_ids" attrs="{'readonly':[('is_generate_receipt', '=', True)]}">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="product_uom_id"/>
+                                    <field name="quantity"/>
+                                    <field name="description" required="1"/>
+                                    <field name="donation_order_id" invisible="1"/>
+                                    <field name="is_container" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page id="page_donation_order_containers" string="Donation Order containers" attrs="{'invisible': [('is_container', '!=', True)]}">
+                            <field name="donation_order_containers_ids" attrs="{'readonly':[('is_generate_receipt', '=', True)]}">
+                                <tree editable="bottom">
+                                    <field name="container_id"/>
+                                    <field name="nbr_of_bags" required="1"/>
+                                    <field name="comments" required="1"/>
+                                    <field name="donation_order_id" invisible="1"/>
+                                    <field name="is_container" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="other" string="Additional Info">
+                            <group>
+                                <field name="sign_signature" widget="signature" options="{'full_name': 'display_name', 'size': ['',200]}" attrs="{'readonly':[('is_generate_receipt', '=', True)]}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Donation Containers Tree View-->
+
+    <record id="taqat_donation_order_tree" model="ir.ui.view">
+        <field name="name">donation.order.tree</field>
+        <field name="model">donation.order</field>
+        <field name="arch" type="xml">
+            <tree string="Donation Containers">
+                <field name="order_number"/>
+                <field name="order_date"/>
+                <field name="driver_id"/>
+                <field name="donator_id"/>
+                <field name="zone"/>
+                <field name="street"/>
+                <field name="description"/>
+                <field name="building_no"/>
+                <field name="donation_type"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sequence_donation_order_sequence" model="ir.sequence">
+        <field name="name">Donation OrderSequence</field>
+        <field name="code">donation.order</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">DO-%(year)s-</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!--Action for Donation Containers Views -->
+    <record id="action_taqat_donation_order_view" model="ir.actions.act_window">
+        <field name="name">Donation Order</field>
+        <field name="res_model">donation.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_state': 1}</field>
+        <field name="search_view_id" ref="taqat_donation_order_search_view"/>
+    </record>
+
+
+    <menuitem id="menu_donation_order" name="Donation Order" parent="stock.menu_stock_root"
+              action="action_taqat_donation_order_view"/>
+
+</odoo>

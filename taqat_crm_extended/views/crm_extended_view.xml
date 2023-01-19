@@ -1,0 +1,29 @@
+<odoo>
+
+    <record id="taqat_custom_crm_lead_view" model="ir.ui.view">
+        <field name="name">custom.crm.lead.view</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="property_id" required="0" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_lead_form_view_opportunity_inherit_button" model="ir.ui.view">
+        <field name="name">crm.lead.inherit.buttons</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="property_management.crm_lead_form_opportunity_inherit_button"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="won_status" invisible="1"/>
+            </xpath>
+            <xpath expr="//button[@name=%(property_management.action_crm_make_sale)d]" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|',('won_status', '=', 'won'),('is_rent', '=', True)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

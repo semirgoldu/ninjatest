@@ -1,0 +1,190 @@
+<odoo>
+
+
+    <record id="taqat_donation_picking_form_view" model="ir.ui.view">
+        <field name="name">stock.picking.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="statusbar_visible">draft,confirmed,assigned,confirm,done</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="attrs">{'readonly': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='location_dest_id']" position="attributes">
+                <attribute name="attrs">{'readonly': ['|', ('donation_order_id', '!=', False), ('container_order_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='picking_type_id']" position="attributes">
+                <attribute name="attrs">{'readonly': ['|', ('donation_order_id', '!=', False), ('container_order_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='button_validate']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('state', 'in', ('waiting','confirmed')), ('show_validate', '=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='button_validate']" position="after">
+                <button name="action_custom_confirm" attrs="{'invisible': [('state', 'not in', ('assigned'))]}" string="Confirm" type="object" class="oe_highlight" groups="stock.group_stock_user" data-hotkey="v"/>
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="donation_order_id" readonly="1"/>
+                <field name="container_order_id" readonly="1"/>
+            </xpath>
+            <xpath expr="//button[@name='action_assign_serial']" position="after">
+                <button name="action_print_label" string="Print Label" type="object" class="btn-primary"/>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm']" position="attributes">
+                <attribute name="groups">stock.group_stock_manager</attribute>
+            </xpath>
+            <xpath expr="//page[@name='extra']" position="attributes">
+                <attribute name="groups">taqat_groups_access_rights_extended.taqat_group_inventory_manager_role,taqat_donation.group_donation_manager</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_donation_picking_form_for_inventory_manager_view" model="ir.ui.view">
+        <field name="name">stock.picking.inherit.for_group.inventory_manager</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="groups_id" eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_manager_role')), (4, ref('base.group_erp_manager'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="attrs">{'readonly': False}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_donation_picking_form_for_group_view" model="ir.ui.view">
+        <field name="name">stock.picking.inherit.for_group</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="groups_id" eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_inspection_user')),(4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_clerk')),(4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_container_clerk')),(4, ref('taqat_donation.group_driver'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="options">{'no_create_edit': 1, 'no_create': 1}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='move_ids_without_package']/tree/field[@name='product_id']" position="attributes">
+                <attribute name="options">{'no_create_edit': 1, 'no_create': 1}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_stock_warehouse_mgmt">
+        <field name="groups_id" eval="[(4,ref('taqat_donation.group_donation_manager'))]"/>
+    </record>
+    <record model="ir.ui.menu" id="stock.stock_picking_type_menu">
+        <field name="groups_id" eval="[(4,ref('taqat_donation.group_donation_manager')), (4,ref('taqat_groups_access_rights_extended.taqat_group_inspection_user'))]"/>
+    </record>
+    <record model="ir.ui.menu" id="stock.menu_stock_inventory_control">
+        <field name="groups_id" eval="[(4,ref('taqat_donation.group_donation_manager'))]"/>
+    </record>
+
+
+    <record id="taqat_donation_stock_move_form_view" model="ir.ui.view">
+        <field name="name">stock.move.inherit</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_stock_move_operations"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[1]/group" position="inside">
+                <label for="price_unit"/>
+                <div class="o_row">
+                    <span>
+                        <field name="price_unit"/>
+                    </span>
+                    <button name="action_assign_price_unit" type="object"
+                            class="btn-link" data-hotkey="k"
+                            title="Assign Price Unit">
+                        <span>Assign Price Unit</span>
+                    </button>
+                    <button name="action_clear_price_unit" type="object"
+                            class="btn-link" data-hotkey="y"
+                            title="Clear Price Unit">
+                        <span>Clear Price Unit</span>
+                    </button>
+                </div>
+                <label for="location_id"/>
+                <div class="o_row">
+                    <span>
+                        <field name="location_id" domain="[('usage', '=', 'internal'), '|', ('company_id', '=', False), ('company_id', '=', company_id), ('usage', '!=', 'view')]"/>
+                    </span>
+                    <button name="action_assign_location" type="object"
+                            class="btn-link ml-5"
+                            title="Assign Location">
+                        <span>Assign Location</span>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='product_uom_category_id']" position="after">
+                <field name="is_generate" invisible="1"/>
+            </xpath>
+            <xpath expr="//button[@name='action_assign_serial_show_details']" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_generate', '=', True)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_donation_stock_move_line_form_view" model="ir.ui.view">
+        <field name="name">stock.move.line.inherit</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='location_dest_id']" position="attributes">
+                <attribute name="domain">[('usage', '=', 'internal'), '|', ('company_id', '=', False), ('company_id', '=', company_id), ('usage', '!=', 'view')]</attribute>
+            </xpath>
+            <xpath expr="//tree/field[@name='location_id']" position="attributes">
+                <attribute name="domain">[('usage', '=', 'internal'), '|', ('company_id', '=', False), ('company_id', '=', company_id), ('usage', '!=', 'view')]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='lot_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='lot_id']" position="after">
+                <field name="price_unit" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_stock_picking_type_form_view" model="ir.ui.view">
+        <field name="name">taqat.stock.picking.inherit</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_picking_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="operation_type" attrs="{'invisible': [('code', '!=', 'incoming')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='sequence_code']" position="after">
+                <field name="is_container_type" attrs="{'invisible': [('code', '!=', 'incoming')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sequence_self_lot_sequence" model="ir.sequence">
+        <field name="name">Lot Sequence</field>
+        <field name="code">lot.seq</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">%(year)s%(month)s%(day)s</field>
+        <field name="padding">9</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <record id="stock.action_picking_tree_all" model="ir.actions.act_window">
+            <field name="name">Transfers</field>
+            <field name="res_model">stock.picking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,kanban,form,calendar</field>
+            <field name="domain"></field>
+            <field name="context">{'search_default_draft': 1,'contact_display': 'partner_address', 'default_company_id': allowed_company_ids[0]}</field>
+            <field name="search_view_id" ref="stock.view_picking_internal_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No transfer found. Let's create one!
+                </p><p>
+                    Transfers allow you to move products from one location to another.
+                </p>
+            </field>
+        </record>
+
+
+
+</odoo>

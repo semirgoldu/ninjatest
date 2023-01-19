@@ -1,0 +1,56 @@
+<odoo>
+
+    <!--zk attendance Form View-->
+    <record id="taqat_zk_attendance_form_view" model="ir.ui.view">
+        <field name="name">zk.attendance.form</field>
+        <field name="model">zk.attendance</field>
+        <field name="arch" type="xml">
+            <form string="ZK Attendance">
+                    <header>
+                        <button string="Test Connection" name="action_test_connection" type="object"/>
+                        <button string="Get Attendance" name="get_attendance" type="object" class="oe_highlight" invisible="1"/>
+                    </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="machine_id" invisible="1"/>
+                            <field name="serial_number" invisible="1"/>
+                            <field name="user_name"/>
+                            <field name="password" password="True"/>
+                            <field name="tz"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--zk attendance Tree View-->
+
+    <record id="taqat_zk_attendance_tree" model="ir.ui.view">
+        <field name="name">zk.attendance.tree</field>
+        <field name="model">zk.attendance</field>
+        <field name="arch" type="xml">
+            <tree string="ZK Attendance">
+                <field name="machine_id" invisible="1"/>
+                <field name="serial_number" invisible="1"/>
+                <field name="user_name"/>
+                <field name="password" password="True"/>
+                <field name="tz"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Action for zk attendance Views -->
+    <record id="action_taqat_zk_attendance_view" model="ir.actions.act_window">
+        <field name="name">Zk Attendance</field>
+        <field name="res_model">zk.attendance</field>
+        <field name="view_mode">tree,form</field>
+<!--        <field name="search_view_id" ref="taqat_container_order_search_view"/>-->
+    </record>
+
+
+    <menuitem id="menu_zk_attendance" name="ZK Attendance" parent="hr_attendance.menu_hr_attendance_root"
+              action="action_taqat_zk_attendance_view" groups="taqat_groups_access_rights_extended.taqat_group_hr_manager_role,base.group_erp_manager"/>
+
+</odoo>

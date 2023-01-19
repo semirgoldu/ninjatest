@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="paperformat_taqat_account_statement" model="report.paperformat">
+            <field name="name">Account Statement</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">9</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="action_report_invoice_statement"
+                model="account.move"
+                string="Invoice Statement"
+                report_type="qweb-pdf"
+                name="taqat_account_move_extended.report_invoice_statement"
+                file="taqat_account_move_extended.report_invoice_statement"
+                print_report_name="'Invoice Statement'"
+                paperformat="taqat_account_move_extended.paperformat_taqat_account_statement"
+        />
+
+        <report
+                id="action_report_invoice_payment"
+                model="account.move"
+                string="Payment Request"
+                report_type="qweb-pdf"
+                name="taqat_account_move_extended.report_invoice_payment_request"
+                file="taqat_account_move_extended.report_invoice_payment_request"
+                print_report_name="'Payment Request'"
+                paperformat="taqat_account_move_extended.paperformat_taqat_account_statement"
+        />
+
+        <report
+                id="action_report_invoice_payment_report"
+                model="account.move"
+                string="Invoice Payment"
+                report_type="qweb-pdf"
+                name="taqat_account_move_extended.report_invoice_payment_request_report"
+                file="taqat_account_move_extended.report_invoice_payment_request_report"
+                print_report_name="'Invoice Payment'"
+                paperformat="taqat_account_move_extended.paperformat_taqat_account_statement"
+        />
+
+        <template id="report_invoice_statement">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="taqat_account_move_extended.report_invoice_statement_details"/>
+                </t>
+            </t>
+        </template>
+        <template id="report_invoice_payment_request">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="taqat_account_move_extended.report_invoice_payment_request_details"/>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="report_invoice_statement_details">
+            <t t-call="web.basic_layout">
+                <t t-set="o" t-value="o"/>
+                <div class="page">
+                    <div class="row" style="font-size: 18px;line-height:2;align-items: flex-end !important;-webkit-box-pack: end;justify-content: right;">
+                        <div class="col-8">
+                            <strong>REF.NO:</strong>
+                            <span>
+                                <t t-if="o.name" t-esc="o.name"/>
+                            </span>
+                            <br/>
+                            <strong>Date:</strong>
+                            <span>
+                                <t t-if="o.invoice_date" t-esc="o.invoice_date"/>
+                            </span>
+                            <br/>
+                            <strong>Dear /</strong>
+                            <span>
+                                <t t-if="o.partner_id" t-esc="o.partner_id.name"/>
+                                Esquires
+                            </span>
+                            <br/>
+                        </div>
+                        <div class="col-4 p-0">
+                         <div class="w-100 float-left" style="text-align: right;">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                 class="float-right w-50" alt="Logo"/>
+                         </div>
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: center;padding-top: 20px;font-size: 24px;line-height:2;">
+                        <t t-if="o.subject">
+                            <div class="col-8" style="border-top: 1px solid #2596be;border-bottom: 1px solid #2596be; margin: auto;">
+                                <strong>
+                                    <span>
+                                        <t t-esc="o.subject"/>
+                                    </span>
+                                </strong>
+                            </div>
+                        </t>
+                    </div>
+                    <div class="row" style="padding-top: 20px;font-size: 18px;line-height:2;">
+                        <div class="col-12 p-0">
+                            <span>Please do accept
+                                <t t-if="o.company_id" t-esc="o.company_id.name"/>
+                                warmest greetings.
+                            </span>
+                            <br/>
+                            <span>
+                                <t t-if="o.greeting_text" t-esc="o.greeting_text"/>
+                            </span>
+                            <br/>
+                            <span>Kindly remit the corresponding amount
+                                <strong>
+                                    <t t-if="o.amount_total" t-esc="o.amount_total"/>
+                                    Qatari Riyal
+                                </strong>
+                                only. We sincerely hope we can continue doing business together in the future.
+                            </span>
+                            <br/>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top:15px;">
+                        <table class="table table-sm" style="border: 1px solid black;">
+                            <thead>
+                                <tr style="text-align:center;border: 1px solid black;">
+                                    <th style="border: 1px solid black;">
+                                        <strong>Product</strong>
+                                    </th>
+                                    <th style="border: 1px solid black;">
+                                        <strong>Amount / QAR</strong>
+                                    </th>
+                                    <th style="border: 1px solid black;">
+                                        <strong>Details</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody style="border: 1px solid black;">
+                                <t t-foreach="o.invoice_line_ids" t-as="line">
+                                    <tr style="border: 1px solid black;">
+                                        <td class="text-center" style="border: 1px solid black;">
+                                            <span t-esc="line.product_id.name"/>
+                                        </td>
+                                        <td class="text-center" style="border: 1px solid black;">
+                                            <span t-esc="line.price_subtotal"/>
+                                        </td>
+                                        <td class="text-center" style="border: 1px solid black;">
+                                            <span t-esc="line.name"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr style="border: 1px solid black;">
+                                    <td style="border: 1px solid black;">
+                                        <span style="float: center;">Total (QAR):</span>
+                                    </td>
+                                    <td colspan="3" style="border: 1px solid black;">
+                                        <span style="float: center;">
+                                            <span t-if="o.invoice_line_ids" t-esc="sum(o.invoice_line_ids.mapped('price_subtotal'))"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row" style="padding-top: 15px;font-size: 18px;line-height:2;">
+                        <div class="col-3 p-0">
+                            <span>Sincerely,</span>
+                            <br/>
+                            <strong>
+                                <span t-if="o.company_id" t-esc="o.company_id.name"></span>
+                            </strong>
+                        </div>
+                        <div class="col-8"></div>
+                    </div>
+                    <div class="row" style="font-size: 18px;padding-top: 10px;page-break-inside: avoid;">
+                        <div class="col-6"></div>
+                        <div class="col-6 p-0">
+                            <div style="border: 1px solid black; padding-left: 10px;">
+                                <h4><strong>Bank information</strong></h4>
+                                <span>Account Name: </span><span t-if="o.company_id" t-esc="o.company_id.name"/><br/>
+                                <span>Bank Name: </span><span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].bank_name"/><br/>
+                                <span>Branch: </span><span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].bank_name"/><br/>
+                                <span>Current Account: </span><span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].acc_number"/><br/>
+                                <span>IBAN: </span><span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].iban_no"/><br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_invoice_payment_request_details">
+            <t t-call="web.basic_layout">
+                <t t-set="o" t-value="o"/>
+                <div class="page">
+                    <div class="row" style="font-size: 18px;line-height:2;align-items: flex-end !important;-webkit-box-pack: end;justify-content: right;">
+                        <div class="col-8">
+                            <strong>REF.NO:</strong>
+                            <span>
+                                <t t-if="o.name" t-esc="o.name"/>
+                            </span>
+                            <br/>
+                            <strong>Date:</strong>
+                            <span>
+                                <t t-if="o.invoice_date" t-esc="o.invoice_date"/>
+                            </span>
+                            <br/>
+                            <strong>Dear /</strong>
+                            <span>
+                                <t t-if="o.partner_id" t-esc="o.partner_id.name"/>
+                                Esquires
+                            </span>
+                            <br/>
+                        </div>
+                        <div class="col-4">
+                             <div class="w-100 float-left" style="text-align: right;">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                 class="float-right w-50" alt="Logo"/>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: center;padding-top: 20px;font-size: 24px;line-height:2;">
+                        <t t-if="o.subject">
+                            <div class="col-8" style="border-top: 1px solid #2596be;border-bottom: 1px solid #2596be; margin: auto;">
+                                <strong>
+                                    <span>
+                                        <t t-esc="o.subject"/>
+                                    </span>
+                                </strong>
+                            </div>
+                        </t>
+                    </div>
+                    <div class="row" style="padding-top: 20px;font-size: 18px;line-height:2;">
+                        <div class="col-12 p-0">
+                            <span>Please do accept
+                                <t t-if="o.company_id" t-esc="o.company_id.name"/>
+                                warmest greetings.
+                            </span>
+                            <br/>
+                            <span>
+                                <t t-if="o.greeting_text" t-esc="o.greeting_text"/>
+                            </span>
+                            <br/>
+                            <span>Kindly remit the corresponding amount
+                                <strong>
+                                    <t t-if="o.amount_total" t-esc="o.amount_total"/>
+                                    Qatari Riyal
+                                </strong>
+                                only. We sincerely hope we can continue doing business together in the future.
+                            </span>
+                            <br/>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 50px;font-size: 18px;line-height:2;">
+                        <div class="col-3 p-0">
+                            <span>Sincerely,</span>
+                            <br/>
+                            <strong>
+                                <span t-if="o.company_id" t-esc="o.company_id.name"></span>
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="row" style="font-size: 18px;padding-top: 10px;page-break-inside: avoid;">
+                        <div class="col-6"></div>
+                        <div class="col-6 p-0">
+                            <div style="border: 1px solid black; padding-left: 10px;">
+                                <h4><strong>Bank information</strong></h4>
+                                <span>Account Name: </span><span t-if="o.company_id" t-esc="o.company_id.name"/><br/>
+                                <span>Bank Name: </span><span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].bank_name"/><br/>
+                                <span>Branch: </span><span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].bank_name"/><br/>
+                                <span>Current Account: </span><span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].acc_number"/><br/>
+                                <span>IBAN: </span><span t-if="o.company_id.bank_ids" t-esc="o.company_id.bank_ids[0].iban_no"/><br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

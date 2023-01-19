@@ -1,0 +1,8 @@
+<odoo>
+    <record id="fleet_vehicle_odometerrule_expense_user" model="ir.rule">
+        <field name="name">Fleet Vehicle Odometer</field>
+        <field ref="fleet.model_fleet_vehicle_odometer" name="model_id"/>
+        <field name="domain_force">[('driver_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('taqat_donation.group_driver'))]"/>
+    </record>
+</odoo>

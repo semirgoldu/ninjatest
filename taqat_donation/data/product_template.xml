@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="product_container" model="product.template">
+            <field name="name">Container</field>
+            <field name="default_code">CONT</field>
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="type">product</field>
+        </record>
+        <record id="product_container_wholesale" model="product.template">
+            <field name="name">Container</field>
+            <field name="default_code">WHOLESALE</field>
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="type">product</field>
+            <field name="is_wholesale">1</field>
+        </record>
+        <record id="product_container_scrap" model="product.template">
+            <field name="name">Container Scrap</field>
+            <field name="default_code">SCRAP</field>
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="type">product</field>
+            <field name="is_scrap">1</field>
+        </record>
+        <record id="product_container_generic" model="product.template">
+            <field name="name">Generic</field>
+            <field name="default_code">GENERIC</field>
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="type">product</field>
+            <field name="is_convertable">1</field>
+            <field name="tracking">serial</field>
+        </record>
+
+         <record id="container_week_monday" model="containers.schedule.week">
+            <field name="name">Monday</field>
+            <field name="code">1</field>
+        </record>
+         <record id="container_week_tuesday" model="containers.schedule.week">
+            <field name="name">Tuesday</field>
+            <field name="code">2</field>
+        </record>
+         <record id="container_week_wednesday" model="containers.schedule.week">
+            <field name="name">Wednesday</field>
+            <field name="code">3</field>
+        </record>
+         <record id="container_week_thursday" model="containers.schedule.week">
+            <field name="name">Thursday</field>
+            <field name="code">4</field>
+        </record>
+         <record id="container_week_friday" model="containers.schedule.week">
+            <field name="name">Friday</field>
+            <field name="code">5</field>
+        </record>
+         <record id="container_week_saturday" model="containers.schedule.week">
+            <field name="name">Saturday</field>
+            <field name="code">6</field>
+        </record>
+         <record id="container_week_sunday" model="containers.schedule.week">
+            <field name="name">Sunday</field>
+            <field name="code">7</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,58 @@
+<odoo>
+
+
+    <!--     <record model="ir.ui.menu" id="hr_holidays.menu_hr_holidays_root">-->
+    <!--        <field name="groups_id" eval="[(4,ref('hr_holidays.group_hr_holidays_user')),(4,ref('hr_holidays.group_hr_holidays_manager'))]"/>-->
+    <!--    </record>-->
+
+    <record id="taqat_hr_leave_view_inherited" model="ir.ui.view">
+        <field name="name">taqat.hr.leave.view.inherited</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="is_sick_leave" invisible="1"/>
+                <field name="is_manager" invisible="1"/>
+                <field name="replacement_employee_id" attrs="{'required': [('is_sick_leave', '!=', True)], 'invisible': [('is_sick_leave', '=', True)], 'readonly': [('state', 'not in', ['confirm','draft'])]}"/>
+            </xpath>
+            <xpath expr="//button[@name='action_approve']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', ('can_approve', '=', False), ('state', '!=', 'confirm'), ('is_manager', '=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_refuse']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', ('can_approve', '=', False), ('state', 'not in', ('confirm','validate1','validate')), ('is_manager', '=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_validate']" position="attributes">
+                <attribute name="groups">taqat_groups_access_rights_extended.taqat_group_hr_manager_role</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_hr_leave_type_view_inherited" model="ir.ui.view">
+        <field name="name">taqat.hr.leave.type.view.inherited</field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='active']" position="after">
+                <field name="is_sick_leave"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="taqat_hr_leave_allocation_view_inherited" model="ir.ui.view">
+        <field name="name">taqat.hr.leave.allocation.view.inherited</field>
+        <field name="model">hr.leave.allocation</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_form_manager"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_ids']" position="after">
+                <field name="is_manager" invisible="1"/>
+            </xpath>
+            <xpath expr="//button[@name='action_validate']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('is_manager', '=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_refuse']" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_manager', '=', False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

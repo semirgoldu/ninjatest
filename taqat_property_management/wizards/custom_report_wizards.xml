@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--    Parent Property Report-->
+
+    <record id="parent_property_report_form_view" model="ir.ui.view">
+        <field name="name">parent.property.report.form</field>
+        <field name="model">parent.property.report</field>
+        <field name="arch" type="xml">
+            <form string="بيان العقارات">
+                <group>
+                    <group>
+                        <field name="parent_property_ids" widget="many2many_tags" required="1"
+                               domain="[('parent_id', '=', False)]"
+                               options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--    Maintenance Report-->
+
+    <record id="maintenance_report_form_view" model="ir.ui.view">
+        <field name="name">maintenance.report.form</field>
+        <field name="model">maintenance.report</field>
+        <field name="arch" type="xml">
+            <form string="تقرير الصيانة">
+                <group>
+                    <group>
+                        <field name="parent_property_ids" widget="many2many_tags" required="1"
+                               domain="[('parent_id', '=', False)]"
+                               options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                    </group>
+                    <group>
+                        <field name="from_date" required="1"/>
+                        <field name="to_date" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--    real estate tenancy-->
+    <record id="real_estate_tenancies_form_view" model="ir.ui.view">
+        <field name="name">Real.state.tenancies.form</field>
+        <field name="model">real.estate.tenancies</field>
+        <field name="arch" type="xml">
+            <form string="تقرير العقود">
+                <group>
+                    <group>
+                        <field name="parent_property_ids" widget="many2many_tags" required="1"
+                               domain="[('parent_id', '=', False)]"
+                               options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                    </group>
+                    <group>
+                        <field name="from_date" required="1"/>
+                        <field name="to_date" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--    real estate tenancy lines-->
+
+    <record id="real_estate_tenancies_lines_form_view" model="ir.ui.view">
+        <field name="name">Real.state.tenancies.lines.form</field>
+        <field name="model">real.estate.tenancies.lines</field>
+        <field name="arch" type="xml">
+            <form string="تقرير المتأخرات ">
+                <group>
+                    <group>
+                        <field name="parent_property_ids" widget="many2many_tags" required="1"
+                               domain="[('parent_id', '=', False)]"
+                               options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                    </group>
+                    <group>
+                        <field name="from_date" required="1"/>
+                        <field name="to_date" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <!--    Vacancies Report-->
+
+    <record id="vacancies_report_form_view" model="ir.ui.view">
+        <field name="name">vacancies.report.form</field>
+        <field name="model">vacancies.report</field>
+        <field name="arch" type="xml">
+            <form string="تقرير الصيانة">
+                <group>
+                    <group>
+                        <field name="parent_property_ids" widget="many2many_tags" required="1"
+                               domain="[('parent_id', '=', False)]"
+                               options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                    </group>
+                    <group>
+                        <field name="from_date" required="1"/>
+                        <field name="to_date" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--    expense report-->
+    <record id="real_estate_expense_form_view" model="ir.ui.view">
+        <field name="name">Real.state.expense.form</field>
+        <field name="model">real.estate.expense</field>
+        <field name="arch" type="xml">
+            <form string="تقرير المصروفات العقارية">
+                <group>
+                    <group>
+                        <field name="parent_property_ids" widget="many2many_tags" required="1"
+                               domain="[('parent_id', '=', False)]"
+                               options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                    </group>
+                    <group>
+                        <field name="from_date" required="1"/>
+                        <field name="to_date" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--    expense revenue-->
+
+    <record id="real_estate_revenue_form_view" model="ir.ui.view">
+        <field name="name">Real.state.revenue.form</field>
+        <field name="model">real.estate.revenue</field>
+        <field name="arch" type="xml">
+            <form string="تقرير الايرادات العقارية">
+                <group>
+                    <group>
+                        <field name="parent_property_ids" widget="many2many_tags" required="1"
+                               domain="[('parent_id', '=', False)]"
+                               options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                    </group>
+                    <group>
+                        <field name="from_date" required="1"/>
+                        <field name="to_date" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_parent_property_report" model="ir.actions.act_window">
+        <field name="name">بيان العقارات</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">parent.property.report</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_maintenance_report" model="ir.actions.act_window">
+        <field name="name">تقرير الصيانة</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">maintenance.report</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_real_estate_tenancies" model="ir.actions.act_window">
+        <field name="name">تقرير العقود</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">real.estate.tenancies</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_real_estate_tenancies_lines" model="ir.actions.act_window">
+        <field name="name">تقرير المتأخرات</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">real.estate.tenancies.lines</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_vacancies_report" model="ir.actions.act_window">
+        <field name="name">تقرير الوحدات الشاغرة</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">vacancies.report</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_real_estate_expense" model="ir.actions.act_window">
+        <field name="name">تقرير المصروفات العقارية</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">real.estate.expense</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_real_estate_revenue" model="ir.actions.act_window">
+        <field name="name">تقرير الايرادات العقارية</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">real.estate.revenue</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem action="action_parent_property_report" id="menu_parent_property_report"
+              parent="property_management.menu_report_sub" sequence="11"/>
+
+    <menuitem action="action_maintenance_report" id="menu_maintenance_report"
+              parent="property_management.menu_report_sub" sequence="12"/>
+
+    <menuitem action="action_real_estate_tenancies" id="menu_real_estate_tenancies"
+              parent="property_management.menu_report_sub" sequence="12"/>
+
+    <menuitem action="action_real_estate_tenancies_lines" id="menu_real_estate_tenancies_lines"
+              parent="property_management.menu_report_sub" sequence="13"/>
+
+    <menuitem action="action_vacancies_report" id="menu_vacancies_report"
+              parent="property_management.menu_report_sub" sequence="13"/>
+
+    <menuitem action="action_real_estate_expense" id="menu_real_estate_expense"
+              parent="property_management.menu_report_sub" sequence="14"/>
+
+    <menuitem action="action_real_estate_revenue" id="menu_real_estate_revenue"
+              parent="property_management.menu_report_sub" sequence="15"/>
+
+</odoo>

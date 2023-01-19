@@ -1,0 +1,33 @@
+<odoo>
+
+    <record id="taqat_product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='purchase_ok']//.." position="after">
+                <span class="d-inline-block">
+                    <field name="is_donation_generic"/>
+                    <label for="is_donation_generic"/>
+                </span>
+                <span class="d-inline-block">
+                    <field name="is_wholesale"/>
+                    <label for="is_wholesale"/>
+                </span>
+                <span class="d-inline-block">
+                    <field name="is_scrap"/>
+                    <label for="is_scrap"/>
+                </span>
+                <span class="d-inline-block">
+                    <field name="is_convertable"/>
+                    <label for="is_convertable"/>
+                </span>
+            </xpath>
+            <xpath expr="//field[@name='detailed_type']" position="after">
+                <field name="container_id" attrs="{'invisible':[('is_wholesale', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

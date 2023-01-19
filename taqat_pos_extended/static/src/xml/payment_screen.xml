@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="PaymentScreen" t-inherit="point_of_sale.PaymentScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('payment-buttons-container')]" position="before">
+            <t t-set="is_bank" t-value="false"/>
+            <span>
+                <t t-foreach="currentOrder.get_paymentlines()" t-as="line">
+                    <t t-if="line.payment_method.type == 'bank'">
+                        <t t-set="is_bank" t-value="true"/>
+                    </t>
+                </t>
+            </span>
+            <t t-if="is_bank">
+                <div style="margin: 10px;">
+                    <strong>
+                        <span>
+                            Visa Number :
+                            <input type="text" name="visa_number" id="visa_number" class="popup-input" style="width: 50%;"/>
+                        </span>
+                    </strong>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

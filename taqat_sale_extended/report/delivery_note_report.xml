@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Delivery Note Report Template-->
+    <record id="paperformat_taqat_delivery_note" model="report.paperformat">
+        <field name="name">Delivery Note</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">20</field>
+        <field name="margin_bottom">9</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">45</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="taqat_delivery_note_report" model="ir.actions.report">
+        <field name="name">Delivery Note</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">taqat_sale_extended.taqat_delivery_note_template_report</field>
+        <field name="report_file">taqat_sale_extended.taqat_delivery_note_template_report</field>
+        <field name="print_report_name">'Delivery Note - %s' % (object.name).replace('/', '')</field>
+        <field name="paperformat_id" ref="taqat_sale_extended.paperformat_taqat_delivery_note"/>
+        <field name="binding_model_id" ref="model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <template id="taqat_delivery_note_template">
+        <t t-call="web.basic_layout">
+            <div class="page" style="page-break-after: always;">
+                <t t-set="o" t-value="docs"/>
+                <center>
+                    <div class="col-12" style="padding-top: 200px;">
+                        <div class="w-100">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                 style="width:20%;" alt="Logo"/>
+                        </div>
+                    </div>
+                    <h3 style="padding-top: 150px;">إسم المشروع</h3>
+                    <div style="font-size: 45px;padding-top: 20px;line-height: 35px;">
+                        <span><strong><t t-if="o.project_id" t-esc="o.project_id.name"/></strong></span>
+                    </div>
+                </center>
+            </div>
+            <div class="page">
+                <div class="row" style="direction: rtl;padding-right: 50px;font-size: 20px;text-align: right;">
+                    <strong style="color: blue;">
+                        <span>1.</span>
+                        <span>مقدمة</span>
+                    </strong>
+                    <br/>
+                    <span>
+                        <t t-if="o.subject" t-esc="o.subject"/>
+                    </span>
+                </div>
+                <br/>
+                <div class="row" style="direction: rtl;padding-right: 50px;font-size: 20px;text-align: right;">
+                    <strong style="color: blue;">
+                        <span>2.</span>
+                        <span>إقرار الإستلام</span>
+                    </strong>
+                    <br/>
+                    <span>يوضح الجدول التالي قائمة المهام التي قامت بها الموظفة المذكورة أعلاه وهي</span>
+                    <br/>
+                    <span>كالتالي:</span>
+                    <br/>
+                </div>
+                <br/>
+                <center>
+                    <table style="border: 1px solid black;width: 90%;">
+                        <thead style="text-align: center;">
+                            <tr style="color: white;background: royalblue;">
+                                <th style="border: 1px solid black;width:20%;">QC</th>
+                                <th style="border: 1px solid black;width:80%;">Product Description</th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align: right;">
+                            <t t-foreach="o.order_line" t-as="line">
+                                <tr style="direction: rtl;">
+                                    <td style="border: 1px solid black;text-align: center;width:20%;">
+                                        <span>Delivered</span>
+                                    </td>
+                                    <td style="border: 1px solid black;padding-right: 5px;width:80%;">
+                                        <div style="display: block;direction: rtl;width: 500px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                                            <t t-esc="line.name"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </center>
+                <br/>
+                <div class="row" style="direction: rtl;padding-right: 50px;font-size: 20px;text-align: right;">
+                    <strong style="color: blue;">
+                        <span>3.</span>
+                        <span>اعتماد الإستلام</span>
+                    </strong>
+                    <br/>
+                    <span>يرجى التكرم بالعلم أن الاعمال المذكورة أعلاه قد تم استلامها من ضمن المهام</span>
+                    <br/>
+                    <span>والأعمال الخاصة.</span>
+                    <br/>
+                </div>
+                <div class="row" style="padding-top: 200px;">
+                    <div class="col-6">
+                        <p style="border-top: 1px solid black;width:60%;margin: auto;"></p>
+                    </div>
+                    <div class="col-6" style="direction: rtl;text-align: center;">
+                        <p style="border-top: 1px solid black;width:60%;margin: auto;"></p>
+                        <br/>
+                        <span>
+                            إدارة الحوكمة واالتصال –
+                        </span>
+                        <br/>
+                        <span>
+                            قطر الخيرية
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="taqat_delivery_note_template_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="taqat_sale_extended.taqat_delivery_note_template"/>
+            </t>
+        </t>
+    </template>
+</odoo>

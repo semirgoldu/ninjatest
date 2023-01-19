@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="hr_attendance.menu_hr_attendance_my_attendances" name="Check In / Check Out"
+              parent="hr_attendance.menu_hr_attendance_root"
+              sequence="1" active="False" groups="hr_attendance.group_hr_attendance"
+              action="hr_attendance.hr_attendance_action_my_attendances"/>
+    <menuitem id="hr_attendance.menu_hr_attendance_view_attendances" name="Attendances" parent="hr_attendance.menu_hr_attendance_root" sequence="1"
+              groups="hr_attendance.group_hr_attendance_user" action="hr_attendance.hr_attendance_action"/>
+
+
+</odoo>

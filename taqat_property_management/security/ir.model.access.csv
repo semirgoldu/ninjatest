@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_property_duplicate,property_duplicate,model_property_duplicate,,1,1,1,1
+access_parent_property_report,parent_property_report,model_parent_property_report,,1,1,1,1
+access_maintenance_report,maintenance_report,model_maintenance_report,,1,1,1,1
+access_real_estate_tenancies,real_estate_tenancies,taqat_property_management.model_real_estate_tenancies,,1,1,1,1
+access_real_estate_tenancies_lines,real_estate_tenancies_lines,taqat_property_management.model_real_estate_tenancies_lines,,1,1,1,1
+access_vacancies_report,vacancies_report,model_vacancies_report,,1,1,1,1
+access_real_estate_expense,real_estate_expense,taqat_property_management.model_real_estate_expense,,1,1,1,1
+access_real_estate_revenue,real_estate_revenue,taqat_property_management.model_real_estate_revenue,,1,1,1,1
+access_budget_revenue,budget_revenue,taqat_property_management.model_budget_revenue,,1,1,1,1
+access_budget_expense,budget_expense,taqat_property_management.model_budget_expense,,1,1,1,1

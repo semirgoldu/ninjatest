@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <!--        -->
+    <record id="property_compound_utility_form" model="ir.ui.view">
+    <field name="name">property.compound.utility.form</field>
+    <field name="model">compound.utility</field>
+    <field name="arch" type="xml">
+        <form string="Compound Utility">
+            <sheet>
+                <group>
+                    <field name="name" required="1"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+	</record>
+
+	<!--Property Type Tree View-->
+	<record id="property_compound_utility_tree" model="ir.ui.view">
+    <field name="name">property.compound.utility.tree</field>
+    <field name="model">compound.utility</field>
+    <field name="arch" type="xml">
+        <tree string="Compound Utility">
+            <field name="name"/>
+        </tree>
+    </field>
+	</record>
+
+	<!--Property Type Search View-->
+	<record id="property_compound_utility_view_search" model="ir.ui.view">
+    <field name="name">property.compound.utility.search</field>
+    <field name="model">compound.utility</field>
+    <field name="arch" type="xml">
+        <search string="Compound Utility">
+            <field name="name"/>
+        </search>
+    </field>
+	</record>
+
+	<!-- Action for Property Tenancy Views -->
+	<record id="action_compound_utility_view" model="ir.actions.act_window">
+    <field name="name">Common Area Utility</field>
+    <field name="res_model">compound.utility</field>
+    <field name="view_mode">tree,form</field>
+	</record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+
+        <record id="helpdesk_tickets_extended_view" model="ir.ui.view">
+            <field name="name">helpdesk.tickets.view</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='email_cc']" position="after">
+                    <field name="account_asset_asset_id"/>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                 <notebook>
+                        <page string="Maintenance Request">
+                            <field name="maintenance_ids"/>
+                        </page>
+                 </notebook>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>

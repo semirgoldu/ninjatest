@@ -1,0 +1,1710 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* property_landlord_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0e+e-20200102\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-23 21:28+0000\n"
+"PO-Revision-Date: 2021-02-23 23:38+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__meeting_count
+msgid "# Meetings"
+msgstr "عدد الاجتماعات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__task_count
+msgid "# Tasks"
+msgstr "عدد المهام"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__supplier_invoice_count
+msgid "# Vendor Bills"
+msgstr "عدد فواتير الموردين"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__account_manager
+msgid "Account Manager"
+msgstr "الحساب التحليلي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__property_account_payable_id
+msgid "Account Payable"
+msgstr "حساب الدائنون"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__property_account_receivable_id
+msgid "Account Receivable"
+msgstr "حساب المدينون"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Accounting Entries"
+msgstr "القيود المحاسبية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__active_lang_count
+msgid "Active Lang Count"
+msgstr "عدد اللغات النشطة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__additional_info
+msgid "Additional info"
+msgstr "معلومات إضافية"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Additional notes..."
+msgstr "ملاحظات إضافية "
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Address"
+msgstr "العنوان"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__type
+msgid "Address Type"
+msgstr "نوع العنوان"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__agent
+msgid "Agent"
+msgstr "وكيل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this language."
+msgstr ""
+"سيتم ترجمة كافة رسائل البريد الإلكتروني والمستندات المرسلة لجهة الاتصال المختارة إلى "
+"هذه اللغة."
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Amount Deposit"
+msgstr "مبلغ الإيداع"
+
+#. module: property_landlord_management
+#: model:ir.model,name:property_landlord_management.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Are you sure you want to Cancel?"
+msgstr "هل أنت متأكد أنك تريد إلغاء؟"
+
+#. module: property_landlord_management
+#: model:ir.model,name:property_landlord_management.model_account_asset_asset
+msgid "Asset"
+msgstr "أصل"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Asset Information"
+msgstr "معلومات الأصول"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__bank_account_count
+msgid "Bank"
+msgstr "البنك"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Bank Accounts"
+msgstr "الحسابات البنكية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__bank_ids
+msgid "Banks"
+msgstr "البنوك"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__is_blacklisted
+msgid "Blacklist"
+msgstr "القائمة السوداء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_bounce
+msgid "Bounce"
+msgstr "المرتد"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__cr_exp_date
+msgid "CR Expiry Date"
+msgstr "تاريخ انتهاء السجل التجاري"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__cr_number_doc
+msgid "CR Number Document"
+msgstr "وثيقة رقم السجل التجاري"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__can_publish
+msgid "Can Publish"
+msgstr "يمكن أن تنشر"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Cancel Tenancy"
+msgstr "إلغاء الإيجار"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__channel_ids
+msgid "Channels"
+msgstr "القنوات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "فحص ما اذا كانت جهة الاتصال مؤسسة، وإلا كانت شخصًا"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__agent
+msgid "Check this box if this contact is a Agent."
+msgstr "حدد هذا المربع إذا كانت جهة الاتصال هذه وكيلاً."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__is_owner
+#: model:ir.model.fields,help:property_landlord_management.field_res_partner__is_owner
+#: model:ir.model.fields,help:property_landlord_management.field_res_users__is_owner
+#: model:ir.model.fields,help:property_landlord_management.field_tenant_partner__is_owner
+msgid "Check this box if this contact is a landlord(owner)."
+msgstr "حدد هذا المربع إذا كان جهة الاتصال هذه هي المالك (المالك)."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__tenant
+msgid "Check this box if this contact is a tenant."
+msgstr "حدد هذا المربع إذا كانت جهة الاتصال هذه مستأجرًا."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__employee
+msgid "Check this box if this contact is an Employee."
+msgstr "قم بتحديد هذا المربع إذا كانت جهة الاتصال المختارة موظفًا."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__city
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "City"
+msgstr "المدينة"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.analytic_kanban_view_landlord
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_analytic_view_tree_landlord
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Code"
+msgstr "الكود"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__color
+msgid "Color Index"
+msgstr "معرف اللون"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "الكيان التجاري"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__commission_line
+msgid "Commission"
+msgstr "عمولة"
+
+#. module: property_landlord_management
+#: model:ir.model,name:property_landlord_management.model_tenancy_rent_schedule
+msgid "Commission Invoice"
+msgstr "فاتورة العمولة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__ref_company_ids
+msgid "Companies that refers to partner"
+msgstr "مؤسسات تشير إلي شركاء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__company_name
+msgid "Company Name"
+msgstr "اسم المؤسسة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__commercial_company_name
+msgid "Company Name Entity"
+msgstr "كيان اسم المؤسسة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__company_type
+msgid "Company Type"
+msgstr "نوع المؤسسة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__partner_gid
+msgid "Company database ID"
+msgstr "معرف قاعدة بيانات المؤسسة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__contact_address
+msgid "Complete Address"
+msgstr "العنوان الكامل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__computer_card_doc
+msgid "Computer Card Document"
+msgstr "مستند بطاقة الكمبيوتر"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__comp_card_exp_date
+msgid "Computer Card Expiry Date"
+msgstr "تاريخ انتهاء صلاحية بطاقة الكمبيوتر"
+
+#. module: property_landlord_management
+#: model:ir.model,name:property_landlord_management.model_res_partner
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__child_ids
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__contact_address_complete
+msgid "Contact Address Complete"
+msgstr "عنوان جهة الاتصال مكتمل"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Contract Information"
+msgstr "معلومات العقد"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__contracts
+msgid "Contracts"
+msgstr "العقود"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__payment_token_count
+msgid "Count Payment Token"
+msgstr "عدد رموز السداد السرية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr "عدد الرسائل المرتدة لجهة الاتصال هذه"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__country_id
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Country"
+msgstr "دولة"
+
+#. module: property_landlord_management
+#: model_terms:ir.actions.act_window,help:property_landlord_management.action_landlord_view_id
+msgid "Create Landlord details and keep track."
+msgstr "إنشاء تفاصيل المالك وتتبعها."
+
+#. module: property_landlord_management
+#: model_terms:ir.actions.act_window,help:property_landlord_management.action_landlord_view_id
+msgid "Create a Landlord Details"
+msgstr "إنشاء تفاصيل المالك"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__credit_limit
+msgid "Credit Limit"
+msgstr "حد الائتمان"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__property_stock_customer
+msgid "Customer Location"
+msgstr "موقع العميل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__property_payment_term_id
+msgid "Customer Payment Terms"
+msgstr "شروط السداد للعميل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__customer_rank
+msgid "Customer Rank"
+msgstr "رتبة العميل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__trust
+msgid "Degree of trust you have in this debtor"
+msgstr "درجة ثقتكم في هذا المدين"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__dependants
+msgid "Dependants"
+msgstr "المعالون"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__date_stop_renew
+msgid "Do Not Renew After"
+msgstr "لا تجدد بعد"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__document_count
+msgid "Document Count"
+msgstr "عدد المستندات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__partner_share
+msgid ""
+"Either customer (not a user), either shared user. Indicated the current partner is a "
+"customer without access or with a limited access created for sharing data."
+msgstr ""
+"إما العميل (ليس مستخدمًا) ، إما مستخدم مشترك. يشار إلى أن الشريك الحالي هو عميل بدون "
+"وصول أو لديه وصول محدود تم إنشاؤه لمشاركة البيانات."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: property_landlord_management
+#: code:addons/property_landlord_management/models/account_analytic.py:0
+#, python-format
+msgid "End date must be greater than start date."
+msgstr "يجب أن يكون تاريخ الانتهاء أكبر من تاريخ البدء."
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Enter Terms and Conditions..."
+msgstr "أدخل الشروط والأحكام ..."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__event_count
+msgid "Events"
+msgstr "الفعاليات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__phone_sanitized
+msgid ""
+"Field used to store sanitized phone number. Helps speeding up searches and comparisons."
+msgstr "يستخدم الحقل لتخزين رقم الهاتف المعقم. يساعد في تسريع عمليات البحث والمقارنات."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__doc_name
+msgid "Filename"
+msgstr "اسم الملف"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__property_account_position_id
+msgid "Fiscal Position"
+msgstr "الموقف الضريبي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr "تنسيق البريد الإلكتروني \"الاسم <email@domain>\""
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__email_formatted
+msgid "Formatted Email"
+msgstr "بريد إلكتروني منسق"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "GSTIN"
+msgstr ""
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__gender
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__partner_latitude
+msgid "Geo Latitude"
+msgstr "خط العرض الجغرافي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__partner_longitude
+msgid "Geo Longitude"
+msgstr "خط الطول الجغرافي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__date_localization
+msgid "Geolocation Date"
+msgstr "تاريخ التموضع الجغرافي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__has_unreconciled_entries
+msgid "Has Unreconciled Entries"
+msgstr "يحتوي قيود غير مسواة"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "History"
+msgstr "السجل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__im_status
+msgid "IM Status"
+msgstr "حالة المحادثات الفورية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى استثناء النشاط"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__id_attachment
+msgid "Identity Proof"
+msgstr "إثبات الهوية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__message_needaction
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__message_has_error
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__team_id
+msgid ""
+"If set, this Sales Team will be used for sales and assignations related to this partner"
+msgstr ""
+"إذا قمت بتحديد هذا الخيار، سيتكفل فريق المبيعات هذا بالمبيعات والتكليفات المرتبطة بهذا "
+"الشريك"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__is_blacklisted
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__phone_blacklisted
+msgid ""
+"If the email address is on the blacklist, the contact won't receive mass mailing "
+"anymore, from any list"
+msgstr ""
+"إذا كان البريد الإلكتروني في القائمة السوداء، لن يستقبل صاحبه أي مراسلات جماعية من أي "
+"قائمة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__image_1920
+msgid "Image"
+msgstr "صورة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__image_1024
+msgid "Image 1024"
+msgstr "صورة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__image_128
+msgid "Image 128"
+msgstr "صورة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__image_256
+msgid "Image 256"
+msgstr "صورة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__image_512
+msgid "Image 512"
+msgstr "صورة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__industry_id
+msgid "Industry"
+msgstr "مجال العمل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__invoice_warn
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__type
+msgid ""
+"Invoice & Delivery addresses are used in sales orders. Private addresses are only "
+"visible by authorized users."
+msgstr ""
+"يتم استخدام عناوين الفاتورة والتسليم في أوامر المبيعات. العناوين الخاصة مرئية فقط من "
+"قبل المستخدمين المصرح لهم."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__invoice_ids
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Invoicing"
+msgstr "الفوترة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_account_analytic_account__is_landlord_rent
+msgid "Is Landlord Rent ?"
+msgstr "هل المؤجر الإيجار؟"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__is_miscellaneous
+msgid "Is Miscellaneous"
+msgstr "متفرقات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__is_published
+msgid "Is Published"
+msgstr "يتم نشر"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__is_company
+msgid "Is a Company"
+msgstr "هذه مؤسسة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__is_owner
+#: model:ir.model.fields,field_description:property_landlord_management.field_res_partner__is_owner
+#: model:ir.model.fields,field_description:property_landlord_management.field_res_users__is_owner
+#: model:ir.model.fields,field_description:property_landlord_management.field_tenant_partner__is_owner
+msgid "Is a Owner"
+msgstr "مالك"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Is a Tenant"
+msgstr "مستأجر"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__has_call_in_queue
+msgid "Is in the Call Queue"
+msgstr "موجود في قائمة انتظار المكالمات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__function
+msgid "Job Position"
+msgstr "المنصب الوظيفي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__journal_item_count
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Journal Items"
+msgstr "عناصر اليومية"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Landlord"
+msgstr "المالك"
+
+#. module: property_landlord_management
+#: model:ir.actions.act_window,name:property_landlord_management.action_landlord_view_id
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__owner_tenancy_ids
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__owner_tenancy_ids
+#: model:ir.ui.menu,name:property_landlord_management.menu_landlord_detail_id
+#: model:ir.ui.menu,name:property_landlord_management.menu_landlord_details_sub
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_view_tree
+msgid "Landlord Details"
+msgstr "تفاصيل المالك"
+
+#. module: property_landlord_management
+#: model:ir.model,name:property_landlord_management.model_landlord_partner
+msgid "Landlord Partner"
+msgstr "شريك المالك"
+
+#. module: property_landlord_management
+#: model:ir.actions.act_window,name:property_landlord_management.action_analytic_rent_action
+#: model:ir.model.fields,field_description:property_landlord_management.field_account_analytic_account__landlord_rent
+msgid "Landlord Rent"
+msgstr "إيجار المالك"
+
+#. module: property_landlord_management
+#: model:ir.ui.menu,name:property_landlord_management.menu_tenancy_rents
+msgid "Landlord Tenancy"
+msgstr ""
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__lang
+msgid "Language"
+msgstr "اللغة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__calendar_last_notif_ack
+msgid "Last notification marked as read from base Calendar"
+msgstr "تم تحديد آخر رسالة كمقروءة من التقويم الأساسي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__last_time_entries_checked
+msgid ""
+"Last time the invoices & payments matching was performed for this partner. It is set "
+"either if there's not at least an unreconciled debit and an unreconciled credit or if "
+"you click the \"Done\" button."
+msgstr ""
+"آخر مرة تم إجراء تسوية بين فواتير ومدفوعات هذا الشريك. يتم تحديد هذا الحقل إذا كان هناك "
+"مبلغ مدين غير مسوى ومبلغ دائن غير مسوى أو إذا نقرت زر \"تم\"."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__last_time_entries_checked
+msgid "Latest Invoices & Payments Matching Date"
+msgstr "تاريخ آخر مطابقة للفواتير والمدفوعات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__image_medium
+msgid "Medium-sized image"
+msgstr "صورة متوسطة الحجم"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__meeting_ids
+msgid "Meetings"
+msgstr "الاجتماعات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__invoice_warn_msg
+msgid "Message for Invoice"
+msgstr "رسالة للفاتورة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__purchase_warn_msg
+msgid "Message for Purchase Order"
+msgstr "رسالة لأمر الشراء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__sale_warn_msg
+msgid "Message for Sales Order"
+msgstr "رسالة لأمر المبيعات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__picking_warn_msg
+msgid "Message for Stock Picking"
+msgstr "رسالة لاختيار الأسهم"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Misc"
+msgstr "متنوعات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__mobile
+msgid "Mobile"
+msgstr "الهاتف المحمول"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__sanitized_mobile
+msgid "Mobile number sanitized"
+msgstr "رقم الهاتف معقم"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__nationality
+msgid "Nationality"
+msgstr "جنسية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__x_studio_field_WQaBB
+msgid "New Signature"
+msgstr "توقيع جديد"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__email_normalized
+msgid "Normalized Email"
+msgstr "البريد الإلكتروني العادي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__comment
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__event_count
+msgid "Number of events the partner has participated."
+msgstr "عدد الفعاليات التي شارك بها الشريك."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__occupation
+msgid "Occupation"
+msgstr "الإشغال"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__online_partner_bank_account
+msgid "Online Partner Bank Account"
+msgstr "حساب الشريك البنكي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__online_partner_vendor_name
+msgid "Online Partner Vendor Name"
+msgstr "اسم المورد الشريك"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__opportunity_ids
+msgid "Opportunities"
+msgstr "الفرص"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__opportunity_count
+msgid "Opportunity"
+msgstr "فرصة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_account_analytic_account__property_owner_id
+msgid "Owner"
+msgstr "المالك"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Owner Name"
+msgstr "اسم المالك"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_account_analytic_account__property_owner_id
+msgid "Owner of property."
+msgstr "مالك العقار."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__parent_name
+msgid "Parent name"
+msgstr "اسم الأساس"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__parent_id
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__contract_ids
+msgid "Partner Contracts"
+msgstr "عقود الشريك"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__same_vat_partner_id
+msgid "Partner with same Tax ID"
+msgstr "شريك شريك بنفس المعرف الضريبي للعقود"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__passport_doc
+msgid "Passport Document"
+msgstr "وثيقة جواز السفر"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__passport_exp_date
+msgid "Passport Expiry Date"
+msgstr "وقت نفاذ صلاحيه جواز السفر"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Pay Deposit"
+msgstr "إيداع الدفع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__debit_limit
+msgid "Payable Limit"
+msgstr "حدود الدين المستحق"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__payment_token_ids
+msgid "Payment Tokens"
+msgstr "رموز السداد السرية"
+
+#. module: property_landlord_management
+#: model:ir.model,name:property_landlord_management.model_account_payment
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__payment_ids
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__person_type
+msgid "Person Type"
+msgstr "نوع الشخص"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__phone
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__phone_blacklisted
+msgid "Phone Blacklisted"
+msgstr "الهاتف مدرج في القائمة السوداء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__sanitized_phone
+msgid "Phone number sanitized"
+msgstr "رقم الهاتف معقم"
+
+#. module: property_landlord_management
+#: code:addons/property_landlord_management/models/account_analytic.py:0
+#, python-format
+msgid "Please Enter Deposit amount."
+msgstr "الرجاء إدخال مبلغ الإيداع."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__property_product_pricelist
+msgid "Pricelist"
+msgstr "قائمه الأسعار"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Property Name"
+msgstr "اسم الخاصية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_account_asset_asset__property_owner
+msgid "Property Owner"
+msgstr "صاحب العقار"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Purchase"
+msgstr "شراء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__purchase_warn
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__purchase_order_count
+msgid "Purchase Order Count"
+msgstr "عدد أوامر الشراء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__qatar_id_doc
+msgid "Qatar ID Document"
+msgstr "وثيقة الهوية القطرية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__qatarid_exp_date
+msgid "Qatar ID Expiry Date"
+msgstr "تاريخ انتهاء الهوية القطرية"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Received Deposit"
+msgstr "الإيداع المستلم"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__ref
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Reference"
+msgstr "رقم الإشارة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__related_company
+msgid "Related Company"
+msgstr "شركة ذات صلة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__employee_dependants
+msgid "Related Dependants"
+msgstr "المعالون ذوو الصلة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__document_o2m
+msgid "Related Documents"
+msgstr "الوثائق ذات الصلة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__company_employees
+msgid "Related Employees"
+msgstr "الموظفون المرتبطون"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__company_visitors
+msgid "Related Visitors"
+msgstr "الزوار ذوو الصلة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__contact_relation_type_id
+msgid "Relation Type"
+msgstr "نوع العلاقة"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Renew"
+msgstr "تجديد"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Rent Schedule"
+msgstr "جدول الإيجار"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Rent Schedule Details"
+msgstr "تفاصيل جدول الإيجار"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__website_id
+msgid "Restrict publishing to this website."
+msgstr "تقييد النشر على هذا الموقع."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__is_seo_optimized
+msgid "SEO optimized"
+msgstr "تحسين محركات البحث"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__sale_order_count
+msgid "Sale Order Count"
+msgstr "عدد أوامر البيع"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Sales"
+msgstr "المبيعات"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Sales & Purchases"
+msgstr "المبيعات والمشتريات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__sale_order_ids
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__team_id
+msgid "Sales Team"
+msgstr "فريق المبيعات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__sale_warn
+msgid "Sales Warnings"
+msgstr "تحذيرات المبيعات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__user_id
+msgid "Salesperson"
+msgstr "مسئول المبيعات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__phone_sanitized
+msgid "Sanitized Number"
+msgstr "رقم معقم"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Schedule Rent"
+msgstr "جدولة الإيجار"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__invoice_warn
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__picking_warn
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__purchase_warn
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__sale_warn
+msgid ""
+"Selecting the \"Warning\" option will notify user with the message, Selecting "
+"\"Blocking Message\" will throw an exception with the message and block the flow. The "
+"Message has to be written in the next field."
+msgstr ""
+"اختيار الخيار \"تحذير\" سوف يخطر المستخدم مع الرسالة، واختيار \"حجب رسالة\" سيظهر رسالة "
+"خطأ مع الرسالة ويوقف التدفق. يجب كتابة الرسالة في الحقل التالي."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__self
+msgid "Self"
+msgstr "نفس"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__service_ids
+msgid "Services"
+msgstr "الخدمات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__service_count
+msgid "Services Count"
+msgstr "عدد الخدمات"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__partner_share
+msgid "Share Partner"
+msgstr "مشاركة الشريك"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__signup_expiration
+msgid "Signup Expiration"
+msgstr "انتهاء صلاحية التسجيل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__signup_token
+msgid "Signup Token"
+msgstr "كلمة سر التسجيل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__signup_type
+msgid "Signup Token Type"
+msgstr "نوع كلمة سر التسجيل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__signup_valid
+msgid "Signup Token is Valid"
+msgstr "كلمة سر التسجيل صالحة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__signup_url
+msgid "Signup URL"
+msgstr "رابط التسجيل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__sponsor
+msgid "Sponsor"
+msgstr "راعي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__sponsor_for
+msgid "Sponsor For"
+msgstr "الراعي ل"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Start"
+msgstr "بدء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__state_id
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "State"
+msgstr "المحافظة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__picking_warn
+msgid "Stock Picking"
+msgstr "اختيار الأسهم"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__street
+msgid "Street"
+msgstr "الشارع"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Street 2..."
+msgstr "الشارع 2..."
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Street..."
+msgstr "الشارع..."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__street2
+msgid "Street2"
+msgstr "الشارع 2"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__property_purchase_currency_id
+msgid "Supplier Currency"
+msgstr "عملة المورد"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__supplier_rank
+msgid "Supplier Rank"
+msgstr "رتبة المورد"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__category_id
+msgid "Tags"
+msgstr "الوسوم"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__task_ids
+msgid "Tasks"
+msgstr "المهام"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__vat
+msgid "Tax ID"
+msgstr "معرف الضريبة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__online_partner_bank_account
+msgid "Technical field used to store information from plaid/yodlee to match partner"
+msgstr "حقل تقني يُستخدم لحفظ معلومات من plaid/yodlee لمطابقتها مع الشريك"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__online_partner_vendor_name
+msgid ""
+"Technical field used to store information from plaid/yodlee to match partner (used when "
+"a purchase is made)"
+msgstr ""
+"حقل تقني يُستخدم لحفظ معلومات من plaid/yodlee لمطابقتها مع الشريك (يُستخدم عند القيام "
+"بعملية شراء)"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Tenancy #"
+msgstr "الإيجار"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_analytic_view_tree_landlord
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Tenancy Details"
+msgstr "تفاصيل الإيجار"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Tenancy Information"
+msgstr "معلومات الإيجار"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.analytic_kanban_view_landlord
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_analytic_view_tree_landlord
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Tenancy Name"
+msgstr "اسم الإيجار"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__tenant
+msgid "Tenant"
+msgstr "مستأجر"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__date_termination
+msgid "Termination Date"
+msgstr "تاريخ الإنهاء"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Terms & Conditions"
+msgstr "الشروط والأحكام"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Terms and Conditions"
+msgstr "الأحكام والشروط"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__vat
+msgid ""
+"The Tax Identification Number. Complete it if the contact is subjected to government "
+"taxes. Used in some legal statements."
+msgstr ""
+"رقم التعريف الضريبي. قم بإكماله إذا كانت جهة الاتصال تخضع للضرائب الحكومية. يُستخدم في "
+"بعض المستندات القانونية."
+
+#. module: property_landlord_management
+#: code:addons/property_landlord_management/models/account_analytic.py:0
+#, python-format
+msgid "The deposit amount must be strictly positive."
+msgstr "يجب أن يكون مبلغ الإيداع موجبًا تمامًا."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__property_account_position_id
+msgid "The fiscal position determines the taxes/accounts used for this contact."
+msgstr "يحدد الموقف الضريبي الضرائب/الحسابات المستخدمة لجهة الاتصال المُختارة."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__website_url
+msgid "The full URL to access the document through the website."
+msgstr "عنوان URL الكامل للوصول إلى المستند من خلال الموقع."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__user_id
+msgid "The internal user in charge of this contact."
+msgstr "المستخدم الداخلي مسئول عن هذا العقد."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__has_unreconciled_entries
+msgid ""
+"The partner has at least one unreconciled debit and credit since last time the invoices "
+"& payments matching was performed."
+msgstr ""
+"لدى الشريك حساب مدين ودائن واحد على الأقل لم يُسوَ منذ أخر تطابق بين الفواتير والمدفوعات."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__property_stock_customer
+msgid "The stock location used as destination when sending goods to this contact."
+msgstr "موقع المخزون المستخدم كوجهة عند إرسال البضائع إلى جهة الاتصال هذه."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__property_stock_supplier
+msgid "The stock location used as source when receiving goods from this contact."
+msgstr "موقع المخزون المستخدم كمصدر عند استلام البضائع من جهة الاتصال هذه."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__property_account_payable_id
+msgid ""
+"This account will be used instead of the default one as the payable account for the "
+"current partner"
+msgstr "سيتم استخدام هذا الحساب بدلًا من الحساب الافتراضي كحساب دائن للشريك الحالي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__property_account_receivable_id
+msgid ""
+"This account will be used instead of the default one as the receivable account for the "
+"current partner"
+msgstr "سيتم استخدام هذا الحساب بدلًا من الحساب الافتراضي كحساب مدين للشريك الحالي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__property_purchase_currency_id
+msgid ""
+"This currency will be used, instead of the default one, for purchases from the current "
+"partner"
+msgstr ""
+"سيتم استخدام هذه العملة بدلًا من العملة الافتراضية لإتمام عمليات الشراء من الشريك الحالي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__email_normalized
+msgid ""
+"This field is used to search on email address as the primary email field can contain "
+"more than strictly an email address."
+msgstr ""
+"يُستخدم هذا الحقل للبحث في عنوان البريد الإلكتروني حيث يمكن أن يحتوي حقل البريد "
+"الإلكتروني الأساسي على أكثر من عنوان بريد إلكتروني بشكل صارم."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__property_supplier_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for purchase orders and "
+"vendor bills"
+msgstr "سيُستخدم شرط السداد هذا بدلًا من الشرط الافتراضي لأوامر الشراء وفواتير المورد"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__property_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for sales orders and customer "
+"invoices"
+msgstr ""
+"سيُستخدم شرط السداد هذا بدلًا من الشرط الافتراضي لإصدار أوامر المبيعات وفواتير العملاء"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the current "
+"partner"
+msgstr "سوف تستخدم قائمة الأسعار هذه بدلاً من الافتراضية للبيع للشريك الحالي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__ticket_count
+msgid "Tickets"
+msgstr "تذاكر"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__tz
+msgid "Timezone"
+msgstr "المنطقة الزمنية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__tz_offset
+msgid "Timezone offset"
+msgstr "معادلة المنطقة الزمنية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__title
+msgid "Title"
+msgstr "العنوان"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Total Amount"
+msgstr "المبلغ الإجمالي"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Total Credit"
+msgstr "إجمالي الائتمان"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_analytic_view_form_id
+msgid "Total Debit"
+msgstr "إجمالي الدين"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__total_invoiced
+msgid "Total Invoiced"
+msgstr "إجمالي قيمة الفواتير"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__debit
+msgid "Total Payable"
+msgstr "الاجمالى الدائن"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__credit
+msgid "Total Receivable"
+msgstr "الإجمالي المدين"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.analytic_kanban_view_landlord
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_analytic_view_tree_landlord
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "Total Rent"
+msgstr "إجمالي الإيجار"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__credit
+msgid "Total amount this customer owes you."
+msgstr "إجمالي المبلغ المُستحق من هذا العميل."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__debit
+msgid "Total amount you have to pay to this vendor."
+msgstr "إجمالي المبلغ الواجب سداده لهذا المورد."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__trade_licence_doc
+msgid "Trade Licence Document"
+msgstr "وثيقة الرخصة التجارية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__trade_licence_date
+msgid "Trade Licence Expiry Date"
+msgstr "تاريخ انتهاء الرخصة التجارية"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__user_ids
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__currency_id
+msgid "Utility field to express amount currency"
+msgstr "حقل مساعد للتعبير عن عملة المبلغ"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__property_stock_supplier
+msgid "Vendor Location"
+msgstr "موقع البائع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__property_supplier_payment_term_id
+msgid "Vendor Payment Terms"
+msgstr "شروط السداد كمورد"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_published
+msgid "Visible on current website"
+msgstr "مرئي على الموقع الحالي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__visitor_ids
+msgid "Visitors"
+msgstr "الزائرين"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_id
+msgid "Website"
+msgstr "الموقع الإلكتروني"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website
+msgid "Website Link"
+msgstr "رابط الموقع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_description
+msgid "Website Partner Full Description"
+msgstr "شريك الموقع الوصف الكامل"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_short_description
+msgid "Website Partner Short Description"
+msgstr "وصف مختصر لشريك الموقع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_url
+msgid "Website URL"
+msgstr "رابط الموقع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_meta_description
+msgid "Website meta description"
+msgstr "وصف تعريف موقع الويب"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_meta_keywords
+msgid "Website meta keywords"
+msgstr "الكلمات المفتاحية لموقع الويب"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_meta_title
+msgid "Website meta title"
+msgstr "العنوان التعريفي للموقع"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__website_meta_og_img
+msgid "Website opengraph image"
+msgstr "صورة موقع opengraph"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,help:property_landlord_management.field_landlord_partner__tz
+msgid ""
+"When printing documents and exporting/importing data, time values are computed "
+"according to this timezone.\n"
+"If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
+"Anywhere else, time values are computed according to the time offset of your web client."
+msgstr ""
+"عند طباعة المستندات وتصدير / استيراد البيانات ، يتم حساب قيم الوقت وفقًا لهذه المنطقة "
+"الزمنية.\n"
+"إذا لم يتم تعيين المنطقة الزمنية ، فسيتم استخدام UTC (التوقيت العالمي المنسق).\n"
+"في أي مكان آخر ، يتم حساب قيم الوقت وفقًا للإزاحة الزمنية لعميل الويب الخاص بك."
+
+#. module: property_landlord_management
+#: code:addons/property_landlord_management/models/account_analytic.py:0
+#, python-format
+msgid ""
+"You cannot delete Tenancy record, if any related Rent                         Schedule "
+"entries are in posted."
+msgstr "لا يمكنك حذف سجل الإيجار ، إذا تم نشر أي إدخالات ذات صلة بجدول الإيجار."
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "ZIP"
+msgstr "الرمز البريدي"
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__zip
+msgid "Zip"
+msgstr "الرمز البريدي"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.landlord_partner_kanban_view
+msgid "at"
+msgstr "في"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "e.g. BE0477472701"
+msgstr "مثال: BE0477472701"
+
+#. module: property_landlord_management
+#: model_terms:ir.ui.view,arch_db:property_landlord_management.property_landlord_partner_form_id
+msgid "e.g. www.odoo.com"
+msgstr ""
+
+#. module: property_landlord_management
+#: model:ir.model.fields,field_description:property_landlord_management.field_landlord_partner__date_join
+msgid "join Date"
+msgstr "تاريخ الانضمام"

@@ -1,0 +1,15 @@
+<odoo>
+
+   <record id="action_duplicate_account" model="ir.actions.server">
+            <field name="name">Duplicate</field>
+            <field name="model_id" ref="property_management.model_account_asset_asset"/>
+            <field name="binding_model_id" ref="property_management.model_account_asset_asset"/>
+            <field name="binding_view_types">form</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = model.duplicate_property()
+            </field>
+        </record>
+
+
+</odoo>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Sale Order Confirmation Report Template-->
+
+    <template id="taqat_donation_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <t t-set="o" t-value="docs"/>
+                    <center><h4>Donation Receipt</h4></center>
+                    <div class="col-6 p-0">
+                        <!--                            <div name="td_section_subtotal">-->
+                        <table class="table table-sm">
+                            <tr>
+                                <th class="table-active"
+                                    style="font-weight:bold;  padding-left: 6px;; border:1px solid black; width:20%; text-align:left;">
+                                    Address:
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:40%;  padding: 6px;">
+                                    <b>Building No:</b><span t-field="o.building_no"/>
+                                    <br/>
+                                    <b>Zone:</b><span t-field="o.zone"/>
+                                    <br/>
+                                    <b>Street No:</b><span t-field="o.street"/>
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!--Customer Information table-->
+                    <table class="table table-sm table-bordered border-black">
+                        <tr>
+                            <th class="table-active"
+                                style="text-align:center; border:1px solid black; width:10%; font-weight:bold;">
+                                Order Number:
+                            </th>
+                            <td style="text-align:center;border:1px solid black; width:20%;">
+                                <span style="text-align:center;" t-field="o.order_number"/>
+                            </td>
+                            <th class="table-active"
+                                style="text-align:center; border:1px solid black; width:10%; font-weight:bold;">
+                                Order Date:
+                            </th>
+                            <td style="text-align:center;border:1px solid black; width:20%;">
+                                <span style="text-align:center;" t-field="o.order_date"/>
+                            </td>
+                            <th class="table-active"
+                                style="text-align:center; width:10%; border:1px solid black; font-weight:bold;">
+                                Driver:
+                            </th>
+                            <td style="text-align:center;border:1px solid black; width:20%;    background: unset;">
+                                <span style="text-align:center;" t-field="o.driver_id.name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="table-active"
+                                style="text-align:center; border:1px solid black; width:10%; font-weight:bold;">
+                                Donator
+                            </th>
+                            <td style="text-align:center;border:1px solid black; width:20%;">
+                                <span style="text-align:center;" t-field="o.donator_id.name"/>
+                            </td>
+                            <th class="table-active"
+                                style="text-align:center; border:1px solid black; width:10%; font-weight:bold;">
+                                Donation Type:
+                            </th>
+                            <td style="text-align:center;border:1px solid black; width:20%;">
+                                <span style="text-align:center;" t-field="o.donation_type.name"/>
+                            </td>
+                            <th class="table-active"
+                                style="text-align:center; width:10%; border:1px solid black; font-weight:bold;">
+                                Description:
+                            </th>
+                            <td style="text-align:center;border:1px solid black; width:20%;background: unset;">
+                                <span style="text-align:center;" t-field="o.description"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--                    </div>-->
+                    <!--                    &lt;!&ndash;Invoice lines table&ndash;&gt;-->
+                    <t t-if="o.is_container == False">
+                        <table style="font-size:14px; border-bottom: 1px solid black; "
+                               class="table table-sm">
+                            <thead>
+                                <tr style="border-bottom:1px solid black;">
+                                    <th class="table-active"
+                                        style="text-align:center; width:20%; font-weight:bold; border:1px solid black;color:#495057">
+                                        product
+                                    </th>
+                                    <th class="table-active"
+                                        style="text-align:center; width:45%;; font-weight:bold; border:1px solid black;color:#495057">
+                                        UOM
+                                    </th>
+                                    <th class="table-active"
+                                        style="text-align:center; width:10%; font-weight:bold; border:1px solid black;color:#495057">
+                                        Quantity
+                                    </th>
+
+                                    <th class="table-active"
+                                        style="text-align:center; width:10%; font-weight:bold; border:1px solid black;color:#495057;">
+                                        Description
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.donation_order_line_ids" t-as="line">
+                                    <tr>
+
+                                        <td style="text-align:center; width:20%;border-right: 1px solid black;border-left: 1px solid black;">
+                                            <t t-if="line.product_id">
+                                                <span style="text-align:center;"
+                                                      t-field="line.product_id.name"/>
+                                            </t>
+                                        </td>
+                                        <td style="text-align:center; width:45%;border-right: 1px solid black;">
+                                            <t t-if="line.product_uom_id">
+                                                <span style="text-align:center;" t-field="line.product_uom_id.name"/>
+                                            </t>
+                                        </td>
+                                        <td style="text-align:center; width:10%; border-left: 1px solid black;border-right: 1px solid black;">
+                                            <t t-if="line.quantity">
+                                                <span style="text-align:center;" t-field="line.quantity"/>
+                                            </t>
+                                        </td>
+                                        <td style="text-align:right; width:10%;border-right: 1px solid black;    background: unset;">
+                                            <t t-if="line.description">
+                                                <span t-field="line.description"/>
+                                            </t>
+                                        </td>
+
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                    <t t-else="">
+                        <table style="font-size:14px; border-bottom: 1px solid black;"
+                               class="table table-sm">
+                            <thead>
+                                <tr style="border-bottom:1px solid black;">
+                                    <th class="table-active"
+                                        style="text-align:center; width:20%; font-weight:bold; border:1px solid black;color:#495057">
+                                        Containers
+                                    </th>
+                                    <th class="table-active"
+                                        style="text-align:center; width:45%;; font-weight:bold; border:1px solid black;color:#495057">
+                                        Number of bags
+                                    </th>
+                                    <th class="table-active"
+                                        style="text-align:center; width:10%; font-weight:bold; border:1px solid black;color:#495057">
+                                        Comments
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.donation_order_containers_ids" t-as="line">
+                                    <tr>
+
+                                        <td style="text-align:center; width:20%;border-right: 1px solid black;border-left: 1px solid black;">
+                                            <t t-if="line.container_id">
+                                                <span style="text-align:center;"
+                                                      t-field="line.container_id.name"/>
+                                            </t>
+                                        </td>
+                                        <td style="text-align:center; width:45%;border-right: 1px solid black;">
+                                            <t t-if="line.name">
+                                                <span style="text-align:center;" t-field="line.name"/>
+                                            </t>
+                                        </td>
+                                        <td style="text-align:center; width:10%; border-left: 1px solid black;border-right: 1px solid black;">
+                                            <t t-if="line.nbr_of_bags">
+                                                <span style="text-align:center;" t-field="line.nbr_of_bags"/>
+                                            </t>
+                                        </td>
+                                        <td style="text-align:right; width:10%;border-right: 1px solid black;     background: unset;">
+                                            <t t-if="line.comments">
+                                                <span t-field="line.comments"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+
+
+                </div>
+
+            </t>
+        </t>
+    </template>
+    <template id="taqat_donation_template_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--                <t t-set="lang" t-value="o.partner_id.sudo().lang"/>-->
+                <t t-call="taqat_donation.taqat_donation_template"/>
+            </t>
+        </t>
+    </template>
+</odoo>

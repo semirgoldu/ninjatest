@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="custom_documents_view" model="ir.ui.view">
+            <field name="name">custom.documents.view</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_form"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//button[@name='create_share']" position="after">
+                    <button type="object" name="preview_document" string="Preview"/>
+                </xpath>
+
+                <xpath expr="//field[@name='owner_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='create_uid']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='create_date']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='datas']" position="before">
+                    <field name="document_number" string="Document Number"/>
+                </xpath>
+                <xpath expr="//field[@name='document_number']" position="after">
+                    <field name="ebs_mod_document_type_id"/>
+                    <field name="status" string="Status"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+
+                    <field name="person_type"/>
+                    <field name="related_company"/>
+                    <field name="related_contact"/>
+                    <field name="sponsor"/>
+                    <field name="date_stop_renew"/>
+                    <field name="service_id"/>
+                </xpath>
+                <xpath expr="//field[@name='type']" position="before">
+                    <field name="issue_date"/>
+                    <field name="expiry_date"/>
+                    <field name="desc"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="documents_custom_tree">
+            <field name="name">documents.custom.tree</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.documents_view_list"/>
+            <field name="priority">16</field>
+            <field name="type">tree</field>
+
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//tree//field[@name='partner_id']" position="replace">
+                    <field name="partner_id" optional="hide"/>
+                    <field name="person_type" optional="hide"/>
+                    <field name="related_company" optional="hide"/>
+                    <field name="related_contact" optional="hide"/>
+                    <field name="sponsor" optional="hide"/>
+                    <field name="date_stop_renew" optional="hide"/>
+                    <field name="service_id" optional="hide"/>
+                </xpath>
+                <xpath expr="//tree//field[@name='owner_id']" position="replace">
+                    <field name="issue_date"/>
+                    <field name="expiry_date"/>
+                </xpath>
+                <xpath expr="//tree//field[@name='name']" position="replace">
+                    <field name="document_number" string="Document Number"/>
+                    <field name="name" string="Document Name" optional="show"/>
+                </xpath>
+                <xpath expr="//tree//field[@name='tag_ids']" position="before">
+                    <field name="ebs_mod_document_type_id"/>
+                    <field name="status"/>
+                </xpath>
+                <xpath expr="//tree//field[@name='create_date']" position="replace">
+                    <field name="create_date" widget="date" optional="hide"/>
+                </xpath>
+
+                <xpath expr="//tree//field[@name='create_date']" position="before">
+                    <button name="access_content" icon="fa-download" type="object"
+                            attrs="{'invisible':[('type','!=','binary')]}"/>
+                    <button name="preview_document" icon="fa-eye" type="object"
+                            attrs="{'invisible':[('type','!=','binary')]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="documents_custom_kanban">
+            <field name="name">documents.custom.kanban</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_kanban"/>
+            <field name="priority">16</field>
+            <field name="type">kanban</field>
+
+            <field name="arch" type="xml">
+
+                <xpath expr="//kanban//field[@name='id']" position="after">
+                    <field name="document_number"/>
+                </xpath>
+
+                <xpath expr="//kanban//templates//field[@name='name']" position="replace">
+                    <field name="document_number" class="o_text_overflow"/>
+                    <br/>
+                    <field name="name" required="True" class="o_text_overflow"/>
+                    <!--                    <br/>-->
+                    <!--                    <button name="preview_document"-->
+                    <!--                            string="&lt;span class='glyphicon glyphicon-eye-open'&gt;&lt;/span&gt;"-->
+                    <!--                            type="object" attrs="{'invisible':[('type','!=','binary')]}"/>-->
+                </xpath>
+                <xpath expr="//kanban//templates//div[hasclass('o_kanban_record_title')]" position="after">
+                    <div>
+                        <button name="preview_document"
+                                type="object"
+                                attrs="{'invisible':[('type','!=','binary')]}"
+                                class="btn btn-secondary"
+
+                        >Preview
+                        </button>
+
+                    </div>
+                </xpath>
+
+
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="documents_custom_search_panel">
+            <field name="name">documents.custom.search_panel</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_search"/>
+            <field name="priority">16</field>
+            <field name="type">search</field>
+
+            <field name="arch" type="xml">
+
+                <xpath expr="//search//field[@name='partner_id']" position="replace">
+                </xpath>
+
+                <xpath expr="//search//field[@name='name']" position="replace">
+                    <field name="document_number" string="Document Number"/>
+                    <field name="name" string="Document Name"/>
+                    <field name="ebs_mod_document_type_id"/>
+                    <field name="status"/>
+                    <field name="partner_id" string="Contact"/>
+                    <field name="service_id"/>
+                    <field name="person_type"/>
+                    <field name="sponsor"/>
+                    <field name="related_contact"/>
+                    <field name="related_company" domain="[('person_type', '=', 'company')]" string="Related Company"
+                           operator="child_of"/>
+                </xpath>
+                <xpath expr="//search//filter[@name='owner']" position="before">
+                    <filter name="document_type_group" string="Document Type" domain="[]"
+                            context="{'group_by':'ebs_mod_document_type_id'}"/>
+                    <filter name="status_group" string="Status"
+                            context="{'group_by':'status'}"/>
+                    <filter name="group_related_company" string="Related Company"
+                            context="{'group_by': 'related_company'}"/>
+                    <filter name="group_person_type" string="Contact Type" context="{'group_by': 'person_type'}"/>
+                    <filter name="group_sponsor" string="Sponsor" context="{'group_by': 'sponsor'}"/>
+                </xpath>
+                <xpath expr="//search//searchpanel//field[@name='res_model']" position="replace">
+
+                </xpath>
+                <!--                <xpath expr="//search//searchpanel//field[@name='tag_ids']" position="before">-->
+                <!--                    <field name="document_type_id"/>-->
+                <!--                    <field name="status"/>-->
+                <!--                </xpath>-->
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

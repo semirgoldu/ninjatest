@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="taqat_container_code_template">
+        <t t-call="web.html_container">
+            <div class="page">
+                <t t-set="o" t-value="docs"/>
+                <t t-set="table_style" t-value="'border: 1px solid %s;' % (o.env.user.company_id.primary_color or 'black')"/>
+                <t t-set="barcode_size" t-value="'width:70mm;height:14mm'"/>
+                <t t-set="table_style" t-value="'width:97mm;height:37.1mm;' + table_style"/>
+                <div class="o_label_sheet" t-att-style="padding_page">
+                    <table class="my-0 table table-sm table-borderless" align="center" cellspacing="15">
+                        <t t-foreach="o.get_formate_data()" t-as="row">
+                            <tr>
+                                <t t-foreach="row" t-as="column">
+                                    <td>
+                                        <div class="o_label_full" t-att-style="table_style">
+                                            <div class="o_label_name" style="padding: 10px;">
+                                                <t t-if="column.container_id" t-esc="column.container_id.name"/>
+                                            </div>
+                                            <div class="o_label_data" style="padding: 10px;text-align: center;font-size:10px;">
+                                                <div class="text-center o_label_left_column">
+                                                    <span class="text-nowrap" t-if="column.container_id.code" t-field="column.container_id.code"/><br/>
+                                                    <t t-if="column.container_id.barcode">
+                                                        <div t-out="column.container_id.barcode" t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': barcode_size}"/><br/>
+                                                        <span class="text-center" t-out="column.container_id.barcode"/>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </t>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="taqat_container_code_template_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="taqat_donation.taqat_container_code_template"/>
+            </t>
+        </t>
+    </template>
+</odoo>

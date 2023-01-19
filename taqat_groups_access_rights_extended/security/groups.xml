@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+          <record id="group_custody" model="res.groups">
+            <field name="name">Custody</field>
+        </record>
+
+        <!--        Operational Manager-->
+        <record id="group_operational_manager" model="res.groups">
+            <field name="name">Operational Manager Role</field>
+        </record>
+
+        <record id="group_operational_manager_role" model="res.users.role">
+            <field name="name">Operational Manager</field>
+            <field name="group_id" eval="ref('group_operational_manager')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('survey.menu_surveys')), (4, ref('social.menu_social_global')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('maintenance.menu_maintenance_title'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('ebs_fusion_hr_employee.group_access_other_employee'),
+                   ref('ebs_lb_payroll.group_fos_payroll'),
+                   ref('hr_contract_custom.group_access_other_employee_contract'),
+                   ref('approvals.group_approval_manager'),
+                   ref('hr_appraisal.group_hr_appraisal_manager'),
+                   ref('sales_team.group_sale_manager'),
+                   ref('hr_recruitment.group_hr_recruitment_manager'),
+                   ref('hr_payroll.group_hr_payroll_manager'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('hr_holidays.group_hr_holidays_user'),
+                   ref('fleet.fleet_group_manager'),
+                   ref('documents.group_documents_manager'),
+                   ref('project.group_project_manager'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('hr_attendance.group_hr_attendance')])]"/>
+        </record>
+
+        <!--        Operational Employee-->
+        <record id="group_operational_employee_role" model="res.groups">
+            <field name="name">Operational Employee Role</field>
+        </record>
+
+        <record id="group_operational_employee" model="res.users.role">
+            <field name="name">Operational Employee</field>
+            <field name="group_id" eval="ref('group_operational_employee_role')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('survey.menu_surveys')), (4, ref('social.menu_social_global')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('maintenance.menu_maintenance_title'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('ebs_fusion_hr_employee.group_access_other_employee'),
+                   ref('hr_contract_custom.group_access_other_employee_contract'),
+                   ref('hr_recruitment.group_hr_recruitment_manager'),
+                   ref('approvals.group_approval_user'),
+                   ref('sales_team.group_sale_manager'),
+                   ref('hr_attendance.group_hr_attendance'),
+                   ref('hr_holidays.group_hr_holidays_user'),
+                   ref('documents.group_documents_manager'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('hr_payroll.group_hr_payroll_manager'),
+                   ref('fleet.fleet_group_manager'),
+                   ref('project.group_project_manager'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('ebs_lb_payroll.group_fos_payroll')])]"/>
+        </record>
+
+        <!--        Employability Manager-->
+        <record id="group_employability_manager_role" model="res.groups">
+            <field name="name">Employability Manager Role</field>
+        </record>
+
+        <record id="group_employability_manager" model="res.users.role">
+            <field name="name">Employability Manager</field>
+            <field name="group_id" eval="ref('group_employability_manager_role')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('maintenance.menu_maintenance_title'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('ebs_fusion_hr_employee.group_access_other_employee'),
+                   ref('hr_contract_custom.group_access_other_employee_contract'),
+                   ref('hr_payroll.group_hr_payroll_manager'),
+                   ref('ebs_lb_payroll.group_fos_payroll'),
+                   ref('approvals.group_approval_manager'),
+                   ref('sales_team.group_sale_manager'),
+                   ref('hr_attendance.group_hr_attendance'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('hr_holidays.group_hr_holidays_user'),
+                   ref('documents.group_documents_manager'),
+                   ref('hr_appraisal.group_hr_appraisal_manager'),
+                   ref('project.group_project_manager'),
+                   ref('fleet.fleet_group_manager'),
+                   ref('survey.group_survey_manager'),
+                   ref('social.group_social_manager'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('hr_recruitment.group_hr_recruitment_manager')])]"/>
+        </record>
+
+        <!--        property Manager-->
+        <record id="taqat_group_property_manager_role" model="res.groups">
+            <field name="name">Taqat Property Manager Role</field>
+        </record>
+
+        <record id="taqat_group_property_manager" model="res.users.role">
+            <field name="name">Taqat Property Manager</field>
+            <field name="group_id" eval="ref('taqat_group_property_manager_role')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('hr.menu_hr_root')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('property_management.group_property_manager'),
+                   ref('approvals.group_approval_manager'),
+                   ref('fleet.fleet_group_manager'),
+                   ref('sales_team.group_sale_manager'),
+                   ref('hr_attendance.group_hr_attendance'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('hr_holidays.group_hr_holidays_user'),
+                   ref('documents.group_documents_manager'),
+                   ref('hr_appraisal.group_hr_appraisal_manager'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('base.group_allow_export'),
+                   ref('helpdesk.group_helpdesk_manager')])]"/>
+        </record>
+
+        <!--        property employee-->
+        <record id="taqat_group_property_employee_role" model="res.groups">
+            <field name="name">Taqat Property Employee Role</field>
+        </record>
+
+        <record id="taqat_group_property_employee" model="res.users.role">
+            <field name="name">Taqat Property Employee</field>
+            <field name="group_id" eval="ref('taqat_group_property_employee_role')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('hr.menu_hr_root')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('property_management.group_property_manager'),
+               ref('approvals.group_approval_user'),
+               ref('sales_team.group_sale_manager'),
+               ref('hr_attendance.group_hr_attendance_user'),
+               ref('im_livechat.im_livechat_group_manager'),
+               ref('fleet.fleet_group_manager'),
+               ref('hr_holidays.group_hr_holidays_user'),
+               ref('documents.group_documents_manager'),
+               ref('ebs_qsheild_mod.qshield_contact_admin'),
+               ref('ebs_qsheild_mod.qshield_admin'),
+               ref('ebs_qsheild_mod.qshield_accountant_admin'),
+               ref('base.group_allow_export'),
+               ref('helpdesk.group_helpdesk_manager')])]"/>
+        </record>
+
+        <!--        Inventory Manager-->
+        <record id="taqat_group_inventory_manager_role" model="res.groups">
+            <field name="name">Taqat Inventory Manager Role</field>
+        </record>
+
+        <record id="taqat_group_inventory_manager" model="res.users.role">
+            <field name="name">Taqat Inventory Manager</field>
+            <field name="group_id" eval="ref('taqat_group_inventory_manager_role')"/>
+            <field name="menu_items_ids" eval="[(4, ref('hr.menu_hr_root')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('maintenance.menu_maintenance_title'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('approvals.group_approval_manager'),
+                   ref('stock.group_stock_manager'),
+                   ref('sales_team.group_sale_manager'),
+                   ref('hr_attendance.group_hr_attendance'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('hr_holidays.group_hr_holidays_user'),
+                   ref('documents.group_documents_manager'),
+                   ref('hr_appraisal.group_hr_appraisal_manager'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('base.group_allow_export'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('fleet.fleet_group_manager')])]"/>
+        </record>
+
+        <!--        HR manager-->
+        <record id="taqat_group_hr_manager_role" model="res.groups">
+            <field name="name">Taqat Hr Manager Role</field>
+        </record>
+
+        <record id="taqat_group_hr_manager" model="res.users.role">
+            <field name="name">Taqat Hr Manager</field>
+            <field name="group_id" eval="ref('taqat_group_hr_manager_role')"/>
+            <field name="menu_items_ids" eval="[(4, ref('sale.sale_menu_root')),(4, ref('crm.crm_menu_root')), (4, ref('fleet.menu_root')), (4, ref('social.menu_social_global')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('maintenance.menu_maintenance_title'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('hr.group_hr_manager'),
+                   ref('sales_team.group_sale_manager'),
+                   ref('ebs_fusion_hr_employee.group_access_fusion_employee'),
+                   ref('ebs_fusion_hr_employee.group_access_client_employee'),
+                   ref('ebs_fusion_hr_employee.group_access_other_employee'),
+                   ref('ebs_lb_payroll.group_director_payroll_confirm'),
+                   ref('ebs_lb_payroll.group_finance_payroll_confirm'),
+                   ref('ebs_lb_payroll.group_fos_payroll'),
+                   ref('ebs_lb_payroll.group_payroll_hr'),
+                   ref('ebs_lb_payroll.group_fusion_payroll'),
+                   ref('hr_contract_custom.group_access_fusion_employee_contract'),
+                   ref('hr_contract_custom.group_access_other_employee_contract'),
+                   ref('hr_payroll.group_hr_payroll_manager'),
+                   ref('approvals.group_approval_user'),
+                   ref('hr_attendance.group_hr_attendance_manager'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('hr_holidays.group_hr_holidays_manager'),
+                   ref('documents.group_documents_manager'),
+                   ref('hr_appraisal.group_hr_appraisal_manager'),
+                   ref('fleet.fleet_group_manager'),
+                   ref('survey.group_survey_manager'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('hr_recruitment.group_hr_recruitment_manager')])]"/>
+        </record>
+
+        <!--        Sales Manager-->
+        <record id="taqat_group_sales_manager_role" model="res.groups">
+            <field name="name">Taqat Sales Manager Role</field>
+        </record>
+
+        <record id="taqat_group_sales_manager" model="res.users.role">
+            <field name="name">Taqat Sales Manager</field>
+            <field name="group_id" eval="ref('taqat_group_sales_manager_role')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('social.menu_social_global')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('maintenance.menu_maintenance_title'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('approvals.group_approval_manager'),
+                   ref('sales_team.group_sale_manager'),
+                   ref('hr_attendance.group_hr_attendance'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('hr_holidays.group_hr_holidays_user'),
+                   ref('fleet.fleet_group_manager'),
+                   ref('documents.group_documents_manager'),
+                   ref('hr_appraisal.group_hr_appraisal_manager'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('project.group_project_manager')])]"/>
+        </record>
+
+<!--        Accounting Manager-->
+        <record id="taqat_group_accounting_manager_role" model="res.groups">
+            <field name="name">Taqat Accounting Manager Role</field>
+        </record>
+
+        <record id="taqat_group_accounting_manager" model="res.users.role">
+            <field name="name">Taqat Accounting Manager</field>
+            <field name="group_id" eval="ref('taqat_group_accounting_manager_role')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('social.menu_social_global')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('maintenance.menu_maintenance_title'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('sales_team.group_sale_manager'),
+                   ref('purchase.group_purchase_manager'),
+                   ref('account.group_account_manager'),
+                   ref('stock.group_stock_user'),
+                   ref('maintenance.group_equipment_manager'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('fleet.fleet_group_manager'),
+                   ref('hr.group_hr_user'),
+                   ref('approvals.group_approval_manager'),
+                   ref('hr_holidays.group_hr_holidays_manager'),
+                   ref('hr_contract.group_hr_contract_manager'),
+                   ref('hr_attendance.group_hr_attendance'),
+                   ref('hr_appraisal.group_hr_appraisal_manager'),
+                   ref('hr_payroll.group_hr_payroll_manager'),
+                   ref('documents.group_documents_manager'),
+                   ref('hr_approvals.group_approval_category_manager_bank_change'),
+                   ref('hr_approvals.group_approval_category_manager_bank_change'),
+                   ref('ebs_fusion_hr_employee.group_access_fusion_employee'),
+                   ref('ebs_fusion_hr_employee.group_access_client_employee'),
+                   ref('ebs_fusion_hr_employee.group_access_other_employee'),
+                   ref('hr_contract_custom.group_access_fusion_employee_contract'),
+                   ref('hr_contract_custom.group_access_other_employee_contract'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('property_management.group_property_agent'),
+                   ref('property_management.group_property_owner'),
+                   ref('property_management.group_property_user'),
+                   ref('property_management.group_property_manager'),
+                   ref('ebs_lb_payroll.group_director_payroll_confirm'),
+                   ref('ebs_lb_payroll.group_finance_payroll_confirm'),
+                   ref('ebs_lb_payroll.group_fos_payroll'),
+                   ref('ebs_lb_payroll.group_payroll_hr'),
+                   ref('ebs_lb_payroll.group_fusion_payroll'),
+                   ref('ebs_fusion_account.group_access_delete'),
+                   ref('analytic.group_analytic_tags'),
+                   ref('base.group_allow_export'),
+                   ref('property_maintenance.group_hide_menus')])]"/>
+        </record>
+
+<!--        Procurement Manager-->
+        <record id="group_procurement_manager_role" model="res.users.role">
+            <field name="name">Taqat Procurement Manager</field>
+            <field name="group_id" eval="ref('taqat_approval_extended.group_procurement_manager')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('crm.crm_menu_root')), (4, ref('hr_appraisal.menu_hr_appraisal_root')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('maintenance.menu_maintenance_title'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('approvals.group_approval_manager'),
+                   ref('stock.group_stock_manager'),
+                   ref('purchase.group_purchase_manager'),
+                   ref('sales_team.group_sale_manager'),
+                   ref('hr_attendance.group_hr_attendance'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('hr_holidays.group_hr_holidays_user'),
+                   ref('fleet.fleet_group_manager'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('documents.group_documents_manager')])]"/>
+        </record>
+
+        <record id="taqat_group_general_manager_assistance_role" model="res.groups">
+            <field name="name">Taqat General Manager Assistant</field>
+        </record>
+
+        <record id="taqat_group_general_manager_assistance" model="res.users.role">
+            <field name="name">Taqat General Manager Assistant</field>
+            <field name="group_id" eval="ref('taqat_group_general_manager_assistance_role')"/>
+            <field name="menu_items_ids" eval="[(4, ref('sale.sale_menu_root')),(4, ref('crm.crm_menu_root')),(4, ref('fleet.menu_root')), (4, ref('crm.crm_menu_root')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('maintenance.menu_maintenance_title'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('approvals.group_approval_manager'),
+                   ref('hr_attendance.group_hr_attendance'),
+                   ref('sales_team.group_sale_manager'),
+                   ref('im_livechat.im_livechat_group_manager'),
+                   ref('hr_holidays.group_hr_holidays_user'),
+                   ref('survey.group_survey_manager'),
+                   ref('hr_appraisal.group_hr_appraisal_manager'),
+                   ref('fleet.fleet_group_manager'),
+                   ref('social.group_social_manager'),
+                   ref('ebs_qsheild_mod.qshield_contact_admin'),
+                   ref('ebs_qsheild_mod.qshield_admin'),
+                   ref('ebs_qsheild_mod.qshield_accountant_admin'),
+                   ref('documents.group_documents_manager')])]"/>
+        </record>
+
+        <record id="taqat_group_inventory_clerk" model="res.groups">
+            <field name="name">Taqat Inventory Donation Clerk</field>
+        </record>
+
+        <record id="taqat_group_inventory_clerk_role" model="res.users.role">
+            <field name="name">Taqat Inventory Donation Clerk</field>
+            <field name="group_id" eval="ref('taqat_group_inventory_clerk')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('ebs_fusion_contacts.menu_suppliers')), (4, ref('contacts.menu_contacts')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('ebs_fusion_contacts.menu_companies')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('hr_appraisal.menu_hr_appraisal_root')),(4, ref('planning.planning_menu_root')), (4, ref('hr.menu_hr_root')), (4, ref('hr_holidays.menu_hr_holidays_root')), (4, ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('stock.group_stock_manager'),
+                   ref('fleet.fleet_group_manager')])]"/>
+        </record>
+
+        <record id="taqat_group_inventory_container_clerk" model="res.groups">
+            <field name="name">Taqat Inventory Container Clerk</field>
+        </record>
+
+        <record id="taqat_group_inventory_container_clerk_role" model="res.users.role">
+            <field name="name">Taqat Inventory Container Clerk</field>
+            <field name="group_id" eval="ref('taqat_group_inventory_container_clerk')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('ebs_fusion_contacts.menu_suppliers')), (4, ref('contacts.menu_contacts')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('ebs_fusion_contacts.menu_companies')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('hr_appraisal.menu_hr_appraisal_root')),(4, ref('planning.planning_menu_root')), (4, ref('hr.menu_hr_root')), (4, ref('hr_holidays.menu_hr_holidays_root')), (4, ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('stock.group_stock_manager'),
+                   ref('fleet.fleet_group_manager')])]"/>
+        </record>
+
+        <record id="taqat_group_inspection_user" model="res.groups">
+            <field name="name">Taqat Inspection User</field>
+        </record>
+
+        <record id="taqat_group_inspection_user_role" model="res.users.role">
+            <field name="name">Taqat Inspection User</field>
+            <field name="group_id" eval="ref('taqat_group_inspection_user')"/>
+            <field name="menu_items_ids" eval="[(4, ref('fleet.menu_root')), (4, ref('ebs_fusion_hr_employee.menu_hr_employee_my_profile_root')), (4, ref('ebs_fusion_contacts.menu_suppliers')), (4, ref('contacts.menu_contacts')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('ebs_fusion_contacts.menu_companies')), (4, ref('ebs_fusion_contacts.menu_clients_review')), (4, ref('hr_appraisal.menu_hr_appraisal_root')),(4, ref('planning.planning_menu_root')), (4, ref('hr.menu_hr_root')), (4, ref('hr_holidays.menu_hr_holidays_root')), (4, ref('website.menu_website_configuration'))]"/>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('stock.group_stock_manager'),
+                   ref('fleet.fleet_group_manager')])]"/>
+        </record>
+
+        <record id="taqat_own_employee_record_rule" model="ir.rule">
+            <field name="name">Taqat own employee Record Rule</field>
+            <field ref="hr.model_hr_employee" name="model_id"/>
+            <field name="domain_force">[('id', '=', user.employee_id.id)]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_other_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="taqat_child_invoices_record_rule" model="ir.rule">
+            <field name="name">Taqat Child Invoices Record Rule</field>
+            <field ref="account.model_account_move" name="model_id"/>
+            <field name="domain_force">['|',('create_uid','=',user.id), ('create_uid.employee_ids', 'child_of',
+                user.employee_ids.child_ids.ids)]
+            </field>
+            <field name="groups"
+                   eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_property_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_property_employee_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_manager')), (4, ref('taqat_groups_access_rights_extended.group_employability_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_sales_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_employee_role')), (4, ref('taqat_approval_extended.group_procurement_manager'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="taqat_child_sale_order_line_record_rule" model="ir.rule">
+            <field name="name">Taqat Child Sale Order Line Record Rule</field>
+            <field ref="sale.model_sale_order_line" name="model_id"/>
+            <field name="domain_force">['|',('create_uid','=',user.id), ('create_uid.employee_ids', 'child_of',
+                user.employee_ids.child_ids.ids)]
+            </field>
+            <field name="groups"
+                   eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_property_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_property_employee_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_manager')), (4, ref('taqat_groups_access_rights_extended.group_employability_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_sales_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_employee_role')), (4, ref('taqat_approval_extended.group_procurement_manager'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="taqat_group_property_manager_record_rule" model="ir.rule">
+            <field name="name">Taqat Property Manager Sales Record Rule</field>
+            <field ref="sale.model_sale_order" name="model_id"/>
+            <field name="domain_force">['|',('create_uid','=',user.id), ('create_uid.employee_ids', 'child_of',
+                user.employee_ids.child_ids.ids)]
+            </field>
+            <field name="groups"
+                   eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_property_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_property_employee_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_manager')), (4, ref('taqat_groups_access_rights_extended.group_employability_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_sales_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_employee_role')), (4, ref('taqat_approval_extended.group_procurement_manager'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="taqat_group_property_manager_crm_record_rule" model="ir.rule">
+            <field name="name">Taqat Property Manager CRM Record Rule</field>
+            <field ref="crm.model_crm_lead" name="model_id"/>
+            <field name="domain_force">['|',('user_id','=',user.id), ('create_uid.employee_ids', 'child_of',
+                user.employee_ids.child_ids.ids)]
+            </field>
+            <field name="groups"
+                   eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_property_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_property_employee_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_manager')), (4, ref('taqat_groups_access_rights_extended.group_employability_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_sales_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_employee_role'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="taqat_group_property_manager_leave_record_rule" model="ir.rule">
+            <field name="name">Taqat Property Manager Leave Record Rule</field>
+            <field ref="hr_holidays.model_hr_leave" name="model_id"/>
+            <field name="domain_force">['|',('user_id','=',user.id), ('employee_id', 'child_of',
+                user.employee_ids.child_ids.ids)]
+            </field>
+            <field name="groups"
+                   eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_property_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_property_employee_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_manager')), (4, ref('taqat_groups_access_rights_extended.group_employability_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_sales_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_employee_role')), (4, ref('taqat_approval_extended.group_procurement_manager')), (4, ref('taqat_groups_access_rights_extended.taqat_group_general_manager_assistance_role'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="taqat_group_property_manager_attendance_record_rule" model="ir.rule">
+            <field name="name">Taqat Property Manager Attendance Record Rule</field>
+            <field ref="hr_attendance.model_hr_attendance" name="model_id"/>
+            <field name="domain_force">['|',('employee_id.user_id','=',user.id), ('employee_id', 'child_of',
+                user.employee_ids.child_ids.ids)]
+            </field>
+            <field name="groups"
+                   eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_property_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_property_employee_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_manager')), (4, ref('taqat_groups_access_rights_extended.group_employability_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_sales_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_employee_role')), (4, ref('taqat_approval_extended.group_procurement_manager')), (4, ref('taqat_groups_access_rights_extended.taqat_group_general_manager_assistance_role'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="taqat_group_property_manager_approval_record_rule" model="ir.rule">
+            <field name="name">Taqat Property Manager Approval Record Rule</field>
+            <field ref="approvals.model_approval_request" name="model_id"/>
+            <field name="domain_force">['|',('request_owner_id','=',user.id), ('request_owner_id.employee_ids',
+                'child_of', user.employee_ids.child_ids.ids)]
+            </field>
+            <field name="groups"
+                   eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_property_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_inventory_manager_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_manager')), (4, ref('taqat_groups_access_rights_extended.group_employability_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_hr_manager_role')), (4, ref('taqat_groups_access_rights_extended.taqat_group_sales_manager_role'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="taqat_group_property_manager_approval_user_record_rule" model="ir.rule">
+            <field name="name">Taqat Property Manager Approval User Record Rule</field>
+            <field ref="approvals.model_approval_request" name="model_id"/>
+            <field name="domain_force">[('request_owner_id','=',user.id)]</field>
+            <field name="groups"
+                   eval="[(4, ref('taqat_groups_access_rights_extended.taqat_group_property_employee_role')), (4, ref('taqat_groups_access_rights_extended.group_operational_employee_role'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+<!--        salary attachment-->
+        <record id="access_other_employee_salary_attachment" model="ir.rule">
+            <field name="name">	Access Of Outsourced Employees salary attachment</field>
+            <field ref="hr_payroll.model_hr_salary_attachment" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fos_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_other_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="access_main_employee_salary_attachment" model="ir.rule">
+            <field name="name">	Access Of Main Company Employees salary attachment</field>
+            <field ref="hr_payroll.model_hr_salary_attachment" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fusion_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_fusion_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+<!--        work entries-->
+        <record id="access_other_employee_work_entries" model="ir.rule">
+            <field name="name">	Access Of Outsourced Employees work entries</field>
+            <field ref="hr_work_entry.model_hr_work_entry" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fos_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_other_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="access_main_employee_work_entries" model="ir.rule">
+            <field name="name">	Access Of Main Company Employees work entries</field>
+            <field ref="hr_work_entry.model_hr_work_entry" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fusion_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_fusion_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+<!--        hr.payslip.line-->
+        <record id="access_other_employee_payslip_line" model="ir.rule">
+            <field name="name">	Access Of Outsourced Employees Payslip Line</field>
+            <field ref="hr_payroll.model_hr_payslip_line" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fos_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_other_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="access_main_employee_payslip_line" model="ir.rule">
+            <field name="name">	Access Of Main Company Employees Payslip Line</field>
+            <field ref="hr_payroll.model_hr_payslip_line" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fusion_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_fusion_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+<!--        additional.element.lines-->
+        <record id="access_other_employee_additional_element_lines" model="ir.rule">
+            <field name="name">	Access Of Outsourced Employees Additional Element Lines</field>
+            <field ref="ebs_lb_payroll.model_ebspayroll_additional_element_lines" name="model_id"/>
+            <field name="domain_force">[('employee.employee_type','=', 'fos_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_other_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="access_main_employee_additional_element_lines" model="ir.rule">
+            <field name="name">	Access Of Main Company Employees Additional Element Lines</field>
+            <field ref="ebs_lb_payroll.model_ebspayroll_additional_element_lines" name="model_id"/>
+            <field name="domain_force">[('employee.employee_type','=', 'fusion_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_fusion_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+<!--        payroll.allowance.request-->
+        <record id="access_other_employee_payroll_allowance_request" model="ir.rule">
+            <field name="name">	Access Of Outsourced Employees payroll allowance request</field>
+            <field ref="ebs_lb_payroll.model_ebs_payroll_allowance_request" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fos_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_other_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="access_main_employee_payroll_allowance_request" model="ir.rule">
+            <field name="name">	Access Of Main Company Employees payroll allowance request</field>
+            <field ref="ebs_lb_payroll.model_ebs_payroll_allowance_request" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fusion_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_fusion_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+<!--        ticket.allowance.request-->
+        <record id="access_other_employee_ticket_allowance_request" model="ir.rule">
+            <field name="name">	Access Of Outsourced Employees ticket allowance request</field>
+            <field ref="ebs_lb_payroll.model_ebs_payroll_ticket_allowance_request" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fos_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_other_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="access_main_employee_ticket_allowance_request" model="ir.rule">
+            <field name="name">	Access Of Main Company Employees ticket allowance request</field>
+            <field ref="ebs_lb_payroll.model_ebs_payroll_ticket_allowance_request" name="model_id"/>
+            <field name="domain_force">[('employee_id.employee_type','=', 'fusion_employee')]</field>
+            <field name="groups" eval="[(4, ref('ebs_fusion_hr_employee.group_access_fusion_employee'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+    </data>
+</odoo>

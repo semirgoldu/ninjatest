@@ -1,0 +1,7 @@
+@media only screen and (min-width: 600px){
+    .hide-on-desktop, * [aria-labelledby='hide-on-desktop']{
+        display: none;
+        overflow: hidden;
+        max-height: 0;
+    }
+}

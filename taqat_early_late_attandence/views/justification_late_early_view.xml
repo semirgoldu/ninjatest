@@ -1,0 +1,108 @@
+<odoo>
+
+    <record id="taqat_view_attendance_tree" model="ir.ui.view">
+        <field name="name">hr.attendance.tree</field>
+        <field name="model">hr.attendance</field>
+        <field name="arch" type="xml">
+            <tree string="Employee Late Early Attendances" editable="bottom">
+                <field name="employee_id" readonly="1"/>
+                <field name="check_in" readonly="1"/>
+                <field name="check_out" readonly="1"/>
+                <field name="is_late_check_in" readonly="1"/>
+                <field name="is_early_check_out" readonly="1"/>
+                <field name="late_check_in_hour" readonly="1" widget="float_time"/>
+                <field name="early_check_out_hour" readonly="1" widget="float_time"/>
+                <field name="leave_id" invisible="1"/>
+                <field name="justification_type_id"/>
+                <field name="justification"/>
+                <field name="is_early_check_out_hour_added" invisible="1"/>
+                <field name="is_late_check_in_hour_added" invisible="1"/>
+                <field name="attendance_status" widget="badge"
+                       decoration-info="attendance_status == 'department_manager_approve'"
+                       decoration-warning="attendance_status in ('hr_manager','approved')"
+                       decoration-success="attendance_status == 'approved'"/>
+                <!--                <button string="Approve" name="action_department_manager_approve" type="object" icon="fa-thumbs-up"-->
+                <!--                        attrs="{'invisible':[('attendance_status','!=','department_manager_approve')]}"-->
+                <!--                        groups="hr.group_hr_manager"/>-->
+                <button string="Approve" name="action_department_manager_approve" type="object" icon="fa-thumbs-up"
+                        attrs="{'invisible':['&amp;','|',('is_late_check_in','=',False),'&amp;',('is_late_check_in','=',True),('is_late_check_in_hour_added','=',True),'|',('is_early_check_out','=',False),'&amp;',('is_early_check_out','=',True),('is_early_check_out_hour_added','=',True)]}"
+                        groups="hr.group_hr_manager"/>
+                <!--                <button string="Validate" name="action_hr_manager_validate" type="object" icon="fa-check"-->
+                <!--                        attrs="{'invisible':[('attendance_status','!=','hr_manager')]}" groups="hr.group_hr_manager"/>-->
+                <!--                <button string="Refuse" name="action_manager_refuse" type="object" icon="fa-times"-->
+                <!--                        attrs="{'invisible':[('attendance_status','in',['rejected','approved'])]}"-->
+                <!--                        groups="hr.group_hr_manager"/>-->
+                <button string="Refuse" name="action_manager_refuse" type="object" icon="fa-times"
+                        attrs="{'invisible':['&amp;','|',('is_late_check_in','=',False),'&amp;',('is_late_check_in','=',True),('is_late_check_in_hour_added','=',True),'|',('is_early_check_out','=',False),'&amp;',('is_early_check_out','=',True),('is_early_check_out_hour_added','=',True)]}"
+                        groups="hr.group_hr_manager"/>
+                <field name="worked_hours" string="Work Hours" widget="float_time" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Inherit Form View to Modify it -->
+    <record id="jbm_hr_attendance_form_view_inherit" model="ir.ui.view">
+        <field name="name">jbm.hr.attendance.form.view.inherit</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <field name="attendance_status" invisible="1"/>
+                    <button string="Approve" name="action_department_manager_approve" type="object" icon="fa-thumbs-up"
+                            attrs="{'invisible':['&amp;','|',('is_late_check_in','=',False),'&amp;',('is_late_check_in','=',True),('is_late_check_in_hour_added','=',True),'|',('is_early_check_out','=',False),'&amp;',('is_early_check_out','=',True),('is_early_check_out_hour_added','=',True)]}"
+                            groups="hr.group_hr_manager"/>
+                    <!--                    <button string="Validate" name="action_hr_manager_validate" type="object" icon="fa-check"-->
+                    <!--                            attrs="{'invisible':[('attendance_status','!=','hr_manager')]}"-->
+                    <!--                            groups="hr.group_hr_manager"/>-->
+                    <button string="Refuse" name="action_manager_refuse" type="object" icon="fa-times"
+                            attrs="{'invisible':['&amp;','|',('is_late_check_in','=',False),'&amp;',('is_late_check_in','=',True),('is_late_check_in_hour_added','=',True),'|',('is_early_check_out','=',False),'&amp;',('is_early_check_out','=',True),('is_early_check_out_hour_added','=',True)]}"
+                            groups="hr.group_hr_manager"/>
+                    <!--                    <button string="Refuse" name="action_manager_refuse" type="object" icon="fa-times"-->
+                    <!--                            attrs="{'invisible':[('attendance_status','in',['rejected','approved'])]}"-->
+                    <!--                            groups="hr.group_hr_manager"/>-->
+                </header>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <field name="is_late_check_in" readonly="1"/>
+                    <field name="is_early_check_out" readonly="1"/>
+                    <field name="late_check_in_hour" readonly="1" widget="float_time"/>
+                    <field name="early_check_out_hour" readonly="1" widget="float_time"/>
+                    <field name="justification_type_id"/>
+                    <field name="justification"/>
+                    <field name="is_early_check_out_hour_added" invisible="1"/>
+                    <field name="is_late_check_in_hour_added" invisible="1"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="taqat_hr_attendance_action" model="ir.actions.act_window">
+        <field name="name">Employee Late Early Attendances</field>
+        <field name="res_model">hr.attendance</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[ '|', ('is_late_check_in', '=', True),('is_early_check_out','=',True)]</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('taqat_view_attendance_tree')}),
+                        ]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No attendance records found
+            </p>
+            <p>
+                The attendance records of your employees will be displayed here.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="taqat_menu_hr_attendance_mainmenu" name="Late Early Check IN/OUT"
+              parent="hr_attendance.menu_hr_attendance_root"/>
+
+    <menuitem id="taqat_menu_hr_attendance_overview" name="Justification Check IN/OUT"
+              action="taqat_hr_attendance_action" parent="taqat_menu_hr_attendance_mainmenu" sequence="1"/>
+
+
+</odoo>

@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="mail_template_tenancy_contract" model="mail.template">
+            <field name="name">Tenancy Tenant: Contract Email</field>
+            <field name="model_id" ref="property_management.model_account_analytic_account"/>
+            <field name="subject">Tenancy Tenant: Contract Email</field>
+            <field name="email_from">{{ (object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="partner_to">{{ object.tenant_id.id }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 12px;">
+                        Hello <strong t-out="object.tenant_id.name or ''"/>,
+                        <br/>
+                        <br/>
+                        Your Contract <strong t-out="object.name or ''"/> is attached below.
+                        <br/>
+                        <br/>
+                        Do not hesitate to contact us if you have any questions.
+                        <br/>
+                        <br/>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template" ref="action_report_tenancy_contract"/>
+            <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

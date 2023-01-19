@@ -1,0 +1,65 @@
+<odoo>
+    <record id="taqat_tenancy_rent_schedule_inherit_form_view" model="ir.ui.view">
+        <field name="name">tenant.tenancy.rent.schedule.inherit.form.view</field>
+        <field name="model">tenancy.rent.schedule</field>
+        <field name="inherit_id" ref="property_management.tenancy_rent_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='rel_tenant_id']" position="before">
+                <field name="property_id"/>
+                <field name="parent_id"/>
+            </xpath>
+            <xpath expr="//field[@name='move_check']" position="after">
+                <field name="rent_status"/>
+                <field name="receipt_date"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="taqat_tenancy_rent_schedule_inherit_views" model="ir.ui.view">
+        <field name="name">tenant.tenancy.rent.schedule.inherit.tree.views</field>
+        <field name="model">tenancy.rent.schedule</field>
+        <field name="inherit_id" ref="property_management.tenancy_rent_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='rel_tenant_id']" position="before">
+                <field name="property_id"/>
+                <field name="parent_id"/>
+            </xpath>
+            <xpath expr="//field[@name='amount']" position="before">
+                <field name="receipt_date"/>
+                <field name="rent_status"/>
+            </xpath>
+        </field>
+    </record>
+     <record id="taqat_tenancy_rent_schedule_inherit_view" model="ir.ui.view">
+        <field name="name">tenant.tenancy.rent.schedule.inherit.calendar.view</field>
+        <field name="model">tenancy.rent.schedule</field>
+        <field name="inherit_id" ref="property_management.tenancy_rent_calendar"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='rel_tenant_id']" position="before">
+                <field name="property_id"/>
+                <field name="parent_id"/>
+            </xpath>
+            <xpath expr="//calendar//field[@name='amount']" position="before">
+                <field name="receipt_date"/>
+                <field name="rent_status"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="tenancy_rent_schedule_search_inherit_view" model="ir.ui.view">
+        <field name="name">tenant.tenancy.rent.schedule.inherit.search.view</field>
+        <field name="model">tenancy.rent.schedule</field>
+        <field name="inherit_id" ref="property_management.tenancy_rent_schedule_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='date']" position="after">
+                <filter string="Property" name="property" context="{'group_by':'property_id'}"/>
+                <filter string="Parent Property" name="parent_property" context="{'group_by':'parent_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

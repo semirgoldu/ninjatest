@@ -1,0 +1,43 @@
+<odoo>
+
+    <!--Donation Type Form View-->
+
+    <record id="taqat_donation_type_form_view" model="ir.ui.view">
+        <field name="name">donation.type.form</field>
+        <field name="model">donation.type</field>
+        <field name="arch" type="xml">
+            <form string="Donation Type">
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="is_container"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Donation Type Tree View-->
+
+    <record id="taqat_donation_type_tree" model="ir.ui.view">
+        <field name="name">donation.type.tree</field>
+        <field name="model">donation.type</field>
+        <field name="arch" type="xml">
+            <tree string="Donation Type">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="is_container"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Action for Donation Type Views -->
+    <record id="action_taqat_donation_type_view" model="ir.actions.act_window">
+        <field name="name">Donation Type</field>
+        <field name="res_model">donation.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_main_donation" name="Donation Configuration" parent="stock.menu_stock_config_settings"/>
+    <menuitem id="menu_donation_type" name="Donation Type" parent="taqat_donation.menu_main_donation" action="action_taqat_donation_type_view"/>
+</odoo>

@@ -1,0 +1,68 @@
+<odoo>
+
+    <record id="taqat_property_management_view" model="ir.ui.view">
+        <field name="name">account.asset.asset.view</field>
+        <field name="model">account.asset.asset</field>
+        <field name="inherit_id" ref="ow_account_asset.view_account_asset_asset_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="duplicate">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="attributes">
+                <attribute name="options">{'clickable':'1'}</attribute>
+            </xpath>
+            <xpath expr="//label[@for='street']" position="replace">
+            </xpath>
+            <xpath expr="//field[@name='street']//.." position="replace">
+
+                <field name="street" placeholder="Street..." required="1"/>
+                <field name="street2" placeholder="Street2..."/>
+                <field name="building" placeholder="Building..."/>
+                <field name="zone" placeholder="Zone..."/>
+                <field name="electricity_no" placeholder="Electricity No..."/>
+                <field name="water_no" placeholder="Water No..."/>
+                <field name="township" placeholder="Township..."/>
+                <field name="city" placeholder="City" style="width: 35%%" required="1"/>
+                <field name="state_id" class="oe_no_button" placeholder="State" style="width: 40%%"
+                       options='{"no_open": True}'/>
+                <field name="zip" placeholder="ZIP" style="width: 25%%"/>
+                <field name="country_id" placeholder="Country" class="oe_no_button"
+                       options='{"no_open": True, "no_create": True}' required="1"/>
+
+            </xpath>
+            <xpath expr="//field[@name='value']" position="after">
+                <field name="market_value" widget="monetary"/>
+            </xpath>
+            <xpath expr="//field[@name='is_compound']" position="after">
+                <field name="location_code"/>
+                <field name="free_rent"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string='Budget Revenue' name="budget_revenue">
+                    <group>
+                        <separator string="Budget Revenue" colspan="4"/>
+                        <field name="budget_revenue_ids" nolabel="1" widget="one2many">
+                            <tree editable="true">
+                                <field name="budget_year"/>
+                                <field name="amount"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+                <page string='Budget Expense' name="budget_expense">
+                    <group>
+                        <separator string="Budget Expense" colspan="4"/>
+                        <field name="budget_expense_ids" nolabel="1" widget="one2many">
+                            <tree editable="true">
+                                <field name="budget_year"/>
+                                <field name="amount"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

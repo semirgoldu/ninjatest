@@ -1,0 +1,10 @@
+<odoo>
+
+
+     <record model="ir.ui.menu" id="hr_appraisal.menu_hr_appraisal_root">
+        <field name="groups_id" eval="[(4,ref('hr_appraisal.group_hr_appraisal_manager')),(4,ref('hr_appraisal.group_hr_appraisal_user'))]"/>
+    </record>
+
+
+
+</odoo>

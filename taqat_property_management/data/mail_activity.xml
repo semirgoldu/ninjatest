@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="mail_act_tenant_rent_schedule" model="mail.activity.type">
+            <field name="name">Tenancy Rent Schedule</field>
+            <field name="sequence">4</field>
+            <field name="res_model">tenancy.rent.schedule</field>
+        </record>
+        <record id="mail_act_properties_expiration" model="mail.activity.type">
+            <field name="name">Properties</field>
+            <field name="res_model">account.analytic.account</field>
+        </record>
+    </data>
+</odoo>

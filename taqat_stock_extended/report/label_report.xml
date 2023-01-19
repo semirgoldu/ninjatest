@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="report_productlabel_dymo_inherit" inherit_id="product.report_productlabel_dymo">
+            <xpath expr="//t[@t-set='barcode']" position="after">
+                <t t-set="price" t-value="barcode_and_qty[2]"/>
+            </xpath>
+        </template>
+
+        <template id="report_simple_label_dymo_inherit" inherit_id="product.report_simple_label_dymo">
+            <xpath expr="//div[hasclass('text-right')]" position="replace">
+                <div class="text-right" style="padding: 0 4px;">
+                    <t t-if="price or product.tracking != 'none'">
+                        <strong class="o_label_price_small" t-out="float(price)"/>
+                        <strong>
+                            <t t-esc="product.currency_id.symbol or ''"/>
+                        </strong>
+                    </t>
+                    <t t-else="">
+                        <t t-if="product.is_product_variant">
+                            <strong class="o_label_price_small" t-field="product.lst_price"
+                                    t-options="{'widget': 'monetary', 'label_price': True}"/>
+                        </t>
+                        <t t-else="">
+                            <strong class="o_label_price_small" t-field="product.list_price"
+                                    t-options="{'widget': 'monetary', 'label_price': True}"/>
+                        </t>
+                    </t>
+                    <div class="o_label_extra_data">
+                        <t t-out="extra_html"/>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="report_productlabel_inherit" inherit_id="product.report_productlabel">
+            <xpath expr="//tr" position="replace">
+                <tr>
+                    <t t-foreach="range(columns)" t-as="column">
+                        <t t-if="not current_quantity and quantity">
+                            <t t-set="current_data" t-value="quantity.popitem()"/>
+                            <t t-set="product" t-value="current_data[0]"/>
+                            <t t-set="barcode_and_qty" t-value="current_data[1].pop()"/>
+                            <t t-set="barcode" t-value="barcode_and_qty[0]"/>
+                            <t t-set="current_quantity" t-value="barcode_and_qty[1]"/>
+                            <t t-set="price" t-value="barcode_and_qty[2]"/>
+                        </t>
+                        <t t-if="current_quantity">
+                            <t t-set="make_invisible" t-value="False"/>
+                            <t t-set="current_quantity" t-value="current_quantity - 1"/>
+                        </t>
+                        <t t-elif="current_data and current_data[1]">
+                            <t t-set="barcode_and_qty" t-value="current_data[1].pop()"/>
+                            <t t-set="barcode" t-value="barcode_and_qty[0]"/>
+                            <t t-set="current_quantity" t-value="barcode_and_qty[1] - 1"/>
+                            <t t-set="price" t-value="barcode_and_qty[2]"/>
+                        </t>
+                        <t t-else="">
+                            <t t-set="make_invisible" t-value="True"/>
+                        </t>
+                        <t t-set="table_style"
+                           t-value="'border: 1px solid %s;' % (product.env.user.company_id.primary_color or 'black')"/>
+                        <t t-call="{{report_to_call}}"/>
+                    </t>
+                </tr>
+            </xpath>
+        </template>
+
+        <template id="report_simple_label2x7_inherit" inherit_id="product.report_simple_label2x7">
+            <xpath expr="//t[@t-set='barcode_size']" position="replace">
+                <t t-set="barcode_size" t-value="'width:70mm;height:14mm'"/>
+            </xpath>
+            <xpath expr="//div[hasclass('o_label_left_column')]" position="replace">
+                <div class="text-center" style="font-size:10px;float:left;">
+                    <span class="text-nowrap" t-field="product.default_code"/>
+                    <t t-if="barcode">
+                            <div t-out="barcode" t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': barcode_size}"/>
+                            <span class="text-center" t-out="barcode"/>
+                    </t>
+                </div>
+            </xpath>
+            <xpath expr="//div[hasclass('text-right')]" position="replace">
+                <div class="text-right" style="padding: 0 4px;">
+                    <div class="text-right" style="line-height:normal">
+                        <div class="o_label_extra_data">
+                            <t t-out="extra_html"/>
+                        </div>
+                        <t t-if="price or product.tracking != 'none'">
+                            <strong class="o_label_price_small" t-out="float(price)"/>
+                            <strong>
+                                <t t-esc="product.currency_id.symbol or ''"/>
+                            </strong>
+                        </t>
+                        <t t-else="">
+                            <t t-if="product.is_product_variant">
+                                <strong class="o_label_price" t-field="product.lst_price"
+                                        t-options="{'widget': 'monetary', 'label_price': True}"/>
+                            </t>
+                            <t t-else="">
+                                <strong class="o_label_price" t-field="product.list_price"
+                                        t-options="{'widget': 'monetary', 'label_price': True}"/>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="report_simple_label4x7_inherit" inherit_id="product.report_simple_label4x7">
+            <xpath expr="//div[hasclass('text-right')]" position="replace">
+                <div class="text-right" style="padding-top:0;padding-bottom:0">
+                    <t t-if="price or product.tracking != 'none'">
+                        <strong class="o_label_price_small" t-out="float(price)"/>
+                        <strong>
+                            <t t-esc="product.currency_id.symbol or ''"/>
+                        </strong>
+                    </t>
+                    <t t-else="">
+                        <t t-if="product.is_product_variant">
+                            <strong class="o_label_price_medium" t-field="product.lst_price"
+                                    t-options="{'widget': 'monetary', 'label_price': True}"/>
+                        </t>
+                        <t t-else="">
+                            <strong class="o_label_price_medium" t-field="product.list_price"
+                                    t-options="{'widget': 'monetary', 'label_price': True}"/>
+                        </t>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="report_simple_label4x12_inherit" inherit_id="product.report_simple_label4x12">
+            <xpath expr="//div[hasclass('o_label_price_medium')]" position="replace">
+                <div class="o_label_price_medium text-right">
+                    <t t-if="price or product.tracking != 'none'">
+                        <strong class="o_label_price_small" t-out="float(price)"/>
+                        <strong>
+                            <t t-esc="product.currency_id.symbol or ''"/>
+                        </strong>
+                    </t>
+                    <t t-else="">
+                        <t t-if="product.is_product_variant">
+                            <strong t-field="product.lst_price" t-options="{'widget': 'monetary', 'label_price': True}"/>
+                        </t>
+                        <t t-else="">
+                            <strong t-field="product.list_price" t-options="{'widget': 'monetary', 'label_price': True}"/>
+                        </t>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

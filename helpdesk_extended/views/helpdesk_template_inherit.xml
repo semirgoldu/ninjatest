@@ -1,0 +1,200 @@
+<odoo>
+    <template id="ticket_submit_inherit" inherit_id="website_helpdesk.team" name="Helpdesk Inherit: Submit a Ticket">
+        <xpath expr="//div[@id='o-helpdesk-teams-navbar-collapse']" position="after">
+                <div class="form-group row form-field o_website_form_required">
+                    <div class="col-lg-3 col-md-4 text-right">
+                        <label class="col-form-label" for="property">Property</label>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <select name="account_asset_asset_id" class="form-control o_website_form_input">
+                            <option value=""/>
+                            <t t-foreach="propertys" t-as="property">
+                                <option id="property" t-esc="property.name" t-att-value="property.id"/>
+                            </t>
+                        </select>
+<!--                        <input type="text" class="form-control o_website_form_input" name="name" required="1"/>-->
+                    </div>
+                </div>
+        </xpath>
+    </template>
+
+
+    <template id="portal_helpdesk_ticket_inherited" inherit_id="helpdesk.tickets_followup">
+
+        <xpath expr="//t[@t-set='card_body']/div[1]" position="replace">
+            <div class="row mb-4">
+                <div style="width: 100%;text-align: end;">
+                <a t-attf-href="/my/maintenance/#{ticket.id}" class="btn btn-primary" style="float:right;">Maintenance Request (<t t-esc="len(ticket.maintenance_ids)"/>)</a>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//t[@t-set='card_body']/div[4]" position="after">
+            <div class="row mb-4">
+                <strong class="col-lg-2">Property</strong>
+                <div t-if="ticket.account_asset_asset_id" class="col-lg-10" t-field="ticket.account_asset_asset_id"/>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="maintenance_tree_view" name="Maintenance">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Maintenance Requests</t>
+            </t>
+            <t t-if="not maintenances">
+                <p>You don't have any Maintenance Requests yet.</p>
+            </t>
+            <t t-if="maintenances" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th class="w-75">Subjects</th>
+                        <th class="text-center">Request Date</th>
+                        <th class="text-center">Employee</th>
+                        <th class="text-center">Technician</th>
+                        <th class="text-right">Stage</th>
+                    </tr>
+                </thead>
+                <t t-foreach="maintenances" t-as="maintenance">
+                    <tr>
+                        <td>
+                            <a t-att-href="'/my/maintenance/record/'+str(maintenance.id)"><t t-esc="maintenance.name"/></a>
+                        </td>
+                        <td>
+                            <span t-esc="maintenance.request_date"/>
+                        </td>
+                        <td>
+                            <span t-esc="maintenance.employee_id.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="maintenance.user_id.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="maintenance.stage_id.name"/>
+                        </td>
+
+                    </tr>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="maintenance_view" name="Maintenance Content">
+        <t t-call="portal.portal_layout">
+            <div class="row mt16 oe_website_contract o_portal_sidebar">
+                <div class="col-12 col-lg">
+                    <div class="card oe_website_contract">
+                        <div class="card-header bg-white pb-2 pt-3">
+                            <div class="row">
+                                <div class="col-12 col-lg flex-grow-1 mb-1 mb-lg-0">
+                                    <h4 class="mb-0"><small class="text-muted">Maintenance -</small> <span t-esc="maintenance_rec.name"/></h4>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-body">
+                             <t t-foreach="maintenance_rec" t-as="maintenance">
+                                    <input type="hidden" id="maintenance_id" t-att-value="maintenance.id"/>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label name="stage_id">Stage :
+                                            </label>
+                                            <span t-if="maintenance.stage_id" t-esc="maintenance.stage_id.name"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label name="property_id">Property :
+                                            </label>
+                                            <span t-if="maintenance.property_id" t-esc="maintenance.property_id.name"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <label name="team" string="Team">Team :
+                                            </label>
+                                            <span t-if="maintenance.maintenance_team_id" t-esc="maintenance.maintenance_team_id.name"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label name="compound_utility_id">Compound Utility :
+                                            </label>
+                                            <span t-if="maintenance.compound_utility_id" t-esc="maintenance.compound_utility_id.name"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <label name="user_id" string="Responsible">Responsible :
+                                            </label>
+                                            <span t-if="maintenance.user_id" t-esc="maintenance.user_id.name"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label name="employee_id">Create By :
+                                            </label>
+                                            <span t-if="maintenance.employee_id" t-esc="maintenance.employee_id.name"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <label name="schedule_date" string="Team">Schedule Date :
+                                            </label>
+                                            <span t-esc="maintenance.schedule_date"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label name="request_date">Request Date :
+                                            </label>
+                                            <span t-esc="maintenance.request_date"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <label name="duration" string="duration">Duration :
+                                            </label>
+                                            <span t-esc="maintenance.duration"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label name="close_date">Close Date :
+                                            </label>
+                                            <span t-esc="maintenance.close_date"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <label name="cost" string="Cost">Cost :
+                                            </label>
+                                            <span t-esc="maintenance.cost"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label name="maintenance_type">Maintenance Type :
+                                            </label>
+                                            <span t-esc="maintenance.maintenance_type"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <label name="renters_fault" string="Cost">Renters Fault :
+                                            </label>
+                                            <span t-esc="maintenance.renters_fault"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label name="tenant_id">Tenant :
+                                            </label>
+                                            <span t-if="maintenance.tenant_id" t-esc="maintenance.tenant_id.name"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <label name="date_invoice" string="Cost">Invoice Date :
+                                            </label>
+                                            <span t-esc="maintenance.date_invoice"/>
+                                        </div>
+                                    </div>
+
+                                </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </t>
+    </template>
+
+</odoo>

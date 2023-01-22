@@ -94,6 +94,47 @@
             <div class="oe_structure"/>
         </xpath>
     </template>
+    <template id="products_labels" inherit_id="theme_vouge.vouge_attributes_inherited" active="False"
+              customize_show="True" name="labels">
+        <xpath expr="//ul[hasclass('shop_attributes')]" position="inside">
+
+            <div class="oe_structure"/>
+            <t t-set="labels" t-value="website.get_product_labels(category)"/>
+            <t t-if="labels">
+                <li class="">
+
+                    <div data-toggle="collapse" aria-expanded="true" href="#vouge_labels"
+                         class="vouge-brands attribute_title collapse-title  collapsed">
+                        <strong>Labels</strong>
+                        <span class="collapse-icons ml-auto float-right">
+                            <i class="ti ti-plus"></i>
+                            <i class="ti ti-minus"></i>
+                        </span>
+                    </div>
+
+                    <ul class="collapse nav nav-pills brand-c collapse ml-0" id="vouge_labels">
+                        <span class="brand-height-overflow w-100">
+                            <t t-set="count_value" t-value="0"/>
+                            <t t-foreach="labels" t-as="b">
+                                <t t-set="count_value" t-value="count_value + 1"/>
+                                <div class="form-check">
+                                    <!-- <a t-att-href="'/shop?brand=' + slug(b)" t-attf-class="nav-link #{'active' if b.id in active_brand_list else None}" > -->
+                                    <input name="label" t-att-id="'%s-%s' % (b.id,slug(b))" type="checkbox"
+                                           class="form-check-input" t-att-value="slug(b)"
+                                           t-att-checked="'checked' if b.id in active_label_list else None"/>
+                                    <!-- <span t-field="b.name"></span> -->
+                                    <label class="form-check-label ml-2 font-weight-normal"
+                                           t-att-for="'%s-%s' % (b.id,slug(b))" t-field="b.name"/>
+                                    <!-- </a> -->
+                                </div>
+                            </t>
+                        </span>
+                    </ul>
+                </li>
+            </t>
+            <div class="oe_structure"/>
+        </xpath>
+    </template>
 
     <template id="option_products_brands_count" inherit_id="theme_vouge.products_brands" name="Enable Brand Product Count" active="False" customize_show="True">
         <xpath expr="//label[@t-field='b.name']" position="after">

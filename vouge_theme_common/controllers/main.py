@@ -225,7 +225,7 @@ class BizopleWebsiteSale(WebsiteSale):
         '''/shop/category/<model("product.public.category"):category>/page/<int:page>'''
         # '''/shop/brands'''
     ], type='http', auth="public", website=True, sitemap=WebsiteSale.sitemap_shop)
-    def shop(self, page=0, category=None, search='', min_price=0.0, max_price=0.0, ppg=False, brands=None, **post):
+    def shop(self, page=0, category=None, search='', min_price=0.0, max_price=0.0, ppg=False, brands=None,labels=None, **post):
         add_qty = int(post.get('add_qty', 1))
         try:
             min_price = float(min_price)
@@ -239,6 +239,10 @@ class BizopleWebsiteSale(WebsiteSale):
                 req_ctx = request.context.copy()
                 req_ctx.setdefault('brand_id', int(brands))
                 request.context = req_ctx
+        if labels: #check existing labels
+            req_ctx = request.context.copy()
+            req_ctx.setdefault('product_label_id', int(labels))
+            request.context = req_ctx
         Category = request.env['product.public.category']
         if category:
             category = Category.search([('id', '=', int(category))], limit=1)
@@ -314,11 +318,36 @@ class BizopleWebsiteSale(WebsiteSale):
             request.session["brand_name"] = ''
         active_brand_list = list(set(brand_set))
         # VOUGE BRAND OPTIONS CODE END
+
+        # VOUGE Label OPTIONS CODE START
+        label_list = request.httprequest.args.getlist('label')
+        label_list = [unslug(x)[1] for x in label_list]
+        label_set = set([int(v) for v in label_list])
+        if label_list:
+            labellistdomain = list(map(int, label_list))
+            options['product_label_id'] = labellistdomain
+            label = []
+            label_obj = request.env['product.label.bizople'].sudo().search(
+                [('id', 'in', labellistdomain)])
+            if label_obj:
+                for vals in label_obj:
+                    if vals.name not in label:
+                        label.append((vals.name, vals.id))
+                if label:
+                    request.session["label_name"] = label
+        if not label_list:
+            request.session["label_name"] = ''
+        active_label_list = list(set(label_set))
+        # VOUGE LABEL OPTIONS CODE END
         # No limit because attributes are obtained from complete product list
         product_count, details, fuzzy_search_term = request.website._search_with_fuzzy("products_only", search,
             limit=None, order=self._get_search_order(post), options=options)
         search_product = details[0].get('results', request.env['product.template']).with_context(bin_size=True)
-
+        if not post.get('order') : #check condition of order in post
+            search_product = search_product.sorted('id',reverse=True) #get search product zith id desc order
+        if label_list : #check if the customer has checked one or more product label filter
+            search_product = search_product.sudo().search([('product_label_id.id', "in", label_list)]) #filter search product list using checked label(s)
+            product_count = len(search_product) #update product count in case of checked labels
         filter_by_price_enabled = request.website.is_view_active('website_sale.filter_products_price')
         if filter_by_price_enabled:
             # TODO Find an alternative way to obtain the domain through the search metadata.
@@ -404,7 +433,9 @@ class BizopleWebsiteSale(WebsiteSale):
             'layout_mode': layout_mode,
             # 'float_round': tools.float_round,
             'brand_set': brand_set,
+            'label_set': label_set,
             'active_brand_list': active_brand_list,
+            'active_label_list': active_label_list,
         }
         if filter_by_price_enabled:
             values['min_price'] = min_price or available_min_price
@@ -414,8 +445,6 @@ class BizopleWebsiteSale(WebsiteSale):
         if category:
             values['main_object'] = category
         values.update(self._get_additional_shop_values(values))
-        if not values['order'] and request.httprequest.path == '/shop':
-            return request.redirect('/shop?order=create_date+desc')
         return request.render("website_sale.products", values)
 
 class bizcommonSliderSettings(http.Controller):

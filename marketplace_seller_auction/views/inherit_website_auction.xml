@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+
+        <record id= "mp_inherit_product_wk_website_auction_tree_view" model= "ir.ui.view">
+            <field name= "name">wk.website.auction.tree.mp.inherit</field>
+            <field name= "model">wk.website.auction</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="100"/>
+            <field name="inherit_id" ref="website_auction.product_wk_website_auction_tree_view"/>
+            <field name= "arch" type= "xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="marketplace_seller_id" groups="odoo_marketplace.marketplace_officer_group"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mp_inherit_product_wk_website_auction_form_view" model="ir.ui.view">
+            <field name="name">wk.website.auction.form.mp.inherit</field>
+            <field name="model">wk.website.auction</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="100"/>
+            <field name="inherit_id" ref="website_auction.product_wk_website_auction_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group//field[@name='name']" position="after">
+                    <field name="marketplace_seller_id"
+                           required="1"
+                           groups="odoo_marketplace.marketplace_officer_group"
+                           options="{'no_create_edit':True}"
+                           domain="[('seller','=',True),('state','=','approved')]"
+                           context="{'form_view_ref':'odoo_marketplace.wk_seller_form_view'}"
+                           />
+                    <field name="logged_in_user_group_ids" invisible="1"/>
+                </xpath>
+                <xpath expr="//form/sheet/group//field[@name='product_tmpl_id']" position="attributes">
+                    <attribute name="domain">[('status','=','approved'),('marketplace_seller_id','in',logged_in_user_group_ids),('website_published', '=', True), ('sale_ok', '=', True)]</attribute>
+                    <attribute name="context">{'form_view_ref': 'odoo_marketplace.wk_seller_product_template_form_view', 'tree_view_ref' : 'odoo_marketplace.wk_seller_product_template_tree_view'}</attribute>
+                    <attribute name="options">{'no_create_edit': True, 'no_create': True, 'no_quick_create':True,'no_open':True}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/group//field[@name='product_id']" position="attributes">
+                    <attribute name="domain">[('status','=','approved'),('marketplace_seller_id','in',logged_in_user_group_ids),('product_tmpl_id','=', product_tmpl_id),('website_published', '=', True), ('sale_ok', '=', True)]</attribute>
+                    <attribute name="context">{'form_view_ref': 'odoo_marketplace.wk_seller_product_template_form_view', 'tree_view_ref' : 'odoo_marketplace.wk_seller_product_template_tree_view'}</attribute>
+                    <attribute name="options">{'no_create_edit': True, 'no_create': True, 'no_quick_create':True,'no_open':True}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/group//field[@name='winner_id']" position="attributes">
+                    <attribute name="context">{'form_view_ref': 'odoo_marketplace.customer_form_view_for_marketplace'}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/group//field[@name='order_id']" position="attributes">
+                    <attribute name="options">{'no_create_edit': True, 'no_open': True}</attribute>
+                </xpath>
+                <!-- <xpath expr="//form//notebook//field[@name='bid_increment_rule_ids']" position="attributes">
+                    <attribute name="widget">many2many_kanban</attribute>
+                    <attribute name="context">{'kanban_view_ref': 'marketplace_seller_auction.seller_kanban_view_for_bidding_rule_marketplace'}</attribute>
+                </xpath> -->
+                <xpath expr="//form//notebook//field[@name='bid_increment_rule_ids']" position="replace">
+                    <field required="1" name='bid_increment_rule_ids' nolabel='1' widget="many2many_kanban"
+                                             attrs="{'readonly':[('state','==','finish')]}">
+                         <kanban quick_create="false" create="0" string="Increment Rules">
+                             <field name= "name"/>
+                             <field name= "from_price"/>
+                             <field name= "to_price"/>
+                             <field name= "increment_by"/>
+                             <templates>
+                                 <t t-name="kanban-box">
+                                     <div class="oe_kanban_global_click">
+                                         <div class="oe_kanban_details">
+                                             <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+                                             <ul>
+                                                 <li style="font-size:16px;">
+                                                     <strong>Name: </strong><field name="name"/>
+                                                 </li>
+                                                 <li>
+                                                     <strong>Range: </strong><t t-esc="record.from_price.value"/> - <t t-esc="record.to_price.value"/>
+
+                                                 </li>
+                                                 <li>
+                                                     <strong>Increment By: </strong><t t-esc="record.increment_by.value"/>
+                                                 </li>
+                                             </ul>
+                                         </div>
+                                     </div>
+                                 </t>
+                             </templates>
+                         </kanban>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mp_inherit_product_wk_website_auction_form_view_for_manager" model="ir.ui.view">
+            <field name="name">wk.website.auction.form.mp.inherit</field>
+            <field name="model">wk.website.auction</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="marketplace_seller_auction.mp_inherit_product_wk_website_auction_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('odoo_marketplace.marketplace_manager_group') ])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//notebook//field[@name='bid_increment_rule_ids']" position="replace">
+                    <field required="1" name='bid_increment_rule_ids' nolabel='1'
+                                             attrs="{'readonly':[('state','==','finish')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mp_inherit_product_wk_website_auction_search_view" model="ir.ui.view">
+            <field name="name">wk.website.auction.search.mp.inherit</field>
+            <field name="model">wk.website.auction</field>
+            <field name="inherit_id" ref="website_auction.product_wk_website_auction_search_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('odoo_marketplace.marketplace_officer_group') ])]"/>
+            <field name="arch"  type="xml">
+                <group position="inside">
+                    <filter string="Seller"
+                        context="{'group_by':'marketplace_seller_id'}"
+                        name="groupby_marketplace_seller_id"
+                        groups="odoo_marketplace.marketplace_officer_group"
+                        />
+                </group>
+            </field>
+        </record>
+
+
+        <record id= "seller_kanban_view_for_bidding_rule_marketplace" model= "ir.ui.view">
+           <field name= "name">wk.bid.increment.rule.tree.mp.seller</field>
+           <field name= "model">wk.bid.increment.rule</field>
+           <field name="type">kanban</field>
+           <field name= "arch" type= "xml">
+               <kanban quick_create="false" create="0" string="Increment Rules">
+                   <field name= "name"/>
+                   <field name= "from_price"/>
+                   <field name= "to_price"/>
+                   <field name= "increment_by"/>
+                   <templates>
+                       <t t-name="kanban-box">
+                           <div class="oe_kanban_global_click">
+                               <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+                               <div class="oe_kanban_details">
+                                   <strong>
+                                       <field name="name"/>
+                                   </strong>
+                                   <div>
+                                       <strong>
+                                           <t t-esc="record.from_price.value"/> - <t t-esc="record.to_price.value"/>
+                                       </strong>
+                                   </div>
+                                   <ul>
+                                       <li>Increment By: <t t-esc="increment_by"/></li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </t>
+                   </templates>
+               </kanban>
+           </field>
+       </record>
+
+        <record id= "website_auction.wk_bid_increment_rule_tree_view" model= "ir.ui.view">
+           <field name= "name">wk.bid.increment.rule.tree</field>
+           <field name= "model">wk.bid.increment.rule</field>
+           <field name="type">tree</field>
+           <field name= "arch" type= "xml">
+               <tree string="Increment  Rules" create="false" delete="false" edit="false">
+                   <field name= "name"/>
+                   <field name= "from_price"/>
+                   <field name= "to_price"/>
+                   <field name= "increment_by"/>
+               </tree>
+           </field>
+       </record>
+
+        <record id="website_auction.wk_bid_increment_rule_form_view" model="ir.ui.view">
+           <field name="name">wk.bid.increment.rule.form</field>
+           <field name="model">wk.bid.increment.rule</field>
+            <field name="type">form</field>
+           <field name="arch" type="xml">
+               <form string="Increment Rules" create="false" delete="false" edit="false">
+                   <sheet>
+                    <group>
+                       <group>
+                           <field name='name'/>
+                       </group>
+                       <group>
+                           <field name='active'/>
+                       </group>
+                    </group>
+                   <group>
+                       <group>
+                         <field name='from_price'/>
+                         <field name='to_price'/>
+                       </group>
+                       <group>
+                         <field name='increment_by'/>
+                       </group>
+                   </group>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+       <record id= "mp_inherit_wk_bid_increment_rule_tree_view" model= "ir.ui.view">
+          <field name= "name">wk.bid.increment.rule.tree.mp.inherit</field>
+          <field name= "model">wk.bid.increment.rule</field>
+          <field name="inherit_id" ref="website_auction.wk_bid_increment_rule_tree_view"/>
+          <field name="groups_id" eval="[(6, 0, [ref('odoo_marketplace.marketplace_officer_group') ])]"/>
+          <field name="type">tree</field>
+          <field name= "arch" type= "xml">
+              <tree position="attributes">
+                  <attribute name="create">1</attribute>
+                  <attribute name="edit">1</attribute>
+                  <attribute name="delete">1</attribute>
+              </tree>
+          </field>
+      </record>
+
+        <record id="mp_inherit_wk_bid_increment_rule_form_view" model="ir.ui.view">
+           <field name="name">wk.bid.increment.rule.form.mp.inherit</field>
+           <field name="model">wk.bid.increment.rule</field>
+           <field name="inherit_id" ref="website_auction.wk_bid_increment_rule_form_view"/>
+           <field name="groups_id" eval="[(6, 0, [ref('odoo_marketplace.marketplace_officer_group') ])]"/>
+            <field name="type">form</field>
+           <field name="arch" type="xml">
+               <form position="attributes">
+                   <attribute name="create">1</attribute>
+                   <attribute name="edit">1</attribute>
+                   <attribute name="delete">1</attribute>
+               </form>
+           </field>
+       </record>
+
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <record id="mp_seller_auction_working_action" model="ir.actions.act_window">
+            <field name="name">Marketplace Working Auction</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wk.website.auction</field>
+             <field name="view_mode">tree,form</field>
+             <field name="domain">[('state','not in',['close','complete','finish']),('marketplace_seller_id','in',['get_marketplace_seller_id()'])]</field>
+             <field name="context">{'mp_seller_auction':1,'search_default_groupby_marketplace_seller_id':1}</field>
+            <field name="help" type="html">
+              <p>
+                Here is a list of all your Auction. You
+                can click a Auction to get the detailed Information About Auction.
+              </p>
+            </field>
+            <field
+				name="view_ids"
+				eval="[(5, 0, 0),
+					(0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('mp_inherit_product_wk_website_auction_tree_view')}),
+					(0, 0, {'sequence': 3, 'view_mode': 'form', 'view_id': ref('mp_inherit_product_wk_website_auction_form_view')})
+				]"/>
+        </record>
+        <record id="mp_seller_auction_completed_action" model="ir.actions.act_window">
+            <field name="name">Marketplace Completed Auction</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wk.website.auction</field>
+             <field name="view_mode">tree,form</field>
+             <field name="domain">[('state','in',['close','complete','finish']),('marketplace_seller_id','in',['get_marketplace_seller_id()'])]</field>
+             <field name="context">{'mp_seller_auction':1,'auction_type':'completed','search_default_groupby_marketplace_seller_id':1}</field>
+             <field
+ 				name="view_ids"
+ 				eval="[(5, 0, 0),
+ 					(0, 0, {'sequence': 2, 'view_mode': 'tree', 'sequence':2, 'view_id': ref('mp_inherit_product_wk_website_auction_tree_view')}),
+ 					(0, 0, {'sequence': 3, 'view_mode': 'form', 'sequence':3, 'view_id': ref('mp_inherit_product_wk_website_auction_form_view')})
+ 				]"/>
+        </record>
+
+        <record id="mp_seller_auction_inc_rule_action" model="ir.actions.act_window">
+            <field name="name">Marketplace Bid Increment Rules</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wk.bid.increment.rule</field>
+             <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <menuitem
+            name= "Auction"
+            id= "mp_seller_auction_root_menu"
+            sequence= "4"
+            parent= "odoo_marketplace.wk_seller_dashboard"
+            groups= "marketplace_seller_auction.group_for_mp_auction,odoo_marketplace.marketplace_officer_group"
+        />
+        <menuitem
+            name= "Working Auction"
+            id= "mp_seller_auction_working_menu"
+            action= "marketplace_seller_auction.mp_seller_auction_working_action"
+            parent= "marketplace_seller_auction.mp_seller_auction_root_menu"
+            sequence= "1"
+            groups="marketplace_seller_auction.group_for_mp_auction,odoo_marketplace.marketplace_officer_group"
+        />
+        <menuitem
+            name= "Completed Auction"
+            id= "mp_seller_auction_completed_menu"
+            action= "marketplace_seller_auction.mp_seller_auction_completed_action"
+            parent= "marketplace_seller_auction.mp_seller_auction_root_menu"
+            sequence= "2"
+            groups="marketplace_seller_auction.group_for_mp_auction,odoo_marketplace.marketplace_officer_group"
+        />
+        <menuitem
+            name= "Increment Rules"
+            id= "mp_seller_auction_inc_rule_menu"
+            action= "marketplace_seller_auction.mp_seller_auction_inc_rule_action"
+            parent= "marketplace_seller_auction.mp_seller_auction_root_menu"
+            sequence= "3"
+            groups="marketplace_seller_auction.group_for_mp_auction,odoo_marketplace.marketplace_officer_group"
+        />
+
+    </data>
+</odoo>

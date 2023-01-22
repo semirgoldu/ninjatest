@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Inherited sale order form view-->
+    <record id="view_gift_card_inherit_matager" model="ir.ui.view">
+        <field name="name">gift.card.inherit</field>
+        <field name="model">gift.card</field>
+        <field name="inherit_id" ref="gift_card.gift_card_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expired_date']" position="attributes">
+                <attribute name="readonly">context.get('expire_date_readonly',False)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="readonly">context.get('partner_readonly',False)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='expired_date']" position="after">
+                <field name="sale_order_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

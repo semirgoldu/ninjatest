@@ -1,0 +1,45 @@
+<odoo>
+    <!--    verification code for email on signup-->
+    <template id="email_verify_signup_template" name="Email Number verification">
+        <t t-call="web.login_layout">
+            <!--Redirect to action url on submit button-->
+            <form class="oe_signup_form oe_signup_form_email_verification otp_timer" role="form" method="post" t-if="not message"
+                  t-att-action="'/web/signup/email/verify/submit?email=%s' %email">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                <!--verification code field-->
+                <div class="form-group field_email_verify_login">
+                    <label for="phone_verify" class="col-form-label">Verification Code <span style="color:red">*</span></label>
+                    <input type="text" name="email_verify" t-att-value="email_verify" id="email_verify"
+                           class="form-control"
+                           autofocus="autofocus" required="required" autocapitalize="off"/>
+                    <input name="email" type="hidden" t-att-value="email"/>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="countdown_email_signup"/>
+                    </div>
+                    <div class="col-md-6">
+                        <a t-att-href="'/web/phone/email/verify/url?is_reset_email_otp=True&amp;email=%s' %email" class="resend_otp_login float-right">Resend OTP
+                        </a>
+                    </div>
+                </div>
+                <!--                Error if code is invalid-->
+                <div class="form-group field_email_verify_login_error" t-if="error">
+                    <p class="alert alert-danger" role="alert">
+                        Invalid Code!
+                    </p>
+                </div>
+                <div class="form-group field_email_verify_otp_expire_login_error" t-if="otp_email_expire_error">
+                    <p class="alert alert-danger" role="alert">
+                        Your OTP Expire.Please Resend OTP again!
+                    </p>
+                </div>
+                <!--                confirm button-->
+                <div class="text-center oe_phone_verify_sign_buttons pt-3">
+                    <button type="submit" class="btn btn-primary btn-block">Confirm</button>
+                </div>
+            </form>
+        </t>
+    </template>
+</odoo>

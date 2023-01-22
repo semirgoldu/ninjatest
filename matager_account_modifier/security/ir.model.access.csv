@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_custom_request,custom.request,model_custom_request,,1,1,1,1
+access_otp_phonenumber,otp_phonenumber,model_otp_phonenumber,,1,1,1,1
+access_otp_email,otp_email,model_otp_email,,1,1,1,1

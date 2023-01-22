@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Inherited sale order form view-->
+    <record id="view_sale_order_inherit_matager" model="ir.ui.view">
+        <field name="name">sale.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="return_requested" readonly="1" force_save="1"/>
+            </xpath>
+            <xpath expr="//button[@name='preview_sale_order']" position="after">
+                <button name="action_view_gift_card" type="object" class="oe_stat_button" icon="fa-id-card"
+                        attrs="{'invisible': [('gift_count', '=', 0)]}">
+                    <field name="gift_count" widget="statinfo" string="Gift Cards"/>
+                </button>
+            </xpath>
+            <xpath expr="//button[@name='action_cancel']" position="before">
+               <button name="button_create_gift_card" type="object" string="Create Gift Card" class="btn btn-primary" attrs="{'invisible':['|',('gift_count', '>', 0),('return_requested','=',False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

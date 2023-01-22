@@ -1,0 +1,65 @@
+<odoo>
+    <!--    Signup page inherit to add fields-->
+
+    <template id="auth_signup_fields_inherit" inherit_id="auth_signup.fields">
+
+        <xpath expr="//label[@for='login']" position="replace">
+            <label for="login">Email <span style="color:red">*</span></label>
+        </xpath>
+        <xpath expr="//input[@name='login']" position="after">
+            <span class="form-group field_signup_email"/>
+        </xpath>
+        <xpath expr="//label[@for='name']" position="replace">
+            <label for="name">Full Name <span style="color:red">*</span></label>
+        </xpath>
+        <xpath expr="//div[hasclass('field-password')]" position="before">
+
+            <!-- Phone Number field-->
+            <div class="form-group field-phone-number">
+                <label for="name">Phone Number <span style="color:red">*</span></label>
+                <br/>
+                <select name="countryCode" id="" disabled="disabled" style="height: calc(1.5em + 0.25rem + 2px);">
+                    <optgroup label="Other countries">
+                        <option data-countryCode="QA" value="974" Selected="Selected">+974</option>
+                    </optgroup>
+                </select>
+                <input type="number" name="phone" t-att-value="phone" id="phone"
+                       class="form-control form-control-sm" style="display: inline-block;width: 75%;"
+                       required="required" t-att-readonly="'readonly' if only_passwords else None"
+                       t-att-autofocus="'autofocus' if login and not only_passwords else None"/>
+                <span class="form-group field_signup_phone"/>
+            </div>
+
+            <!-- Date of Birth field-->
+            <div class="form-group field-dob">
+                <label for="name">Date of Birth <span style="color:red">*</span></label>
+                <input type="date" name="dob" t-att-value="dob" id="dob"
+                       class="form-control form-control-sm" placeholder="xx/xx/xxxx"
+                       required="required" />
+            </div>
+
+            <!-- Gender field-->
+            <div class="form-group field-gender">
+                <label for="name">Gender <span style="color:red">*</span></label>
+                <select name="gender" id="gender" class="form-control form-control-sm" required="required">
+                    <option value=""></option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </xpath>
+        <xpath expr="//label[@for='password']//.." position="after">
+            <div class="form-group field-is_terms_condition_apply">
+                <input type="checkbox" name="is_terms_condition_apply" t-att-value="is_terms_condition_apply" id="is_terms_condition_apply"
+                       required="required" />
+                <label for="is_terms_condition_apply" class="col-form-label">I accept terms &amp; Conditions. <span style="color:red">*</span></label>
+            </div>
+        </xpath>
+        <xpath expr="//label[@for='password']" position="replace">
+            <label for="password">Password <span style="color:red">*</span></label>
+        </xpath>
+
+        <!-- Replace Confirm Password field-->
+        <xpath expr="//div[hasclass('field-confirm_password')]" position="replace"/>
+    </template>
+</odoo>

@@ -1,0 +1,320 @@
+<odoo>
+    <!--    Shop Address page inherit to modification in view-->
+
+    <template id="matager_address_inherit" inherit_id="website_sale.address">
+        <xpath expr="//input[@name='street2']//.." position="replace"/>
+        <xpath expr="//input[@name='zip']//.." position="replace"/>
+        <xpath expr="//input[@name='zip']//.." position="replace"/>
+        <xpath expr="//input[@name='city']//.." position="before">
+            <div t-attf-class="form-group #{error.get('building') and 'o_has_error' or ''} col-lg-12 div_building">
+                <label class="col-form-label" for="building">Building</label>
+                <input type="text" name="building" id="building"
+                       t-attf-class="form-control #{error.get('building') and 'is-invalid' or ''}"
+                       t-att-value="'building' in checkout and checkout['building']"/>
+            </div>
+        </xpath>
+        <xpath expr="//input[@name='city']" position="replace">
+            <input type="text" name="city" t-attf-class="form-control #{error.get('city') and 'is-invalid' or ''}"
+                   t-att-value="'city' in checkout and checkout['city'] or 'Doha'"/>
+        </xpath>
+        <xpath expr="//label[@for='street']" position="replace">
+            <label for="street">Address <span style="color:red">*</span></label>
+        </xpath>
+        <xpath expr="//label[@for='city']" position="replace">
+             <label class="col-form-label" for="city">City <span style="color:red">*</span></label>
+        </xpath>
+        <xpath expr="//input[@name='name']" position="after">
+            <span class="otp_name_required"></span>
+        </xpath>
+        <xpath expr="//label[@for='name']" position="replace">
+            <label class="col-form-label" for="name">Name
+                <span style="color:red">*</span>
+            </label>
+        </xpath>
+        <xpath expr="//label[@for='phone']//.." position="replace">
+            <div t-attf-class="form-group #{error.get('phone') and 'o_has_error' or ''} col-lg-6" id="div_phone">
+                  <label class="col-form-label" for="phone">Phone
+                <span style="color:red">*</span>
+            </label>
+                <br/>
+                <select name="countryCode" id="" disabled="disabled" style="height: calc(1.5em + 0.75rem + 2px);">
+                    <optgroup label="Other countries">
+                        <option data-countryCode="QA" value="974" Selected="Selected">+974</option>
+                    </optgroup>
+                </select>
+                <input type="tel" name="phone" t-attf-class="form-control #{error.get('phone') and 'is-invalid' or ''}"
+                       t-att-value="'phone' in checkout and checkout['phone']" style="display: inline-block;width: 82%;" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
+                  <input type="checkbox" name="phone_verify_checkbox" id="phone_verify_checkbox" t-att-checked="'checked' if show_phone_verify == False else None" class="d-none"/>
+                <t t-if="show_phone_verify == True">
+                    <div class="shop_address_phone_verify_main">
+                        <div>
+                            <button name="shop_address_phone_verify" class="shop_address_phone_verify btn btn-link" type="button">
+                                Phone Verify
+                            </button>
+
+                            <input type="hidden" name="phone_verify_field" id="phone_verify_field"/>
+                            <div class="modal fade" id="modal_phone_verify" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-light">
+                                            <b>
+                                                Phone Verify
+                                            </b>
+                                            <button type="button" class="close text-mute" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                <span>x</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="">
+                                                <input type="hidden" name="csrf_token"
+                                                       t-att-value="request.csrf_token()"/>
+                                                <!--verification code field-->
+                                                <div class="form-group field_phone_verify_login">
+                                                    <label for="phone_verify" class="col-form-label">Verification Code
+                                                        <span style="color:red">*</span>
+                                                    </label>
+                                                    <input type="text" name="phone_verify_shop_address"
+                                                           t-att-value="phone_verify_shop_address"
+                                                           id="phone_verify_shop_address"
+                                                           class="form-control"
+                                                           autofocus="autofocus" required="required"
+                                                           autocapitalize="off"/>
+                                                     <div class="row">
+                                                    <div class="col-md-6 mt-1">
+                                                        <span id="countdown_phone"/>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <button type="button" class="btn_resend_otp_phone btn btn-link float-right">
+                                                            Resend OTP
+                                                        </button>
+                                                    </div>
+                                                </div>
+<!--                                                    <button type="button" class="btn_resend_otp_phone btn btn-link">Resend OTP</button>-->
+                                                    <span class="field_shop_address_otp_verify"/>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer bg-light">
+                                                <button type="button"
+                                                        class="btn btn-secondary modal_phone_verify_submit">
+                                                    Confirm
+                                                </button>
+                                                <button type="button" class="btn btn-secondary btn-close-product"
+                                                        data-dismiss="modal">
+                                                    Close
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </t>
+                 <span class="form-group field_shop_address_phone"/>
+            </div>
+
+        </xpath>
+        <xpath expr="//label[@for='country_id']" position="replace">
+            <label class="col-form-label" for="country_id">Country
+                <span style="color:red">*</span>
+            </label>
+        </xpath>
+        <xpath expr="//label[@for='state_id']" position="replace">
+            <label class="col-form-label" for="state_id">State / Province
+                <span style="color:red">*</span>
+            </label>
+        </xpath>
+        <xpath expr="//input[@name='email']" position="after">
+            <input type="checkbox" name="email_verify_checkbox" id="email_verify_checkbox" t-att-checked="'checked' if show_email_verify == False else None" class="d-none"/>
+            <t t-if="show_email_verify == True">
+             <div class="shop_address_email_main">
+                    <div>
+                        <button name="shop_address_email_verify" class="shop_address_email_verify btn btn-link" type="button">Email Verify</button>
+                        <input type="hidden" name="email_verify_field" id="email_verify_field"/>
+                        <div class="modal fade" id="modal_email_verify" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-light">
+                                        <b>
+                                            Email Verify
+                                        </b>
+                                        <button type="button" class="close text-mute" data-dismiss="modal" aria-label="Close">
+                                            <span>x</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                            <!--verification code field-->
+                                            <div class="form-group field_email_verify_login">
+                                                <label for="email_verify" class="col-form-label">Verification Code
+                                                    <span style="color:red">*</span>
+                                                </label>
+                                                <input type="text" name="email_verify_shop_address"
+                                                       t-att-value="email_verify_shop_address"
+                                                       id="email_verify_shop_address" class="form-control"
+                                                       autofocus="autofocus" required="required" autocapitalize="off"/>
+                                                <div class="row">
+                                                    <div class="col-md-6 mt-1">
+                                                        <span id="countdown_email"/>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <button type="button" class="btn_resend_otp_email btn btn-link float-right">
+                                                            Resend OTP
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <span class="field_email_address_otp_verify"/>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer bg-light">
+                                            <button type="button" class="btn btn-secondary modal_email_verify_submit">Confirm</button>
+                                            <button type="button" class="btn btn-secondary btn-close-product" data-dismiss="modal"> Close </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+            <span class="form-group field_shop_address_email"/>
+        </xpath>
+        <xpath expr="//label[@for='email']" position="replace">
+            <label t-attf-class="col-form-label #{mode[1] == 'shipping' and 'label-optional' or ''}" for="email">Email
+                <span style="color:red">*</span>
+            </label>
+        </xpath>
+    </template>
+    <template id ="phone_verification_template">
+        <div class="shop_address_phone_verify_main">
+                        <div>
+                            <button name="shop_address_phone_verify" class="shop_address_phone_verify btn btn-link" type="button">
+                                Phone Verify
+                            </button>
+                            <input type="checkbox" name="phone_verify_checkbox" id="phone_verify_checkbox" class="d-none"/>
+                            <input type="hidden" name="phone_verify_field" id="phone_verify_field"/>
+                            <div class="modal fade" id="modal_phone_verify" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-light">
+                                            <b>
+                                                Phone Verify
+                                            </b>
+                                            <button type="button" class="close text-mute" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                <span>x</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="">
+                                                <input type="hidden" name="csrf_token"
+                                                       t-att-value="request.csrf_token()"/>
+                                                <!--verification code field-->
+                                                <div class="form-group field_phone_verify_login">
+                                                    <label for="phone_verify" class="col-form-label">Verification Code
+                                                        <span style="color:red">*</span>
+                                                    </label>
+                                                    <input type="text" name="phone_verify_shop_address"
+                                                           t-att-value="phone_verify_shop_address"
+                                                           id="phone_verify_shop_address"
+                                                           class="form-control"
+                                                           autofocus="autofocus" required="required"
+                                                           autocapitalize="off"/>
+                                                    <div class="row">
+                                                    <div class="col-md-6 mt-1">
+                                                        <span id="countdown_phone"/>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <button type="button" class="btn_resend_otp_phone btn btn-link float-right">
+                                                            Resend OTP
+                                                        </button>
+                                                    </div>
+                                                    </div>
+<!--                                                    <button type="button" class="btn_resend_otp_phone btn btn-link">Resend OTP</button>-->
+                                                    <span class="field_shop_address_otp_verify"/>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer bg-light">
+                                                <button type="button"
+                                                        class="btn btn-secondary modal_phone_verify_submit">
+                                                    Confirm
+                                                </button>
+                                                <button type="button" class="btn btn-secondary btn-close-product"
+                                                        data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+    </template>
+    <template id ="email_verification_template">
+        <div class="shop_address_email_main">
+                    <div>
+                        <button name="shop_address_email_verify" class="shop_address_email_verify btn btn-link" type="button">Email Verify</button>
+                        <input type="hidden" name="email_verify_field" id="email_verify_field"/>
+                        <div class="modal fade" id="modal_email_verify" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-light">
+                                        <b>
+                                            Email Verify
+                                        </b>
+                                        <button type="button" class="close text-mute" data-dismiss="modal" aria-label="Close">
+                                            <span>x</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                            <!--verification code field-->
+                                            <div class="form-group field_email_verify_login">
+                                                <label for="email_verify" class="col-form-label">Verification Code
+                                                    <span style="color:red">*</span>
+                                                </label>
+                                                <input type="text" name="email_verify_shop_address"
+                                                       t-att-value="email_verify_shop_address"
+                                                       id="email_verify_shop_address" class="form-control"
+                                                       autofocus="autofocus" required="required" autocapitalize="off"/>
+<!--                                                <button type="button" class="btn_resend_otp_email btn btn-link">Resend OTP</button>-->
+                                                <div class="row">
+                                                    <div class="col-md-6 mt-1">
+                                                        <span id="countdown_email"/>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <button type="button" class="btn_resend_otp_email btn btn-link float-right">
+                                                            Resend OTP
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <span class="field_email_address_otp_verify"/>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer bg-light">
+                                            <button type="button" class="btn btn-secondary modal_email_verify_submit">Confirm</button>
+                                            <button type="button" class="btn btn-secondary btn-close-product" data-dismiss="modal"> Close </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </template>
+
+    <template id="matager_address_b2b_inherit" inherit_id="website_sale.address_b2b">
+        <xpath expr="//input[@name='company_name']//..//.." position="replace"/>
+    </template>
+</odoo>

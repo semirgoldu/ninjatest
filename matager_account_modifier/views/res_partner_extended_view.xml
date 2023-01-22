@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Inherited res partner form view-->
+    <record id="view_res_partner_inherit_matager" model="ir.ui.view">
+        <field name="name">res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='website']" position="before">
+                <field name="dob"/>
+                <field name="gender"/>
+                <field name="is_phone_verify" readonly="1" force_save="1"/>
+                <field name="is_email_verify" readonly="1" force_save="1"/>
+                <field name="is_terms_condition_apply" readonly="1" force_save="1"/>
+            </xpath>
+            <xpath expr="//field[@name='street2']" position="after">
+                <field name="building" placeholder="Building..."/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_seller_role" model="res.users.role">
+            <field name="name">Seller Group</field>
+            <field name="implied_ids"
+                   eval="[(6, 0, [ref('base.group_portal'), ref('odoo_marketplace.marketplace_seller_group'),ref('odoo_marketplace.marketplace_draft_seller_group'),ref('marketplace_seller_auction.group_for_mp_auction')])]"/>
+        </record>
+    </data>
+</odoo>

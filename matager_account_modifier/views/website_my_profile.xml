@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_account_extended" inherit_id="portal.portal_my_details">
+        <xpath expr="//input[@name='phone']" position="replace">
+            <br/>
+            <select name="countryCode" id="" disabled="disabled" style="height: calc(1.5em + 0.75rem + 2px);">
+                <optgroup label="Other countries">
+                    <option data-countryCode="QA" value="974" Selected="Selected">+974</option>
+                </optgroup>
+            </select>
+            <input type="tel" name="phone" t-attf-class="form-control #{error.get('phone') and 'is-invalid' or ''}"
+                   t-att-value="phone or partner.phone" style="display: inline-block;width: 81%;" t-att-readonly="'readonly' if is_phone_verify else None"/>
+            <t t-if="not is_phone_verify">
+                <a target="_self" t-att-href="'/web/phone/email/verify/url?phone=%s&amp;my_profile_phone=True' %partner.phone">Phone Verify</a>
+            </t>
+            <span class="form-group field_my_profile_phone"/>
+        </xpath>
+        <xpath expr="//input[@name='email']/.." position="replace">
+            <div t-attf-class="form-group #{error.get('email') and 'o_has_error' or ''} col-xl-6">
+                <label class="col-form-label" for="email">Email</label>
+                <input type="email" name="email"
+                       t-attf-class="form-control #{error.get('email') and 'is-invalid' or ''}"
+                       t-att-value="email or partner.email" t-att-readonly="'readonly' if is_email_verify else None"/>
+                <t t-if="not is_email_verify">
+                    <a target="_self" t-att-href="'/web/phone/email/verify/url?email=%s&amp;my_profile_email=True' %partner.email">Email Verify</a>
+                </t>
+                <span class="form-group field_my_profile_email"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//select[@name='state_id']/.." position="after">
+            <div t-attf-class="form-group #{error.get('gender') and 'o_has_error' or ''} col-xl-6">
+                <label class="col-form-label" for="gender">Gender</label>
+                <select name="gender" class="form-control" required="required">
+                    <option value="" ></option>
+                    <option value="male" t-att-selected="gender == 'male'">Male</option>
+                    <option value="female" t-att-selected="gender == 'female'">Female</option>
+                </select>
+            </div>
+            <div t-attf-class="form-group #{error.get('dob') and 'o_has_error' or ''} col-xl-6">
+                <label class="col-form-label" for="dob">Date Of Birth</label>
+                <input type="date" id="dob_my_account" name="dob" class="form-control" t-att-value="dob"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,11 @@
+.pac-container{
+   margin-left:auto !important;
+}
+
+.pac-container .pac-item-query {
+    color: black !important;
+}
+.pac-container .pac-item {
+    background-color: #ffffff !important;
+    color: black !important;
+}

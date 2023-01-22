@@ -1,0 +1,64 @@
+<odoo>
+    <!--    verification code for Mobile on signup and for reset password-->
+    <template id="phone_number_verify_signup_template" name="Phone Number verification">
+        <t t-call="web.login_layout">
+            <!--Redirect to action url on submit button-->
+            <form class="oe_signup_form oe_signup_form_phone_verification otp_timer" role="form" method="post" t-if="not message"
+                  t-att-action="'/web/signup/phone/verify/submit?phone=%s' % phone">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <input type="hidden" name="is_reset_phone" t-att-value="is_reset_phone or ''"/>
+                <input type="hidden" name="phone_login" t-att-value="phone_login or ''"/>
+
+                <!--verification code field-->
+                <div class="form-group field_phone_verify_login">
+                    <label for="phone_verify" class="col-form-label">Verification Code<span style="color:red">*</span></label>
+                    <input type="text" name="phone_verify" t-att-value="phone_verify" id="phone_verify"
+                           class="form-control"
+                           autofocus="autofocus" required="required" autocapitalize="off"/>
+                    <input type="hidden" name="phone" t-att-value="phone"/>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span id="countdown_phone_signup"/>
+                    </div>
+                    <div class="col-md-6">
+                        <t t-if="is_reset_phone">
+                        <a t-att-href="'/web/phone/email/verify/url?is_reset_phone_otp=True&amp;is_reset_phone=True&amp;phone_login=%s&amp;phone=%s' %(phone,phone)" class="resend_otp_login float-right">Resend OTP
+                        </a>
+                        </t>
+                        <t t-else="">
+                            <a t-att-href="'/web/phone/email/verify/url?is_reset_phone_otp=True&amp;phone_login=%s&amp;phone=%s' %(phone,phone)" class="resend_otp_login float-right">Resend OTP
+                        </a>
+                        </t>
+                    </div>
+                </div>
+
+                <!-- Error if code is invalid-->
+                <div class="form-group field_phone_verify_login_error" t-if="error">
+                    <p class="alert alert-danger" role="alert">
+                        Invalid Code!
+                    </p>
+                </div>
+
+                <!-- OTP Expire Error if User is Not Found-->
+                <div class="form-group field_phone_verify_otp_expire_login_error" t-if="otp_phone_expire_error">
+                    <p class="alert alert-danger" role="alert">
+                        Your OTP Expire.Please Resend OTP again!
+                    </p>
+                </div>
+
+                <!-- Error if User is Not Found-->
+                <div class="form-group field_user_not_found_error" t-if="not_user_error">
+                    <p class="alert alert-danger" role="alert">
+                        User Not Found!
+                    </p>
+                </div>
+
+                <!--                submit button-->
+                <div class="text-center oe_phone_verify_sign_buttons pt-3">
+                    <button type="submit" class="btn btn-primary btn-block">Confirm</button>
+                </div>
+            </form>
+        </t>
+    </template>
+</odoo>

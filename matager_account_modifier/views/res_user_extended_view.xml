@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Inherited res users form view-->
+    <record id="view_res_users_inherit_matager" model="ir.ui.view">
+        <field name="name">res.users.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]//field[@name='partner_id']" position="after">
+                <field name="phone" required="1"/>
+                <field name="dob"/>
+                <field name="gender"/>
+                <field name="is_phone_verify"/>
+                <field name="is_email_verify"/>
+                <field name="is_terms_condition_apply"/>
+                <field name="email_verification_code" readonly="1" force_save="1"/>
+                <field name="phone_verification_code" readonly="1" force_save="1"/>
+            </xpath>
+            <xpath expr="//page[@name='preferences']" position="after">
+                <page string="OTP" name="otp">
+                    <group>
+                        <group string="Phone OTP" name="phone_otp">
+                            <field name="phone_otp_ids" create="false" editable="false" delete="false" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="user_id" invisible="1"/>
+                                    <field name="date"/>
+                                    <field name="otp"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group string="Email OTP" name="email_otp" >
+                            <field name="email_otp_ids" create="false" editable="false" delete="false" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="user_id" invisible="1"/>
+                                    <field name="date"/>
+                                    <field name="otp"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                </page>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

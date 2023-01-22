@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <record id="inherit_mp_settings_form_for_auction" model="ir.ui.view">
+            <field name="name">marketplace.config.setting.auction</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="odoo_marketplace.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='mp_miscellaneous_settings']" position="attributes">
+                    <attribute name="style"></attribute>
+                </xpath>
+                <xpath expr="//page[@name='mp_miscellaneous_settings']" position="inside">
+                    <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <separator string="Seller Auction Settings"/>
+                        <div class="o_setting_left_pane">
+                            <field name="group_allow_seller_for_auction" class="oe_inline" help="Enable to allow Seller for Product Auctions."/>
+                        </div>
+                        <div class="o_setting_right_pane" title="Allow Seller for Product Auctions.">
+                            <label for="group_allow_seller_for_auction" string="Allow Seller Auction"/>
+                            <div class="text-muted">
+                                ⇒ Enable to allow Seller for Product Auctions.
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

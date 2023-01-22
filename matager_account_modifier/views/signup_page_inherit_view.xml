@@ -48,13 +48,13 @@
                 </select>
             </div>
         </xpath>
-        <xpath expr="//label[@for='password']//.." position="after">
-            <div class="form-group field-is_terms_condition_apply">
-                <input type="checkbox" name="is_terms_condition_apply" t-att-value="is_terms_condition_apply" id="is_terms_condition_apply"
-                       required="required" />
-                <label for="is_terms_condition_apply" class="col-form-label">I accept terms &amp; Conditions. <span style="color:red">*</span></label>
-            </div>
-        </xpath>
+<!--        <xpath expr="//label[@for='password']//.." position="after">-->
+<!--            <div class="form-group field-is_terms_condition_apply">-->
+<!--                <input type="checkbox" name="is_terms_condition_apply" t-att-value="is_terms_condition_apply" id="is_terms_condition_apply"-->
+<!--                       required="required" />-->
+<!--                <label for="is_terms_condition_apply" class="col-form-label">I accept terms &amp; Conditions. <span style="color:red">*</span></label>-->
+<!--            </div>-->
+<!--        </xpath>-->
         <xpath expr="//label[@for='password']" position="replace">
             <label for="password">Password <span style="color:red">*</span></label>
         </xpath>

@@ -17,7 +17,7 @@
 
 from odoo import models, fields, api, _
 from lxml import etree
-
+from odoo.exceptions import RedirectWarning, UserError, ValidationError, AccessError
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -30,6 +30,20 @@ class AccountMove(models.Model):
     seller_payment_ids = fields.One2many("seller.payment", "invoice_id", string="Seller Payment")
     mp_seller_bill = fields.Boolean("MP Seller Bill")
 
+    @api.constrains('move_type', 'journal_id')
+    def _check_journal_type(self):
+        for record in self:
+            journal_type = record.journal_id.type
+
+            if record.is_sale_document() and journal_type != 'sale' or record.is_purchase_document() and journal_type != 'purchase':
+                _logger.info('---------------------journal--------------------')
+                _logger.info(record)
+                _logger.info(record.journal_id.name)
+                _logger.info(record.is_sale_document())
+                _logger.info(journal_type)
+                _logger.info('-----------------------------------------')
+                raise ValidationError(
+                    _("The chosen journal has a type that is not compatible with your invoice type. Sales operations should go to 'sale' journals, and purchase operations to 'purchase' ones."))
     @api.model
     def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
         context = self._context

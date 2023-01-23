@@ -38,6 +38,7 @@ class AccountMove(models.Model):
             if record.is_sale_document() and journal_type != 'sale' or record.is_purchase_document() and journal_type != 'purchase':
                 _logger.info('---------------------journal--------------------')
                 _logger.info(record)
+                _logger.info(record.move_type)
                 _logger.info(record.journal_id.name)
                 _logger.info(record.is_sale_document())
                 _logger.info(journal_type)

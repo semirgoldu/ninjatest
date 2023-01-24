@@ -291,7 +291,7 @@ class SellerPayment(models.Model):
             }
             default_term = self.env.ref('account.account_payment_term_immediate').id
             invoice_vals = {
-                "move_type": "in_invoice",
+                "move_type": invoice_type,
                 "partner_id": rec.seller_id.id,
                 "journal_id": journal_ids[0].id if journal_ids else False,
                 "invoice_origin": rec.name,

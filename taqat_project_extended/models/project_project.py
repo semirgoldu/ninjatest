@@ -20,8 +20,8 @@ class ProjectInherit(models.Model):
             ('state', 'not in', ['draft', 'cancel']),
             ('move_type', 'in', ('in_invoice', 'in_refund')),
         ]
-        price_totals = self.env['account.move'].read_group(domain, ['price_subtotal'],['project_id'])
-        self.total_project_purchase_invoiced = sum(price['price_subtotal'] for price in price_totals)
+        price_totals = self.env['account.move'].read_group(domain, ['amount_total'],['project_id'])
+        self.total_project_purchase_invoiced = sum(price['amount_total'] for price in price_totals)
 
     def customer_invoice_total(self):
         self.total_project_sale_invoiced = 0
@@ -33,8 +33,8 @@ class ProjectInherit(models.Model):
             ('state', 'not in', ['draft', 'cancel']),
             ('move_type', 'in', ('out_invoice', 'out_refund')),
         ]
-        price_totals = self.env['account.move'].read_group(domain, ['price_subtotal'],['project_id'])
-        self.total_project_sale_invoiced = sum(price['price_subtotal'] for price in price_totals)
+        price_totals = self.env['account.move'].read_group(domain, ['amount_total'],['project_id'])
+        self.total_project_sale_invoiced = sum(price['amount_total'] for price in price_totals)
     def action_view_project_purchase_invoices(self):
         return {
 

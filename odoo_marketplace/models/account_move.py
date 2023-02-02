@@ -171,15 +171,21 @@ class AccountMove(models.Model):
     #     not_paid_invoices.filtered(lambda move: move.payment_state in ('paid', 'in_payment')).mp_post_action_invoice_paid()
     #     return result
 
-    def action_post(self):
-        not_paid_invoices = self.filtered(lambda move: move.is_invoice(include_receipts=True) and move.payment_state not in ('paid', 'in_payment'))
-        result = super(AccountMove, self).action_post()
-        not_paid_invoices.filtered(lambda move: move.payment_state in ('paid', 'in_payment')).mp_post_action_invoice_paid()
-        return result
+    # def action_post(self):
+    #     not_paid_invoices = self.filtered(lambda move: move.is_invoice(include_receipts=True) and move.payment_state not in ('paid', 'in_payment'))
+    #     result = super(AccountMove, self).action_post()
+    #     not_paid_invoices.filtered(lambda move: move.payment_state in ('paid', 'in_payment')).mp_post_action_invoice_paid()
+    #     return result
 
 class AccountInvoiceLine(models.Model):
     _inherit = "account.move.line"
 
+
+    def reconcile(self):
+        not_paid_invoices = self.move_id.filtered(lambda move: move.is_invoice(include_receipts=True) and move.payment_state not in ('paid', 'in_payment'))
+        result = super(AccountInvoiceLine, self).reconcile()
+        not_paid_invoices.filtered(lambda move: move.payment_state in ('in_payment','paid')).mp_post_action_invoice_paid()
+        return result
     def update_seller_admin_amount(self, seller_amount):
         self.ensure_one()
         sol_id = self.sale_line_ids[0] if self.sale_line_ids else False

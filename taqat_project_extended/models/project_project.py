@@ -9,6 +9,8 @@ class ProjectInherit(models.Model):
         groups='account.group_account_invoice,account.group_account_readonly')
     total_project_sale_invoiced = fields.Monetary(compute='customer_invoice_total', string="Total Vendor Invoiced",
                                                       groups='account.group_account_invoice,account.group_account_readonly')
+    total_net = fields.Monetary(compute='_compute_total_net', string="Total Net",
+                                                      groups='account.group_account_invoice,account.group_account_readonly')
 
     def vendor_invoice_total(self):
         self.total_project_purchase_invoiced = 0
@@ -35,6 +37,9 @@ class ProjectInherit(models.Model):
         ]
         price_totals = self.env['account.move'].read_group(domain, ['amount_total'],['project_id'])
         self.total_project_sale_invoiced = sum(price['amount_total'] for price in price_totals)
+
+    def _compute_total_net(self):
+        self.total_net = self.total_project_sale_invoiced - self.total_project_purchase_invoiced
     def action_view_project_purchase_invoices(self):
         return {
 

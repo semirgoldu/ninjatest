@@ -18,13 +18,18 @@
                     </group>
                 </page>
             </xpath>
+            <xpath expr="//div[@name='dates']" position="after">
+                 <field name="total_net" groups='account.group_account_invoice,account.group_account_readonly' readonly="1"/>
+            </xpath>
+            dates
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button type="object" class="oe_stat_button" icon="fa-pencil-square-o"
                         name="action_view_project_purchase_invoices">
                     <div class="o_form_field o_stat_info">
                         <span class="o_stat_value">
                             <field name="currency_id" invisible="1"/>
-                            <field name="total_project_purchase_invoiced" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="total_project_purchase_invoiced" widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"/>
                         </span>
                         <span class="o_stat_text">Vendor Bills Invoiced</span>
                     </div>
@@ -34,7 +39,8 @@
                     <div class="o_form_field o_stat_info">
                         <span class="o_stat_value">
                             <field name="currency_id" invisible="1"/>
-                            <field name="total_project_sale_invoiced" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="total_project_sale_invoiced" widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"/>
                         </span>
                         <span class="o_stat_text">Customer Invoiced</span>
                     </div>

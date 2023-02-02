@@ -16,7 +16,7 @@ class ProjectInherit(models.Model):
             return True
 
         domain = [
-            ('project_id', "=", self.filtered('id')),
+            ('project_id', "=", int(self.filtered('id'))),
             ('state', 'not in', ['draft', 'cancel']),
             ('move_type', 'in', ('in_invoice', 'in_refund')),
         ]
@@ -29,7 +29,7 @@ class ProjectInherit(models.Model):
             return True
 
         domain = [
-            ('project_id', "=", self.filtered('id')),
+            ('project_id', "=", int(self.filtered('id'))),
             ('state', 'not in', ['draft', 'cancel']),
             ('move_type', 'in', ('out_invoice', 'out_refund')),
         ]
